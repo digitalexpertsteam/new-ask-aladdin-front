@@ -1,0 +1,23 @@
+.card {
+    box-shadow: 0 1px 4px rgb(0 0 0 / 20%);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+.card:hover {
+    transform: translateY(-.5rem) scale(1.05);
+}
+.carousel-cell a{
+    text-decoration: none;
+}
+.carousel-cell .card .card-body h5 {
+    font-size: .9rem;
+}
+.carousel-cell .card .card-body .card-text {
+    font-size: .8rem;
+    color:#9c9c9c;
+    text-align: justify;
+}
+.carousel-cell .card .card-body .icons i {
+    color: #9c9c9c;
+    font-size: 1.24rem;
+}

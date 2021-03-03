@@ -1,0 +1,39 @@
+<section class="my-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-5">
+                <div class="blog-video position-relative">
+                    <video poster="assets/imgs/2018-Egypt-Luxor-temples-124.jpg">
+                        <source src="assets/imgs/blog-video.mp4" type="video/mp4">
+                        <span><i class="fas fa-play"></i></span>
+                    </video>
+                </div>
+            </div>
+            <div class="col-12 col-md-7">
+                <div class="blog-section">
+                    <div class="blog-title">
+                        <h2 class="font-weight-bold">From Our Blog</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aene an commodo dolor. Aenean Massa.
+                            Cum sociis the</p>
+                    </div>
+                    <div class="blog-content border-bottom py-3" *ngFor="let blog of blogContainer">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{blog.thumb}}" class="img-fluid w-100 h-100" alt="{{blog.thumb_alt}}" />
+                            </div>
+                            <div class="col-9">
+                                <div class="blog-details">
+                                    <h5 class="font-weight-bold">{{blog.name}}</h5>
+                                    <p class="" [innerHTML]="blog.content"></p>
+                                    <span class="mr-2">{{blog.created_at}}</span>
+                                    <!-- <span class="ml-2"><i class="far fa-comment mr-2"></i>1 Comment</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

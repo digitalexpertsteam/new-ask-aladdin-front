@@ -1,0 +1,23 @@
+.accomodation .acco-image img {
+    height: 145px;
+    object-fit: cover;
+    transition: all 0.5s ease 0s;
+    width: 100%;
+}
+.accomodation .acco-image:hover img {
+    transform: scale(1.1)
+}
+.accomodation .card {
+    background-color: #f4f5f9;
+}
+.acco-link a {
+    font-size: 0.8rem;
+    padding: 0.3rem 1.3rem;
+    border-radius: 5px
+}
+.accomodation a{
+    text-decoration: none;
+}
+.accomodation .card .card-body p {
+    font-size: .8rem;
+}

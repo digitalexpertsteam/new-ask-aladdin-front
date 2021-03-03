@@ -1,0 +1,30 @@
+<section class="about my-5 py-5">
+    <div class="container">
+        <div class="head-title text-center mb-5">
+            <p class="sat-font main-color mb-0">About Us</p>
+            <h2 class="font-weight-bold text-white">Why Ask Aladdin</h2>
+        </div>
+        <div class="about-more">
+            <div class="row mr-0 ml-0">
+                <ng-container *ngFor="let about of aboutContainer">
+                    <div class="col-12 col-lg-5 p-0">
+                        <div class="video" (click)="toggleVideo()">
+                            <video poster="../../../assets/imgs/2018-Egypt-Luxor-temples-124.jpg" #videoPlayer>
+                                <source src="{{about.video}}" type="video/mp4">
+                            </video>
+                            <span *ngIf="hideIcon">
+                                <i class="fas fa-play main-color"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-7 p-0">
+                        <div class="about-text" style="font-size:15px;">
+                            <p [innerHTML]="about.description"></p>
+                            <a href="" class="main-btn mt-4">Read More</a>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</section>

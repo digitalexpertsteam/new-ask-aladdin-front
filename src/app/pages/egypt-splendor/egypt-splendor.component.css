@@ -1,0 +1,43 @@
+.splendor p {
+    font-size: 13px;
+    margin-bottom: 0.2rem;
+}
+.package {
+    border-left: 3px dotted #f68800;
+    padding-left: 4rem;
+    margin-left: 1rem;
+}
+.package-details span {
+    font-size: 18px;
+}
+.package-details .number {
+    position: absolute;
+    top: -2%;
+    left: -13%;
+}
+.package-details .number p {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.package-details .number p span {
+    background-color: #f8a640;
+    border: 3px solid #fbc787;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    line-height: 80%;
+}
+.package-details p:not(:first-child){
+    font-size: 13px;
+}
+.meal img  {
+    height: 25px;
+}
+.meal span , .detail span {
+    font-size: 13px;
+    margin-left: 0.2rem;
+}
+.detail img{
+    height: 20px;
+}

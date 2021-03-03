@@ -1,0 +1,15 @@
+.main-section {
+    background-color: #000000;
+}
+.main-section ul li i , .main-section ul li span {
+    font-size: .9rem
+}
+.dropdown-menu {
+    min-width: 110px !important;
+    z-index: 999999;
+}
+@media only screen and (max-width: 600px) {
+.lang-btn {
+    margin-left: 40px;
+}
+}

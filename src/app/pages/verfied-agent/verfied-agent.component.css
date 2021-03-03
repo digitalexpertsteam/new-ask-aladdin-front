@@ -1,0 +1,22 @@
+.count {
+    border-radius: 8px;
+}
+.count h5 {
+    font-size: 1.2rem;
+}
+.count-circle {
+    left:50%;
+    transform: translate(-50%, -110%);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.count-circle img {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+}
+.count .text {
+    font-size: 1.7rem;
+}

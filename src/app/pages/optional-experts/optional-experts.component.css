@@ -1,0 +1,34 @@
+.card-body {
+    padding: 0.2rem 0.5rem;
+}
+.list-group-item img {
+    height: 90px;
+    object-fit: cover;
+}
+.list-group-item {
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+}
+.head h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+}
+.card-body h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.card-body p {
+    font-size: 0.8rem;
+    color: #a0a0a0
+}
+.card-body a {
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: orange;
+    color: #Fff;
+    width: 100%;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+}

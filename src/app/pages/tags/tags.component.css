@@ -1,0 +1,15 @@
+.services-content {
+    flex: 1 1 auto
+}
+.services-content i , .services-content p {
+    font-size: 18px;
+}
+.services-content p {
+    font-size: .8rem;
+}
+.services-content {
+    border-right: 1px solid #f4f4f9 ;
+}
+.services {
+    padding: .8rem 0;
+}

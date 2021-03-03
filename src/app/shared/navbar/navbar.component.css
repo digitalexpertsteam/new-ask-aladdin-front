@@ -1,0 +1,24 @@
+nav {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.main-nav {
+    background-color: #fff;
+    z-index:99999;
+}
+.navbar img {
+    height: 3.5rem;
+}
+.drop-link {
+    cursor: pointer;
+}
+.nav-btn {
+    background-color: #f68800;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.nav-btn:hover {
+    color: #fff;
+    text-decoration: none;
+}

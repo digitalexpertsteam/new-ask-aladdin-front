@@ -1,0 +1,56 @@
+.view img {
+    height: 85vh;
+    object-fit: cover;
+}
+.carousel-caption {
+    top:27%
+}
+.carousel-caption h3 {
+    font-size: 50px;
+    font-weight: bold;
+}
+.carousel-caption p {
+    font-size: 25px;
+}
+.carousel-caption button {
+    font-size: 13px;
+}
+/* .alaadin-banner {
+    background-image: url("../../../assets/imgs/203-2036768_ancient-history-historic-site-cairo-tourism-egypt-egypt.jpg");
+    background-size: cover;
+    background-position: 0% 20%;
+    position: relative;
+    
+}
+.banner-head {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.banner-head h1 {
+    text-shadow: 0 1rem 2rem rgb(0 0 0 / 50%);
+}
+.banner-head p {
+    font-size: 1.3rem;
+}
+.search-places {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    bottom: 0;
+    padding: 2.5rem;
+}
+ */
+ .search-places .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .2);
+    padding: .5rem .3rem;
+    padding-left: .9rem;
+    flex: 0 0 60%;
+    transition: all .2s;
+    border-radius: 6px;
+}
+
