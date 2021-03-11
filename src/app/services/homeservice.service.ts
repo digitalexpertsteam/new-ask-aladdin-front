@@ -38,4 +38,7 @@ export class HomeserviceService {
   getSingleDestination(id:any):Observable<any>{
     return this._http.get(`${environment.ApiUrl}destination/packages/${id}/en`)
   }
+  getOneDistination(id:any):Observable<any>{
+    return this._http.get(`${environment.ApiUrl}destination/${id}/en`)
+  }
 }
