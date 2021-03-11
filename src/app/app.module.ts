@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule , Title , Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -63,6 +63,7 @@ import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationBlogComponent } from './pages/destination-blog/destination-blog.component';
+import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,7 +115,8 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
     SingleBlogComponent,
     OurStoryComponent,
     ContactUsComponent,
-    DestinationBlogComponent
+    DestinationBlogComponent,
+    OneDestinationComponent
   ],
   imports: [
     BrowserModule,
@@ -131,7 +133,7 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
     NgbModule,
 
   ],
-  providers: [],
+  providers: [Title , Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

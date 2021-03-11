@@ -15,7 +15,13 @@ export class HomeserviceService {
     return this._http.get(`${environment.ApiUrl}destinations/en`);
   }
   getBlogs():Observable<any>{
-    return this._http.get(`${environment.ApiUrl}blogs/en`)
+    return this._http.get(`${environment.ApiUrl}blog/1/en`)
+  }
+  getDestinationEgy():Observable<any>{
+    return this._http.get(`${environment.ApiUrl}destination/blogs/1/en`)
+  }
+  getSingleBlogs(id:any):Observable<any>{
+    return this._http.get(`${environment.ApiUrl}blog/${id}/en`)
   }
   getDestinationBlogs(id:any):Observable<any>{
     return this._http.get(`${environment.ApiUrl}destination/blogs/${id}/en`)

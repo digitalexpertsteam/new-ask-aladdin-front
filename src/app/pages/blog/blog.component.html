@@ -19,13 +19,13 @@
                     <div class="blog-content border-bottom py-3" *ngFor="let blog of blogContainer">
                         <div class="row">
                             <div class="col-3">
-                                <img src="{{blog.thumb}}" class="img-fluid w-100 h-100" alt="{{blog.thumb_alt}}" />
+                                <img src="{{blog.blog_thumb}}" class="img-fluid w-100 h-100" alt="{{blog.blog_thumb_alt}}" />
                             </div>
                             <div class="col-9">
                                 <div class="blog-details">
-                                    <h5 class="font-weight-bold">{{blog.name}}</h5>
-                                    <p class="" [innerHTML]="blog.content"></p>
-                                    <span class="mr-2">{{blog.created_at}}</span>
+                                    <h5 class="font-weight-bold">{{blog.blog_name}}</h5>
+                                    <p class="" [innerHTML]="blog.blog_content"></p>
+                                    <span class="mr-2">{{blog.blog_created_at}}</span>
                                     <!-- <span class="ml-2"><i class="far fa-comment mr-2"></i>1 Comment</span> -->
                                 </div>
                             </div>
