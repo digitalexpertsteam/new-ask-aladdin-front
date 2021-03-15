@@ -36,3 +36,42 @@ footer .shortcuts li a:hover {
 .footer-links i {
     font-size: 25px;
 }
+.copyright
+{
+    transform: translateY(80px);
+    color: #fff;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between ;
+}
+.link-copyright a{
+    color: black;
+    transition: ease .5s;
+}
+.link-copyright a:hover {
+    text-decoration: black;
+    font-size: 13.5px;
+}
+.link-social{
+    display: flex;
+    justify-content: center;
+}
+.social i{
+   margin-left:5px ;
+   color: #fff;
+   font-size: 16px;
+}
+
+@media only screen and (max-width: 786px){
+   .copyright{
+       transform: translateY(0);
+       flex-direction: column;
+       text-align: center;
+   }
+   .footer-links i {
+    font-size: 25px;
+    color: black;
+}
+
+}
+
