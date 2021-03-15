@@ -9,6 +9,8 @@ import { HomeserviceService } from 'src/app/services/homeservice.service';
 })
 export class FooterComponent implements OnInit {
 
+  isDropup = true;
+  date = new Date();
   socialsContainer:socials[] = []
   constructor(private _socials:HomeserviceService) { }
 
