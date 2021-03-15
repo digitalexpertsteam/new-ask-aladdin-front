@@ -12,6 +12,14 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class OneDestinationComponent implements OnInit {
   id:any;
   singleDestination:destination[]=[]
+  singleDestinationContent:destination[]=[]
+  packageOffer:destination[]=[]
+  excursionsOffer:destination[]=[]
+  cruisesOffer:destination[]=[]
+  relatedPages:destination[]=[]
+
+  image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
+  
   // itemsPerSlide = 3;
   // singleSlideOffset = true;
   // noWrap = false;
@@ -36,7 +44,7 @@ export class OneDestinationComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 6
+        items: 4
       }
     },
     nav: true
@@ -67,10 +75,6 @@ export class OneDestinationComponent implements OnInit {
     },
     nav: true
   }
-
-  
-  
-  
   constructor( private _Home : HomeserviceService) { }
 
   ngOnInit(): void {
@@ -78,6 +82,17 @@ export class OneDestinationComponent implements OnInit {
     this._Home.getOneDistination(this.id).subscribe(res => {
       this.singleDestination = res.data  
     })
+    this._Home.getOneDestinationDetails(this.id).subscribe(res => {
+        console.log(res.data)
+        this.packageOffer = res.data[0].packages_hot_offers 
+        this.excursionsOffer = res.data[0].excursions_hot_offers
+        this.cruisesOffer =res.data[0].cruises_hot_offers
+        this.relatedPages = res.data[0].related_pages
+    })
+    this._Home.getOneDestinationContent().subscribe(res => {
+      console.log(res.data)
+      this.singleDestinationContent = res.data[0].page_content;
+  })
   }
 
 }

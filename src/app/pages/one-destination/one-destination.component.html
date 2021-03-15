@@ -24,92 +24,36 @@
         <div class="head-title text-center mb-4">
             <h2 class="font-weight-bold"></h2>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-4 mb-4" >
+        <div  class="row">
+            <div *ngFor='let content of singleDestinationContent|slice:0:6' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
                     <a routerLink="/" class="text-dark">
                         <div class="card main-card text-center">
-                            <img src="../../../assets/imgs/Egypt-Shopping-Guide.jpg" class="img-fluid" alt="">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">Egypt Travel Guide </h5>
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
                                 <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-12 col-md-4 mb-4" >
+            <div *ngFor='let content of singleDestinationContent|slice:6:7' class="col-sm-12 " >
                 <div class="blogs overflow-hidden">
                     <a routerLink="/" class="text-dark">
                         <div class="card main-card text-center">
-                            <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
+                            <img [src]="content.thumb || image" class="img-fluid" alt="{{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">Egypt Travel Guide </h5>
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name}}  </h5>
                                 <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="col-12 col-md-4 mb-4" >
-                <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
-                        <div class="card main-card text-center">
-                            <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                           
-                            <div class="card-body card-details">
-                                <h5 class="card-title ">Egypt Travel Guide </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4" >
-                <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
-                        <div class="card main-card text-center">
-                            <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                           
-                            <div class="card-body card-details">
-                                <h5 class="card-title ">Egypt Travel Guide </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4" >
-                <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
-                        <div class="card main-card text-center">
-                            <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                           
-                            <div class="card-body card-details">
-                                <h5 class="card-title ">Egypt Travel Guide </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4" >
-                <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
-                        <div class="card main-card text-center">
-                            <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                           
-                            <div class="card-body card-details">
-                                <h5 class="card-title ">Egypt Travel Guide </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        
+            
         </div>
     </div>
 </section>
@@ -120,12 +64,46 @@
         </div>
     
         <owl-carousel-o [options]="customOwl">
-            <ng-template carouselSlide>
+            <ng-template *ngFor='let pack of packageOffer' carouselSlide>
+                <div  class="slide">
+                    <div  class="blogs overflow-hidden">
+                        <a routerLink="/" class="text-dark">
+                            <div class="card main-card text-center anotherCard offerCard">
+                                <img [src]="pack.thumb || image" class="img-fluid" alt="{{pack.thumb_alt}}">
+                               
+                                <div class="card-body card-details des-antherCard">
+                                    <h6 class="card-title ">{{singleDestination[0].name}} {{pack.name}} </h6>
+                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </ng-template>
+            <ng-template *ngFor='let excurs of excursionsOffer' carouselSlide>
                 <div class="slide">
                     <div class="blogs overflow-hidden">
                         <a routerLink="/" class="text-dark">
                             <div class="card main-card text-center anotherCard offerCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
+                                <img [src]="excurs.thumb || image" class="img-fluid" alt="{{excurs.thumb_alt}}">
+                               
+                                <div class="card-body card-details des-antherCard">
+                                    <h6 class="card-title ">{{singleDestination[0].name}} {{excurs.name}} </h6>
+                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </ng-template>
+            <ng-template *ngFor='let curies of cruisesOffer'  carouselSlide>
+                <div class="slide">
+                    <div class="blogs overflow-hidden">
+                        <a routerLink="/" class="text-dark">
+                            <div class="card main-card text-center anotherCard offerCard">
+                                <img [src]="curies.thumb || image" class="img-fluid" alt="{{curies.thumb_alt}}">
                                
                                 <div class="card-body card-details des-antherCard">
                                     <h6 class="card-title ">Egypt Travel Guide </h6>
@@ -137,74 +115,7 @@
 
                 </div>
             </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard offerCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard offerCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard offerCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard offerCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
+            
         </owl-carousel-o>
     </div>
 
@@ -218,15 +129,15 @@
             <h3 class="font-weight-bold"> Related Pages </h3>
         </div>
         <owl-carousel-o [options]="customOptions">
-            <ng-template carouselSlide>
+            <ng-template *ngFor='let page of relatedPages'  carouselSlide>
                 <div class="slide">
                     <div class="blogs overflow-hidden">
                         <a routerLink="/" class="text-dark">
                             <div class="card main-card text-center anotherCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
+                                <img [src]="page.thumb || image" class="img-fluid" alt="{{page.thumb_alt}}">
                                
                                 <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
+                                    <h6 class="card-title "> {{page.name}} </h6>
                                     <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                                 </div>
                             </div>
@@ -235,74 +146,7 @@
 
                 </div>
             </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slide">
-                    <div class="blogs overflow-hidden">
-                        <a routerLink="/" class="text-dark">
-                            <div class="card main-card text-center anotherCard">
-                                <img src="../../../assets/imgs/egypt-guide-cover.jpg" class="img-fluid" alt="">
-                               
-                                <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
-                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-            </ng-template>
+            
         </owl-carousel-o>
 </div>
 <app-sponsors-logo></app-sponsors-logo>

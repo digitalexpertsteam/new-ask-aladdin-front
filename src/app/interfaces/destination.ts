@@ -7,4 +7,5 @@ export interface destination {
     thumb_alt:string;
     thumb:string;
     banner:string;
+    thump:string
   }
