@@ -7,15 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  languages= [ 'En' , 'Ru' , 'Es' , 'De' , 'Fr']
-  langText = ''
+  
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  onClick(i:any){
-    this.langText = i.text
-  }
+  
 }
 
