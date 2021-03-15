@@ -12,7 +12,7 @@ export class WhyAskComponent implements OnInit {
   aboutContainer:About[] = [];
   @ViewChild('videoPlayer') videoplayer!: ElementRef;
   hideIcon:boolean = true;
-  constructor(private _about:HomeserviceService) { }
+  constructor(private _about:HomeserviceService ) { }
 
   ngOnInit(): void {
     this._about.getAboutAs().subscribe(result => this.aboutContainer = result.data)

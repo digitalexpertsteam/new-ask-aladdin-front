@@ -1,9 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule , Title , Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HttpClient} from '@angular/common/http';
+import {TranslateModule,TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+
+
 // components & pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -63,6 +68,8 @@ import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationBlogComponent } from './pages/destination-blog/destination-blog.component';
+import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
+import { translate } from '@angular/localize/src/utils';
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,9 +121,11 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
     SingleBlogComponent,
     OurStoryComponent,
     ContactUsComponent,
-    DestinationBlogComponent
+    DestinationBlogComponent,
+    OneDestinationComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -129,9 +138,23 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
     BsDatepickerModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     NgbModule,
+    TranslateModule.forRoot(
+      {
+        defaultLanguage: 'en',
+        loader: {
+            provide: TranslateLoader,
+            useFactory: createTranslateLoader,
+            deps: [HttpClient]
+        }
+    }
+    )
 
   ],
-  providers: [],
+  providers: [Title , Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+//ngx-translate
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
