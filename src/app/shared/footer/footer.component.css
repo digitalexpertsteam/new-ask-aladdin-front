@@ -41,6 +41,7 @@ footer .shortcuts li a:hover {
     transform: translateY(80px);
     color: #fff;
     display: flex;
+
     font-size: 14px;
     justify-content: space-between ;
 }
@@ -52,6 +53,7 @@ footer .shortcuts li a:hover {
     text-decoration: black;
     font-size: 13.5px;
 }
+
 .link-social{
     display: flex;
     justify-content: center;

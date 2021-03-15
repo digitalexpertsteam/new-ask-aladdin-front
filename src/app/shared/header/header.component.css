@@ -5,11 +5,34 @@
     font-size: .9rem
 }
 .dropdown-menu {
-    min-width: 110px !important;
+    width: 75px !important;
+    transform: translateX(-20px ) !important;
     z-index: 999999;
 }
+.dropdown-menu a {
+    display: flex;
+    justify-content: space-between;
+}
+.a-various-dropdown
+{
+    display: none !important;
+}
+
 @media only screen and (max-width: 600px) {
 .lang-btn {
     margin-left: 40px;
 }
+}
+
+.flag , .img-lang
+{
+    width: 20px;
+    margin-bottom: 10px;
+     
+    
+}
+
+
+.list-dropdown h3 {
+    font-size: 14px;
 }

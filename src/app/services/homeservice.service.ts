@@ -2,12 +2,28 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {TranslateService} from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class HomeserviceService {
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http:HttpClient,public translate: TranslateService) {
+    //ngx translate
+    this.currentLang=localStorage.getItem('currentLang') ||'en';
+    this.translate.use(this.currentLang);
+   }
+   //ngx translate
+  currentLang:string='';
+
+  changeCurrentLang(lang:string )
+  {
+    this.translate.use(lang);
+    localStorage.setItem('currentLang',lang);
+  }
+  //End ngx translate
+
   getSlider(): Observable<any> {
     return this._http.get(`${environment.ApiUrl}sliders/en`);
   }
@@ -41,6 +57,7 @@ export class HomeserviceService {
   getOneDistination(id:any):Observable<any>{
     return this._http.get(`${environment.ApiUrl}destination/${id}/en`)
   }
+
   getOneDestinationContent():Observable<any>{
     return this._http.get(`${environment.ApiUrl}content/destination/1/en`)
   }

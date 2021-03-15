@@ -1,3 +1,4 @@
+
 <!-- descriptipon  for destination -->
 <section *ngFor='let des of singleDestination'>
 <section class="banner text-center" [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + des.banner + ')' }" >
@@ -16,6 +17,7 @@
         </div>
     </div>
 </section>
+
 </section>
 
 <!-- End  descriptipon  for destination -->
@@ -24,6 +26,7 @@
         <div class="head-title text-center mb-4">
             <h2 class="font-weight-bold"></h2>
         </div>
+
         <div  class="row">
             <div *ngFor='let content of singleDestinationContent|slice:0:6' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
@@ -39,6 +42,7 @@
                     </a>
                 </div>
             </div>
+
             <div *ngFor='let content of singleDestinationContent|slice:6:7' class="col-sm-12 " >
                 <div class="blogs overflow-hidden">
                     <a routerLink="/" class="text-dark">
@@ -53,6 +57,7 @@
                     </a>
                 </div>
             </div>
+
             
         </div>
     </div>
@@ -128,6 +133,7 @@
         <div class="head-title  mb-4">
             <h3 class="font-weight-bold"> Related Pages </h3>
         </div>
+
         <owl-carousel-o [options]="customOptions">
             <ng-template *ngFor='let page of relatedPages'  carouselSlide>
                 <div class="slide">

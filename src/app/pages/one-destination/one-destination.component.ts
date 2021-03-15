@@ -1,3 +1,4 @@
+
 import { Component, HostListener, OnInit } from '@angular/core';
 import { destination } from 'src/app/interfaces/destination';
 import { HomeserviceService } from 'src/app/services/homeservice.service';
@@ -12,6 +13,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class OneDestinationComponent implements OnInit {
   id:any;
   singleDestination:destination[]=[]
+
   singleDestinationContent:destination[]=[]
   packageOffer:destination[]=[]
   excursionsOffer:destination[]=[]
@@ -79,6 +81,7 @@ export class OneDestinationComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = localStorage.getItem('id');
+
     this._Home.getOneDistination(this.id).subscribe(res => {
       this.singleDestination = res.data  
     })

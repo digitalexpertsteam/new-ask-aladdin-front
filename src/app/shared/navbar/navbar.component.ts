@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeserviceService } from 'src/app/services/homeservice.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   navbarCollapsed:boolean = true;
-  constructor() { }
+  ngOnInit(): void {}
+  
 
-  ngOnInit(): void {
+  
+  constructor(public _HomeserviceService:HomeserviceService) {
 
-  }
+}
 
+  
 }
