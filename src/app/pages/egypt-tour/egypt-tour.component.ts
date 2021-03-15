@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { packages } from 'src/app/interfaces/package';
-
 import { HomeserviceService } from 'src/app/services/homeservice.service';
 
 @Component({

@@ -23,15 +23,12 @@
         <li class="d-flex align-items-center lang-btn">
             <div class="btn-group" dropdown>
                 <a id="button-basic" dropdownToggle class="main-btn text-white dropdown-toggle"
-                    aria-controls="dropdown-basic">
-                    Languages <span class="caret"></span>
+                    aria-controls="dropdown-basic"> {{langText || 'languales'}}
+                     <span class="caret"></span>
                 </a>
                 <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-                    <li role="menuitem"><a class="dropdown-item" href="#">EN</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">RU</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">FA</a></li>
-                    <li role="menuitem"><a class="dropdown-item" href="#">ES</a>
-                    </li>
+                    <li *ngFor="let lang of languages" role="menuitem"><a #on class="dropdown-item" (click)="onClick(on)" >{{lang}}</a></li>
+                    
                 </ul>
             </div>
         </li>

@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule , Title , Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,6 +48,8 @@ import { PackageDetailsComponent } from './pages/package-details/package-details
 import { SponsorsLogoComponent } from './pages/sponsors-logo/sponsors-logo.component';
 import { AllDestinationsComponent } from './pages/all-destinations/all-destinations.component';
 import { SponsorssComponent } from './pages/sponsorss/sponsorss.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 // ngx bootstrap & Angular matrial modules
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RatingModule } from 'ngx-bootstrap/rating';
@@ -63,6 +65,7 @@ import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationBlogComponent } from './pages/destination-blog/destination-blog.component';
+import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,7 +117,8 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
     SingleBlogComponent,
     OurStoryComponent,
     ContactUsComponent,
-    DestinationBlogComponent
+    DestinationBlogComponent,
+    OneDestinationComponent
   ],
   imports: [
     BrowserModule,
@@ -122,6 +126,7 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    CarouselModule ,
     IvyCarouselModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
@@ -131,7 +136,7 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
     NgbModule,
 
   ],
-  providers: [],
+  providers: [Title , Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

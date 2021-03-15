@@ -14,7 +14,7 @@ export class DestinationBlogComponent implements OnInit {
   constructor(private _destinationBlog:HomeserviceService) { }
 
   ngOnInit(): void {
-    this.id =localStorage.getItem("id");
+    this.id = localStorage.getItem("id");
     this._destinationBlog.getDestinationBlogs(this.id).subscribe(result => this.destinationBlog = result.data);
   }
 

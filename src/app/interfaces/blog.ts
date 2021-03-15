@@ -5,5 +5,7 @@ export interface Blog {
     content:string;
     thumb_alt:string;
     thumb:string;
-    created_at:string
+    created_at:string;
+    banner:string;
+    banner_alt:string;
   }

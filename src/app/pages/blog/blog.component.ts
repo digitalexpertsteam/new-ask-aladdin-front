@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from 'src/app/interfaces/blog';
+import { destinationBlog } from 'src/app/interfaces/destinationBlog';
 import { HomeserviceService } from 'src/app/services/homeservice.service';
 @Component({
   selector: 'app-blog',
@@ -8,7 +9,7 @@ import { HomeserviceService } from 'src/app/services/homeservice.service';
 })
 export class BlogComponent implements OnInit {
 
-  blogContainer:Blog[] = []
+  blogContainer:destinationBlog[] = []
   constructor(private _blog:HomeserviceService) { }
 
   ngOnInit(): void {
