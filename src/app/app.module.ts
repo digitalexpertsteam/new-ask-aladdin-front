@@ -48,6 +48,8 @@ import { PackageDetailsComponent } from './pages/package-details/package-details
 import { SponsorsLogoComponent } from './pages/sponsors-logo/sponsors-logo.component';
 import { AllDestinationsComponent } from './pages/all-destinations/all-destinations.component';
 import { SponsorssComponent } from './pages/sponsorss/sponsorss.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
 // ngx bootstrap & Angular matrial modules
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RatingModule } from 'ngx-bootstrap/rating';
@@ -124,6 +126,7 @@ import { OneDestinationComponent } from './pages/one-destination/one-destination
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    CarouselModule ,
     IvyCarouselModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),

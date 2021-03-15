@@ -1,3 +1,14 @@
+.banner{
+    background-size: cover;
+    height: 450px;
+    background-position: center center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 .blogs a {
     text-decoration: none;
 }
@@ -62,10 +73,17 @@
 }
 .anotherCard{
     height: 200px;
+    width: 200px;
+    margin: 10px;
+    
+}
+.offerCard{
+    height: 250px;
+    width: 250px;
+    margin: 10px;
+
 }
 .des-antherCard{
     width: 80%;
     height: 75px;
-    
-   
 }
