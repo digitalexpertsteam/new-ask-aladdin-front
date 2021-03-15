@@ -12,7 +12,7 @@ export class SponsorsComponent implements OnInit {
   height:number = 132;
   loop:boolean=true;
   autoplay:boolean=true;
-  images = [
+  images = [ 
     {path: '../../../assets/imgs/1.png'},
     {path: '../../../assets/imgs/5.jpg'},
     {path: '../../../assets/imgs/6.jpg'},

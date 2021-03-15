@@ -24,7 +24,9 @@ const routes: Routes = [
   {path:"contactUs", component:ContactUsComponent},
   {path:"singleblog/:id",component:SingleBlogComponent},
   {path:"", children:[
+
     {path:':slug',component: OneDestinationComponent }
+ 
   ]},
 ];
 

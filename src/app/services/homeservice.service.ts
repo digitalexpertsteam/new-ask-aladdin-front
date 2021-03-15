@@ -57,4 +57,11 @@ export class HomeserviceService {
   getOneDistination(id:any):Observable<any>{
     return this._http.get(`${environment.ApiUrl}destination/${id}/en`)
   }
+
+  getOneDestinationContent():Observable<any>{
+    return this._http.get(`${environment.ApiUrl}content/destination/1/en`)
+  }
+  getOneDestinationDetails(id:any):Observable<any>{
+    return this._http.get(`${environment.ApiUrl}content/destination/${id}/en`)
+  }
 }

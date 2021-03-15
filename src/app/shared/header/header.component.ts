@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   imgLang ='';
 
 
+
   constructor(public translate: TranslateService) { 
     this.currentLang=localStorage.getItem('currentLang') ||'en';
     this.translate.use(this.currentLang);
@@ -42,4 +43,6 @@ export class HeaderComponent implements OnInit {
   
 }
 
+
 }
+
