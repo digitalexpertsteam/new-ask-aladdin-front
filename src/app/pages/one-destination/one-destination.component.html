@@ -44,7 +44,7 @@
             </div>
 
             <div *ngFor='let content of singleDestinationContent|slice:6:7' class="col-sm-12 " >
-                <div class="blogs overflow-hidden">
+                <div class="blogs overflow-hidden h-75">
                     <a routerLink="/" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt="{{content.thumb_alt}}">
@@ -78,7 +78,7 @@
                                
                                 
                                 <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">{{singleDestination[0].name}} {{pack.name}} </h6>
+                                    <h6 class="card-title "> {{pack.name}} </h6>
                                     <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@
                                 <img [src]="excurs.thumb || image" class="img-fluid" alt="{{excurs.thumb_alt}}">
                                
                                 <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">{{singleDestination[0].name}} {{excurs.name}} </h6>
+                                    <h6 class="card-title "> {{excurs.name}} </h6>
                                     <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                                 </div>
                             </div>
@@ -124,12 +124,9 @@
             
         </owl-carousel-o>
     </div>
-
- 
-
 </section>
 
-<section class="sec-bg py-4">
+<section class="sec-bg py-4  ">
     <div class="container">
         <div class="head-title  mb-4">
             <h3 class="font-weight-bold"> Related Pages </h3>
@@ -153,9 +150,46 @@
 
                 </div>
             </ng-template>
-            
+            <ng-template *ngFor='let page of relatedPages'  carouselSlide>
+                <div class="slide">
+                    <div class="blogs overflow-hidden">
+                        <a routerLink="/" class="text-dark">
+                            <div class="card main-card text-center anotherCard">
+                                <img [src]="page.thumb || image" class="img-fluid" alt="{{page.thumb_alt}}">
+                               
+                                <div class="card-body card-details des-antherCard">
+                                    <h6 class="card-title "> {{page.name}} </h6>
+                                    <a routerLink="/singleblog/"class="btn main-btn blog-btn ">Read More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </ng-template>
+            <ng-template *ngFor='let page of relatedPages'  carouselSlide>
+                <div class="slide">
+                    <div class="blogs overflow-hidden">
+                        <a routerLink="/" class="text-dark">
+                            <div class="card main-card text-center anotherCard">
+                                <img [src]="page.thumb || image" class="img-fluid" alt="{{page.thumb_alt}}">
+                                <div class="card-body card-details des-antherCard">
+                                    <h6 class="card-title ">{{page.name}}</h6>
+                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </ng-template>
         </owl-carousel-o>
 </div>
-<app-sponsors-logo></app-sponsors-logo>
 
+
+</section>
+<section class="sec-bg py-4 mb-4" >
+    <app-sponsors-logo></app-sponsors-logo>
+</section>
+<section class="sec-bg py-4 mb-4" >
+    <app-sponsors></app-sponsors>
 </section>
