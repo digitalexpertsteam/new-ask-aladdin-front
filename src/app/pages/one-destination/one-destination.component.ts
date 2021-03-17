@@ -49,7 +49,7 @@ export class OneDestinationComponent implements OnInit {
         items: 5
       }
     },
-    nav: true
+    nav: false
   }
   customOwl: OwlOptions = {
     loop: true,
@@ -75,7 +75,7 @@ export class OneDestinationComponent implements OnInit {
         items: 4
       }
     },
-    nav: true
+    nav: false
   }
   constructor( private _Home : HomeserviceService) { }
 

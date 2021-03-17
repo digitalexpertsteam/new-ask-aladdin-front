@@ -73,6 +73,8 @@
 
             <div *ngFor='let content of singleDestinationContent|slice:1:2' class="col-sm-12 mb-4" >
                 <div class="blogs overflow-hidden">
+
+           
                     <a routerLink="/" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt="{{content.thumb_alt}}">
@@ -196,12 +198,9 @@
             
         </owl-carousel-o>
     </div>
-
- 
-
 </section>
 
-<section class="sec-bg py-4">
+<section class="sec-bg py-4  ">
     <div class="container">
         <div class="head-title  mb-4">
             <h3 class="font-weight-bold"> Related Pages </h3>
@@ -260,6 +259,7 @@
                 </div>
             </ng-template>
             
+  
         </owl-carousel-o>
 </div>
 

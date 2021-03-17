@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   {lnaguage:"German" , image:"assets/imgs/de.png"},
   {lnaguage:"Russian" , image:"assets/imgs/ru.png"},
 
+
 ]
 
   textLang='';
@@ -44,6 +45,7 @@ export class HeaderComponent implements OnInit {
 
   
 }
+
 
 
 }
