@@ -13,7 +13,7 @@ export class BlogComponent implements OnInit {
   constructor(private _blog:HomeserviceService) { }
 
   ngOnInit(): void {
-    this._blog.getBlogs().subscribe(result => this.blogContainer = result.data)
+    this._blog.getDestinationEgy().subscribe(result => this.blogContainer = result.data)
   }
 
 }

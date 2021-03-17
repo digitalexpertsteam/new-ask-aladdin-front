@@ -9,13 +9,14 @@ import {TranslateService} from '@ngx-translate/core';
 
 export class HomeserviceService {
 
+  currentLang:string='';
   constructor(private _http:HttpClient,public translate: TranslateService) {
     //ngx translate
     this.currentLang=localStorage.getItem('currentLang') ||'en';
     this.translate.use(this.currentLang);
    }
    //ngx translate
-  currentLang:string='';
+  
 
   changeCurrentLang(lang:string )
   {
@@ -25,43 +26,43 @@ export class HomeserviceService {
   //End ngx translate
 
   getSlider(): Observable<any> {
-    return this._http.get(`${environment.ApiUrl}sliders/en`);
+    return this._http.get(`${environment.ApiUrl}sliders/${this.currentLang}`);
   }
   getAlldestination():Observable<any> {
-    return this._http.get(`${environment.ApiUrl}destinations/en`);
+    return this._http.get(`${environment.ApiUrl}destinations/${this.currentLang}`);
   }
   getBlogs():Observable<any>{
-    return this._http.get(`${environment.ApiUrl}blog/1/en`)
+    return this._http.get(`${environment.ApiUrl}blog/1/${this.currentLang}`)
   }
   getDestinationEgy():Observable<any>{
-    return this._http.get(`${environment.ApiUrl}destination/blogs/1/en`)
+    return this._http.get(`${environment.ApiUrl}destination/blogs/1/${this.currentLang}`)
   }
   getSingleBlogs(id:any):Observable<any>{
-    return this._http.get(`${environment.ApiUrl}blog/${id}/en`)
+    return this._http.get(`${environment.ApiUrl}blog/${id}/${this.currentLang}`)
   }
   getDestinationBlogs(id:any):Observable<any>{
-    return this._http.get(`${environment.ApiUrl}destination/blogs/${id}/en`)
+    return this._http.get(`${environment.ApiUrl}destination/blogs/${id}/${this.currentLang}`)
   }
   getPackages():Observable<any>{
-     return this._http.get(`${environment.ApiUrl}packages/en`)
+     return this._http.get(`${environment.ApiUrl}packages/${this.currentLang}`)
   }
   getAboutAs():Observable<any>{
-    return this._http.get(`${environment.ApiUrl}abouts/en`)
+    return this._http.get(`${environment.ApiUrl}abouts/${this.currentLang}`)
   }
   getSocials():Observable<any>{
-    return this._http.get(`${environment.ApiUrl}socials/en`)
+    return this._http.get(`${environment.ApiUrl}socials/${this.currentLang}`)
   }
   getSingleDestination(id:any):Observable<any>{
-    return this._http.get(`${environment.ApiUrl}destination/packages/${id}/en`)
+    return this._http.get(`${environment.ApiUrl}destination/packages/${id}/${this.currentLang}`)
   }
   getOneDistination(id:any):Observable<any>{
-    return this._http.get(`${environment.ApiUrl}destination/${id}/en`)
+    return this._http.get(`${environment.ApiUrl}destination/${id}/${this.currentLang}`)
   }
 
   getOneDestinationContent():Observable<any>{
-    return this._http.get(`${environment.ApiUrl}content/destination/1/en`)
+    return this._http.get(`${environment.ApiUrl}content/destination/1/${this.currentLang}`)
   }
   getOneDestinationDetails(id:any):Observable<any>{
-    return this._http.get(`${environment.ApiUrl}content/destination/${id}/en`)
+    return this._http.get(`${environment.ApiUrl}content/destination/${id}/${this.currentLang}`)
   }
 }

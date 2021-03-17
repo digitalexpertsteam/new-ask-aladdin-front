@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   {lnaguage:"German" , image:"assets/imgs/de.png"},
   {lnaguage:"Russian" , image:"assets/imgs/ru.png"},
 
+
 ]
 
   textLang='';
@@ -40,8 +41,11 @@ export class HeaderComponent implements OnInit {
   localStorage.setItem('currentLang',lang);
   this.textLang = i.text 
   console.log(this.imgLang);
+  location.reload();
+
   
 }
+
 
 
 }

@@ -23,11 +23,14 @@ const routes: Routes = [
   {path:"our-story", component:OurStoryComponent},
   {path:"contactUs", component:ContactUsComponent},
   {path:"singleblog/:id",component:SingleBlogComponent},
+  {path:'travel-packages',component: TourPackageComponent },
   {path:"", children:[
-
     {path:':slug',component: OneDestinationComponent }
- 
   ]},
+  
+    
+ 
+  
 ];
 
 @NgModule({
