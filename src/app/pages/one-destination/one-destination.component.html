@@ -28,7 +28,35 @@
         </div>
 
         <div  class="row">
-            <div *ngFor='let content of singleDestinationContent|slice:0:6' class="col-12 col-md-4 mb-4" >
+            <div *ngFor='let content of singleDestinationContent|slice:0:1' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
+                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div *ngFor='let content of singleDestinationContent|slice:6:7' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
+                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div *ngFor='let content of singleDestinationContent|slice:2:3' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
                     <a routerLink="/" class="text-dark">
                         <div class="card main-card text-center">
@@ -43,7 +71,7 @@
                 </div>
             </div>
 
-            <div *ngFor='let content of singleDestinationContent|slice:6:7' class="col-sm-12 " >
+            <div *ngFor='let content of singleDestinationContent|slice:1:2' class="col-sm-12 mb-4" >
                 <div class="blogs overflow-hidden">
                     <a routerLink="/" class="text-dark">
                         <div class="card main-card text-center">
@@ -51,6 +79,50 @@
                            
                             <div class="card-body card-details">
                                 <h5 class="card-title ">{{singleDestination[0].name}} {{content.name}}  </h5>
+                                <a routerLink="/travel-packages" class="btn main-btn blog-btn ">Read More</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div *ngFor='let content of singleDestinationContent|slice:3:4' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
+                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div *ngFor='let content of singleDestinationContent|slice:4:5' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
+                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div *ngFor='let content of singleDestinationContent|slice:5:6' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
                                 <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                             </div>
                         </div>
@@ -78,7 +150,7 @@
                                
                                 
                                 <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">{{singleDestination[0].name}} {{pack.name}} </h6>
+                                    <h6 class="card-title "> {{pack.name}} </h6>
                                     <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                                 </div>
                             </div>
@@ -95,7 +167,7 @@
                                 <img [src]="excurs.thumb || image" class="img-fluid" alt="{{excurs.thumb_alt}}">
                                
                                 <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">{{singleDestination[0].name}} {{excurs.name}} </h6>
+                                    <h6 class="card-title "> {{excurs.name}} </h6>
                                     <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                                 </div>
                             </div>
@@ -112,7 +184,7 @@
                                 <img [src]="curies.thumb || image" class="img-fluid" alt="{{curies.thumb_alt}}">
                                
                                 <div class="card-body card-details des-antherCard">
-                                    <h6 class="card-title ">Egypt Travel Guide </h6>
+                                    <h6 class="card-title ">{{curies.name}} </h6>
                                     <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
                                 </div>
                             </div>
@@ -153,9 +225,46 @@
 
                 </div>
             </ng-template>
+            <ng-template *ngFor='let page of relatedPages'  carouselSlide>
+                <div class="slide">
+                    <div class="blogs overflow-hidden">
+                        <a routerLink="/" class="text-dark">
+                            <div class="card main-card text-center anotherCard">
+                                <img [src]="page.thumb || image" class="img-fluid" alt="{{page.thumb_alt}}">
+                               
+                                <div class="card-body card-details des-antherCard">
+                                    <h6 class="card-title "> {{page.name}} </h6>
+                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </ng-template>
+            <ng-template *ngFor='let page of relatedPages'  carouselSlide>
+                <div class="slide">
+                    <div class="blogs overflow-hidden">
+                        <a routerLink="/" class="text-dark">
+                            <div class="card main-card text-center anotherCard">
+                                <img [src]="page.thumb || image" class="img-fluid" alt="{{page.thumb_alt}}">
+                               
+                                <div class="card-body card-details des-antherCard">
+                                    <h6 class="card-title "> {{page.name}} </h6>
+                                    <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </ng-template>
             
         </owl-carousel-o>
 </div>
-<app-sponsors-logo></app-sponsors-logo>
+
+
 
 </section>
+<app-sponsors-logo></app-sponsors-logo>
+<app-sponsors></app-sponsors>

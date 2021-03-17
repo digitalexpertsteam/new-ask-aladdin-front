@@ -40,6 +40,8 @@ export class HeaderComponent implements OnInit {
   localStorage.setItem('currentLang',lang);
   this.textLang = i.text 
   console.log(this.imgLang);
+  location.reload();
+
   
 }
 

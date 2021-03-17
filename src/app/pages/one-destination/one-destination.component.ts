@@ -46,7 +46,7 @@ export class OneDestinationComponent implements OnInit {
         items: 3
       },
       940: {
-        items: 4
+        items: 5
       }
     },
     nav: true
