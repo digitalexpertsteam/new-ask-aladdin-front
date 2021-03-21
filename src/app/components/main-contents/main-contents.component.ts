@@ -56,6 +56,7 @@ export class MainContentsComponent implements OnInit {
           this.blogs = true
         }
       })
+      //sss
     })
   }
 }
