@@ -12,6 +12,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 // components & pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { MainContentsComponent} from './components/main-contents/main-contents.component';
 import { TourDetailsComponent } from './components/tour-details/tour-details.component';
 import { TourPackageComponent } from './components/tour-package/tour-package.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -72,6 +73,11 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationBlogComponent } from './pages/destination-blog/destination-blog.component';
 import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
 import { translate } from '@angular/localize/src/utils';
+import { TravelExcursionsDesComponent } from './pages/travel-excursions-des/travel-excursions-des.component';
+import { TravelGuideDesComponent } from './pages/travel-guide-des/travel-guide-des.component';
+import { TravelFactsDesComponent } from './pages/travel-facts-des/travel-facts-des.component';
+import { TravelHotelsDesComponent } from './pages/travel-hotels-des/travel-hotels-des.component';
+import { TravelCruisesDesComponent } from './pages/travel-cruises-des/travel-cruises-des.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +131,14 @@ import { translate } from '@angular/localize/src/utils';
     OurStoryComponent,
     ContactUsComponent,
     DestinationBlogComponent,
-    OneDestinationComponent
+    OneDestinationComponent,
+    TravelExcursionsDesComponent,
+    TravelGuideDesComponent,
+    TravelFactsDesComponent,
+    TravelHotelsDesComponent,
+    TravelCruisesDesComponent,
+    MainContentsComponent
+    
   ],
   imports: [
     

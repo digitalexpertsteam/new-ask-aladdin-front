@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild ,ElementRef  } from '@angular/core';
-import { About } from 'src/app/interfaces/about';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { About } from '../../interfaces/about';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-why-ask',

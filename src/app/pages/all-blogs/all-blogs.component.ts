@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { setISODayOfWeek } from 'ngx-bootstrap/chronos/units/day-of-week';
-import { destinationBlog } from 'src/app/interfaces/destinationBlog';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { destinationBlog } from '../../interfaces/destinationBlog';
+import { HomeserviceService } from '../../services/homeservice.service';
 import {Title , Meta} from '@angular/platform-browser'
-import { SeoService } from 'src/app/services/seo.service';
+import { SeoService } from '../../services/seo.service';
 import { SecondBannerComponent } from '../second-banner/second-banner.component';
 
 

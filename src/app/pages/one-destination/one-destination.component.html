@@ -4,8 +4,7 @@
 <section class="banner text-center" [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + des.banner + ')' }" >
     <div class="container">
         <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
-            <h1><span class="main-color font-weight-bold">{{des.name}} </span> Travel Guide
-            </h1>
+            <h1><span class="main-color des-Name font-weight-bold">{{des.name}} </span> </h1>
         </div>
         <p class="mt-2" [innerHTML]="des.description"></p>
         <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
@@ -28,75 +27,72 @@
         </div>
 
         <div  class="row">
+            <!-- Travel Guide  -->
             <div *ngFor='let content of singleDestinationContent|slice:0:1' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
+                    <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                <h5 class="card-title ">{{content.name || 'Travel Guide'}}  </h5>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
+            <!-- Travel blogs  -->
             <div *ngFor='let content of singleDestinationContent|slice:6:7' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
+                    <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                <h5 class="card-title "> {{content.name || 'Travel Guide'}}  </h5>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
+
+            <!-- TravelExcursions  -->
             <div *ngFor='let content of singleDestinationContent|slice:2:3' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
+                    <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                <h5 class="card-title "> {{content.name || 'Travel Guide'}}  </h5>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-
-            <div *ngFor='let content of singleDestinationContent|slice:1:2' class="col-sm-12 mb-4" >
+            <!-- Travel Packages -->
+            <div *ngFor='let content of singleDestinationContent|slice:1:2' class="col-sm-12  mb-4" >
                 <div class="blogs overflow-hidden">
-
-           
-                    <a routerLink="/" class="text-dark">
+                    <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt="{{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name}}  </h5>
-                                <a routerLink="/travel-packages" class="btn main-btn blog-btn ">Read More</a>
+                                <h5 class="card-title "> {{content.name}}  </h5>
                             </div>
                         </div>
                     </a>
                 </div>
             </div>
-
+            <!-- Travel Packages -->
             <div *ngFor='let content of singleDestinationContent|slice:3:4' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
+                    <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                <h5 class="card-title "> {{content.name || 'Travel Guide'}}  </h5>
                             </div>
                         </div>
                     </a>
@@ -105,13 +101,13 @@
 
             <div *ngFor='let content of singleDestinationContent|slice:4:5' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
+                    <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                <h5 class="card-title "> {{content.name || 'Travel Guide'}}  </h5>
+                                
                             </div>
                         </div>
                     </a>
@@ -119,13 +115,12 @@
             </div>
             <div *ngFor='let content of singleDestinationContent|slice:5:6' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/" class="text-dark">
+                    <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
                             <div class="card-body card-details">
-                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name || 'Travel Guide'}}  </h5>
-                                <a routerLink="/singleblog/"    class="btn main-btn blog-btn ">Read More</a>
+                                <h5 class="card-title "> {{content.name || 'Travel Guide'}}  </h5>
                             </div>
                         </div>
                     </a>

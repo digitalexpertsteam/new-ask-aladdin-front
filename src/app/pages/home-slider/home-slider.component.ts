@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { sliders } from 'src/app/interfaces/sliders';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { sliders } from '../../interfaces/sliders';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-home-slider',
