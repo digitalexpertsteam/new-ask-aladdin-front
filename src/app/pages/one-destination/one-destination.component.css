@@ -43,7 +43,6 @@
 .main-card:hover .card-details
 {
    background-color: rgba(0,0,0,0.5);
-   flex-direction: unset;
    height: 100%;
    top: 0;
    
@@ -70,35 +69,41 @@
 }
 
 
-.blog-btn{
-    transition-delay: .5s;
-    display: none;
-    opacity: 0;
-    background-color: transparent;
-}
 
-.blog-btn:hover {
-    transition: all 0.8s ease 0s;
-    background-color:  rgba( 0,0,0,.8);
-    color: #f68800;
-}
 .anotherCard{
 
   
 
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 200px;
     margin: 10px;
 
     
 }
 .offerCard{
+    position: relative;
     height: 250px;
     width: 250px;
 
 }
+.offerCard .top
+{
+    position: absolute;
+    top: 0;
+    
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+   
+}
+.offerCard .main-top{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
 .des-antherCard{
-    width: 80%;
-    height: 75px;
+    width: 100%;
+    height: 50px;
 
 }

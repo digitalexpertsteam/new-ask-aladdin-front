@@ -18,8 +18,10 @@ export class WhyAskComponent implements OnInit {
     this._about.getAboutAs().subscribe(result => this.aboutContainer = result.data)
   }
   toggleVideo() {
-    this.videoplayer.nativeElement.play();
+     this.videoplayer.nativeElement.play();
     this.hideIcon = false;
 }
+
+
 
 }

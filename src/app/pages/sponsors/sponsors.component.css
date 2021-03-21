@@ -1,4 +1,3 @@
- .carousel-arrow-prev , .carousel-arrow-next{
+ .carousel-arrow-prev {
     left: 0 !important;
-    right: 0 !important;
 }
