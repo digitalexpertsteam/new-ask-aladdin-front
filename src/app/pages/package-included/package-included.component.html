@@ -7,66 +7,11 @@
                 </div>
                 <div class="">
                     <ul class="list-group p-0">
-                        <li class="list-group-item d-flex px-0 py-2">
+                        <li *ngFor='let in of includ.included' class="list-group-item d-flex px-0 py-2">
                             <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>03 nights accommodation in Cairo at a 5-star hotel on bed and breakfast basis.</span>
+                            <span>{{in.content}}</span>
                         </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>04 nights accommodation on board a 5 star Nile Cruise on full board basis (all meals
-                                included).
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Private and personalized sightseeing excursions as per the above-mentioned program.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Private English speaking Egyptologist guides as per the itinerary
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Entrance fees for all sightseeing.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>All transfers as per the above-mentioned program.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Meals: 7 breakfasts + 4 lunches + 4 dinners.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Private and deluxe air-conditioned vehicle for all transportation.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Arrival & departure assistance at the airport.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Domestic flights: Cairo to Luxor and Aswan to Cairo.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>Luggage handling at airports and hotels.
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/right.svg" class="img-fluid">
-                            <span>All applicable taxes.
-                            </span>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -76,15 +21,9 @@
                 </div>
                 <div class="">
                     <ul class="p-0">
-                        <li class="list-group-item d-flex px-0 py-2">
+                        <li *ngFor='let in of includ.excluded' class="list-group-item d-flex px-0 py-2">
                             <img src="assets/imgs/wrong.svg" class="img-fluid">
-                            <span>Tipping for guides, driver, Nile cruise crew, etc…
-                            </span>
-                        </li>
-                        <li class="list-group-item d-flex px-0 py-2">
-                            <img src="assets/imgs/wrong.svg" class="img-fluid">
-                            <span>Tipping for guides, driver, Nile cruise crew, etc…
-                            </span>
+                            <span>{{in.content}}</span>
                         </li>
                     </ul>
                 </div>
