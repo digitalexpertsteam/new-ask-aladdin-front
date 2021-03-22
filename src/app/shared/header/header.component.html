@@ -4,10 +4,10 @@
             <span class="ml-3 text-white">info@askaladdin.com</span>
         </li>
         <li class="mr-4"><i class="fas fa-phone main-color"></i>
-            <span class="ml-3 text-white">+8(888) 513-5971</span>
+            <span class="ml-3 text-white">+8(888) 213-555</span>
         </li>
         <li class=" mr-4"><i class="far fa-address-book main-color"></i>
-            <span class="ml-3 text-white">Building C 69, Cairo | Egypt
+            <span class="ml-3 text-white">{{"Building" |translate}} C 69, Cairo | Egypt
             </span>
         </li>
     </ul>
@@ -20,15 +20,37 @@
         </li>
         <li class="d-flex align-items-center mr-4"><i class="fab fa-pinterest-p text-white"></i>
         </li>
-        <li class="d-flex align-items-center lang-btn">
+        <li class=" align-items-center lang-btn">
             <div class="btn-group" dropdown>
-                <a id="button-basic" dropdownToggle class="main-btn text-white dropdown-toggle"
-                    aria-controls="dropdown-basic"> {{langText || 'languales'}}
-                     <span class="caret"></span>
+                <a  id="button-basic" dropdownToggle class="main-btn text-white dropdown-toggle"
+                    aria-controls="dropdown-basic">
+                    {{textLang  || 'Languages'}} <img class="img-lang "  [src]="imgLang" alt="">  <span class="caret"></span>
                 </a>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
-                    <li *ngFor="let lang of languages" role="menuitem"><a #on class="dropdown-item" (click)="onClick(on)" >{{lang}}</a></li>
-                    
+                <ul  id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                    <li *ngFor="let language of Languages|slice:0:1 "  class="list-dropdown"  role="menuitem">
+                        <a #on (click)="changeCurrentLang('en', on) "  class="dropdown-item"  > <div ><h3> {{language.lnaguage}}</h3></div>  
+                        <div ><img class="flag " [src]="language.image" /></div>
+                    </a></li>
+                    <li *ngFor="let language of Languages|slice:1:2" class="list-dropdown"  role="menuitem">
+                        <a #on (click)="changeCurrentLang('fr', on) "  class="dropdown-item"  ><div ><h3> {{language.lnaguage}}</h3></div>  
+                            <div ><img class="flag " [src]="language.image" /></div>
+                    </a></li>
+                    <li *ngFor="let language of Languages|slice:2:3" class="list-dropdown" role="menuitem">
+                        <a #on (click)="changeCurrentLang('es', on) "  class="dropdown-item"  ><div ><h3> {{language.lnaguage}}</h3></div>  
+                            <div ><img class="flag " [src]="language.image" /></div>
+                    </a></li>
+                    <li *ngFor="let language of Languages|slice:3:4" class="list-dropdown" role="menuitem">
+                        <a #on (click)="changeCurrentLang('de', on) "  class="dropdown-item"  ><div ><h3> {{language.lnaguage}}</h3></div>  
+                            <div ><img class="flag " [src]="language.image" /></div>
+                    </a></li>
+                    <li *ngFor="let language of Languages|slice:4:5" class="list-dropdown" role="menuitem">
+                        <a #on (click)="changeCurrentLang('ru', on) "  class="dropdown-item"  ><div ><h3> {{language.lnaguage}}</h3></div>  
+                            <div ><img class="flag " [src]="language.image" /></div>
+                    </a></li>
+                   
+
+
+
                 </ul>
             </div>
         </li>

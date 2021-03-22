@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { socials } from 'src/app/interfaces/socials';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { socials } from '../../interfaces/socials';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +10,7 @@ import { HomeserviceService } from 'src/app/services/homeservice.service';
 export class FooterComponent implements OnInit {
 
   isDropup = true;
+
   date = new Date();
   socialsContainer:socials[] = []
   constructor(private _socials:HomeserviceService) { }

@@ -1,8 +1,9 @@
 .blog-video{
-    height: 35rem;
+    height: 450px;
 }
 .blog-content img {
     object-fit: cover;
+    
 }
 .blog-details p {
     text-align: justify

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from 'src/app/interfaces/blog';
-import { destinationBlog } from 'src/app/interfaces/destinationBlog';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { Blog } from '../../interfaces/blog';
+import { destinationBlog } from '../../interfaces/destinationBlog';
+import { HomeserviceService } from '../../services/homeservice.service';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -13,7 +13,7 @@ export class BlogComponent implements OnInit {
   constructor(private _blog:HomeserviceService) { }
 
   ngOnInit(): void {
-    this._blog.getBlogs().subscribe(result => this.blogContainer = result.data)
+    this._blog.getDestinationEgy().subscribe(result => this.blogContainer = result.data)
   }
 
 }
