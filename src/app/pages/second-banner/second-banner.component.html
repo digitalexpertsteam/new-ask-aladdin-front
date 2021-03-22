@@ -1,17 +1,21 @@
-<section class="sec-banner text-center">
+<section class="sec-banner text-center" [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + banener.banner + ')' }">
+
     <div class="container">
         <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
-            <h1><span class="main-color font-weight-bold">Egypt </span> Travel Guide
+            <h1><span class="main-color font-weight-bold">{{banener.name}} </span> 
             </h1>
         </div>
-        <p class="mt-2">Below you'll find the wide variety of attractions here in Egypt. Keep any of these in mind
-            when planning your trip!</p>
+        <p class="mt-2">{{banener.description}}</p>
         <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
-            <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a>
-            <a href="" class="call-btn d-flex align-items-center">
+            <!-- <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a> -->
+           
+               
+           
+            <a  class="call-btn d-flex align-items-center">
                 <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
-                <span class="phone-text text-dark">Call Us: <strong>+1(888) 513-5971</strong></span>
+                <span class="phone-text text-dark">Call Us: <strong>{{contact.phone1}}</strong></span>
             </a>
         </div>
-    </div>
-</section>
+     </div>
+    
+</section>  

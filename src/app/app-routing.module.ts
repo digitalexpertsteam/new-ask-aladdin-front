@@ -25,7 +25,9 @@ const routes: Routes = [
   {path:":slug/:slug", component:MainContentsComponent},
   {path:"travelguide", component:TravelGuideComponent},
   {path:"privacypolicy",component:PrivacyPolicyComponent},
+
   {path:"tourdetails",component:TourDetailsComponent},
+  
   {path:"our-story", component:OurStoryComponent},
   {path:"contactUs", component:ContactUsComponent},
   {path:"singleblog/:id",component:SingleBlogComponent},
