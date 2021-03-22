@@ -80,6 +80,7 @@ import { TravelGuideDesComponent } from './pages/travel-guide-des/travel-guide-d
 import { TravelFactsDesComponent } from './pages/travel-facts-des/travel-facts-des.component';
 import { TravelHotelsDesComponent } from './pages/travel-hotels-des/travel-hotels-des.component';
 import { TravelCruisesDesComponent } from './pages/travel-cruises-des/travel-cruises-des.component';
+import { DashboardComponent } from './shared/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -134,13 +135,14 @@ import { TravelCruisesDesComponent } from './pages/travel-cruises-des/travel-cru
     ContactUsComponent,
     DestinationBlogComponent,
     OneDestinationComponent,
-    SinglePackageComponent
+    SinglePackageComponent,
     TravelExcursionsDesComponent,
     TravelGuideDesComponent,
     TravelFactsDesComponent,
     TravelHotelsDesComponent,
     TravelCruisesDesComponent,
-    MainContentsComponent
+    MainContentsComponent,
+    DashboardComponent
     
   ],
   imports: [

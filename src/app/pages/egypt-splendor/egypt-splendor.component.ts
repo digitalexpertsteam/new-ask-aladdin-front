@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-egypt-splendor',

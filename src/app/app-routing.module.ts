@@ -13,6 +13,7 @@ import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
 import { TravelGuideDesComponent } from './pages/travel-guide-des/travel-guide-des.component';
+import { DashboardComponent } from './shared/dashboard/dashboard.component';
 
 
 
@@ -25,13 +26,12 @@ const routes: Routes = [
   {path:":slug/:slug", component:MainContentsComponent},
   {path:"travelguide", component:TravelGuideComponent},
   {path:"privacypolicy",component:PrivacyPolicyComponent},
-
   {path:"tourdetails",component:TourDetailsComponent},
-  
   {path:"our-story", component:OurStoryComponent},
   {path:"contactUs", component:ContactUsComponent},
   {path:"singleblog/:id",component:SingleBlogComponent},
-  {path:':slug',component: OneDestinationComponent }
+  {path:':slug',component: OneDestinationComponent },
+  {path:'/admin',component: DashboardComponent }
  
 ];
 
