@@ -1,6 +1,6 @@
 import { Component,HostListener, OnInit } from '@angular/core';
-import { packages } from 'src/app/interfaces/package';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { packages } from '../../interfaces/package';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-tour-slider',

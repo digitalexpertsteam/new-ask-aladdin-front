@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { singleDestination } from 'src/app/interfaces/single-destination';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { singleDestination } from '../..//interfaces/single-destination';
+import { HomeserviceService } from '../..//services/homeservice.service';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-package-details',

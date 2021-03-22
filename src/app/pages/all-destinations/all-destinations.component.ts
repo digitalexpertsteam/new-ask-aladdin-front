@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { destination } from 'src/app/interfaces/destination';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { destination } from '../../interfaces/destination';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-all-destinations',
@@ -18,8 +18,6 @@ export class AllDestinationsComponent implements OnInit {
   }
   setId(id:any){
     localStorage.setItem("id", id);
-    console.log(id);
-    
   }
 }
  

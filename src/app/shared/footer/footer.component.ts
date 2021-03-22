@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { socials } from 'src/app/interfaces/socials';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
+import { socials } from '../../interfaces/socials';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-footer',
