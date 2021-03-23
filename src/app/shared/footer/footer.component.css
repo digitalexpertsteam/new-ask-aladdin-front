@@ -6,6 +6,13 @@ footer {
     position: relative;
     background-size: cover;
 }
+footer .shortcuts{
+    width: 80%;
+    margin-left: 18%;
+}
+footer .shortcuts h6{
+   font-size: 16px;
+}
 footer .shortcuts h6::after {
     content: "";
     width: 25px;

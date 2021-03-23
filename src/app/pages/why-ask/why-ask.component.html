@@ -11,10 +11,10 @@
                         <div class="video mt-1  mb-4" (click)="toggleVideo()">
                             <img src="../../../assets/imgs/oman.jpg" data-toggle="modal" data-target="#exampleModal"
                                 alt="">
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            <div class="modal fade bg-light" id="exampleModal" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 
-                                <div class="modal-dialog" role="document">
+                                <div class="modal-dialog  bg-light" role="document">
                                     <div class="modal-content bg-transparent">
                                         <div class="modal-header bg-transparent">
                                             <button type="button" class="close"  (click)="toggleVideo()" data-dismiss="modal" aria-label="Close">
@@ -24,11 +24,10 @@
                                         <div class="modal-body">
                                             <div class="videoPlay">
                                                 <div class="source">
-                                                    <video src="{{about.video}}" #videoPlayer  type="video/mp4">
+                                                    <video controls src="{{about.video}}" #videoPlayer  type="video/mp4">
                                                         <source media="(min-width: )"  src="{{about.video}}">
                                                     </video>
-                                                </div>
-                                                
+                                                </div>                                               
                                                 <div class="pause bg-light" > 
                                                     <i class="fas fa-pause" ></i>
                                                 </div>
