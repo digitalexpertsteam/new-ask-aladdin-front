@@ -70,6 +70,22 @@ footer .shortcuts li a:hover {
    color: #fff;
    font-size: 16px;
 }
+.fb:hover i
+{
+    color: rgb(3, 30, 185);
+}
+.ins:hover i
+{
+    color: rgb(172, 12, 187);
+}
+.twt:hover i , .lin:hover i
+{
+    color: rgb(6, 126, 238);
+}
+.pain:hover i , .yout:hover i
+{
+    color: rgb(238, 6, 6);
+}
 
 @media only screen and (max-width: 786px){
    .copyright{
