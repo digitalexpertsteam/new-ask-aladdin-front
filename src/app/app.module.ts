@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
 import {TranslateModule,TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 // components & pages
@@ -73,11 +74,13 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationBlogComponent } from './pages/destination-blog/destination-blog.component';
 import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
 import { translate } from '@angular/localize/src/utils';
+import { SinglePackageComponent } from './pages/single-package/single-package.component';
 import { TravelExcursionsDesComponent } from './pages/travel-excursions-des/travel-excursions-des.component';
 import { TravelGuideDesComponent } from './pages/travel-guide-des/travel-guide-des.component';
 import { TravelFactsDesComponent } from './pages/travel-facts-des/travel-facts-des.component';
 import { TravelHotelsDesComponent } from './pages/travel-hotels-des/travel-hotels-des.component';
 import { TravelCruisesDesComponent } from './pages/travel-cruises-des/travel-cruises-des.component';
+import { DashboardComponent } from './shared/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -132,12 +135,14 @@ import { TravelCruisesDesComponent } from './pages/travel-cruises-des/travel-cru
     ContactUsComponent,
     DestinationBlogComponent,
     OneDestinationComponent,
+    SinglePackageComponent,
     TravelExcursionsDesComponent,
     TravelGuideDesComponent,
     TravelFactsDesComponent,
     TravelHotelsDesComponent,
     TravelCruisesDesComponent,
-    MainContentsComponent
+    MainContentsComponent,
+    DashboardComponent
     
   ],
   imports: [
@@ -155,6 +160,8 @@ import { TravelCruisesDesComponent } from './pages/travel-cruises-des/travel-cru
     BsDatepickerModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     NgbModule,
+    MatTabsModule,
+    TabsModule.forRoot(),
     TranslateModule.forRoot(
       {
         defaultLanguage: 'en',

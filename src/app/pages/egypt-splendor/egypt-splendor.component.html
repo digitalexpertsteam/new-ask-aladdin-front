@@ -1,150 +1,171 @@
 <section class="bg-white mt-3 px-2 py-4">
     <div class="container">
-        <div class="splendor mb-4">
-            <div class="head mb-4">
-                <h3 class="font-weight-bold">Egypt Splendor</h3>
+
+        <div>
+
+            <div class="buttons py-3">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                            aria-controls="pills-home" aria-selected="true">
+                            <img src="assets/imgs/e1.png" class="img-fluid"/>
+                            Itinerary</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profilee" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">
+                           
+                            Included</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contactt" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">
+                   
+                            Prices & Dates</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">
+
+                            Highlights</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                            aria-controls="pills-contact" aria-selected="false"> Travel Experiences</a>
+                           
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pillss-contact" role="tab"
+                            aria-controls="pills-contact" aria-selected="false">Accommodation</a>
+                    </li>
+                </ul>
             </div>
-            <p>07 nights / 08 days</p>
-            <p>03 nights in Cairo + 04 nights Nile Cruise</p>
-            <p>Including transportation, sightseeing, domestic flights and private Egyptologist tour guide as per
-                program's itinerary.</p>
-            <p>Starting from $1300 USD per person in a double room</p>
-        </div>
-        <div class="package-itinerary">
-            <div class="head mb-4">
-                <h3 class="font-weight-bold">Package Itinerary</h3>
-            </div>
-            <div class="package">
-                <div class="package-details">
-                    <h3 class="position-relative">
-                        <span class="font-weight-bold">Day 1 :- Cairo: Arrival</span>
-                        <div class="number d-none d-xl-block">
-                            <p class="main-bg text-center d-flex align-items-center justify-content-center">
-                                <span
-                                    class="d-flex align-items-center justify-content-center text-white m-auto">1</span>
-                            </p>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+
+                    <div class="splendor mb-4">
+                        <div class="head mb-4">
+                            <h3 class="font-weight-bold">{{guide.name}}</h3>
                         </div>
-                    </h3>
-                    <p>Welcome to Cairo airport! The first day of your tour begins when you are greeted by our
-                        representative who will meet you and assist you through immigration and customs formalities upon
-                        your arrival. After you have collected your luggage, he will then take you in our deluxe vehicle
-                        to your 5-star hotel in Cairo. Hotel check-in and overnight. </p>
-                </div>
-                <div class="package-details mt-5">
-                    <h3 class="position-relative">
-                        <span class="font-weight-bold">Day 2 :- Cairo: Giza Pyramids, Sphinx, Egyptian Museum</span>
-                        <div class="number d-none d-xl-block">
-                            <p class="main-bg text-center d-flex align-items-center justify-content-center">
-                                <span
-                                    class="d-flex align-items-center justify-content-center text-white m-auto">2</span>
-                            </p>
-                        </div>
-                    </h3>
-                    <p>Breakfast at the hotel is followed by a full day tour. In the morning you will be driven to see
-                        the Pyramids of Giza and the Great Sphinx: the most famous monuments of not only ancient Egypt
-                        but of the entire ancient world! In the afternoon you will be taken to the Egyptian Museum: gaze
-                        at the wonders of King Tutankhamen, including his golden death mask; stare upon the mummies of
-                        some of Egypt's ancient pharaohs (optional); lose yourself in the many rooms and galleries,
-                        where thousands of artifacts are awaiting your visit. At the end of this exciting day, you will
-                        be driven back to your hote </p>
-                    <div class="offers d-flex">
-                        <div class="meal mr-2">
-                            <img src="assets/imgs/meal.svg" />
-                            <span>Meals : </span>
-                        </div>
-                        <div class="meal-details d-flex">
-                            <div class="detail">
-                                <img src="assets/imgs/right.svg" />
-                                <span>breakfast</span>
+                        <p>{{num}} nights / {{guide.days}} days</p>
+                        <p [innerHTML]="guide.overview"></p>
+
+                        <div class="package-itinerary">
+                            <div class="head mb-4">
+                                <h3 class="font-weight-bold">Package Itinerary</h3>
                             </div>
-                            <div class="detail ml-2">
-                                <img src="assets/imgs/wrong.svg" />
-                                <span>Lunch</span>
-                            </div>
-                            <div class="detail ml-2">
-                                <img src="assets/imgs/wrong.svg" />
-                                <span>dinner</span>
+
+                        </div>
+
+                        <div class="package">
+                            <div *ngFor='let day of guide.day_data' class="package-details">
+                                <h3 class="position-relative">
+
+                                    <span class="font-weight-bold">Day {{day.day_number}} :- {{day.day_title}}</span>
+                                    <div class="number d-none d-xl-block">
+                                        <p class="main-bg text-center d-flex align-items-center justify-content-center">
+
+                                            <span
+                                                class="d-flex align-items-center justify-content-center text-white m-auto">{{day.day_number}}</span>
+                                        </p>
+                                    </div>
+                                </h3>
+                                <p [innerHTML]="day.day_summary"></p>
+                                <div class="offers d-flex">
+                                    <div class="meal mr-2">
+                                        <img src="assets/imgs/meal.svg" />
+                                        <span>Meals : </span>
+                                    </div>
+                                    <div class="meal-details d-flex">
+                                        <div class="detail">
+                                            <img [src]="day.breakfast ?  imageTrue  :  imageFalse" />
+                                            <span>breakfast</span>
+                                        </div>
+                                        <div class="detail ml-2">
+                                            <img [src]="day.lunch ? imageTrue : imageFalse" />
+                                            <span>Lunch</span>
+                                        </div>
+                                        <div class="detail ml-2">
+                                            <img [src]="day.dinner ? imageTrue  : imageFalse" />
+                                            <span>dinner</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-                <div class="package-details mt-5">
-                    <h3 class="position-relative">
-                        <span class="font-weight-bold">Day 3 :- Flight to Luxor, Nile Cruise: Luxor (Karnak & Luxor
-                            Temples)</span>
-                        <div class="number d-none d-xl-block">
-                            <p class="main-bg text-center d-flex align-items-center justify-content-center">
-                                <span
-                                    class="d-flex align-items-center justify-content-center text-white m-auto">3</span>
-                            </p>
-                        </div>
-                    </h3>
-                    <p>After breakfast, you will check-out from hotel and our representative will escort you to the
-                        airport for your flight to Luxor. Upon arrival, you will be met and assisted by our
-                        representative who will transfer you to your cruise boat: your floating hotel for your next 4
-                        nights. After lunch, which you will have on board, you will visit the magnificent Karnak and
-                        Luxor Temples. Once your visit to these ancient Theban Temples is complete, you will return to
-                        the boat for your dinner </p>
-                    <div class="offers d-flex">
-                        <div class="meal mr-2">
-                            <img src="assets/imgs/meal.svg" />
-                            <span>Meals : </span>
-                        </div>
-                        <div class="meal-details d-flex">
-                            <div class="detail">
-                                <img src="assets/imgs/right.svg" />
-                                <span>breakfast</span>
-                            </div>
-                            <div class="detail ml-2">
-                                <img src="assets/imgs/wrong.svg" />
-                                <span>Lunch</span>
-                            </div>
-                            <div class="detail ml-2">
-                                <img src="assets/imgs/wrong.svg" />
-                                <span>dinner</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab-pane fade" id="pills-profilee" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <app-package-included></app-package-included>
                 </div>
-                <div class="package-details mt-5">
-                    <h3 class="position-relative">
-                        <span class="font-weight-bold">Day 4 :- Nile Cruise: Luxor (Westbank: Kings Valley, Queens
-                            Valley, Hatshepsut Temple, Memnon Colossi)</span>
-                        <div class="number d-none d-xl-block">
-                            <p class="main-bg text-center d-flex align-items-center justify-content-center">
-                                <span
-                                    class="d-flex align-items-center justify-content-center text-white m-auto">4</span>
-                            </p>
-                        </div>
-                    </h3>
-                    <p>After your first breakfast on board, it is time to visit the West Bank of Luxor: the tombs of the
-                        New Kingdom Pharaohs in the Valley of the Kings; the tombs of princes in the Valley of the
-                        Queens; the magnificent temple of Queen Hatshepsut at Deir El-Bahri finishing with the immense
-                        Colossi of Memnon. After this visit to the Theban "City of the Dead" you will be taken back to
-                        your boat for your lunch, and then you can watch as it departs Luxor and sails for Esna. As the
-                        Nile flows gently underneath you, dinner will be served. </p>
-                    <div class="offers d-flex">
-                        <div class="meal mr-2">
-                            <img src="assets/imgs/meal.svg" />
-                            <span>Meals : </span>
-                        </div>
-                        <div class="meal-details d-flex">
-                            <div class="detail">
-                                <img src="assets/imgs/right.svg" />
-                                <span>breakfast</span>
-                            </div>
-                            <div class="detail ml-2">
-                                <img src="assets/imgs/wrong.svg" />
-                                <span>Lunch</span>
-                            </div>
-                            <div class="detail ml-2">
-                                <img src="assets/imgs/wrong.svg" />
-                                <span>dinner</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab-pane fade" id="pills-contactt" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                    <app-prices-dates></app-prices-dates>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <app-hightlightes></app-hightlightes>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <app-trav-exp></app-trav-exp>
+                </div>
+                <div class="tab-pane fade" id="pillss-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                    <app-accomodation></app-accomodation>
                 </div>
             </div>
         </div>
+
+
+
+
+
+
     </div>
+
+
+</section>
+<!-- <owl-carousel-o [options]="customOptions">
+    <ng-template *ngFor='let page of relatedPages'  carouselSlide>
+                   <div class="slide">
+   <div class="blogs overflow-hidden">
+                       <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
+                           <div class="card main-card text-center">
+                               <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                              
+                               <div class="card-body card-details">
+                                   <h5 class="card-title "> {{content.name || 'Travel Guide'}}  </h5>
+                                   
+                               </div>
+                           </div>
+                       </a>
+                   </div>
+   </div>
+   </ng-template>
+   </owl-carousel-o> -->
+
+
+<section class="py-5 ">
+    <h1>Related Packages</h1>
+
+    <owl-carousel-o>
+        <ng-template *ngFor='let guid of guide.related_packages' carouselSlide>
+            <div class="slide">
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/{{guide.slug}}" (click)="setSlug(guide.id)" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img alt="{{guid.thumb_alt}}" [src]="guid.thumb " class="img-fluid ">
+    
+                            <div class="card-body card-details">
+                                <h5 class="card-title "> {{guide.name}} </h5>
+    
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </ng-template>
+    </owl-carousel-o>
 </section>

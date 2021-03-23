@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-hightlightes',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HightlightesComponent implements OnInit {
 
-  constructor() { }
+  lights:any = [];
+
+  constructor(private highlights:HomeserviceService) { }
 
   ngOnInit(): void {
+
+
+    this.highlights.getTravelGuide(1).subscribe(result => {
+      this.lights = result.data[0]
+      
+      
+  
+
+  })}
   }
 
-}
+
+  
+

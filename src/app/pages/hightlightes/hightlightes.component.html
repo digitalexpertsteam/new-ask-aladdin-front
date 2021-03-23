@@ -6,58 +6,11 @@
         </div>
         <div class="">
             <ul class="list-group p-0">
-                <li class="list-group-item d-flex px-0 py-2">
+                <li *ngFor="let li of lights.highlight" class="list-group-item d-flex px-0 py-2">
                     <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Great Pyramids of Giza</span>
+                    <span>{{li.content}}</span>
                 </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Great Sphinx of Giza</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Egyptian Museum of Antiquities</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Temples of Karnak & Luxor</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Temple of Queen Hatshepsut at Deir El-Bahary</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Valley of the Kings</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Memnon Colossi</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Edfu Temple of Horus</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Kom Ombo Temple of Horus and Sobek</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Philae Temple of Isis in Aswan</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>High Dam in Aswan</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>High Dam in Aswan</span>
-                </li>
-                <li class="list-group-item d-flex px-0 py-2">
-                    <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span>Botanical Garden on Lord Kitchener Island in Aswan</span>
-                </li>
+
             </ul>
         </div>
     </div>
