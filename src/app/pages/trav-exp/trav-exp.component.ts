@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeserviceService } from 'src/app/services/homeservice.service';
-
 
 @Component({
   selector: 'app-trav-exp',
@@ -9,20 +7,9 @@ import { HomeserviceService } from 'src/app/services/homeservice.service';
 })
 export class TravExpComponent implements OnInit {
 
-  ex:any = [];
-
-  constructor(private experiance:HomeserviceService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    
-
-    this.experiance.getTravelGuide(1).subscribe(result => {
-      this.ex = result.data[0]
-      
-      
-  
-
-  })}
   }
 
-
+}
