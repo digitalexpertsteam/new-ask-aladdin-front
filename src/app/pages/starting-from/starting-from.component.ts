@@ -11,13 +11,14 @@ export class StartingFromComponent implements OnInit {
 
   start:any = [];
   num : any;
+  id:any
 
   constructor(private start_form:HomeserviceService) { }
 
   ngOnInit(): void {
 
-    
-    this.start_form.getTravelGuide(1).subscribe(result => {
+    this.id=localStorage.getItem('id')
+    this.start_form.getTravelGuide(this.id).subscribe(result => {
       this.start = result.data[0];
       let x = 1
       this.num = result.data[0].days - x

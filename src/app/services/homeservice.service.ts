@@ -55,9 +55,9 @@ export class HomeserviceService {
   getSingleDestination(id:any):Observable<any>{
     return this._http.get(`${environment.ApiUrl}destination/packages/${id}/${this.currentLang}`)
   }
-  getSingleDestinationDetails(id:any , pack:string):Observable<any>{
-    return this._http.get(`${environment.ApiUrl}destination/${pack}/${id}/${this.currentLang}`)
-  }
+  // getSingleDestinationDetails(id:any , pack:string):Observable<any>{
+  //   return this._http.get(`${environment.ApiUrl}destination/${pack}/${id}/${this.currentLang}`)
+  // }
   getOneDistination(id:any):Observable<any>{
     return this._http.get(`${environment.ApiUrl}destination/${id}/${this.currentLang}`)
   }

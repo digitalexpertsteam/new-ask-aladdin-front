@@ -31,7 +31,8 @@ const routes: Routes = [
   {path:"contactUs", component:ContactUsComponent},
   {path:"singleblog/:id",component:SingleBlogComponent},
   {path:':slug',component: OneDestinationComponent },
-  {path:'/admin',component: DashboardComponent }
+  {path:'/admin',component: DashboardComponent },
+ 
  
 ];
 

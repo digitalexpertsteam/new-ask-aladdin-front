@@ -8,17 +8,21 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class HightlightesComponent implements OnInit {
 
-  lights:any = [];
+  lights:any
+  id:any;
 
   constructor(private highlights:HomeserviceService) { }
 
   ngOnInit(): void {
 
 
-    this.highlights.getTravelGuide(1).subscribe(result => {
-      this.lights = result.data[0]
+    this.id = localStorage.getItem("id");
+    this.highlights.getTravelGuide(this.id).subscribe(result => {
+    this.lights = result.data[0].highlight
+    
+    
       
-      
+     
   
 
   })}

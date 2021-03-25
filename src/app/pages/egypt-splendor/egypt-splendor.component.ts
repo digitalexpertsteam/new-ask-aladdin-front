@@ -12,7 +12,7 @@ export class EgyptSplendorComponent implements OnInit {
   guide:any = [];
   id:any;
   selectTrue = true
-  imageFalse= 'assets/imgs/wrong.svg';
+  imageFalse= '';
   imageTrue='assets/imgs/right.svg';
   num : any;
 
@@ -44,25 +44,27 @@ export class EgyptSplendorComponent implements OnInit {
     nav: false
   }
 
+  
+
   ngOnInit(): void {
-    this._splendor.getTravelGuide(1).subscribe(result => {
+    this.id = localStorage.getItem("id");
+    this._splendor.getTravelGuide(this.id).subscribe(result => {
       this.guide = result.data[0];
+     
+      
       let x = 1
       this.num = result.data[0].days - x
      
-     
-      
-       
-    
+
   })}
 
-  setSlug(id:any)
-  {
-    localStorage.setItem("idPack",id)
+  // setSlug(id:any)
+  // {
+  //   localStorage.setItem("idPack",id)
+
+  // }
 
   }
 
 
-
-
-  }
+  

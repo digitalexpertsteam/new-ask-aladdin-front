@@ -15,8 +15,8 @@ export class PackageIncludedComponent implements OnInit {
 
   ngOnInit(): void {
   
-
-  this.included.getTravelGuide(1).subscribe(result => {
+    this.id = localStorage.getItem('id')
+  this.included.getTravelGuide(this.id).subscribe(result => {
     this.includ = result.data[0]
      
     

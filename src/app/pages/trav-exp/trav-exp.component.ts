@@ -10,13 +10,16 @@ import { HomeserviceService } from '../../services/homeservice.service';
 export class TravExpComponent implements OnInit {
 
   ex:any = [];
+  id:any
 
   constructor(private experiance:HomeserviceService) { }
+
 
   ngOnInit(): void {
     
 
-    this.experiance.getTravelGuide(1).subscribe(result => {
+    this.id=localStorage.getItem('id')
+    this.experiance.getTravelGuide(this.id).subscribe(result => {
       this.ex = result.data[0]
       
       

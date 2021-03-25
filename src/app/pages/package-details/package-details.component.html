@@ -1,5 +1,5 @@
 <section>
-    <div class="tags">
+    <!-- <div class="tags">
         <span class="tag text-dark bg-white font-weight-bold">Land only Tours</span>
         <span class="tag text-dark bg-white font-weight-bold">3-7 Night Package</span>
         <span class="tag text-dark bg-white font-weight-bold">4-8 Night Package</span>
@@ -8,7 +8,7 @@
         <span class="tag text-dark bg-white font-weight-bold">Nile Package Cruise</span>
         <span class="tag text-dark bg-white font-weight-bold">Dahabiya Packages</span>
         <span class="tag text-dark bg-white font-weight-bold">Meditation Trips (Groups Only)</span>
-    </div>
+    </div> -->
     <h2 class="info main-bg text-white font-weight-bold">208 Egypt Tour Packages with <span>756 Reviews</span></h2>
     <ng-container *ngFor="let singleDes of destinationContainer">
         <div class="data-box bg-white mt-3 p-2">
@@ -24,7 +24,8 @@
                                             <div class="embed-responsive">
                                                 <iframe class="embed-responsive-item"
                                                     [src]="transform(singleDes.location_package_map)"
-                                                    allowfullscreen=""></iframe>
+                                                    allowfullscreen="">
+                                                </iframe>
                                             </div>
                                         </div>
                                         <!-- <div class="col-5 px-0">
@@ -107,8 +108,7 @@
                         <span>Pricing</span>
                         <h4 class="font-weight-bold mb-2">Start From</h4>
                         <span class="price main-color font-weight-bold">{{singleDes.start_price}}USD</span>
-                        <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}} Nights / 08 Days 03 Nights in
-                            Cairo + 04 Nights Nile Cruise
+                        <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}} Nights / 08 Days 03 Nights 
                         </p>
                         <a class="main-btn p-2 d-block mb-2 font-weight-bold" href="#">View Tour Details</a>
                         <a class="main-btn book bg-white p-2 d-block font-weight-bold" href="#">Booking Inquiry</a>

@@ -12,6 +12,12 @@ export class PackageDetailsComponent implements OnInit {
   max = 5;
   rate = 3;
   isReadonly = false;
+  // duration_in_days;
+  num : any;
+  night:any=[];
+ 
+
+
   overStar: number | undefined;
   percent: number | undefined;
   hoveringOver(value: number): void {
@@ -28,6 +34,13 @@ export class PackageDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = localStorage.getItem("id")
     this._singleDes.getSingleDestination(this.id).subscribe(result =>this.destinationContainer = result.data)
+    // this._singleDes.getSingleDestination(this.id).subscribe(result =>this.night = result.data)
+    //   let x = 1;
+    //   this.num = this.night.data[0].duration_in_days - x
+    //   console.log(this.num);
+      
+      
+    
   }
   transform(url:any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
