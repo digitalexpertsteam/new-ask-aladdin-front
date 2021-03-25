@@ -13,9 +13,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 // components & pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { MainContentsComponent} from './components/main-contents/main-contents.component';
 import { TourDetailsComponent } from './components/tour-details/tour-details.component';
-import { TourPackageComponent } from './components/tour-package/tour-package.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeSliderComponent } from './pages/home-slider/home-slider.component';
@@ -51,7 +49,6 @@ import { SponsorsComponent } from './pages/sponsors/sponsors.component';
 import { TagsComponent } from './pages/tags/tags.component';
 import { TravExpComponent } from './pages/trav-exp/trav-exp.component';
 import { PackageIncludedComponent } from './pages/package-included/package-included.component';
-import { PackageDetailsComponent } from './pages/package-details/package-details.component';
 import { SponsorsLogoComponent } from './pages/sponsors-logo/sponsors-logo.component';
 import { AllDestinationsComponent } from './pages/all-destinations/all-destinations.component';
 import { SponsorssComponent } from './pages/sponsorss/sponsorss.component';
@@ -66,7 +63,6 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SafePipe } from './pipes/safe-url.pipe';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { AllBlogsComponent } from './pages/all-blogs/all-blogs.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
@@ -75,19 +71,14 @@ import { DestinationBlogComponent } from './pages/destination-blog/destination-b
 import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
 import { translate } from '@angular/localize/src/utils';
 import { SinglePackageComponent } from './pages/single-package/single-package.component';
-import { TravelExcursionsDesComponent } from './pages/travel-excursions-des/travel-excursions-des.component';
-import { TravelGuideDesComponent } from './pages/travel-guide-des/travel-guide-des.component';
-import { TravelFactsDesComponent } from './pages/travel-facts-des/travel-facts-des.component';
-import { TravelHotelsDesComponent } from './pages/travel-hotels-des/travel-hotels-des.component';
-import { TravelCruisesDesComponent } from './pages/travel-cruises-des/travel-cruises-des.component';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
+import { AllPackagesDestinationComponent } from './components/all-packages-destination/all-packages-destination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TourDetailsComponent,
-    TourPackageComponent,
     NavbarComponent,
     FooterComponent,
     HomeSliderComponent,
@@ -123,12 +114,10 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
     TagsComponent,
     TravExpComponent,
     PackageIncludedComponent,
-    PackageDetailsComponent,
     SponsorsLogoComponent,
     AllDestinationsComponent,
     SponsorssComponent,
     SafePipe,
-    AllBlogsComponent,
     PrivacyPolicyComponent,
     SingleBlogComponent,
     OurStoryComponent,
@@ -136,13 +125,8 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
     DestinationBlogComponent,
     OneDestinationComponent,
     SinglePackageComponent,
-    TravelExcursionsDesComponent,
-    TravelGuideDesComponent,
-    TravelFactsDesComponent,
-    TravelHotelsDesComponent,
-    TravelCruisesDesComponent,
-    MainContentsComponent,
-    DashboardComponent
+    DashboardComponent,
+    AllPackagesDestinationComponent
     
   ],
   imports: [
@@ -174,10 +158,11 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
     )
 
   ],
+  
   providers: [Title , Meta],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {  }
 //ngx-translate
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { setISODayOfWeek } from 'ngx-bootstrap/chronos/units/day-of-week';
-import { destinationBlog } from '../../interfaces/destinationBlog';
-import { HomeserviceService } from '../../services/homeservice.service';
+import { destinationBlog } from '../../../interfaces/destinationBlog';
+import { HomeserviceService } from '../../../services/homeservice.service';
 import {Title , Meta} from '@angular/platform-browser'
-import { SeoService } from '../../services/seo.service';
-import { SecondBannerComponent } from '../second-banner/second-banner.component';
+import { SeoService } from '../../../services/seo.service';
+import { SecondBannerComponent } from '../../../pages/second-banner/second-banner.component';
 
 
 @Component({

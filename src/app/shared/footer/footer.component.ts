@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   isDropup = true;
   destinationContainer:destination[]=[];
   packagesName:any;
-  guidesSlug:destination[]=[];
+  guidesSlug:any;
   date = new Date();
   socialsContainer:socials[] = []
   constructor(private _footer:HomeserviceService) { }
