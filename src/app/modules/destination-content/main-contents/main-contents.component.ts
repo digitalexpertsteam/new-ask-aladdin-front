@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeserviceService } from '../../services/homeservice.service';
+import { HomeserviceService } from '../../../services/homeservice.service';
 import { ActivatedRoute } from '@angular/router'
 
 @Component({

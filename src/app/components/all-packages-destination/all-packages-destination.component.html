@@ -1,0 +1,60 @@
+<section  >
+    <section class="banner text-center"
+        [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + packageContent.thumb + ')' }">
+        <div class="container">
+            <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+                <h1><span class="main-color des-Name font-weight-bold"> {{packageContent.name}}</span>  </h1>
+            </div>
+            <p class="mt-2"></p>
+            <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+                <a href="" class="call-btn d-flex align-items-center">
+                    <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
+                    <span class="phone-text text-dark">Call Us: <strong>+1(888) 513-5971</strong></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</section>
+<section>
+    <div class="container">
+        <div class="page-links py-2">
+            <span>Home / </span>
+            <span class="main-color"></span>
+        </div>
+    </div>
+</section>
+
+<!-- End  descriptipon  for destination -->
+<section class="sec-bg py-4">
+    <div class="container">
+        <div class="head-title text-center mb-4">
+            <h2 class="font-weight-bold"></h2>
+        </div>
+
+        <div class="row">
+            <!-- Travel Guide  -->
+            <div *ngFor="let package of packagesNames" class="col-12 col-md-4 mb-4">
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/{{package.slug}}/{{packageContent.slug}}" (click)="setId(package.id)" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="package.thumb" class="img-fluid" alt=" ">
+                            <div class="card-led">
+                                <div class="card-body card-details">
+                                    <h5 class="card-title mt-2"> {{package.name}} {{packageContent.name}} </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Travel blogs  -->
+
+
+
+        </div>
+    </div>
+</section>
+
+<app-sponsors-logo></app-sponsors-logo>
+<app-sponsorss></app-sponsorss>

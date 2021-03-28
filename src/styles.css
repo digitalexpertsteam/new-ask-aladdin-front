@@ -132,6 +132,9 @@ ul {
 .destination-details:hover .overlay a {
     visibility: visible;
 }
+.card-title{
+    font-size: 16px;
+}
 /* end destination */
 
 html, body { height: 100%; }

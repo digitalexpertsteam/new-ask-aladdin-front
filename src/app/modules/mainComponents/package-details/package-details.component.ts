@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { singleDestination } from '../..//interfaces/single-destination';
-import { HomeserviceService } from '../..//services/homeservice.service';
+import { singleDestination } from '../../../interfaces/single-destination';
+import { HomeserviceService } from '../../../services/homeservice.service';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-package-details',
@@ -19,6 +19,7 @@ export class PackageDetailsComponent implements OnInit {
     this.percent = (value / this.max) * 100;
   }
   id:any;
+  idpackage:any
   destinationContainer:singleDestination[] = []
   resetStar(): void {
     this.overStar = void 0;
@@ -27,6 +28,7 @@ export class PackageDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = localStorage.getItem("id")
+    this
     this._singleDes.getSingleDestination(this.id).subscribe(result =>this.destinationContainer = result.data)
   }
   transform(url:any) {

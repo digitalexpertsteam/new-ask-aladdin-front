@@ -1,4 +1,3 @@
-
 .banner{
     background-size: cover;
     height: 450px;
@@ -39,7 +38,15 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    
 
+}
+.card-led{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    transition: all ease 1s;
 }
 .card-title{
     font-size: 16px;
@@ -49,8 +56,9 @@
 {
    background-color: rgba(0,0,0,0.5);
    height: 100%;
+   width: 100%;
    top: 0;
-   
+   left: 0;
    color: #fff;
    
 }
@@ -61,8 +69,8 @@
 }
 .card-details{
     position: absolute;
-    top: 85%;
-    width: 100%;
+    top: 50%;
+    border-radius: 10px;
     height: 50px;
     
     color: #f68800;
@@ -72,44 +80,4 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-
-
-.anotherCard{
-
-  
-
-    height: 250px;
-    width: 200px;
-    margin: 10px;
-
-    
-}
-.offerCard{
-    position: relative;
-    height: 250px;
-    width: 250px;
-
-}
-.offerCard .top
-{
-    position: absolute;
-    top: 0;
-    
-    width: 120px;
-    height: 120px;
-    z-index: 2;
-   
-}
-.offerCard .main-top{
-    position: absolute;
-    top: 0;
-    z-index: 1;
-}
-
-.des-antherCard{
-    width: 100%;
-    height: 50px;
-
 }
