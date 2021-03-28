@@ -43,9 +43,9 @@
                                 <div class="card-body package-content pt-0 pb-1">
                                     <h5 class="card-title font-weight-bold mb-2">{{singleDes.package_name}}</h5>
                                     <div class="rating mb-1">
-                                        <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"
+                                        <!-- <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"
                                             (onHover)="hoveringOver($event)" (onLeave)="resetStar()"
-                                            [titles]="['one','two','three']"></rating>
+                                            [titles]="['one','two','three']"></rating> -->
                                         <span class="ml-2">of 2 reviews</span>
                                     </div>
                                     <p class="package-text" [innerHTML]="singleDes.destination_description"></p>

@@ -35,7 +35,7 @@
                     </h6>
                     <ul *ngFor="let guideName of destinationContainer" class="footer-links">
                         <li class="mb-2">
-                            <a routerLink="/{{guideName.slug}}/{{guidesSlug.slug}}" (click)="setId(guideName.id)" class="text-dark">{{guideName.name}} {{guidesSlug.name}}</a>
+                            <a routerLink="/{{guideName.slug}}/{{guidesSlug.slug}}" (click)="setId(guideName.id)"  class="text-dark">{{guideName.name}} {{guidesSlug.name}} </a>
                         </li>
                     </ul>
                 </div>
@@ -56,7 +56,7 @@
                     </h6>
                     <ul *ngFor="let desName of destinationContainer" class="footer-links">
                         <li class="mb-2">
-                            <a routerLink="/{{desName.slug}}" (click)="setId(desName.id)" class="text-dark">{{desName.name}} Destination</a>
+                            <a routerLink="/{{desName.slug}}" (click)="setId(desName.id)" class="text-dark">{{desName.name}} </a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +68,8 @@
                         <ng-container *ngFor="let social of socialsContainer">
                             <div class="row">
                                 <div class="col-2 p-0">
-                                    <i class="fas fa-map-marker-alt main-color mt-1"></i>
+                                    <!-- <i class="fas fa-map-marker-alt main-color mt-1"></i> -->
+                                    <img  src="../../../assets/imgs/31.svg" alt="">
                                 </div>
                                 <div class="col-10 p-0">
                                     <p class="mb-1 font-weight-bold text-justify">USA - Office</p>
@@ -77,7 +78,8 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-2 p-0">
-                                    <i class="fas fa-map-marker-alt main-color mt-1"></i>
+                                    <!-- <i class="fas fa-map-marker-alt main-color mt-1"></i> -->
+                                    <img  src="../../../assets/imgs/31.svg" alt="">
                                 </div>
                                 <div class="col-10 p-0">
                                     <p class="mb-1 font-weight-bold text-justify">Egypt - Office</p>
@@ -86,7 +88,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-2 p-0">
-                                    <i class="fas fa-phone main-color mt-1"></i>
+                                    <img class="mr-3 img-fluid" src="../../../assets/imgs/11.svg" alt="">
                                 </div>
                                 <div class="col-10 p-0">
                                     <p class="mt-1">{{social.phone1}}</p>
@@ -94,7 +96,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-2 p-0">
-                                    <i class="fas fa-phone main-color mt-1"></i>
+                                    <img  src="../../../assets/imgs/11.svg" alt="">
                                 </div>
                                 <div class="col-10 p-0">
                                     <p class="mt-1">{{social.phone2}}</p>
@@ -102,7 +104,7 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-2 p-0">
-                                    <i class="far fa-envelope main-color mt-1"></i>
+                                    <img  src="../../../assets/imgs/9.svg" alt="">
                                 </div>
                                 <div class="col-10 p-0">
                                     <p class="mt-1">{{social.mail}}</p>
