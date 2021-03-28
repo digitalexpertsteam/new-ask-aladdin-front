@@ -1,80 +1,5 @@
-<!-- <section class="bg-white mt-3 px-2 py-4">
-    <div class="container">
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="splendor mb-4">
-            <div class="head mb-4">
-                <h3 class="font-weight-bold">{{guide.name}}</h3>
-            </div>
-            <p>{{num}} nights / {{guide.days}}{{"days" |translate}}</p>
-            <p [innerHTML]="guide.overview"></p>
-
-            <div class="package-itinerary">
-                <div class="head mb-4">
-                    <h3 class="font-weight-bold">Package Itinerary</h3>
-                </div>
-
-            </div>
-
-            <div class="package">
-                <div *ngFor='let day of guide.day_data' class="package-details">
-                    <h3 class="position-relative">
-
-                        <span class="font-weight-bold">Day {{day.day_number}} :- {{day.day_title}}</span>
-                        <div class="number d-none d-xl-block">
-                            <p class="main-bg text-center d-flex align-items-center justify-content-center">
-
-                                <span
-                                    class="d-flex align-items-center justify-content-center text-white m-auto">{{day.day_number}}</span>
-                            </p>
-                        </div>
-                    </h3>
-
-
-
-
-                    <p [innerHTML]="day.day_summary"></p>
-                    <div class="offers d-flex">
-                        <div class="meal mr-2">
-                            <img src="assets/imgs/meal.svg" />
-                            <span>Meals : </span>
-                        </div>
-                        <div class="meal-details d-flex">
-                            <div class="detail">
-                                <img [src]="day.breakfast ?  imageTrue  :  imageFalse" />
-                                <span>breakfast</span>
-                            </div>
-                            <div class="detail ml-2">
-                                <img [src]="day.lunch ? imageTrue : imageFalse" />
-                                <span>Lunch</span>
-                            </div>
-                            <div class="detail ml-2">
-                                <img [src]="day.dinner ? imageTrue  : imageFalse" />
-                                <span>dinner</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-    </div>
-</section> -->
-<!-- <owl-carousel-o [options]="customOptions">
+<!-- 
+ <owl-carousel-o [options]="customOptions">
     <ng-template *ngFor='let page of relatedPages'  carouselSlide>
                    <div class="slide">
    <div class="blogs overflow-hidden">
@@ -111,7 +36,9 @@
                 <div *ngFor='let day of guide.day_data' class="package-details">
                     <h3 class="position-relative">
 
-                        <span class="font-weight-bold">Day {{day.day_number}} :- {{day.day_title}}</span>
+                        <div class="py-2">
+                        <span class="font-weight-bold py-2">Day {{day.day_number}} :- {{day.day_title}}</span>
+                    </div>
                         <div class="number d-none d-xl-block">
                             <p class="main-bg text-center d-flex align-items-center justify-content-center">
 
@@ -121,6 +48,8 @@
                         </div>
                     </h3>
                     <p  [innerHTML]="day.day_summary"></p>
+
+
                     <div class="offers d-flex">
                         <div class="meal mr-2 ml-2 py-2">
                             <img src="assets/imgs/meal.svg" />
@@ -128,11 +57,11 @@
                         </div>
                         <div class="meal-details d-flex">
                             <div class="detail ml-2 py-2">
-                                <img [src]="day.breakfast ?  imageTrue  :  imageFalse" />
+                                <img [src]="day.breakfast ?  imageTrue  :  ''" />
                                 <span>breakfast</span>
                             </div>
                             <div class="detail ml-2 py-2">
-                                <img [src]="day.lunch ? imageTrue : imageFalse" />
+                                <img [src]="day.lunch ? imageTrue : ''" />
                                 <span>Lunch</span>
                             </div>
                             <div class="detail ml-2 py-2" >
@@ -149,7 +78,6 @@
         </div>
     </div>
 </section>
-
 
 
 <!-- <section class="py-5 ">

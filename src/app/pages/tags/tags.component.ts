@@ -17,7 +17,9 @@ export class TagsComponent implements OnInit {
     document.getElementById('Itinerary')?.scrollIntoView({behavior:'smooth'})
   }
 
-  toItinerary(){
+
+
+  Included(){
     document.getElementById('included')?.scrollIntoView({behavior:'smooth'})
   }
   prices(){
@@ -30,4 +32,13 @@ export class TagsComponent implements OnInit {
   accomodation(){
     document.getElementById('accomodation')?.scrollIntoView({behavior:'smooth'})
   }
+  highlights(){
+    document.getElementById('highlights')?.scrollIntoView({behavior:'smooth'})
+  }
+
+  videos(){
+    document.getElementById('videos')?.scrollIntoView({behavior:'smooth'})
+  }
+  
+  
 }
