@@ -26,7 +26,9 @@ const routes: Routes = [
   {path:":slug/:slug", loadChildren:()=>import('./modules/destination-content/destination-content.module').then(m=> m.DestinationContentModule)},
   {path:"travelguide", component:TravelGuideComponent},
   {path:"privacypolicy",component:PrivacyPolicyComponent},
+
   {path:"tourdetails",component:AllPackagesDestinationComponent},
+
   {path:"our-story", component:OurStoryComponent},
   {path:"contactUs", component:ContactUsComponent},
   {path:"singleblog/:id",component:SingleBlogComponent},
