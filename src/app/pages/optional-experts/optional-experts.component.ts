@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-optional-experts',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionalExpertsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _experts: HomeserviceService) { }
+
+  id: any;
+  experts: any = [];
 
   ngOnInit(): void {
+
+
+    this.id = localStorage.getItem("id");
+    this._experts.getTravelGuide(this.id).subscribe(result => {
+      this.experts = result.data[0];
+      console.log(this.experts);
+      
+
+     
+
+  })
   }
 
 }

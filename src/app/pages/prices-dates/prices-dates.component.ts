@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DayPickerComponent } from 'ngx-bootstrap/datepicker';
 import { HomeserviceService } from '../../services/homeservice.service';
 
 
@@ -11,7 +12,9 @@ export class PricesDatesComponent implements OnInit {
 
   id: any;
   prices: any = [];
-  standred_1:any
+  standred_1=[];
+  date=new Date();
+  
   constructor(private _prices: HomeserviceService) {
 
 
@@ -22,8 +25,7 @@ export class PricesDatesComponent implements OnInit {
     this.id = localStorage.getItem("id");
     this._prices.getTravelGuide(this.id).subscribe(result => {
       this.prices = result.data[0].prices;
-      this.standred_1 = this.prices[0].attributes.double_room_standard_1 & this.prices[0].attributes.double_room_standard_1 &this.prices[0].attributes.double_room_standard_1 &
-      this.prices[0].attributes.double_room_standard_1&this.prices[0].attributes.double_room_standard_1&this.prices[0].attributes.double_room_standard_1
+      this.standred_1.push()
       console.log(this.standred_1);
       
       

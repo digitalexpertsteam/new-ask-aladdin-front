@@ -24,9 +24,13 @@
                 <h3 class="font-weight-bold">{{guide.name}}</h3>
             </div>
             <p>{{num}} nights / {{guide.days}}{{"days" |translate}}</p>
-            <p [innerHTML]="guide.overview"></p>
-
-        </div>
+            <h4 [innerHTML]="guide.overview"></h4>
+            <h3> Including </h3>
+                <div *ngFor='let x of guide.included'>
+                    <span> {{x.content}},</span>
+                </div>
+         
+            </div>
         <div class="package-itinerary">
             <div class="head mb-4">
                 <h2 class="font-weight-bold"> Itinerary</h2>

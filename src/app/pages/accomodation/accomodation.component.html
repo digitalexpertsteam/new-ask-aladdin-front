@@ -4,7 +4,7 @@
             <h2 class="font-weight-bold">Accommodation for 5 star deluxe package</h2>
         </div>
         <div class="row">
-            <div class="col-12 col-md-4">
+            <!-- <div class="col-12 col-md-4">
                 <div class="card overflow-hidden">
                     <a href="#">
                         <div class="row">
@@ -29,14 +29,43 @@
                         </div>
                     </a>
                 </div>
+            </div> -->
+            <div *ngFor="let acc of accomodation.hotels" class="col-12 col-md-4 pt-2">
+                <div class="card overflow-hidden">
+                    <a href="{{acc.slug}}">
+                        <div class="row ">
+                            <div class="col-sm-12 ">
+                                <div class="acco-image">
+                                    <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}" class="img-fluid w-100" />
+                                </div>
+                            </div>
+                            <div class="col-sm-12 text-center p-0">
+                                <div class="card-body">
+                                    <p class="text-dark mb-1  font-weight-bold">
+                                     {{acc.name}}
+                                    </p>
+                                    <div class="mb-3">
+                                        <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"
+                                            (onHover)="hoveringOver($event)" (onLeave)="resetStar()"
+                                            [titles]="['one','two','three']">
+                                        </rating>
+                                    </div>
+                                    <div class="acco-link">
+                                        <a href="#" class="main-btn">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="col-12 col-md-4">
+            <!-- <div class="col-12 col-md-4">
                 <div class="card overflow-hidden">
                     <a href="#">
                         <div class="row">
                             <div class="col-sm-12 col-md-4">
                                 <div class="acco-image">
-                                    <img src="assets/imgs/fairmosnt-hotel-heliopolis-2.jpg" class="img-fluid" />
+                                    <img src="assets/imgs/fairmosnt-hotel-heliopolis-2.jpg" class=" " />
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-8 p-0">
@@ -55,35 +84,9 @@
                         </div>
                     </a>
                 </div>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="card overflow-hidden">
-                    <a href="#">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-4">
-                                <div class="acco-image">
-                                    <img src="assets/imgs/fairmosnt-hotel-heliopolis-2.jpg" class="img-fluid" />
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-8 p-0">
-                                <div class="card-body">
-                                    <p class="text-dark mb-1 font-weight-bold">Fairmont Hotel - Heliopolis</p>
-                                    <div class="mb-3">
-                                        <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"
-                                            (onHover)="hoveringOver($event)" (onLeave)="resetStar()"
-                                            [titles]="['one','two','three']"></rating>
-                                    </div>
-                                    <div class="acco-link">
-                                        <a href="#" class="main-btn">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            </div> -->
         </div>
-        <div class="row mt-3">
+        <!-- <div class="row mt-3">
             <div class="col-12 col-md-4">
                 <div class="card overflow-hidden">
                     <a href="#">
@@ -165,36 +168,7 @@
                     </a>
                 </div>
             </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-12 col-md-4">
-                <div class="card overflow-hidden">
-                    <a href="#">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-4">
-                                <div class="acco-image">
-                                    <img src="assets/imgs/Royal_lotus_nile-cruise-1.jpg" class="img-fluid" />
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-8 p-0">
-                                <div class="card-body px-2">
-                                    <p class="text-dark mb-1 font-weight-bold">M/s Movenpick Royal lotus</p>
-                                    <div class="mb-3">
-                                        <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"
-                                            (onHover)="hoveringOver($event)" (onLeave)="resetStar()"
-                                            [titles]="['one','two','three']"></rating>
-                                    </div>
-                                    <div class="acco-link">
-                                        <a href="#" class="main-btn">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+        </div> -->
 
-
-        </div>
     </div>
 </section>
