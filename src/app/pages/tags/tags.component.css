@@ -1,3 +1,9 @@
+.services{
+    position: sticky;
+    top: 1%;
+    z-index: 555555;
+    background-color: rgba(255, 255, 255, 0.829) !important;
+}
 .services-content {
     flex: 1 1 auto
 }
@@ -12,4 +18,12 @@
 }
 .services {
     padding: .8rem 0;
+}
+a{
+    color: black;
+}
+.services a:hover
+{
+    color:#f68800;
+    text-decoration: none;
 }

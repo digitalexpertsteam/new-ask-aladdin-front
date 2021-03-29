@@ -30,6 +30,7 @@ const routes: Routes = [
   {path:"privacypolicy",component:PrivacyPolicyComponent},
 
   {path:"tourdetails",component:AllPackagesDestinationComponent},
+  {path:"single-package",component:TourDetailsComponent},
 
   {path:"our-story", component:OurStoryComponent},
   {path:"contactUs", component:ContactUsComponent},
