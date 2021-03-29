@@ -8,22 +8,9 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class HightlightesComponent implements OnInit {
 
-  lights:any = [];
-
-  constructor(private highlights:HomeserviceService) { }
+  constructor() { }
 
   ngOnInit(): void {
-
-
-    this.highlights.getTravelGuide(1).subscribe(result => {
-      this.lights = result.data[0]
-      
-      
-  
-
-  })}
   }
 
-
-  
-
+}

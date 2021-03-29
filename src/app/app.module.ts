@@ -6,8 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule,HttpClient} from '@angular/common/http';
 import {TranslateModule,TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { TabsModule } from 'ngx-bootstrap/tabs';
-import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 // components & pages
@@ -76,6 +75,7 @@ import { AllFaqDestinationComponent } from './components/all-faq-destination/all
 import { DestinationContentModule } from './modules/destination-content/destination-content.module';
 import { ShareModule } from './modules/share/share.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -127,6 +127,7 @@ import { ShareModule } from './modules/share/share.module';
     DashboardComponent,
     AllPackagesDestinationComponent,
     AllFaqDestinationComponent
+
     
   ],
   imports: [
@@ -144,8 +145,6 @@ import { ShareModule } from './modules/share/share.module';
     BsDatepickerModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     NgbModule,
-    MatTabsModule,
-    TabsModule.forRoot(),
     TranslateModule.forRoot(
       {
         defaultLanguage: 'en',
