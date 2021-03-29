@@ -62,11 +62,9 @@ export class HomeserviceService {
     return this._http.get(`${environment.ApiUrl}destination/${id}/${this.currentLang}`)
   }
 
-  getOneDestinationContent():Observable<any>{
-    return this._http.get(`${environment.ApiUrl}content/destination/1/${this.currentLang}`)
-  }
+ 
   getOneDestinationDetails(id:any):Observable<any>{
-    return this._http.get(`${environment.ApiUrl}content/destination/${id}/${this.currentLang}`)
+    return this._http.get(`${environment.ApiUrl}categories/${id}/${this.currentLang}`)
   }
 
   getTravelGuide(id:any):Observable<any>{

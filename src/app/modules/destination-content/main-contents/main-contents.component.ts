@@ -16,7 +16,7 @@ export class MainContentsComponent implements OnInit {
   hotels = false
   facts = false
   blogs = false
-
+  id:any;
   slug: any
 
 
@@ -26,37 +26,38 @@ export class MainContentsComponent implements OnInit {
   constructor(private active: ActivatedRoute, private _home: HomeserviceService) { }
 
   ngOnInit(): void {
-
+    this.id = localStorage.getItem('id')
     this.slug = localStorage.getItem('slug')
     console.log(this.slug);
 
-    this._home.getOneDestinationContent().subscribe(res => {
+    this._home.getOneDestinationDetails(this.id).subscribe(res => {
       this.active.params.subscribe(data => {
-        if (data.slug == res.data[0].page_content[0].slug) {
+        if (data.slug == res.data[0].categories[0].slug) {
 
           this.guide = true
-          console.log(res.data[0].page_content[0].slug);
+          console.log(res.data[0].categories[0].slug);
         }
-        if (data.slug == res.data[0].page_content[1].slug) {
+        if (data.slug == res.data[0].categories[1].slug) {
           this.package = true
         }
-        if (data.slug == res.data[0].page_content[2].slug) {
+        if (data.slug == res.data[0].categories[2].slug) {
           this.excursions = true
         }
-        if (data.slug == res.data[0].page_content[3].slug) {
+        if (data.slug == res.data[0].categories[3].slug) {
           this.cruises = true
         }
-        if (data.slug == res.data[0].page_content[4].slug) {
+        if (data.slug == res.data[0].categories[4].slug) {
           this.hotels = true
         }
-        if (data.slug == res.data[0].page_content[5].slug) {
-          this.facts = true
-        }
-        if (data.slug == res.data[0].page_content[6].slug) {
+        if (data.slug == res.data[0].categories[5].slug) {
           this.blogs = true
         }
+        if (data.slug == res.data[0].categories[6].slug) {
+          this.facts = true
+        }
+       
       })
-      //sss
+      
     })
   }
 }

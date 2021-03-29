@@ -17,15 +17,15 @@ export class FooterComponent implements OnInit {
   date = new Date();
   socialsContainer:socials[] = []
   constructor(private _footer:HomeserviceService) { }
-
+  id : any;
   ngOnInit(): void {
     this._footer.getSocials().subscribe(result => this.socialsContainer = result.data)
 
     this._footer.getAlldestination().subscribe(result => this.destinationContainer = result.data)
-    
-    this._footer.getOneDestinationContent().subscribe(result => {
-      this.packagesName = result.data[0].page_content[1]
-      this.guidesSlug = result.data[0].page_content[0]
+    this.id = localStorage.getItem('id')
+    this._footer.getOneDestinationDetails(this.id).subscribe(result => {
+      this.packagesName = result.data[0].categories[1]
+      this.guidesSlug = result.data[0].categories[0]
       
       
     })
