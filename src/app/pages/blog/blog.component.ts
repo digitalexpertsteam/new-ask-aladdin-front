@@ -16,4 +16,8 @@ export class BlogComponent implements OnInit {
     this._blog.getDestinationEgy().subscribe(result => this.blogContainer = result.data)
   }
 
+  setId(id:any){
+    localStorage.setItem('idBlog' , id)
+  }
+
 }

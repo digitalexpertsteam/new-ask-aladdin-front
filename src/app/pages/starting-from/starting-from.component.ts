@@ -17,7 +17,7 @@ export class StartingFromComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.id=localStorage.getItem('id')
+    this.id=localStorage.getItem('idPack')
     this.start_form.getTravelGuide(this.id).subscribe(result => {
       this.start = result.data[0];
       let x = 1

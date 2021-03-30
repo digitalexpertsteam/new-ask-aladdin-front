@@ -74,6 +74,7 @@ import { AllPackagesDestinationComponent } from './components/all-packages-desti
 import { AllFaqDestinationComponent } from './components/all-faq-destination/all-faq-destination.component';
 import { DestinationContentModule } from './modules/destination-content/destination-content.module';
 import { ShareModule } from './modules/share/share.module';
+import { SingleComponentsComponent } from './components/single-components/single-components.component';
 
 
 @NgModule({
@@ -126,7 +127,8 @@ import { ShareModule } from './modules/share/share.module';
     SinglePackageComponent,
     DashboardComponent,
     AllPackagesDestinationComponent,
-    AllFaqDestinationComponent
+    AllFaqDestinationComponent,
+    SingleComponentsComponent
 
     
   ],

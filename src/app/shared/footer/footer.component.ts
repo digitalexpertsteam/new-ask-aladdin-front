@@ -12,8 +12,8 @@ export class FooterComponent implements OnInit {
 
   isDropup = true;
   destinationContainer:destination[]=[];
-  packagesName:any;
-  guidesSlug:any;
+  packagesName:destination[]=[];
+  guidesSlug:destination[]=[];
   date = new Date();
   socialsContainer:socials[] = []
   constructor(private _footer:HomeserviceService) { }
@@ -24,8 +24,8 @@ export class FooterComponent implements OnInit {
     this._footer.getAlldestination().subscribe(result => this.destinationContainer = result.data)
     this.id = localStorage.getItem('id')
     this._footer.getOneDestinationDetails(this.id).subscribe(result => {
-      this.packagesName = result.data[0].categories[1]
-      this.guidesSlug = result.data[0].categories[0]
+      this.packagesName = result.data[0].categories
+      this.guidesSlug = result.data[0].categories
       
       
     })

@@ -41,8 +41,8 @@ export class PackageDetailsComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
   setId(id:any){
-    localStorage.setItem('id' , id)
-    console.log(id);
+    localStorage.setItem('idPack' , id)
+    
     
   }
 }

@@ -18,7 +18,7 @@ export class TravExpComponent implements OnInit {
   ngOnInit(): void {
     
 
-    this.id=localStorage.getItem('id')
+    this.id=localStorage.getItem('idPack')
     this.experiance.getTravelGuide(this.id).subscribe(result => {
       this.ex = result.data[0]
       

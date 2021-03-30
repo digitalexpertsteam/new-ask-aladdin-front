@@ -8,22 +8,20 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class SecondBannerComponent implements OnInit {
 
-  banener:any = [];
-  contact:any=[];
   id:any
 
   constructor(private _banner:HomeserviceService) { }
   
 
   ngOnInit(): void {
-    this.id = localStorage.getItem('id')
+    this.id = localStorage.getItem("idPack");
     this. _banner.getTravelGuide(this.id).subscribe(result => {
-      this.banener = result.data[0]
+     
       
       
   
       this._banner.getSocials().subscribe(result => {
-        this.contact = result.data[0]
+       
         
         
       })

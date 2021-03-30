@@ -20,7 +20,6 @@ export class OneDestinationComponent implements OnInit {
   excursionsOffer:destination[]=[]
   cruisesOffer:destination[]=[]
   relatedPages:destination[]=[]
-  One="OneDestination"
 
   image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
   

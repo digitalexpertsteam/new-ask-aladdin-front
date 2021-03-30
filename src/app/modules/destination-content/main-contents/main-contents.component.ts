@@ -28,7 +28,6 @@ export class MainContentsComponent implements OnInit {
   ngOnInit(): void {
     this.id = localStorage.getItem('id')
     this.slug = localStorage.getItem('slug')
-    console.log(this.slug);
 
     this._home.getOneDestinationDetails(this.id).subscribe(res => {
       this.active.params.subscribe(data => {
