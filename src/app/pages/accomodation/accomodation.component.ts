@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-accomodation',
@@ -8,13 +7,9 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class AccomodationComponent implements OnInit {
 
-  constructor(private _accomodation:HomeserviceService) { }
-
-  accomodation:any = [];
-  id:any;
-
+  constructor() { }
   max = 5;
-  rate :any =[];
+  rate = 3;
   isReadonly = false;
   overStar: number | undefined;
   percent: number | undefined;
@@ -26,18 +21,6 @@ export class AccomodationComponent implements OnInit {
     this.overStar = void 0;
   }
   ngOnInit(): void {
-
-
-    this.id = localStorage.getItem("id");
-    this._accomodation.getTravelGuide(this.id).subscribe(result => {
-      this.accomodation = result.data[0];
-
-
-     console.log(this.accomodation.hotels[0].rate);
-
-
-
-  })}
   }
 
-
+}
