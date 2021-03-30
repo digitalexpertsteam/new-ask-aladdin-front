@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { HomeserviceService } from '../../services/homeservice.service';
+
 
 @Component({
   selector: 'app-page-links',
@@ -8,9 +10,7 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class PageLinksComponent implements OnInit {
 
-
-
-  constructor(private _link:HomeserviceService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

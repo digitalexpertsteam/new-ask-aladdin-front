@@ -22,11 +22,10 @@ export class PricesDatesComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.id = localStorage.getItem("id");
+
+    this.id = localStorage.getItem("idPack");
     this._prices.getTravelGuide(this.id).subscribe(result => {
       this.prices = result.data[0].prices;
-      this.standred_1.push()
-      console.log(this.standred_1);
       
       
     })

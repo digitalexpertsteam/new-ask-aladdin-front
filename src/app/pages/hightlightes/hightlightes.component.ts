@@ -16,7 +16,8 @@ export class HightlightesComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.id = localStorage.getItem("id");
+
+    this.id = localStorage.getItem("idPack");
     this.highlights.getTravelGuide(this.id).subscribe(result => {
     this.lights = result.data[0].highlight
     

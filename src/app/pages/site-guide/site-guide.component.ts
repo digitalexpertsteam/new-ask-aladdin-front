@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { HomeserviceService } from '../../services/homeservice.service';
+
 
 @Component({
   selector: 'app-site-guide',
@@ -8,20 +10,9 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class SiteGuideComponent implements OnInit {
 
-
-
-  constructor(private site_guide:HomeserviceService) { 
-    
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
-
-    
-    
-
-      
-    
   }
-  
+
 }

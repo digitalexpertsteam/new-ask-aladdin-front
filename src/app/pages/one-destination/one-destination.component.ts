@@ -20,7 +20,6 @@ export class OneDestinationComponent implements OnInit {
   excursionsOffer:destination[]=[]
   cruisesOffer:destination[]=[]
   relatedPages:destination[]=[]
-  One="OneDestination"
 
   image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
   
@@ -88,14 +87,13 @@ export class OneDestinationComponent implements OnInit {
       this.singleDestination = res.data  
     })
     this._Home.getOneDestinationDetails(this.id).subscribe(res => {
+      this.singleDestinationContent = res.data[0].categories;
         this.packageOffer = res.data[0].packages_hot_offers 
         this.excursionsOffer = res.data[0].excursions_hot_offers
         this.cruisesOffer =res.data[0].cruises_hot_offers
         this.relatedPages = res.data[0].related_pages
     })
-    this._Home.getOneDestinationContent().subscribe(res => {
-      this.singleDestinationContent = res.data[0].page_content;
-  })
+   
 
   
   }

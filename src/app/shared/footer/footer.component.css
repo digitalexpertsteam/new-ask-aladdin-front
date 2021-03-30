@@ -6,6 +6,7 @@ footer {
     position: relative;
     background-size: cover;
 }
+
 footer .shortcuts{
     width: 80%;
     margin-left: 18%;
@@ -70,17 +71,70 @@ footer .shortcuts li a:hover {
    color: #fff;
    font-size: 16px;
 }
+.fb:hover i
+{
+    color: rgb(3, 30, 185);
+}
+.ins:hover i
+{
+    color: rgb(172, 12, 187);
+}
+.twt:hover i , .lin:hover i
+{
+    color: rgb(6, 126, 238);
+}
+.pain:hover i , .yout:hover i
+{
+    color: rgb(238, 6, 6);
+}
 
 @media only screen and (max-width: 786px){
    .copyright{
        transform: translateY(0);
-       flex-direction: column;
+       flex-direction: column-reverse;
        text-align: center;
    }
    .footer-links i {
-    font-size: 25px;
-    color: black;
+    font-size: 20px;
 }
 
 }
 
+@media only screen and (max-width : 480px){
+    footer {
+        min-height: 800px;
+        background-position: bottom;
+        background-size: contain;
+    }
+    footer .shortcuts{
+        width: 100%;
+        
+    }
+    .link-copyright {
+        color: black;
+        transition: ease .5s;
+        
+    }
+   
+    .link-copyright a{
+        color: rgba(243, 133, 8, 0.959);
+        transition: ease .5s;
+    }
+    .link-copyright a:hover {
+        text-decoration: black;
+        font-size: 9px;
+    }
+    .copyright{
+        color: black;
+        font-size: 11px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .social i{
+        margin-left:5px ;
+        color: #f68800;
+        font-size: 16px;
+     }
+    
+}
