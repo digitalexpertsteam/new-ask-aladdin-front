@@ -75,6 +75,7 @@ import { AllFaqDestinationComponent } from './components/all-faq-destination/all
 import { DestinationContentModule } from './modules/destination-content/destination-content.module';
 import { ShareModule } from './modules/share/share.module';
 import { SingleComponentsComponent } from './components/single-components/single-components.component';
+import { PageLinksComponent } from './pages/page-links/page-links.component';
 
 
 @NgModule({
@@ -160,7 +161,7 @@ import { SingleComponentsComponent } from './components/single-components/single
     DestinationContentModule,
     ShareModule,
   ],
-  exports:[SecondBannerComponent,],
+  exports:[SecondBannerComponent,PageLinksComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
