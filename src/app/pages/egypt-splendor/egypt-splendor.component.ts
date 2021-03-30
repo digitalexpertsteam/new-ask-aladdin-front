@@ -9,9 +9,62 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class EgyptSplendorComponent implements OnInit {
 
-  constructor() { }
+  guide:any = [];
+  id:any;
+  selectTrue = true
+  imageFalse= '';
+  imageTrue='assets/imgs/right.svg';
+  num : any;
 
-  ngOnInit(): void {
+  constructor(private _splendor:HomeserviceService) { }
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    autoplay:true,
+    autoplayTimeout:5000,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['<', '>'],
+    responsive: {
+      0: {
+        items: 1 
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 5
+      }
+    },
+    nav: false
   }
 
-}
+  
+
+  ngOnInit(): void {
+    this.id = localStorage.getItem("idPack");
+    this._splendor.getTravelGuide(this.id).subscribe(result => {
+      this.guide = result.data[0];
+     
+      
+      let x = 1
+      this.num = result.data[0].days - x
+     
+
+  })}
+
+  // setSlug(id:any)
+  // {
+  //   localStorage.setItem("idPack",id)
+
+  // }
+
+  }
+
+
+  

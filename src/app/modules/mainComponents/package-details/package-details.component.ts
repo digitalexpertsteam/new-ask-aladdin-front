@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { singleDestination } from '../../../interfaces/single-destination';
 import { HomeserviceService } from '../../../services/homeservice.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { setISODayOfWeek } from 'ngx-bootstrap/chronos/units/day-of-week';
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -29,9 +30,21 @@ export class PackageDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = localStorage.getItem("id")
     this
-    this._singleDes.getSingleDestination(this.id).subscribe(result =>this.destinationContainer = result.data)
+    this._singleDes.getSingleDestination(this.id).subscribe(result =>{
+      this.destinationContainer = result.data
+      console.log(this.destinationContainer);
+      
+      
+    })
   }
   transform(url:any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
+  setId(id:any){
+    localStorage.setItem('idPack' , id)
+    
+    
+  }
 }
+
+

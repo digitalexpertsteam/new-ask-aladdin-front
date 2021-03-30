@@ -17,6 +17,7 @@
                             Cum sociis the</p>
                     </div>
                     <div class="blog-content border-bottom py-3" *ngFor="let blog of blogContainer">
+                        <a routerLink="/singleblog/{{blog.blog_slug}} " (click)="setId(blog.blog_id)">
                         <div class="row">
                             <a routerLink="/singleblog/{{blog.blog_slug}}">
                             <div class="col-3">
@@ -32,6 +33,7 @@
                             </div>
                         </a>
                         </div>
+                    </a>
                     </div>
 
                 </div>
