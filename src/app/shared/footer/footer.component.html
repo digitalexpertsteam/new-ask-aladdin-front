@@ -35,7 +35,7 @@
                     </h6>
                     <ul *ngFor="let guideName of destinationContainer" class="footer-links">
                         <li class="mb-2">
-                            <a routerLink="/{{guideName.slug}}/{{guidesSlug.slug}}" (click)="setId(guideName.id)"  class="text-dark">{{guideName.name}} {{guidesSlug.name}} </a>
+                            <a href="/{{guideName.slug}}/{{guidesSlug.slug}}" (click)="setId(guideName.id)"  class="text-dark">{{guideName.name}} {{guidesSlug.name}} </a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@
                     </h6>
                     <ul *ngFor="let packName of destinationContainer" class="footer-links">
                         <li class="">
-                            <a routerLink="/{{packName.slug}}/{{packagesName.slug}}" (click)="setId(packName.id)"  class="text-dark">{{packName.name}} {{packagesName.name}} </a>
+                            <a href="/{{packName.slug}}/{{packagesName.slug}}" (click)="setId(packName.id)"  class="text-dark">{{packName.name}} {{packagesName.name}} </a>
                         </li>
                         
                     </ul>
@@ -56,7 +56,7 @@
                     </h6>
                     <ul *ngFor="let desName of destinationContainer" class="footer-links">
                         <li class="mb-2">
-                            <a routerLink="/{{desName.slug}}" (click)="setId(desName.id)" class="text-dark">{{desName.name}} </a>
+                            <a href="/{{desName.slug}}" (click)="setId(desName.id)" class="text-dark">{{desName.name}} </a>
                         </li>
                     </ul>
                 </div>

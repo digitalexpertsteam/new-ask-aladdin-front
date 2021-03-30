@@ -9,14 +9,13 @@ import {TravelHotelsDesComponent} from '../mainComponents/travel-hotels-des/trav
 import {TourPackageComponent} from '../mainComponents/tour-package/tour-package.component';
 import {AllBlogsComponent} from '../mainComponents/all-blogs/all-blogs.component';
 import { PackageDetailsComponent } from '../mainComponents/package-details/package-details.component';
-
-import {AppModule} from '../../app.module';
+import { FilterByComponent } from '../../pages/filter-by/filter-by.component';
 
 
 import { DestinationContentRoutingModule } from './destination-content-routing.module';
-import { from } from 'rxjs';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
+import { SafePipe } from '../../pipes/safe-url.pipe';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { ShareModule } from '../share/share.module';
 
 
 @NgModule({
@@ -29,14 +28,16 @@ import { BrowserModule } from '@angular/platform-browser';
     TravelHotelsDesComponent,
     AllBlogsComponent,
     TourPackageComponent,
-    PackageDetailsComponent
-
-
-  
+    PackageDetailsComponent,
+    SafePipe,
+    FilterByComponent,
+    
   ],
   imports: [
     CommonModule,
     DestinationContentRoutingModule,
+    CollapseModule.forRoot(),
+    ShareModule
     
    
   ],
