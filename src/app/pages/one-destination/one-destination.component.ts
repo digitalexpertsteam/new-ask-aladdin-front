@@ -4,7 +4,6 @@ import {Router} from '@angular/router'
 import { destination } from '../../interfaces/destination';
 import { HomeserviceService } from '../../services/homeservice.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { SeoService } from '../../services/destinationsSeo.service';
 import { Meta, Title } from '@angular/platform-browser';
 
 

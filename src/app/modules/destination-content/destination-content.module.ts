@@ -15,8 +15,9 @@ import { FilterByComponent } from '../../pages/filter-by/filter-by.component';
 import { DestinationContentRoutingModule } from './destination-content-routing.module';
 import { SafePipe } from '../../pipes/safe-url.pipe';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { ShareModule } from '../share/share.module';
-import { PageLinksComponent } from '../../pages/page-links/page-links.component';
+
+
+
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { PageLinksComponent } from '../../pages/page-links/page-links.component'
     PackageDetailsComponent,
     SafePipe,
     FilterByComponent,
+   
     
   ],
   imports: [

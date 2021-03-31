@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Blog } from '../../interfaces/blog';
-import { destinationBlog } from '../../interfaces/destinationBlog';
-import { HomeserviceService } from '../../services/homeservice.service';
+import { Blog } from '../../../../interfaces/blog';
+import { destinationBlog } from '../../../../interfaces/destinationBlog';
+import { HomeserviceService } from '../../../../services/homeservice.service';
 
 @Component({
   selector: 'app-single-blog',
@@ -12,24 +12,22 @@ import { HomeserviceService } from '../../services/homeservice.service';
 export class SingleBlogComponent implements OnInit {
   singleBlog:Blog[] = [];
   idBlogs: any;
-  seo: any;
   alldestinationCards:destinationBlog[] = [];
 
 
   
 
-  constructor(private _ActivatedRoute: ActivatedRoute , public _homeService : HomeserviceService) { }
+  constructor(private _ActivatedRoute: ActivatedRoute , public _homeService : HomeserviceService) { 
+  }
 
   ngOnInit(): void {
-       
          // Get Id From Loacal Storage 
-         this.idBlogs = localStorage.getItem("idBlog"); 
+         this.idBlogs = localStorage.getItem("idBlog");         
         //  this._ActivatedRoute.snapshot.params.id;
-         console.log(this.idBlogs)
         this._homeService.getSingleBlogs(this.idBlogs).subscribe(result => {
-          this.singleBlog = result.data          
+          this.singleBlog = result.data
+         console.log(result.data);  
         })
-
         this._homeService.getDestinationEgy().subscribe(res => {
             this.alldestinationCards = res.data;
             this.alldestinationCards.filter(ele => {
@@ -37,7 +35,7 @@ export class SingleBlogComponent implements OnInit {
                   this.alldestinationCards.slice(ele.blog_id)
               }
             })
-            
+            console.log(this.alldestinationCards); 
           })
   }
   setId(id:any){

@@ -22,7 +22,6 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { EgyptSplendorComponent } from './pages/egypt-splendor/egypt-splendor.component';
 import { EgyptTourComponent } from './pages/egypt-tour/egypt-tour.component';
 import { ExpertReviewsComponent } from './pages/expert-reviews/expert-reviews.component';
-import { FilterByComponent } from './pages/filter-by/filter-by.component';
 import { HightlightesComponent } from './pages/hightlightes/hightlightes.component';
 import { OptionalExpertsComponent } from './pages/optional-experts/optional-experts.component';
 import { PricesDatesComponent } from './pages/prices-dates/prices-dates.component';
@@ -59,22 +58,18 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SafePipe } from './pipes/safe-url.pipe';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DestinationBlogComponent } from './pages/destination-blog/destination-blog.component';
 import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
-import { translate } from '@angular/localize/src/utils';
 import { SinglePackageComponent } from './pages/single-package/single-package.component';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
 import { AllPackagesDestinationComponent } from './components/all-packages-destination/all-packages-destination.component';
 import { AllFaqDestinationComponent } from './components/all-faq-destination/all-faq-destination.component';
 import { DestinationContentModule } from './modules/destination-content/destination-content.module';
 import { ShareModule } from './modules/share/share.module';
-import { SingleComponentsComponent } from './components/single-components/single-components.component';
 import { PageLinksComponent } from './pages/page-links/page-links.component';
 
 
@@ -120,7 +115,6 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
     AllDestinationsComponent,
     SponsorssComponent,
     PrivacyPolicyComponent,
-    SingleBlogComponent,
     OurStoryComponent,
     ContactUsComponent,
     DestinationBlogComponent,
@@ -129,7 +123,6 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
     DashboardComponent,
     AllPackagesDestinationComponent,
     AllFaqDestinationComponent,
-    SingleComponentsComponent
 
     
   ],
@@ -161,7 +154,7 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
     DestinationContentModule,
     ShareModule,
   ],
-  exports:[SecondBannerComponent,PageLinksComponent],
+  exports:[SecondBannerComponent,PageLinksComponent , AsideComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
@@ -171,7 +164,7 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
 })
 
 
-export class AppModule { SecondBannerComponent: any }
+export class AppModule { }
 //ngx-translate
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');

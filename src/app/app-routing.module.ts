@@ -11,7 +11,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { OneDestinationComponent } from './pages/one-destination/one-destination.component';
 import { OurStoryComponent } from './pages/our-story/our-story.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
-import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
+import { SingleBlogComponent } from './modules/destination-single-content/singleComponents/single-blog/single-blog.component';
 import { AllFaqDestinationComponent } from './components/all-faq-destination/all-faq-destination.component';
 import { DataSource } from '@angular/cdk/collections';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
@@ -26,12 +26,11 @@ const routes: Routes = [
    component:AllDestinationsComponent},
    {path:"facts",component: AllFaqDestinationComponent },
   {path:":slug/:slug", pathMatch: 'full', loadChildren:()=>import('./modules/destination-content/destination-content.module').then(m=> m.DestinationContentModule)},
+  {path:":slug/:slug/:slug" , pathMatch: 'full', loadChildren:()=>import('./modules/destination-single-content/destination-single-content.module').then(m=> m.DestinationSingleContentModule)},
   {path:"travelguide",  component:TravelGuideComponent},
   {path:"privacypolicy",component:PrivacyPolicyComponent},
-
   {path:"tourdetails",component:AllPackagesDestinationComponent},
   {path:"single-package",component:TourDetailsComponent},
-
   {path:"our-story", component:OurStoryComponent},
   {path:"contactUs", component:ContactUsComponent},
   {path:"singleblog/:id",component:SingleBlogComponent},
