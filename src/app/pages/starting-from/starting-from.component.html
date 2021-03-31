@@ -9,26 +9,16 @@
                 <img src="assets/imgs/right.svg" class="img-fluid">
                 <span>{{num}} nights / {{start.days}} days </span>
             </li>
+
             <li class="list-group-item d-flex px-0 py-2">
                 <img src="assets/imgs/right.svg" class="img-fluid">
-                <span>03 Nights in Cairo + 04 Nights Nile Cruise</span>
+                <span>Including Transportation</span>
             </li>
-            <li class="list-group-item d-flex px-0 py-2">
+            <li *ngFor='let x of start.included' class="list-group-item d-flex px-0 py-2">
                 <img src="assets/imgs/right.svg" class="img-fluid">
-                <span>Including Transportation,</span>
+                <span>{{x.content}}</span>
             </li>
-            <li class="list-group-item d-flex px-0 py-2">
-                <img src="assets/imgs/right.svg" class="img-fluid">
-                <span>Sightseeing,</span>
-            </li>
-            <li class="list-group-item d-flex px-0 py-2">
-                <img src="assets/imgs/right.svg" class="img-fluid">
-                <span>Domestic Flights</span>
-            </li>
-            <li class="list-group-item d-flex px-0 py-2">
-                <img src="assets/imgs/right.svg" class="img-fluid">
-                <span>Private Egyptologist tour guide as per program's itinerary.</span>
-            </li>
+
             
         </ul>
     </div>

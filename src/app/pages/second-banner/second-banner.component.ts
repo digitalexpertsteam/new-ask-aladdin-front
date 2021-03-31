@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeserviceService } from '../../services/homeservice.service';
 
-
 @Component({
   selector: 'app-second-banner',
   templateUrl: './second-banner.component.html',
@@ -9,9 +8,28 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class SecondBannerComponent implements OnInit {
 
-  constructor() { }
+  id:any
+
+  constructor(private _banner:HomeserviceService) { }
+  
 
   ngOnInit(): void {
+    this.id = localStorage.getItem("idPack");
+    this. _banner.getTravelGuide(this.id).subscribe(result => {
+     
+      
+      
+  
+      this._banner.getSocials().subscribe(result => {
+       
+        
+        
+      })
+        
+      
+  
+
+  })}
   }
 
-}
+

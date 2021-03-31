@@ -16,6 +16,7 @@ import { DestinationContentRoutingModule } from './destination-content-routing.m
 import { SafePipe } from '../../pipes/safe-url.pipe';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ShareModule } from '../share/share.module';
+import { PageLinksComponent } from '../../pages/page-links/page-links.component';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { ShareModule } from '../share/share.module';
     CommonModule,
     DestinationContentRoutingModule,
     CollapseModule.forRoot(),
-    ShareModule
+    
     
    
   ],

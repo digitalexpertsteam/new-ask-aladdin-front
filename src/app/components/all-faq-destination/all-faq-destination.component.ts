@@ -9,14 +9,14 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class AllFaqDestinationComponent implements OnInit {
   faqNames: destination[] = [];
-  faqContent:any;
+  faqContent:any = []
+  id:any;
   constructor(private _destinationPack: HomeserviceService) { }
-
   ngOnInit(): void {
+    this.id = localStorage.getItem('id')
     this._destinationPack.getAlldestination().subscribe(result => this.faqNames = result.data)
-    this._destinationPack.getOneDestinationContent().subscribe(res => {
-      this.faqContent = res.data[0].page_content[5]
-      console.log(this.faqContent);
+    this._destinationPack.getOneDestinationDetails(this.id).subscribe(res => {
+      this.faqContent = res.data[0].categories[6]
   })}
 
 

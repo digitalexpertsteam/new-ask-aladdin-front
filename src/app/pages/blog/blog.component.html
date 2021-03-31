@@ -17,7 +17,9 @@
                             Cum sociis the</p>
                     </div>
                     <div class="blog-content border-bottom py-3" *ngFor="let blog of blogContainer">
+                        <a routerLink="/singleblog/{{blog.blog_slug}} " (click)="setId(blog.blog_id)">
                         <div class="row">
+                            <a routerLink="/singleblog/{{blog.blog_slug}}">
                             <div class="col-3">
                                 <img src="{{blog.blog_thumb}}" class="img-fluid " alt="{{blog.blog_thumb_alt}}" />
                             </div>
@@ -29,7 +31,9 @@
                                     <!-- <span class="ml-2"><i class="far fa-comment mr-2"></i>1 Comment</span> -->
                                 </div>
                             </div>
+                        </a>
                         </div>
+                    </a>
                     </div>
 
                 </div>

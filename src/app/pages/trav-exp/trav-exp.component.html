@@ -1,4 +1,4 @@
-<section class="bg-white mt-3 px-2 py-4">
+<section id="trav" class="bg-white mt-3 px-2 py-4">
     <div class="container">
         <div class="head mb-4">
             <h3 class="font-weight-bold">Package Travel Experiences</h3>
@@ -7,7 +7,7 @@
             <ul class="list-group p-0">
                 <li  *ngFor='let e of ex.travel_experiences' class="list-group-item d-flex px-0 py-2">
                     <img src="assets/imgs/dot.svg" class="img-fluid">
-                    <span [innerHTML]="e.travel_experiences"></span>
+                    <span [innerHTML]="e"></span>
                 </li>
 
             </ul>

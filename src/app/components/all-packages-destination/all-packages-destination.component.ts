@@ -10,16 +10,17 @@ import { HomeserviceService } from '../../services/homeservice.service';
 export class AllPackagesDestinationComponent implements OnInit {
 
   packagesNames: destination[] = [];
-  packageContent:any;
+  packageContent:destination[] = []
+  id:any;
   constructor(private _destinationPack: HomeserviceService) { }
 
   ngOnInit(): void {
-    
+    this.id = localStorage.getItem('id');
     this._destinationPack.getAlldestination().subscribe(result => this.packagesNames = result.data)
-    this._destinationPack.getOneDestinationContent().subscribe(res => {
-      this.packageContent = res.data[0].page_content[1]
-      console.log(this.packageContent);
-      
+
+    this._destinationPack.getOneDestinationDetails(this.id).subscribe(res => {
+      this.packageContent = res.data[0].categories
+           
     })
 
   }

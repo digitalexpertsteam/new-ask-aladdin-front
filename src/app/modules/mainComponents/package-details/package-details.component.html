@@ -110,7 +110,7 @@
                         <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}} Nights / 08 Days 03 Nights in
                             Cairo + 04 Nights Nile Cruise
                         </p>
-                        <a class="main-btn p-2 d-block mb-2 font-weight-bold" href="#">View Tour Details</a>
+                        <a class="main-btn p-2 d-block mb-2 font-weight-bold" (click)="setId(singleDes.package__id)" routerLink="/single-package">View Tour Details</a>
                         <a class="main-btn book bg-white p-2 d-block font-weight-bold" href="#">Booking Inquiry</a>
                     </div>
                 </div>
