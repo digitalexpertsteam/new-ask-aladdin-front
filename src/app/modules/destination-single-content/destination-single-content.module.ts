@@ -12,7 +12,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   declarations: [
     SingleComponentsComponent,
     SingleBlogComponent,
-    AsideComponent
+    
+    
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
@@ -20,6 +21,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   imports: [
     CommonModule,
     DestinationSingleContentRoutingModule,
+    
     
 
   ],

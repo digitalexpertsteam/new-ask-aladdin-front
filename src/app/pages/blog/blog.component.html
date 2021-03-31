@@ -19,7 +19,7 @@
                    
 
                     <div class="blog-content border-bottom py-3" *ngFor="let blog of blogContainer">
-                        <a routerLink="/singleblog/{{blog.blog_slug}} " (click)="setId(blog.blog_id)">
+                        <a routerLink="/{{desSlug}}/{{category}}/{{blog.blog_slug}} " (click)="setId(blog.blog_id)">
                         <div class="row">
                             <div class="col-3">
                                 <img src="{{blog.blog_thumb}}" class="img-fluid " alt="{{blog.blog_thumb_alt}}" />

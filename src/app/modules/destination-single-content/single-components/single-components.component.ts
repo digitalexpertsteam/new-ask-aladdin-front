@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HomeserviceService } from '../../../services/homeservice.service';
-
 @Component({
   selector: 'app-single-components',
   templateUrl: './single-components.component.html',
@@ -34,11 +33,6 @@ export class SingleComponentsComponent implements OnInit {
         }
       })
     })
-
-    
-      
-        
-        
         // if (data.slug == res.data[0].categories[1].slug) {
         //   this.package = true
         // }

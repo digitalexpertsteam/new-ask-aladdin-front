@@ -123,6 +123,8 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
     DashboardComponent,
     AllPackagesDestinationComponent,
     AllFaqDestinationComponent,
+    PageLinksComponent,
+    AsideComponent
 
     
   ],
@@ -154,7 +156,7 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
     DestinationContentModule,
     ShareModule,
   ],
-  exports:[SecondBannerComponent,PageLinksComponent , AsideComponent],
+  exports:[SecondBannerComponent, PageLinksComponent , AsideComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

@@ -18,7 +18,7 @@ export class AllBlogsComponent implements OnInit {
   blogDes: string = '';
   desName: string = '';
   desSlug: string ='';
-  category: string = '';
+  category: string = ''; 
   title!: String;
   id:any;
 
@@ -46,9 +46,8 @@ export class AllBlogsComponent implements OnInit {
 
     this.id = localStorage.getItem('id')
     this._blogs.getOneDestinationDetails(this.id).subscribe(res => {
-        this.category = res.data[0].categories[5].slug
-        
-        
+        this.category = res.data[0].categories[5].slug    
+        console.log(this.category);
         
     })
     
