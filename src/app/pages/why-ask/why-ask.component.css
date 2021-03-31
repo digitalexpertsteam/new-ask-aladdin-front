@@ -70,28 +70,7 @@
 
 }
 
-.modal-dialog
-{
-    width: 1000px;
-    display: flex;
-    
-}
-.modal-header
-{
-    width: 50px;
-    position: absolute;
-    top: 0;
-    right: 5px;
-}
-.modal-body{
-    position: absolute;
-    right: 1%;
-    background-color: transparent;
-    height: 800px;
-    width: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
+
 
 
