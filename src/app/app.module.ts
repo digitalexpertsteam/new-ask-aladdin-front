@@ -49,7 +49,7 @@ import { TravExpComponent } from './pages/trav-exp/trav-exp.component';
 import { PackageIncludedComponent } from './pages/package-included/package-included.component';
 import { SponsorsLogoComponent } from './pages/sponsors-logo/sponsors-logo.component';
 import { AllDestinationsComponent } from './pages/all-destinations/all-destinations.component';
-import { SponsorssComponent } from './pages/sponsorss/sponsorss.component';
+// import { SponsorssComponent } from './pages/sponsorss/sponsorss.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 // ngx bootstrap & Angular matrial modules
@@ -75,6 +75,9 @@ import { AllFaqDestinationComponent } from './components/all-faq-destination/all
 import { DestinationContentModule } from './modules/destination-content/destination-content.module';
 import { ShareModule } from './modules/share/share.module';
 import { SingleComponentsComponent } from './components/single-components/single-components.component';
+import { SingleExcursionsComponent } from './pages/single-excursions/single-excursions.component';
+import { TagsExcursionsComponent } from './pages/tags-excursions/tags-excursions.component';
+import { ExcursionsSplendorComponent } from './pages/excursions-splendor/excursions-splendor.component';
 
 
 @NgModule({
@@ -85,7 +88,7 @@ import { SingleComponentsComponent } from './components/single-components/single
     NavbarComponent,
     FooterComponent,
     HomeSliderComponent,
-    AsideComponent,
+    // AsideComponent,
     AccomodationComponent,
     BlogComponent,
     EgyptSplendorComponent,
@@ -117,7 +120,7 @@ import { SingleComponentsComponent } from './components/single-components/single
     PackageIncludedComponent,
     SponsorsLogoComponent,
     AllDestinationsComponent,
-    SponsorssComponent,
+    // SponsorssComponent,
     PrivacyPolicyComponent,
     SingleBlogComponent,
     OurStoryComponent,
@@ -128,7 +131,10 @@ import { SingleComponentsComponent } from './components/single-components/single
     DashboardComponent,
     AllPackagesDestinationComponent,
     AllFaqDestinationComponent,
-    SingleComponentsComponent
+    SingleComponentsComponent,
+    SingleExcursionsComponent,
+    TagsExcursionsComponent,
+    ExcursionsSplendorComponent,
 
     
   ],

@@ -70,4 +70,10 @@ export class HomeserviceService {
   getTravelGuide(id:any):Observable<any>{
     return this._http.get(`${environment.ApiUrl}package/${id}/${this.currentLang}`)
   }
+  getDestinationExcursions(id:any):Observable<any>{
+    return this._http.get(`${environment.ApiUrl}destination/excursions/${id}/${this.currentLang}`)
+  }
+  getSingleExcursion(id:any):Observable<any>{
+    return this._http.get(`${environment.ApiUrl}excursion/${id}/${this.currentLang}`)
+  }
 }

@@ -1,0 +1,67 @@
+<section id="Itinerary" class="bg-white mt-3 px-2 py-4">
+    <div class="container">
+        <div class="splendor mb-4">
+            <div class="head mb-2">
+                <h3 class="font-weight-bold">{{guide.name}}</h3>
+            </div>
+            <p>{{num}} nights / {{guide.days}}{{"days" |translate}}</p>
+            <h4 [innerHTML]="guide.description"></h4>
+            <h3> Including </h3>
+                <div *ngFor='let x of guide.included'>
+                    <span> {{x.content}},</span>
+                </div>
+         
+            </div>
+        <div class="package-itinerary">
+            <div class="head mb-4">
+                <h2 class="font-weight-bold"> Itinerary</h2>
+            </div>
+            <div class="package-details" class="package">
+
+                <div *ngFor='let day of guide.day_data' class="package-details">
+                    <h3 class="position-relative">
+
+                        <div class="py-2">
+                        <span class="font-weight-bold py-2">Day {{day.day_number}} :- {{day.day_title}}</span>
+                    </div>
+                        <div class="number d-none d-xl-block">
+                            <p class="main-bg text-center d-flex align-items-center justify-content-center">
+
+                                <span
+                                    class="d-flex align-items-center justify-content-center text-white m-auto">{{day.day_number}}</span>
+                            </p>
+                        </div>
+                    </h3>
+                    <p  [innerHTML]="day.day_summary"></p>
+                    <noscript>
+                        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2849306681974886&ev=PageView&noscript=1"/>
+                      </noscript>
+
+                    <div class="offers d-flex">
+                        <div class="meal mr-2 ml-2 py-2">
+                            <img src="assets/imgs/meal.svg" />
+                            <span>Meals : </span>
+                        </div>
+                        <div class="meal-details d-flex">
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day.breakfast ?  imageTrue  :  ''" />
+                                <span>breakfast</span>
+                            </div>
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day.lunch ? imageTrue : ''" />
+                                <span>Lunch</span>
+                            </div>
+                            <div class="detail ml-2 py-2" >
+                                <img [src]="day.dinner ? imageTrue  : imageFalse" />
+                                <span>dinner</span>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

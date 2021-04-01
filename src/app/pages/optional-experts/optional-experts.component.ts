@@ -16,7 +16,7 @@ export class OptionalExpertsComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.id = localStorage.getItem("id");
+    this.id = localStorage.getItem("idPack");
     this._experts.getTravelGuide(this.id).subscribe(result => {
       this.experts = result.data[0];
       console.log(this.experts);

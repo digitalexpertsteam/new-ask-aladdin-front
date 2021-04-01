@@ -10,8 +10,6 @@ import {TourPackageComponent} from '../mainComponents/tour-package/tour-package.
 import {AllBlogsComponent} from '../mainComponents/all-blogs/all-blogs.component';
 import { PackageDetailsComponent } from '../mainComponents/package-details/package-details.component';
 import { FilterByComponent } from '../../pages/filter-by/filter-by.component';
-
-
 import { DestinationContentRoutingModule } from './destination-content-routing.module';
 import { SafePipe } from '../../pipes/safe-url.pipe';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -30,8 +28,7 @@ import { ShareModule } from '../share/share.module';
     TourPackageComponent,
     PackageDetailsComponent,
     SafePipe,
-    FilterByComponent,
-    
+    FilterByComponent,  
   ],
   imports: [
     CommonModule,

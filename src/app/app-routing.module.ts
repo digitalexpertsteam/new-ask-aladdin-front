@@ -15,6 +15,7 @@ import { SingleBlogComponent } from './pages/single-blog/single-blog.component';
 import { AllFaqDestinationComponent } from './components/all-faq-destination/all-faq-destination.component';
 import { DataSource } from '@angular/cdk/collections';
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
+import { SingleExcursionsComponent } from './pages/single-excursions/single-excursions.component';
 
 
 
@@ -31,6 +32,8 @@ const routes: Routes = [
 
   {path:"tourdetails",component:AllPackagesDestinationComponent},
   {path:"single-package",component:TourDetailsComponent},
+  {path:"single-excursions",component:SingleExcursionsComponent},
+
 
   {path:"our-story", component:OurStoryComponent},
   {path:"contactUs", component:ContactUsComponent},
