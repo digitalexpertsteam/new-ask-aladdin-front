@@ -6,7 +6,7 @@
         <div class="row">
             <div *ngFor="let acc of accomodation.hotels" class="col-12 col-md-3 pt-2">
                 <div class="card overflow-hidden">
-                    <a routerLink="{{acc.slug}}">
+                    <a >
                         <div class="row ">
                             <div class="col-sm-12 ">
                                 <div class="acco-image">
@@ -20,9 +20,7 @@
                                     </p>
                                     <div class="mb-3">
                                         
-                                        <rating [(ngModel)]="acc.rate"  [max]="max" [readonly]="isReadonly"
-                                            (onHover)="hoveringOver($event)" (onLeave)="resetStar()"
-                                            [titles]="['one','two','three']">
+                                        <rating [(ngModel)]="acc.rate"  [max]="max" [readonly]="isReadonly">
                                         </rating>
                                     </div>
                                     <div class="acco-link">

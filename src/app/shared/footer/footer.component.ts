@@ -16,9 +16,7 @@ export class FooterComponent implements OnInit {
   guidesSlug:destination[]=[];
   date = new Date();
   socialsContainer:socials[] = []
-  constructor(private _footer:HomeserviceService) { }
-  id : any;
-  ngOnInit(): void {
+  constructor(private _footer:HomeserviceService) {
     this._footer.getSocials().subscribe(result => this.socialsContainer = result.data)
 
     this._footer.getAlldestination().subscribe(result => this.destinationContainer = result.data)
@@ -29,6 +27,10 @@ export class FooterComponent implements OnInit {
       
       
     })
+   }
+  id : any;
+  ngOnInit(): void {
+    
   }
   setId(id:any){
     localStorage.setItem("id" , id)

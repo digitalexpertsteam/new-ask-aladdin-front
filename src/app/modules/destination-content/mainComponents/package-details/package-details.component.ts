@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { singleDestination } from '../../../interfaces/single-destination';
-import { HomeserviceService } from '../../../services/homeservice.service';
+import { singleDestination } from '../../../../interfaces/single-destination';
+import { HomeserviceService } from '../../../../services/homeservice.service';
 import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { setISODayOfWeek } from 'ngx-bootstrap/chronos/units/day-of-week';
 @Component({
@@ -23,6 +23,8 @@ export class PackageDetailsComponent implements OnInit {
   idpackage:any
   destinationContainer:singleDestination[] = []
   Title:any;
+  category: string = ''; 
+
   resetStar(): void {
     this.overStar = void 0;
   }
@@ -44,12 +46,20 @@ export class PackageDetailsComponent implements OnInit {
       
       
     })
+    this.id = localStorage.getItem('id')
+    this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
+        this.category = res.data[0].categories[1].slug    
+        console.log(this.category);
+        
+    })
   }
   transform(url:any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
   setId(id:any){
     localStorage.setItem('idPack' , id)
+    console.log(id);
+    
     
     
   }

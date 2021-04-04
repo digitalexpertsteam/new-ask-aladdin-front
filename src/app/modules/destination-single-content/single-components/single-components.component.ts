@@ -16,11 +16,13 @@ export class SingleComponentsComponent implements OnInit {
   facts = false
   blogs = false
   idBlog:any;
+  idPack:any;
   slug: any
   constructor(private active: ActivatedRoute , private _home: HomeserviceService) { }
 
   ngOnInit(): void {
     this.idBlog = localStorage.getItem('idBlog')
+    this.idPack = localStorage.getItem('idPack')
     this.slug = localStorage.getItem('slug')
 
     console.log(this.slug);
@@ -30,6 +32,16 @@ export class SingleComponentsComponent implements OnInit {
       this.active.params.subscribe(data => {
         if (data.slug == blog.data[0].slug) {
           this.blogs = true  
+        }
+      })
+    })
+    this._home.getSinglepackage(this.idPack).subscribe(pack => {     
+      console.log(pack.data[0]); 
+      this.active.params.subscribe(data => {
+        if (data.slug == pack.data[0].slug) {
+          this.package = true  
+          console.log(this.idPack);
+          
         }
       })
     })

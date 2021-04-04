@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Image } from '../../interfaces/image';
 import { sliders } from '../../interfaces/sliders';
 import { HomeserviceService } from '../../services/homeservice.service';
 
@@ -11,23 +12,25 @@ export class HomeSliderComponent implements OnInit {
   image:any;
   video='';
    sliderContainer:sliders[] = []
+   imageSlide:Image[]=[]
   constructor(private _slider:HomeserviceService) { }
 
   ngOnInit(): void {
     this._slider.getSlider().subscribe(result => {
       this.sliderContainer = result.data
-      console.log(result.data[2].image.type);
-      if(result.data[0].image.type == "Image" ){
-        this.image = result.data[0].image.type
-        console.log(this.image);        
-      }
-      if(result.data[2].image.type == "Video"){
-        this.video= result.data[2].image.type
-        console.log(this.video);
+      this.imageSlide = result.data.image
+      
+      
+      // if(result.data.image.type == "Video"){
+      //   this.video= result.data.image.type
+      //   console.log(this.video);
 
-      }
+      // }
      
     })
+    
+    
   }
+  
 
 }

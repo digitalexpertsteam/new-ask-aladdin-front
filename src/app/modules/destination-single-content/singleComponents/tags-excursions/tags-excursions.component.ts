@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tags',
-  templateUrl: './tags.component.html',
-  styleUrls: ['./tags.component.css']
+  selector: 'app-tags-excursions',
+  templateUrl: './tags-excursions.component.html',
+  styleUrls: ['./tags-excursions.component.css']
 })
-export class TagsComponent implements OnInit {
+export class TagsExcursionsComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
-
   }
+
   Itinerary(){
     document.getElementById('Itinerary')?.scrollIntoView({behavior:'smooth'})
   }
+
+
+
   Included(){
     document.getElementById('included')?.scrollIntoView({behavior:'smooth'})
   }
@@ -31,7 +34,10 @@ export class TagsComponent implements OnInit {
   highlights(){
     document.getElementById('highlights')?.scrollIntoView({behavior:'smooth'})
   }
+
   videos(){
     document.getElementById('videos')?.scrollIntoView({behavior:'smooth'})
-  } 
+  }
+  
+
 }

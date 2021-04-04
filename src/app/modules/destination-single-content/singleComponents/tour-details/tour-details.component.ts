@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { HomeserviceService } from '../../services/homeservice.service';
+import { HomeserviceService } from '../../../../services/homeservice.service';
 
 
 
@@ -21,7 +21,9 @@ export class TourDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = localStorage.getItem("idPack");
-    this.highlights.getTravelGuide(this.id).subscribe(result => {
+    console.log(this.id);
+    
+    this.highlights.getSinglepackage(this.id).subscribe(result => {
       this.lights = result.data[0]
       this.banener = result.data[0]
       this.contact = result.data[0]

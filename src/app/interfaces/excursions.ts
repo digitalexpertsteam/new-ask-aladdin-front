@@ -13,7 +13,7 @@ export interface Excursions {
     excursion_thumb:string;
     start_price:string;
     location_map:string;
-    duration:string;
+    duration:number;
     travellers:string;
 
 

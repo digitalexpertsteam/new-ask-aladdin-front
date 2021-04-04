@@ -1,14 +1,5 @@
 <section>
-    <div class="tags">
-        <span class="tag text-dark bg-white font-weight-bold">Land only Tours</span>
-        <span class="tag text-dark bg-white font-weight-bold">3-7 Night Package</span>
-        <span class="tag text-dark bg-white font-weight-bold">4-8 Night Package</span>
-        <span class="tag text-dark bg-white font-weight-bold">8-15 Night Package</span>
-        <span class="tag text-dark bg-white font-weight-bold">Egypt & Jordon</span>
-        <span class="tag text-dark bg-white font-weight-bold">Nile Package Cruise</span>
-        <span class="tag text-dark bg-white font-weight-bold">Dahabiya Packages</span>
-        <span class="tag text-dark bg-white font-weight-bold">Meditation Trips (Groups Only)</span>
-    </div>
+   
     <h2 class="info main-bg text-white font-weight-bold">208 Egypt Tour Packages with <span>756 Reviews</span></h2>
     <ng-container *ngFor="let singleDes of destinationContainer">
         <div class="data-box bg-white mt-3 p-2">
@@ -110,7 +101,8 @@
                         <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}} Nights / 08 Days 03 Nights in
                             Cairo + 04 Nights Nile Cruise
                         </p>
-                        <a class="main-btn p-2 d-block mb-2 font-weight-bold" (click)="setId(singleDes.package__id)" routerLink="/single-package">View Tour Details</a>
+                        <a class="main-btn p-2 d-block mb-2 font-weight-bold" (click)="setId(singleDes.package__id)" 
+                        routerLink="/{{singleDes.destination_slug}}/travel-package/{{singleDes.package_slug}}">View Tour Details</a>
                         <a class="main-btn book bg-white p-2 d-block font-weight-bold" href="#">Booking Inquiry</a>
                     </div>
                 </div>

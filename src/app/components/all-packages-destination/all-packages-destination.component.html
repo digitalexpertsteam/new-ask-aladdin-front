@@ -38,7 +38,7 @@
             <div *ngFor="let package of packagesNames" class="col-12 col-md-4 mb-4">
                 <div *ngFor='let pack of packageContent|slice:1:2'>
                 <div  class="blogs overflow-hidden">
-                    <a routerLink="/{{package.slug}}/{{pack.slug}}" (click)="setId(package.id)" class="text-dark">
+                    <a routerLink="/{{package.slug}}/travel-package" (click)="setId(package.id)" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="package.thumb" class="img-fluid" alt=" ">
                             <div class="card-led">

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OneDestinationComponent } from '../../pages/one-destination/one-destination.component';
 import { SingleComponentsComponent } from './single-components/single-components.component';
 
 const routes: Routes = [
-  {path:'' , component: SingleComponentsComponent}
+  {path:'' , component: OneDestinationComponent}
 ];
 
 @NgModule({

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainContentsComponent } from './main-contents.component';
+import { TagsExcursionsComponent } from './tags-excursions.component';
 
-describe('MainContentsComponent', () => {
-  let component: MainContentsComponent;
-  let fixture: ComponentFixture<MainContentsComponent>;
+describe('TagsExcursionsComponent', () => {
+  let component: TagsExcursionsComponent;
+  let fixture: ComponentFixture<TagsExcursionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainContentsComponent ]
+      declarations: [ TagsExcursionsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainContentsComponent);
+    fixture = TestBed.createComponent(TagsExcursionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

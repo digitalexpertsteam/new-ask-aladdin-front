@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HomeserviceService } from '../../services/homeservice.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
+
 
 @Component({
-  selector: 'app-egypt-splendor',
-  templateUrl: './egypt-splendor.component.html',
-  styleUrls: ['./egypt-splendor.component.css']
+  selector: 'app-excursions-splendor',
+  templateUrl: './excursions-splendor.component.html',
+  styleUrls: ['./excursions-splendor.component.css']
 })
-export class EgyptSplendorComponent implements OnInit {
+export class ExcursionsSplendorComponent implements OnInit {
 
   guide:any = [];
   id:any;
@@ -17,6 +19,7 @@ export class EgyptSplendorComponent implements OnInit {
   num : any;
 
   constructor(private _splendor:HomeserviceService) { }
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -44,27 +47,18 @@ export class EgyptSplendorComponent implements OnInit {
     nav: false
   }
 
-  
-
   ngOnInit(): void {
+
+
     this.id = localStorage.getItem("idPack");
-    this._splendor.getSinglepackage(this.id).subscribe(result => {
+    this._splendor.getSingleExcursion(this.id).subscribe(result => {
       this.guide = result.data[0];
+      
      
       
-      let x = 1
-      this.num = result.data[0].days - x
      
 
-  })}
-
-  // setSlug(id:any)
-  // {
-  //   localStorage.setItem("idPack",id)
-
-  // }
-
+  })
   }
 
-
-  
+}

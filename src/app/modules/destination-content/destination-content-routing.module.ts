@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainContentsComponent } from './main-contents/main-contents.component';
+import { TourDetailsComponent } from '../destination-single-content/singleComponents/tour-details/tour-details.component';
+import { TourPackageComponent } from './mainComponents/tour-package/tour-package.component';
 
 const routes: Routes = [
-  {path:'' , component: MainContentsComponent}
+  {path:":slug/travel-package/:slug" , component: TourDetailsComponent }
 
 ];
 

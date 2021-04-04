@@ -12,7 +12,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 // components & pages
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { TourDetailsComponent } from './components/tour-details/tour-details.component';
+import { TourDetailsComponent } from './modules/destination-single-content/singleComponents/tour-details/tour-details.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeSliderComponent } from './pages/home-slider/home-slider.component';
@@ -48,7 +48,6 @@ import { TravExpComponent } from './pages/trav-exp/trav-exp.component';
 import { PackageIncludedComponent } from './pages/package-included/package-included.component';
 import { SponsorsLogoComponent } from './pages/sponsors-logo/sponsors-logo.component';
 import { AllDestinationsComponent } from './pages/all-destinations/all-destinations.component';
-import { SponsorssComponent } from './pages/sponsorss/sponsorss.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 // ngx bootstrap & Angular matrial modules
@@ -70,32 +69,31 @@ import { AllPackagesDestinationComponent } from './components/all-packages-desti
 import { AllFaqDestinationComponent } from './components/all-faq-destination/all-faq-destination.component';
 import { DestinationContentModule } from './modules/destination-content/destination-content.module';
 import { ShareModule } from './modules/share/share.module';
-import { PageLinksComponent } from './pages/page-links/page-links.component';
+import { DestinationSingleContentModule } from './modules/destination-single-content/destination-single-content.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TourDetailsComponent,
+    // TourDetailsComponent,
     NavbarComponent,
     FooterComponent,
     HomeSliderComponent,
-    AsideComponent,
-    AccomodationComponent,
+    // AccomodationComponent,
     BlogComponent,
-    EgyptSplendorComponent,
+    // EgyptSplendorComponent,
     EgyptTourComponent,
-    ExpertReviewsComponent,
-    HightlightesComponent,
-    OptionalExpertsComponent,
-    PricesDatesComponent,
+    // ExpertReviewsComponent,
+    // HightlightesComponent,
+    // OptionalExpertsComponent,
+    // PricesDatesComponent,
     RelatedToursComponent,
     ReviewsComponent,
-    StartingFromComponent,
+    // StartingFromComponent,
     TestimonialsComponent,
     TopDestinationComponent,
-    TourBookingComponent,
+    // TourBookingComponent,
     TourSliderComponent,
     VerfiedAgentComponent,
     WhyAskComponent,
@@ -108,12 +106,12 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
     TravelTipsComponent,
     SecondBannerComponent,
     SponsorsComponent,
-    TagsComponent,
-    TravExpComponent,
-    PackageIncludedComponent,
-    SponsorsLogoComponent,
+    // TagsComponent,
+    // TravExpComponent,
+    // PackageIncludedComponent,
+    // SponsorsLogoComponent,
     AllDestinationsComponent,
-    SponsorssComponent,
+    // SponsorssComponent,
     PrivacyPolicyComponent,
     OurStoryComponent,
     ContactUsComponent,
@@ -123,8 +121,6 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
     DashboardComponent,
     AllPackagesDestinationComponent,
     AllFaqDestinationComponent,
-    PageLinksComponent,
-    AsideComponent
 
     
   ],
@@ -153,10 +149,10 @@ import { PageLinksComponent } from './pages/page-links/page-links.component';
         }
     }
     ),
-    DestinationContentModule,
+    DestinationSingleContentModule,
     ShareModule,
+    DestinationContentModule
   ],
-  exports:[SecondBannerComponent, PageLinksComponent , AsideComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
