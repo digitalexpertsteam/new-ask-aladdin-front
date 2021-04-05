@@ -9,7 +9,7 @@ import { setISODayOfWeek } from 'ngx-bootstrap/chronos/units/day-of-week';
   styleUrls: ['./package-details.component.css']
 })
 export class PackageDetailsComponent implements OnInit {
-
+  x=1;
   max = 5;
   rate = 3;
   isReadonly = false;

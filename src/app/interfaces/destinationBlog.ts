@@ -2,7 +2,7 @@ export interface destinationBlog {
     blog_id:number;
     blog_name:string;
     blog_slug:string;
-    blog_content:string;
+    blog_description:string;
     blog_thumb_alt:string;
     blog_thumb:string;
     blog_created_at:string;
