@@ -2,7 +2,7 @@ export interface Blog {
     id:number;
     name:string;
     slug:string;
-    content:string;
+    overview:string;
     thumb_alt:string;
     thumb:string;
     created_at:string;

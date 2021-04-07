@@ -1,41 +1,37 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ActivatedRoute } from "@angular/router";
-import { Blog } from "../../../../interfaces/blog";
+import { Faq } from "../../../../interfaces/faq";
+import { Faqs } from "../../../../interfaces/faqs";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { OwlOptions } from "ngx-owl-carousel-o";
-import { destinationBlog } from "../../../../interfaces/destinationBlog";
 
 @Component({
-  selector: "app-single-blog",
-  templateUrl: "./single-blog.component.html",
-  styleUrls: ["./single-blog.component.css"],
+  selector: "app-single-faq",
+  templateUrl: "./single-faq.component.html",
+  styleUrls: ["./single-faq.component.css"],
 })
-export class SingleBlogComponent implements OnInit {
-  singleBlog: Blog[] = [];
-  idBlogs: any;
+export class SingleFaqComponent implements OnInit {
+  singleFaq: Faq[] = [];
+  idFaq: any;
   id: any;
-  alldestinationCards: destinationBlog[] = [];
+  alldestinationCards: Faqs[] = [];
   desSlug = "";
 
-  constructor(
-    private _ActivatedRoute: ActivatedRoute,
-    public _homeService: HomeserviceService
-  ) {}
+  constructor(public _homeService: HomeserviceService) {}
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
-    this.idBlogs = localStorage.getItem("idBlog");
+    this.idFaq = localStorage.getItem("idFaq");
     this.id = localStorage.getItem("id");
     //  this._ActivatedRoute.snapshot.params.id;
-    this._homeService.getSingleBlogs(this.idBlogs).subscribe((result) => {
-      this.singleBlog = result.data;
+    this._homeService.getSingleFaq(this.idFaq).subscribe((result) => {
+      this.singleFaq = result.data;
     });
     this._homeService.getHomeBlog().subscribe((result) => {
       this.desSlug = result.data[0].destination_slug;
     });
 
-    this._homeService.getDestinationBlogs(this.id).subscribe((res) => {
+    this._homeService.getDestinationFact(this.id).subscribe((res) => {
       this.alldestinationCards = res.data;
 
       console.log(this.alldestinationCards);
@@ -70,6 +66,6 @@ export class SingleBlogComponent implements OnInit {
   };
 
   setId(id: any) {
-    localStorage.setItem("idBlog", id);
+    localStorage.setItem("idFaq", id);
   }
 }

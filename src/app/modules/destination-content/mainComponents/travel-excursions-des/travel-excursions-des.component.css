@@ -1,4 +1,18 @@
-
+.banner{
+    background-size: cover;
+    height: 450px;
+    background-size: cover ;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.des-Name{
+    font-family: 'Cormorant Unicase', serif;
+    letter-spacing: 3px;
+    font-size: 45px;
+}
 .tags {
     display: flex;
     flex-wrap: wrap;

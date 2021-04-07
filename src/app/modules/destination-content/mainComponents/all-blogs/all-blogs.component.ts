@@ -3,6 +3,8 @@ import { setISODayOfWeek } from 'ngx-bootstrap/chronos/units/day-of-week';
 import { destinationBlog } from '../../../../interfaces/destinationBlog';
 import { HomeserviceService } from '../../../../services/homeservice.service';
 import {Title , Meta} from '@angular/platform-browser'
+import { destination } from '../../../../interfaces/destination';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -18,18 +20,24 @@ export class AllBlogsComponent implements OnInit {
   blogDes: string = '';
   desName: string = '';
   desSlug: string ='';
-  category: string = ''; 
+  category: string = '';  
   title!: String;
   id:any;
+  allBlog:destination[]=[];
+ 
 
 
-
-  constructor(private _blogs:HomeserviceService , private _Meta : Meta , private _Title : Title ) {
+  constructor(private _blogs:HomeserviceService , private _active:ActivatedRoute, private _Meta : Meta , private _Title : Title ) {
 
    }
 
   ngOnInit(): void {
-    this._blogs.getDestinationEgy().subscribe(result => {
+    // this.id = this._active.snapshot.params.slug
+    // console.log(this._active.snapshot.params.slug);
+    
+    this.id = localStorage.getItem('id')
+
+    this._blogs.getDestinationBlogs(this.id).subscribe(result => {
       this.blogContainer = result.data     
       this.blog_name = result.data[0].destination_name + " Blogs";
       this.blogDes = result.data[0].destination_description;
@@ -44,8 +52,8 @@ export class AllBlogsComponent implements OnInit {
       ]);
     }) 
 
-    this.id = localStorage.getItem('id')
     this._blogs.getOneDestinationDetails(this.id).subscribe(res => {
+        this.allBlog = res.data[0].categories
         this.category = res.data[0].categories[5].slug    
         console.log(this.category);
         

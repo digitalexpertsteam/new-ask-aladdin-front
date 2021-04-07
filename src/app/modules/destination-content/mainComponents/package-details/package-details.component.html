@@ -30,24 +30,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-7 px-0">
-                                <div class="card-body package-content pt-0 pb-1">
+                            <div class="col-md-7 px-0  ">
+                                <div class="card-body package-content pt-0 pb-1 h-100 d-flex flex-column justify-content-between ">
                                     <h5 class="card-title font-weight-bold mb-2">{{singleDes.package_name}}</h5>
                                     <div class="rating mb-1">
                                         <!-- <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"
                                             (onHover)="hoveringOver($event)" (onLeave)="resetStar()"
                                             [titles]="['one','two','three']"></rating> -->
-                                        <span class="ml-2">of 2 reviews</span>
                                     </div>
                                     <p class="package-text" [innerHTML]="singleDes.destination_description"></p>
-                                    <p class="text-dark hashtag"><span class="font-weight-bold text-dark">Tour Type :
-                                        </span> Group
-                                        Tour</p>
-                                    <p class="text-dark hashtag"><span class="font-weight-bold text-dark">Accommodation:
-                                            :
-                                        </span>
-                                        Guest House</p>
-                                    <div class="row mt-2 px-0">
+                                    
+                                    <div class="row  pack-icons ">
                                         <div class="col-6 col-sm-4 px-0">
                                             <div class="advatnage">
                                                 <i class="fas fa-highlighter main-color"></i>
@@ -98,8 +91,7 @@
                         <span>Pricing</span>
                         <h4 class="font-weight-bold mb-2">Start From</h4>
                         <span class="price main-color font-weight-bold">{{singleDes.start_price}}USD</span>
-                        <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}} Nights / 08 Days 03 Nights in
-                            Cairo + 04 Nights Nile Cruise
+                        <p class="day-night text-left my-2 mb-3">{{singleDes.duration_in_days}} Days/{{singleDes.duration_in_days-x}} Nights
                         </p>
                         <a class="main-btn p-2 d-block mb-2 font-weight-bold" (click)="setId(singleDes.package__id)" 
                         routerLink="/{{singleDes.destination_slug}}/travel-package/{{singleDes.package_slug}}">View Tour Details</a>

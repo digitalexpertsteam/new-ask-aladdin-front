@@ -1,10 +1,11 @@
 
 import { Component, HostListener, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import { destination } from '../../interfaces/destination';
 import { HomeserviceService } from '../../services/homeservice.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Meta, Title } from '@angular/platform-browser';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -30,13 +31,24 @@ export class OneDestinationComponent implements OnInit {
   // singleSlideOffset = true;
   // noWrap = false;
  
-  constructor( private _Home : HomeserviceService , private route : Router   , private _Meta : Meta , private _Title : Title ) { }
+  constructor( private _Home : HomeserviceService , private route : Router , private _active:ActivatedRoute , private locate:Location , private _Meta : Meta , private _Title : Title ) {
+    this.id = this._active.snapshot.params.id
+    this._Home.getOneDistination(this.id).subscribe(res => {
+      this.locate.go(res.data[0].slug)
+    })
+  }
  
   ngOnInit(): void {
-    this.id = localStorage.getItem('id');
+    // this.id = localStorage.getItem('id');
+    
 
+    
+    
     this._Home.getOneDistination(this.id).subscribe(res => {
       this.singleDestination = res.data  
+      
+      console.log(this.singleDestination);
+      
       this.Title = res.data[0].seo_title;
       this._Title.setTitle(`${this.Title}`)
       this._Meta.addTags([
@@ -50,8 +62,7 @@ export class OneDestinationComponent implements OnInit {
         this.packageOffer = res.data[0].packages_hot_offers 
         this.excursionsOffer = res.data[0].excursions_hot_offers
         this.cruisesOffer =res.data[0].cruises_hot_offers
-        this.relatedPages = res.data[0].related_pages
-       
+        this.relatedPages = res.data[0].related_pages   
     })
     
 
