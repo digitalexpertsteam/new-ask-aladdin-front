@@ -50,29 +50,36 @@
       <h2 class="font-weight-bold"></h2>
     </div>
 
-    <div class="row">
-      <!-- Travel Guide  -->
-      <div
-        *ngFor="let content of singleDestinationContent | slice: 0:1"
-        class="col-12 col-md-4 mb-4"
-      >
-        <div class="blogs overflow-hidden">
-          <a
-            routerLink="/{{singleDestination[0].slug}}/travel-guides"
-            (click)="setSlug(content.slug)"
-            class="text-dark">
-            <div class="card main-card text-center">
-              <img
-                [src]="content.thumb || image"
-                class="img-fluid"
-                alt=" {{ content.thumb_alt }}"
-              />
 
-              <div class="card-body card-details">
-                <h5 class="card-title">
-                  {{ singleDestination[0].name }} {{ content.name }}
-                </h5>
-              </div>
+        <div  class="row">
+            <!-- Travel Guide  -->
+            <div *ngFor='let content of singleDestinationContent|slice:0:1' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name}}  </h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Travel Excursions  -->
+            <div *ngFor='let content of singleDestinationContent|slice:2:3' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/{{singleDestination[0].slug}}/travel-excursions" (click)="setSlug(content.slug)" class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title ">{{singleDestination[0].name}} {{content.name}}  </h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
           </a>
         </div>
@@ -213,6 +220,7 @@
               </div>
             </div>
           </a>
+
         </div>
       </div>
     </div>

@@ -1,43 +1,42 @@
 <section class="my-5 mt-5">
     <div class="container">
         <div class="row">
-            
             <div class=" col-sm-12">
                 <div class="blog-section">
                     <div class="blog-title text-center">
                         <h1 class="font-weight-bold mb-5">From Our Blog</h1>
-                        
                     </div>
-                   
                     <owl-carousel-o [options]="customOptions">
-                        <ng-template *ngFor="let blog of blogContainer"  carouselSlide>
+                        <ng-template *ngFor="let blog of blogContainer" carouselSlide>
                             <div class="slide">
-                                <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}" on (click)="setId(blog.blog_id) "  class="text-dark">
-                                <div class="blogs overflow-hidden">
+                                <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}" on (click)="setId(blog.blog_id) "
+                                    class="text-dark">
+
+                                    <div class="blogs overflow-hidden">
                                         <div class="card main-card text-center ">
-                                            <img [src]="blog.blog_thumb" class=" img-slide" alt="{{blog.blog_thumb_alt}}">
+                                            <img [src]="blog.blog_thumb" class=" img-slide"
+                                                alt="{{blog.blog_thumb_alt}}">
                                             <div class="card-body card-details des-antherCard">
                                                 <h3 class="card-title font-weight-bold"> {{blog.blog_name}} </h3>
-                                                <p  [innerHTML]="blog.blog_description"></p>
-                                            </div>      
-                                        </div>    
-                                </div>
-                            </a>
-                            
+                                                <p [innerHTML]="blog.blog_description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </ng-template>
-                        
-                        
-                         
+
+
+
                     </owl-carousel-o>
-                  
-                
+
+
 
                 </div>
             </div>
         </div>
-        
-       
+
+
     </div>
 
 </section>

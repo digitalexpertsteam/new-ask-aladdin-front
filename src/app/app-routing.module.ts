@@ -5,8 +5,6 @@ import { AllDestinationsComponent } from "./pages/all-destinations/all-destinati
 import { AllFaqDestinationComponent } from "./components/all-faq-destination/all-faq-destination.component";
 import { AllPackagesDestinationComponent } from "./components/all-packages-destination/all-packages-destination.component";
 import { ContactUsComponent } from "./pages/contact-us/contact-us.component";
-import { DashboardComponent } from "./shared/dashboard/dashboard.component";
-import { DataSource } from "@angular/cdk/collections";
 import { HomeComponent } from "./components/home/home.component";
 import { NgModule } from "@angular/core";
 import { OneDestinationComponent } from "./pages/one-destination/one-destination.component";
@@ -20,9 +18,9 @@ import { TourPackageComponent } from "./modules/destination-content/mainComponen
 import { TravelExcursionsDesComponent } from "./modules/destination-content/mainComponents/travel-excursions-des/travel-excursions-des.component";
 import { TravelFactsDesComponent } from "./modules/destination-content/mainComponents/travel-facts-des/travel-facts-des.component";
 import { TravelGuideComponent } from "./components/travel-guide/travel-guide.component";
-import { transform } from "typescript";
 import { TravelGuideDesComponent } from "./modules/destination-content/mainComponents/travel-guide-des/travel-guide-des.component";
 import { SingleGuideComponent } from "./modules/destination-single-content/singleComponents/single-guide/single-guide.component";
+
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -68,6 +66,7 @@ const routes: Routes = [
     component: SingleGuideComponent,
   },
 
+
   // {path:":slug/:slug/:slug" , pathMatch: 'full', loadChildren:()=>import('./modules/destination-single-content/destination-single-content.module').then(m=> m.DestinationSingleContentModule)},
   { path: "travelguide", component: TravelGuideComponent },
   { path: "privacypolicy", component: PrivacyPolicyComponent },
@@ -77,6 +76,7 @@ const routes: Routes = [
   { path: "contactUs", component: ContactUsComponent },
 
   { path: ":id", pathMatch: "full", component: OneDestinationComponent },
+
 ];
 
 @NgModule({

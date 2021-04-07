@@ -126,6 +126,7 @@ export class HomeserviceService {
   getPage(id:any): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}${id}/pages/${this.currentLang}`
+
     );
   }
 }

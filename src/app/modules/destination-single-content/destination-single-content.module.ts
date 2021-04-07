@@ -14,6 +14,7 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { SingleFaqComponent } from './singleComponents/single-faq/single-faq.component';
 import { SingleGuideComponent } from './singleComponents/single-guide/single-guide.component';
 
+
 @NgModule({
   declarations: [
     SingleComponentsComponent,
@@ -23,8 +24,10 @@ import { SingleGuideComponent } from './singleComponents/single-guide/single-gui
     TagsExcursionsComponent,
     ExcursionsSplendorComponent,
     MapPipe,
+<<<<<<< HEAD
     SingleFaqComponent,
     SingleGuideComponent,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule,

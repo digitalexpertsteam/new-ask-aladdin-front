@@ -4,6 +4,7 @@ import { destinationBlog } from '../../../../interfaces/destinationBlog';
 import { HomeserviceService } from '../../../../services/homeservice.service';
 import {Title , Meta} from '@angular/platform-browser'
 import { destination } from '../../../../interfaces/destination';
+<<<<<<< HEAD
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -35,6 +36,7 @@ export class AllBlogsComponent implements OnInit {
     // this.id = this._active.snapshot.params.slug
     // console.log(this._active.snapshot.params.slug);
     
+
     this.id = localStorage.getItem('id')
 
     this._blogs.getDestinationBlogs(this.id).subscribe(result => {

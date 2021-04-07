@@ -6,6 +6,7 @@ import { HomeserviceService } from "../../../../services/homeservice.service";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { destinationBlog } from "../../../../interfaces/destinationBlog";
 
+
 @Component({
   selector: "app-single-blog",
   templateUrl: "./single-blog.component.html",
@@ -40,6 +41,7 @@ export class SingleBlogComponent implements OnInit {
 
       console.log(this.alldestinationCards);
     });
+
   }
   customOptions: OwlOptions = {
     loop: true,
@@ -72,4 +74,5 @@ export class SingleBlogComponent implements OnInit {
   setId(id: any) {
     localStorage.setItem("idBlog", id);
   }
+
 }

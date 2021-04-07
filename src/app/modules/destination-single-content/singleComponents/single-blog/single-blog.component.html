@@ -45,6 +45,7 @@
 
                 <div class=" text-center sec-bg">
                     <h2 class=" mb-5">Related Blogs</h2>
+
                         <!-- <div *ngFor="let blog of alldestinationCards" class="col-lg-4 col-md-6 col-sm-12">
                             <div class="blogs overflow-hidden">
                                 <a class="text-dark">
@@ -62,6 +63,7 @@
                         <owl-carousel-o [options]="customOptions">
                             <ng-template *ngFor="let blog of alldestinationCards"  carouselSlide>
                                 <div class="slide">                                    
+
                                     <div class="blogs overflow-hidden">
                                         <a href="/{{desSlug}}/blogs/{{blog.blog_slug}}" (click)="setId(blog.blog_id)">
                                             <div class="card main-card text-center ">
@@ -74,6 +76,7 @@
                                             </div>
                                         </a>
                                     </div>                               
+
                                 </div>
                             </ng-template>
                             

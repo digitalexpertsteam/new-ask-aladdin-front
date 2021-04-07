@@ -84,6 +84,7 @@
     height: 175px;
     color: #fff;
     background: #f68800;
+
     transition: ease .5s;
     display: flex;
     flex-direction: column;
