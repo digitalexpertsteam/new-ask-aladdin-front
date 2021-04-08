@@ -3,6 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 
+
 import { AccomodationComponent } from "./pages/accomodation/accomodation.component";
 import { AllDestinationsComponent } from "./pages/all-destinations/all-destinations.component";
 import { AllFaqDestinationComponent } from "./components/all-faq-destination/all-faq-destination.component";
@@ -65,45 +66,15 @@ import { TravelGuideComponent } from "./components/travel-guide/travel-guide.com
 import { TravelTipsComponent } from "./pages/travel-tips/travel-tips.component";
 import { VerfiedAgentComponent } from "./pages/verfied-agent/verfied-agent.component";
 import { WhyAskComponent } from "./pages/why-ask/why-ask.component";
+import {IvyGalleryModule} from 'angular-gallery';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { SingleCruisesComponent } from './pages/single-cruises/single-cruises.component';
+ import { CountUpModule } from 'ngx-countup';
+import { SinglePageComponent } from './pages/single-page/single-page.component';
+import { PageComponent } from './pages/page/page.component';
+
 
 // components & pages
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -160,6 +131,9 @@ import { WhyAskComponent } from "./pages/why-ask/why-ask.component";
     DashboardComponent,
     AllPackagesDestinationComponent,
     AllFaqDestinationComponent,
+    SingleCruisesComponent,
+    SinglePageComponent,
+    PageComponent,   
   ],
   imports: [
     BrowserModule,
@@ -175,6 +149,10 @@ import { WhyAskComponent } from "./pages/why-ask/why-ask.component";
     RatingModule.forRoot(),
     BsDatepickerModule.forRoot(),
     NgbModule,
+
+    IvyGalleryModule,
+    NgxGalleryModule,
+    CountUpModule,
     TranslateModule.forRoot({
       defaultLanguage: "en",
       loader: {

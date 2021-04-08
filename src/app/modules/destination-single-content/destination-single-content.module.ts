@@ -14,6 +14,7 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { SingleFaqComponent } from './singleComponents/single-faq/single-faq.component';
 import { SingleGuideComponent } from './singleComponents/single-guide/single-guide.component';
 
+import { IvyGalleryModule } from "angular-gallery";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,6 @@ import { SingleGuideComponent } from './singleComponents/single-guide/single-gui
     TagsExcursionsComponent,
     ExcursionsSplendorComponent,
     MapPipe,
-<<<<<<< HEAD
     SingleFaqComponent,
     SingleGuideComponent,
 
@@ -34,5 +34,6 @@ import { SingleGuideComponent } from './singleComponents/single-guide/single-gui
      DestinationContentModule,
      ShareModule,
     ],
+
 })
 export class DestinationSingleContentModule {}

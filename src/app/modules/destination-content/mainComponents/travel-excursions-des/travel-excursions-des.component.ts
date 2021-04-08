@@ -57,21 +57,21 @@ export class TravelExcursionsDesComponent implements OnInit {
       this.getDestinationExcursions = result.data;
       this.name = result.data;
     });
-    this._excursions.getOneDestinationDetails(this.id).subscribe(res => {
-      this.exContent = res.data[0].categories
-      console.log(this.exContent);
-      
-           
-    })
+
   }
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-  setId(id: any) {
+
+  setId(id: any , price:any ){
     localStorage.setItem("idex", id);
+    localStorage.setItem('price' , price)
   }
+
 
   openVerticallyCentered(content: any) {
     this.modalService.open(content, { centered: true });
   }
+
+
 }

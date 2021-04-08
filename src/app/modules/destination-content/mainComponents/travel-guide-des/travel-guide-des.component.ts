@@ -68,6 +68,7 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
       this.guide_name = result.data[0].destination_name + " Travel Guides";
       this.blogDes = result.data[0].destination_description;
       this.desName = result.data[0].destination_name;
+      this.desSlug = result.data[0].destination_slug;
       
       // this.locate.go(`${this.desSlug}/travel-guide`)
       this.title = result.data[0].destination_seo_title;

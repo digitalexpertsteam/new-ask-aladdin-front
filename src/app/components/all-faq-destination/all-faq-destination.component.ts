@@ -24,6 +24,7 @@ export class AllFaqDestinationComponent implements OnInit {
     });
   }
 
+
   setId(id: any) {
     localStorage.setItem("id", id);
   }

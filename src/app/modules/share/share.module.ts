@@ -26,6 +26,9 @@ import { TourBookingComponent } from "../../pages/tour-booking/tour-booking.comp
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { TravExpComponent } from "../../pages/trav-exp/trav-exp.component";
 
+import { IvyGalleryModule } from "angular-gallery";
+import { NgxGalleryModule } from "@kolkov/ngx-gallery";
+
 @NgModule({
   declarations: [
     PageLinksComponent,
@@ -60,6 +63,10 @@ import { TravExpComponent } from "../../pages/trav-exp/trav-exp.component";
         deps: [HttpClient],
       },
     }),
+
+    IvyGalleryModule,
+    NgxGalleryModule,
+
   ],
 
   exports: [
@@ -78,6 +85,12 @@ import { TravExpComponent } from "../../pages/trav-exp/trav-exp.component";
     TravExpComponent,
     AccomodationComponent,
     SponsorsLogoComponent,
+
+    RatingModule,
+    FormsModule,
+    IvyGalleryModule,
+    NgxGalleryModule,
+
   ],
 })
 export class ShareModule {}

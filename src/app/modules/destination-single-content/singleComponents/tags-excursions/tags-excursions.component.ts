@@ -24,20 +24,22 @@ export class TagsExcursionsComponent implements OnInit {
   prices(){
     document.getElementById('prices')?.scrollIntoView({behavior:'smooth'})
   }
-  trav(){
-    document.getElementById('trav')?.scrollIntoView({behavior:'smooth'})
+
+  gallery(){
+    document.getElementById('gallery')?.scrollIntoView({behavior:'smooth'})
   }
   
-  accomodation(){
-    document.getElementById('accomodation')?.scrollIntoView({behavior:'smooth'})
-  }
+  // accomodation(){
+  //   document.getElementById('accomodation')?.scrollIntoView({behavior:'smooth'})
+  // }
   highlights(){
     document.getElementById('highlights')?.scrollIntoView({behavior:'smooth'})
   }
 
-  videos(){
-    document.getElementById('videos')?.scrollIntoView({behavior:'smooth'})
-  }
+
+  // videos(){
+  //   document.getElementById('videos')?.scrollIntoView({behavior:'smooth'})
+  // }
   
 
 }

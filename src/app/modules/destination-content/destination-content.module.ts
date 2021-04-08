@@ -16,6 +16,8 @@ import { TravelFactsDesComponent } from "./mainComponents/travel-facts-des/trave
 import { TravelGuideDesComponent } from "./mainComponents/travel-guide-des/travel-guide-des.component";
 import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/travel-hotels-des.component";
 
+import { RatingModule } from "ngx-bootstrap/rating";
+
 @NgModule({
   declarations: [
     TravelCruisesDesComponent,
@@ -33,6 +35,8 @@ import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/tra
     CommonModule,
     DestinationContentRoutingModule,
     CollapseModule.forRoot(),
+
+    RatingModule.forRoot(),
     ShareModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

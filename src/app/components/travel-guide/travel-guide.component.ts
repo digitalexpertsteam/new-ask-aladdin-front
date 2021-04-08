@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { destination } from '../../interfaces/destination';
+
 import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
@@ -26,6 +27,6 @@ export class TravelGuideComponent implements OnInit {
 
   setId(id: any) {
     localStorage.setItem("id", id);
-  }
 
+  }
 }

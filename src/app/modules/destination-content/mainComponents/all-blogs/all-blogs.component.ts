@@ -4,7 +4,6 @@ import { destinationBlog } from '../../../../interfaces/destinationBlog';
 import { HomeserviceService } from '../../../../services/homeservice.service';
 import {Title , Meta} from '@angular/platform-browser'
 import { destination } from '../../../../interfaces/destination';
-<<<<<<< HEAD
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -29,6 +28,7 @@ export class AllBlogsComponent implements OnInit {
 
 
   constructor(private _blogs:HomeserviceService , private _active:ActivatedRoute, private _Meta : Meta , private _Title : Title ) {
+
 
    }
 

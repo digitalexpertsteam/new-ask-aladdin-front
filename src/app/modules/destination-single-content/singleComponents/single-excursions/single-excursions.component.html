@@ -21,8 +21,8 @@
 
             <div class="pl-2 font-weight-bold">
               <h3 class="">Arrive Location : {{ included.arrive_location }}</h3>
-              <h3 class="">
-                Departure Location : {{ included.departure_location }}
+
+              <h3 class="">Departure Location : {{ included.departure_location }}
               </h3>
             </div>
             <p class="pl-2 text-muted">{{ included.location_description }}</p>
@@ -89,6 +89,8 @@
         <!-- prices-dates -->
         <!-- <app-prices-dates></app-prices-dates> -->
 
+
+        <section id="prices">
         <div class="tab">
           <div class="time-group pt-3">
             <p class="d-flex align-items-center mb-4">
@@ -128,26 +130,53 @@
           </div>
         </div>
 
-        <!-- End prices-dates -->
-        <app-trav-exp></app-trav-exp>
+      </section>
 
-        <div id="gallery" class="container gallery pb-4">
-          <mdb-carousel
-            class="carousel slide carousel-fade"
-            [type]="'carousel-thumbnails'"
-            [animation]="'fade'"
-          >
-            <mdb-carousel-item
-              *ngFor="let img of included.gallery"
-              class="gallery"
-            >
-              <img class="d-block w-100" src="{{ img }}" alt="First slide" />
-            </mdb-carousel-item>
-          </mdb-carousel>
+        <!-- End prices-dates -->
+
+
+
+        <div class="m-auto" >
+          <ngx-gallery  [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
         </div>
+        <!-- <app-trav-exp></app-trav-exp> -->
+
+        
+
+
       </div>
       <div class="col-12 col-md-3">
-        <app-starting-from></app-starting-from>
+
+
+
+        <!-- start from -->
+        <section class="bg-white mt-3 px-3 py-4">
+          <div class="head mb-2">
+               <h3 class="font-weight-bolder">Starting from <span class="main-color">{{startPrices}} USD</span></h3> 
+              <!-- <p class="mb-1">per person in a double room</p> -->
+          </div>
+          <div class="">
+              <ul class="p-0">
+                  <!-- <li class="list-group-item d-flex px-0 py-2">
+                      <img src="assets/imgs/right.svg" class="img-fluid">
+                      <span>{{num}} nights / {{start.days}} days </span>
+                  </li> -->
+      
+                  <!-- <li class="list-group-item d-flex px-0 py-2">
+                      <img src="assets/imgs/right.svg" class="img-fluid">
+                      <span>Including </span>
+                  </li> -->
+                  <li *ngFor='let includ of included.included' class="list-group-item d-flex px-0 py-2">
+                      <img src="assets/imgs/right.svg" class="img-fluid">
+                      <span>{{includ.content}}</span>
+                  </li>
+      
+                  
+              </ul>
+          </div>
+      </section>
+
+        <!-- <app-starting-from></app-starting-from> -->
         <app-expert-reviews></app-expert-reviews>
         <app-tour-booking></app-tour-booking>
 
@@ -158,7 +187,8 @@
           <ul class="p-0">
             <li
               *ngFor="let ex of included.related_excursions"
-              class="list-group-items d-flex px-0 py-3 mb-2 overflow-hidden"
+
+              class="llist-group-items d-flex px-0 py-3 mb-2 overflow-hidden"
             >
               <div class="row mx-0">
                 <div class="col-md-5 px-0 overflow-hidden">
@@ -174,7 +204,8 @@
                   <div class="card-body">
                     <h5 class="card-title">{{ ex.name }}</h5>
                     <!-- <p class="card-text">Trip By Flight</p> -->
-                    <a class="main-btn d-block" href="">Explain More</a>
+
+                    <a class="main-btn d-block" href="/{{desSlug}}/travel-excursions/{{ex.slug}}" (click)="setid(ex.id)">Explain More</a>
                   </div>
                 </div>
               </div>
@@ -184,9 +215,20 @@
       </div>
     </div>
   </div>
+
+
+
 </section>
 
-<section id="gallery"></section>
+<!-- <div id="gallery" *ngFor="let im of img" class="container gallery pb-4">
+
+   <img class="d-block w-100" src="{{ img }}" alt="First slide" />
+   <img src="{{im}}" (click)="showGallery(1)">
+  
+
+</div> -->
+
 
 <app-sponsors-logo></app-sponsors-logo>
 <app-sponsorss></app-sponsorss>
+

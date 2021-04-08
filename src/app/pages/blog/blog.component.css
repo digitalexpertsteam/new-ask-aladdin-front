@@ -14,6 +14,13 @@
 .blogs{
     border-radius: 0;
 }
+.blog-content a {
+    text-decoration: none;
+    color: black;
+}
+.blog-details p {
+    text-align: justify
+}
 .blogs a {
     text-decoration: none;
 }

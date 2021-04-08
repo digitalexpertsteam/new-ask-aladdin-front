@@ -72,6 +72,7 @@ export class HomeserviceService {
       `${environment.ApiUrl}categories/1/${this.currentLang}`
     );
   }
+
   getOneDistination(id: any): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}destination/${id}/${this.currentLang}`
@@ -81,22 +82,12 @@ export class HomeserviceService {
     return this._http.get(
       `${environment.ApiUrl}categories/${id}/${this.currentLang}`
     );
+
   }
 
   getSinglepackage(id: any): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}package/${id}/${this.currentLang}`
-    );
-  }
-
-  getDestinationExcursions(id: any): Observable<any> {
-    return this._http.get(
-      `${environment.ApiUrl}destination/excursions/${id}/${this.currentLang}`
-    );
-  }
-  getSingleExcursion(id: any): Observable<any> {
-    return this._http.get(
-      `${environment.ApiUrl}excursion/${id}/${this.currentLang}`
     );
   }
   getDestinationFact(id: any): Observable<any> {
@@ -125,8 +116,34 @@ export class HomeserviceService {
 
   getPage(id:any): Observable<any> {
     return this._http.get(
-      `${environment.ApiUrl}${id}/pages/${this.currentLang}`
+      `${environment.ApiUrl}${id}/pages/${this.currentLang}`);}
 
+
+  getDestinationExcursions(id: any): Observable<any> {
+    return this._http.get(`${environment.ApiUrl}destination/excursions/${id}/${this.currentLang}`
+    );
+  }
+  getSingleExcursion(id: any): Observable<any> {
+    return this._http.get(
+      `${environment.ApiUrl}excursion/${id}/${this.currentLang}`
+    );
+  }
+
+  getTravelCruises(id: any): Observable<any> {
+    return this._http.get(`${environment.ApiUrl}destination/cruises/${id}/${this.currentLang}`
+    );
+
+    
+  }
+
+  getSingleCruise(id: any): Observable<any> {
+    return this._http.get(
+      `${environment.ApiUrl}cruise/${id}/${this.currentLang}`
+    );
+  }
+  Counter(): Observable<any> {
+    return this._http.get(
+      `${environment.ApiUrl}counter`
     );
   }
 }

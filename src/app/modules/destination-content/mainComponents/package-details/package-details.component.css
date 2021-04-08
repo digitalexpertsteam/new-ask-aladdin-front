@@ -90,12 +90,14 @@
         margin-top: 20px;
     }
     .card-title{
-        margin-top: 20px;
+
+        margin-top: 30px;
         text-align: center !important;
     }
     .day-night{
         text-align: center !important;
     }
+
     .package-text{
         height: 35%;
     }
