@@ -5,6 +5,10 @@
     object-fit: cover;
     
 }
+.blog-content a {
+    text-decoration: none;
+    color: black;
+}
 .blog-details p {
     text-align: justify
 }

@@ -47,9 +47,8 @@ export class EgyptSplendorComponent implements OnInit {
   
 
   ngOnInit(): void {
-
     this.id = localStorage.getItem("idPack");
-    this._splendor.getTravelGuide(this.id).subscribe(result => {
+    this._splendor.getSinglepackage(this.id).subscribe(result => {
       this.guide = result.data[0];
      
       

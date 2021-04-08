@@ -1,0 +1,29 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { DestinationContentModule } from "../destination-content/destination-content.module";
+import { MapPipe } from "../../pipes/map.pipe";
+import { NgModule } from "@angular/core";
+import { ShareModule } from "../share/share.module";
+import { SingleBlogComponent } from "../destination-single-content/singleComponents/single-blog/single-blog.component";
+import { SingleComponentsComponent } from "../destination-single-content/single-components/single-components.component";
+import { SingleExcursionsComponent } from "../destination-single-content/singleComponents/single-excursions/single-excursions.component";
+import { TourDetailsComponent } from "../destination-single-content/singleComponents/tour-details/tour-details.component";
+import { TagsExcursionsComponent } from "./singleComponents/tags-excursions/tags-excursions.component";
+import { ExcursionsSplendorComponent } from "./singleComponents/excursions-splendor/excursions-splendor.component";
+import { IvyGalleryModule } from "angular-gallery";
+
+@NgModule({
+  declarations: [
+    SingleComponentsComponent,
+    SingleBlogComponent,
+    TourDetailsComponent,
+    SingleExcursionsComponent,
+    TagsExcursionsComponent,
+    ExcursionsSplendorComponent,
+
+    MapPipe,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  imports: [CommonModule, DestinationContentModule, ShareModule,IvyGalleryModule,],
+})
+export class DestinationSingleContentModule {}

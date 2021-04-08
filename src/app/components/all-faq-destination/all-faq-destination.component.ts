@@ -16,7 +16,7 @@ export class AllFaqDestinationComponent implements OnInit {
     this.id = localStorage.getItem('id')
     this._destinationPack.getAlldestination().subscribe(result => this.faqNames = result.data)
     this._destinationPack.getOneDestinationDetails(this.id).subscribe(res => {
-      this.faqContent = res.data[0].categories[6]
+      this.faqContent = res.data[0].categories[5]
   })}
 
 

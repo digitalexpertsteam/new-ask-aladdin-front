@@ -12,13 +12,9 @@ export class TagsComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
   Itinerary(){
     document.getElementById('Itinerary')?.scrollIntoView({behavior:'smooth'})
   }
-
-
-
   Included(){
     document.getElementById('included')?.scrollIntoView({behavior:'smooth'})
   }
@@ -35,10 +31,7 @@ export class TagsComponent implements OnInit {
   highlights(){
     document.getElementById('highlights')?.scrollIntoView({behavior:'smooth'})
   }
-
   videos(){
     document.getElementById('videos')?.scrollIntoView({behavior:'smooth'})
-  }
-  
-  
+  } 
 }

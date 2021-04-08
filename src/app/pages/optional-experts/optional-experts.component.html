@@ -1,116 +1,31 @@
+
 <section class="bg-white mt-3 px-3 py-4">
     <div class="head mb-2">
-        <h3 class="font-weight-bolder">Related Packages</h3>
+      <h3 class="font-weight-bolder">Optional Trips & Exentions</h3>
     </div>
-    <div class="">
-        <ul class="p-0">
-            <li *ngFor='let ex of experts.related_packages' class="list-group-item d-flex px-0 py-3 mb-2 overflow-hidden">
-                <div class="row mx-0">
-                    <div class="col-md-5 px-0 overflow-hidden">
-                        <a routerLink="">
-                            <img src="{{ex.thumb}}" alt="{{ex.thumb_alt}}" class="img-fluid" />
-                        </a>
-                    </div>
-                    <div class="col-md-7 px-0">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ex.name}}</h5>
-                            <!-- <p class="card-text">Trip By Flight</p> -->
-                            <a class="main-btn d-block" href="">Explain More</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-            <!-- 
-
-                   <section class="py-5 ">
-                <h1>Related Packages</h1>
-
-                <owl-carousel-o>
-                    <ng-template *ngFor='let guid of guide.related_packages' carouselSlide>
-                        <div class="slide">
-                            <div class="blogs overflow-hidden">
-                                <a routerLink="/{{guide.slug}}" (click)="setSlug(guide.id)" class="text-dark">
-                                    <div class="card main-card text-center">
-                                        <img alt="{{guid.thumb_alt}}" [src]="guid.thumb " class="img-fluid ">
-
-                                        <div class="card-body card-details">
-                                            <h5 class="card-title "> {{guide.name}} </h5>
-
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </ng-template>
-                </owl-carousel-o>
-            </section> 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                <li class="list-group-item d-flex px-0 py-3 mb-2 overflow-hidden">
-                <div class="row mx-0">
-                    <div class="col-md-5 px-0 overflow-hidden">
-                        <a href="">
-                            <img src="assets/imgs/ph2_incusions.jpg" class="img-fluid" />
-                        </a>
-                    </div>
-                    <div class="col-md-7 px-0">
-                        <div class="card-body">
-                            <h5 class="card-title">Abu Simbel</h5>
-                            <p class="card-text">Trip By Flight</p>
-                            <a class="main-btn d-block" href="">Explain More</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item d-flex px-0 py-3 mb-2 overflow-hidden">
-                <div class="row mx-0">
-                    <div class="col-md-5 px-0 overflow-hidden">
-                        <a href="">
-                            <img src="assets/imgs/ph2_optional-tours.jpg" class="img-fluid" />
-                        </a>
-                    </div>
-                    <div class="col-md-7 px-0">
-                        <div class="card-body">
-                            <h5 class="card-title">Abu Simbel</h5>
-                            <p class="card-text">Trip By Flight</p>
-                            <a class="main-btn d-block" href="">Explain More</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="list-group-item border-0 d-flex px-0 py-3 mb-2 overflow-hidden">
-                <div class="row mx-0">
-                    <div class="col-md-5 px-0 overflow-hidden">
-                        <a href="">
-                            <img src="assets/imgs/ph6_optional-tours.jpg" class="img-fluid" />
-                        </a>
-                    </div>
-                    <div class="col-md-7 px-0">
-                        <div class="card-body">
-                            <h5 class="card-title">Luxor</h5>
-                            <p class="card-text">Over Day Trip</p>
-                            <a class="main-btn d-block" href="">Explain More</a>
-                        </div>
-                    </div>
-                </div>
-            </li> -->
-        
-    </div>
-</section>
+    <ul class="p-0">
+      <li
+        *ngFor="let ex of optional"
+        class="llist-group-items d-flex px-0 py-3 mb-2 overflow-hidden"
+      >
+        <div class="row mx-0">
+          <div class="col-md-5 px-0 overflow-hidden">
+            <a href="/{{des}}/travel-package/{{ex.slug}}" (click)="setid(ex.id)">
+              <img
+                src="{{ ex.thumb }}"
+                alt="{{ ex.thumb_alt }}"
+                class="img-fluid"
+              />
+            </a>
+          </div>
+          <div class="col-md-7 px-0">
+            <div class="card-body">
+              <h5 class="card-title">{{ ex.name }}</h5>
+              <!-- <p class="card-text">Trip By Flight</p> -->
+              <a class="main-btn d-block" href="/{{des}}/travel-package/{{ex.slug}}" (click)="setid(ex.id)">Explain More</a>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>

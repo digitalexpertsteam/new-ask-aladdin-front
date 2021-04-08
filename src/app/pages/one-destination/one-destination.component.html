@@ -49,10 +49,24 @@
                     </a>
                 </div>
             </div>
-            <!-- Travel blogs  -->
-            <div *ngFor='let content of singleDestinationContent|slice:5:6' class="col-12 col-md-4 mb-4" >
+             <!-- Travel Packages -->
+             <div *ngFor='let content of singleDestinationContent|slice:1:2' class="col-lg-4 col-md-6 col-sm-12  mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
+                    <a routerLink="/{{singleDestination[0].slug}}/travel-package" (click)="setSlug(content.slug)"  class="text-dark">
+                        <div class="card main-card text-center">
+                            <img [src]="content.thumb " class="img-fluid" alt="{{content.thumb_alt}}">
+                           
+                            <div class="card-body card-details">
+                                <h5 class="card-title "> {{singleDestination[0].name}} {{content.name}}  </h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Travel Excursions  -->
+            <div *ngFor='let content of singleDestinationContent|slice:2:3' class="col-12 col-md-4 mb-4" >
+                <div class="blogs overflow-hidden">
+                    <a routerLink="/{{singleDestination[0].slug}}/travel-excursions" (click)="setSlug(content.slug)" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
@@ -65,7 +79,7 @@
             </div>
 
             <!-- TravelExcursions  -->
-            <div *ngFor='let content of singleDestinationContent|slice:2:3' class="col-12 col-md-4 mb-4" >
+            <div *ngFor='let content of singleDestinationContent|slice:3:4' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
                     <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
                         <div class="card main-card text-center">
@@ -78,22 +92,9 @@
                     </a>
                 </div>
             </div>
+           
             <!-- Travel Packages -->
-            <div *ngFor='let content of singleDestinationContent|slice:1:2' class="col-sm-12  mb-4" >
-                <div class="blogs overflow-hidden">
-                    <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
-                        <div class="card main-card text-center">
-                            <img [src]="content.thumb " class="img-fluid" alt="{{content.thumb_alt}}">
-                           
-                            <div class="card-body card-details">
-                                <h5 class="card-title "> {{singleDestination[0].name}} {{content.name}}  </h5>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- Travel Packages -->
-            <div *ngFor='let content of singleDestinationContent|slice:3:4' class="col-12 col-md-4 mb-4" >
+            <div *ngFor='let content of singleDestinationContent|slice:4:5' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
                     <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
                         <div class="card main-card text-center">
@@ -106,10 +107,10 @@
                     </a>
                 </div>
             </div>
-
-            <div *ngFor='let content of singleDestinationContent|slice:4:5' class="col-12 col-md-4 mb-4" >
+            <!-- Travel blogs  -->
+            <div *ngFor='let content of singleDestinationContent|slice:5:6' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
+                    <a  routerLink="/{{singleDestination[0].slug}}/blogs" (click)="setSlug(content.slug)"  class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb " class="img-fluid" alt=" {{content.thumb_alt}}">
                            

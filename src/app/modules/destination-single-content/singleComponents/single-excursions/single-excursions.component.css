@@ -1,0 +1,241 @@
+
+/* Included */
+.list-group-item img {
+    height: 15px;
+    margin-top: 6px;
+}
+.list-group-item{
+    border: 0px;
+}
+.list-group-item span {
+    font-size: .9rem;
+    margin-left: 0.6rem;
+    color: #707070;
+    line-height: 1.6rem;
+}
+/* prices */
+.table th{
+    background-color: #f68800;
+}
+.time-group img{
+    height: 15px;
+    margin-right: 5px;
+}
+.period-details {
+    background-color: #f4f5f9;
+    border-radius: 5px;
+    padding: 1rem 1.5rem;
+}
+.details h4 {
+    width: 90%;
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    top: -1.6rem;
+    border-radius: 5px;
+}
+.details p {
+    font-size: 0.9rem;
+    color: #757575;
+    margin-bottom: 0.6rem;
+}
+.list-group-item img {
+    height: 15px;
+    margin-top: 6px;
+}
+.list-group-item{
+    border: 0px;
+}
+/* .list-group-item span {
+    font-size: 1rem;
+    margin-left: 0.6rem;
+    color: #707070;
+    line-height: 1.6rem;
+} */
+.nav-item{
+    background-color: black;
+}
+.nav-tabs .nav-link
+{
+    color: rgb(255, 255, 255);
+}
+.nav-tabs .nav-item
+{
+    background-color: rgba(0,0,0,0.7);
+    width: 25%;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
+{
+    background-color: #f68800;
+    
+
+}
+@media only screen and(max-width:480px){
+    .nav-tabs .nav-item
+{
+    width: 100%;
+}
+}
+
+
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tags .tag {
+    padding: 0.3rem 0.8rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.info {
+    padding: 0.6rem 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.info span {
+    color: #fffa66;
+}
+.data-box {
+    border-radius: 5px;
+}
+.pricing {
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+}
+.price {
+    font-size: 1.1rem;
+    word-spacing: 0.3rem;
+}
+.pricing a {
+    font-size: .7rem;
+}
+.book {
+    color: #f68800;
+}
+.pricing p {
+    font-size: 0.9rem;
+}
+.pricing h4 {
+    font-size: 1rem;
+}
+.data-box .package-content h5{
+    font-size: 1.1rem;
+}
+.package-content span ,.package-content .package-text{
+    color: #9c9c9c;
+    font-size: .8rem;
+}
+.package-content .hashtag {
+    font-size: .9rem;
+}
+.package-content .advatnage{
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fafbfc;
+    display: flex;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.package-content .advatnage span {
+    font-size: 0.8rem;
+}
+.package-img {
+    height: 209px;
+    object-fit: cover;
+}
+.map-details {
+    border-radius: 5px;
+    width: 100%;
+}
+.embed-responsive{
+    height: 300px;
+}
+.embed-responsive-item{
+    height: 100%;
+}
+.details p {
+    font-size: 0.7rem;
+    display: flex;
+    color: #9c9c9c;
+}
+
+/* Related  */
+
+
+ .card-body {
+    padding: 0.2rem 0.5rem;
+}
+.list-group-items img {
+    height: 90px;
+    object-fit: cover;
+}
+
+.llist-group-item {
+    border: 0px;
+    border-bottom: 1px solid #ccc;
+}
+.head h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+}
+.card-body h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.card-body p {
+    font-size: 0.8rem;
+    color: #a0a0a0
+}
+.card-body a {
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: orange;
+    color: #Fff;
+    width: 100%;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+} 
+/* end Related  */
+/* .gallery
+{
+    background-color: #f4f4f9;
+} */
+.carousel-indicators
+{
+    position: absolute;
+    right: 10px !important;
+    bottom: 0px !important;
+    width: 50px !important;
+    top: 20% !important;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+}
+.gall{
+
+    min-width: 100px !important;
+}
+.gallery img{
+    margin: auto !important;
+    width: 100% !important;
+    height: 50% !important;
+}
+.carousel-indicators 
+{
+    width: 15rem !important;
+    background-color: brown !important;
+}

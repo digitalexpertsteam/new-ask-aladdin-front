@@ -17,10 +17,10 @@ export class AllPackagesDestinationComponent implements OnInit {
   ngOnInit(): void {
     this.id = localStorage.getItem('id');
     this._destinationPack.getAlldestination().subscribe(result => this.packagesNames = result.data)
+
     this._destinationPack.getOneDestinationDetails(this.id).subscribe(res => {
       this.packageContent = res.data[0].categories
-     
-      
+           
     })
 
   }

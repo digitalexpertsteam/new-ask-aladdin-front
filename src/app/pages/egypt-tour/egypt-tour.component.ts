@@ -13,7 +13,13 @@ export class EgyptTourComponent implements OnInit {
   constructor(private _package:HomeserviceService) { }
 
   ngOnInit(): void {
-    this._package.getPackages().subscribe(result => this.packageContainer = result.data)
+    this._package.getPackages().subscribe(result => {
+      this.packageContainer = result.data
+      
+    })
+  }
+  setId(id:any){
+    localStorage.setItem('idPack' ,id)
   }
 
 }
