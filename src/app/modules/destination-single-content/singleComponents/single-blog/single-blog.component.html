@@ -19,12 +19,13 @@
 </section>
 <section>
     <div class="container">
-        <div *ngFor='let single of singleBlog ' class="page-links py-2">
-            <span>Home / </span>
-            <span class="main-color">{{single.slug}}</span>
-        </div>
+      <div *ngFor='let single of singleBlog '  class="page-links py-2">
+       <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{desName}} / </span>  </a>
+        <span class="main-color">{{single.name}}</span>  
+      </div>
     </div>
-</section>
+  </section>
 <section class="sec-bg py-4">
     <div class="container-fluid px-5">
         <div  *ngFor="let blog of singleBlog" class="row " >

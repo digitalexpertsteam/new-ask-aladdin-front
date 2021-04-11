@@ -36,8 +36,8 @@
 <section>
   <div class="container">
     <div *ngFor="let des of singleDestination" class="page-links py-2">
-      <span>Home / </span>
-      <span class="main-color">{{ des.name }}</span>
+     <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+      <span class="main-color">{{ des.name }}</span>  
     </div>
   </div>
 </section>

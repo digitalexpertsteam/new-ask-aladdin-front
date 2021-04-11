@@ -4,7 +4,6 @@ import { AllBlogsComponent } from "./mainComponents/all-blogs/all-blogs.componen
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { CommonModule } from "@angular/common";
 import { DestinationContentRoutingModule } from "./destination-content-routing.module";
-import { DestinationSingleContentModule } from "../destination-single-content/destination-single-content.module";
 import { FilterByComponent } from "../../pages/filter-by/filter-by.component";
 import { PackageDetailsComponent } from "./mainComponents/package-details/package-details.component";
 import { SafePipe } from "../../pipes/safe-url.pipe";

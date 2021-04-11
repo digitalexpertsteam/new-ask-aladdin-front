@@ -19,6 +19,7 @@ export class SingleBlogComponent implements OnInit {
   id: any;
   alldestinationCards: destinationBlog[] = [];
   desSlug = "";
+  desName='';
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
@@ -27,9 +28,15 @@ export class SingleBlogComponent implements OnInit {
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
-    this.idBlogs = localStorage.getItem("idBlog");
+    // this.idBlogs = localStorage.getItem("idBlog");
+    this.idBlogs = this._ActivatedRoute.snapshot.params.id
+    console.log(this.idBlogs);
+    
     this.id = localStorage.getItem("id");
+    // this.id = this._ActivatedRoute.snapshot.params.slug
     //  this._ActivatedRoute.snapshot.params.id;
+    console.log(this.id);
+    
     this._homeService.getSingleBlogs(this.idBlogs).subscribe((result) => {
       this.singleBlog = result.data;
     });
@@ -39,8 +46,10 @@ export class SingleBlogComponent implements OnInit {
 
     this._homeService.getDestinationBlogs(this.id).subscribe((res) => {
       this.alldestinationCards = res.data;
-
-      console.log(this.alldestinationCards);
+      
+      
+      this.desName = res.data[0].destination_name
+      console.log(this.desName);
     });
 
   }

@@ -67,7 +67,6 @@ export class PackageDetailsComponent implements OnInit {
       
       
     })
-    this.id = localStorage.getItem('id')
     this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
         this.category = res.data[0].categories[1].slug    
         

@@ -43,6 +43,8 @@ export class TravelExcursionsDesComponent implements OnInit {
   idpackage: any;
   getDestinationExcursions: Excursions[] = [];
   exContent:destination[] = [];
+  desName:any;
+  exName:any;
 
 
   constructor(
@@ -53,11 +55,19 @@ export class TravelExcursionsDesComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = localStorage.getItem("id");
-    this._excursions.getDestinationExcursions(this.id).subscribe((result) => {
+    this._excursions.getDestinationExcursions(this.id).subscribe(result => {
       this.getDestinationExcursions = result.data;
+      console.log(this.getDestinationExcursions);
+      this.desName = result.data[0].destination_name;
+      this.exName = result.data.excursion_name;
       this.name = result.data;
     });
+    this._excursions.getOneDestinationDetails(1).subscribe(res => {
+      this.exContent = res.data[0].categories;
+      this.exName = res.data[0].categories[2].name;
 
+           
+    })
   }
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);

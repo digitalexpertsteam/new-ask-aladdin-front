@@ -9,12 +9,21 @@ import { HomeserviceService } from '../../../../services/homeservice.service';
 })
 export class TourPackageComponent implements OnInit {
   packageContent:destination[] = []
+  packName:any;
+  desName:any;
+  id:any;
+  desSlug:any;
   constructor(private _pack:HomeserviceService) { }
 
   ngOnInit(): void {
-
+    this.id = localStorage.getItem('id')
+    this._pack.getSingleDestination(this.id).subscribe(res => {
+      this.desName = res.data[0].destination_name
+      this.desSlug = res.data[0].destination_slug
+    })
     this._pack.getOneDestinationDetails(1).subscribe(res => {
       this.packageContent = res.data[0].categories
+      this.packName = res.data[0].categories[1].name
            
     })
  

@@ -2,6 +2,7 @@ import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
 import { DomSanitizer } from "@angular/platform-browser";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { destination } from '../../../../interfaces/destination';
 
 @Component({
   selector: 'app-travel-cruises-des',
@@ -21,6 +22,8 @@ export class TravelCruisesDesComponent implements OnInit {
   num: any;
   name: any;
   desName=''
+  cruContent:destination[]=[];
+  cruName:any;
 
 readonly = true
   overStar: number | undefined;
@@ -44,6 +47,13 @@ readonly = true
       console.log(this.desName);
       
     });
+
+    this._excursions.getOneDestinationDetails(1).subscribe(res => {
+      this.cruContent = res.data[0].categories;
+      this.cruName = res.data[0].categories[3].name;
+
+           
+    })
   }
 
   // transform(url: any) {

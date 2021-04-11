@@ -14,7 +14,9 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { SingleFaqComponent } from './singleComponents/single-faq/single-faq.component';
 import { SingleGuideComponent } from './singleComponents/single-guide/single-guide.component';
 
+
 import { IvyGalleryModule } from "angular-gallery";
+import { DestinationSingleContentRoutingModule } from "./destination-single-content-routing.module";
 
 @NgModule({
   declarations: [
@@ -31,8 +33,8 @@ import { IvyGalleryModule } from "angular-gallery";
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule,
-     DestinationContentModule,
      ShareModule,
+     DestinationSingleContentRoutingModule,
     ],
 
 })

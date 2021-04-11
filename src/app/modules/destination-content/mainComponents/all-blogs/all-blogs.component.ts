@@ -16,6 +16,7 @@ export class AllBlogsComponent implements OnInit {
 
   blogContainer:destinationBlog[] = [];
   blog_name: any;
+  blogName:any;
   blogBanner: string = `../../../assets/imgs/5b14a68e3de5a.jpg`
   blogDes: string = '';
   desName: string = '';
@@ -56,7 +57,8 @@ export class AllBlogsComponent implements OnInit {
 
     this._blogs.getOneDestinationDetails(this.id).subscribe(res => {
         this.allBlog = res.data[0].categories
-        this.category = res.data[0].categories[5].slug    
+        this.category = res.data[0].categories[4].slug 
+        this.blogName = res.data[0].categories[4].name  
         console.log(this.category);
         
     })

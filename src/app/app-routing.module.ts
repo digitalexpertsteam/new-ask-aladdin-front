@@ -54,7 +54,7 @@ const routes: Routes = [
 
   // Blogs Group
   { path: ":slug/blogs", pathMatch: "full", component: AllBlogsComponent },
-  { path: ":slug/blogs/:slug", component: SingleBlogComponent },
+  { path: ":slug/blogs/:id", component: SingleBlogComponent },
   // excursion
   { path: ":slug/travel-excursions", component: TravelExcursionsDesComponent },
   {

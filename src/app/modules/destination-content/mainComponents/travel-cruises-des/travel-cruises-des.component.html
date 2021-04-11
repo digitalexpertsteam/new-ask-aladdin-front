@@ -1,13 +1,9 @@
-
-
-
-    
-    <section>
+<section *ngFor='let cru of cruContent |slice:3:4'>
         <section class="banner text-center"
-            [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' +  + ')' }">
+            [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + cru.thumb }">
             <div class="container">
                 <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
-                    <h1><span class="main-color des-Name font-weight-bold"> </span> </h1>
+                    <h1><span class="main-color des-Name font-weight-bold"> {{cru.name}} </span> </h1>
                 </div>
                 <p class="mt-2"></p>
                 <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
@@ -20,8 +16,15 @@
         </section>
     
     </section>
-    <app-page-links></app-page-links>
-    
+    <section>
+        <div class="container">
+          <div  class="page-links py-2">
+           <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+           <a class="hover-color" routerLink="/"> <span >{{desName}} / </span>  </a>
+            <span class="main-color">{{cruName}}</span>  
+          </div>
+        </div>
+      </section>    
     
     <section class="sec-bg p-3 mb-5">
         <div class="container">
