@@ -18,6 +18,8 @@ export class SingleGuideComponent implements OnInit {
   id: any;
   alldestinationCards: TravelGuide[] = [];
   desSlug = "";
+  desName:any;
+  GuideName:any;
 
   constructor(public _homeService: HomeserviceService) {}
 
@@ -32,14 +34,19 @@ export class SingleGuideComponent implements OnInit {
       this.relatedPages = result.data[0].related_pages
       
     });
-    this._homeService.getHomeBlog().subscribe((result) => {
-      this.desSlug = result.data[0].destination_slug;
-    });
+    
 
     this._homeService.getDestinationGuides(this.id).subscribe((res) => {
       this.alldestinationCards = res.data;
+      this.desSlug = res.data[0].destination_slug
+      this.desName = res.data[0].destination_name
 
     });
+    this._homeService.getOneDestinationDetails(this.id).subscribe(res => {
+
+      this.GuideName = res.data[0].categories[0].name  
+      
+  })
   }
   customOptions: OwlOptions = {
     loop: true,

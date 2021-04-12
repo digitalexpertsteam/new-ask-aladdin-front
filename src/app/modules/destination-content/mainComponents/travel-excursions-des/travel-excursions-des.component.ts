@@ -75,6 +75,8 @@ export class TravelExcursionsDesComponent implements OnInit {
 
   setId(id: any , price:any ){
     localStorage.setItem("idex", id);
+    console.log(id);
+    
     localStorage.setItem('price' , price)
   }
 

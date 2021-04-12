@@ -58,7 +58,7 @@ const routes: Routes = [
   // excursion
   { path: ":slug/travel-excursions", component: TravelExcursionsDesComponent },
   {
-    path: ":slug/travel-excursions/:slug",
+    path: ":id/travel-excursions/:slug",
     component: SingleExcursionsComponent,
   },
 

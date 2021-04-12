@@ -20,6 +20,8 @@ export class SingleBlogComponent implements OnInit {
   alldestinationCards: destinationBlog[] = [];
   desSlug = "";
   desName='';
+  ides :any;
+  blogName:any;
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
@@ -32,13 +34,15 @@ export class SingleBlogComponent implements OnInit {
     this.idBlogs = this._ActivatedRoute.snapshot.params.id
     console.log(this.idBlogs);
     
-    this.id = localStorage.getItem("id");
-    // this.id = this._ActivatedRoute.snapshot.params.slug
+     this.ides = localStorage.getItem("id");
+    this.id = this._ActivatedRoute.snapshot.params.slug
     //  this._ActivatedRoute.snapshot.params.id;
     console.log(this.id);
     
     this._homeService.getSingleBlogs(this.idBlogs).subscribe((result) => {
       this.singleBlog = result.data;
+      console.log(this.singleBlog);
+      
     });
     this._homeService.getHomeBlog().subscribe((result) => {
       this.desSlug = result.data[0].destination_slug;
@@ -51,6 +55,12 @@ export class SingleBlogComponent implements OnInit {
       this.desName = res.data[0].destination_name
       console.log(this.desName);
     });
+
+    this._homeService.getOneDestinationDetails(this.ides).subscribe(res => {
+
+      this.blogName = res.data[0].categories[4].name  
+      
+  })
 
   }
   customOptions: OwlOptions = {

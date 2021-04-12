@@ -4,6 +4,7 @@ import { Faq } from "../../../../interfaces/faq";
 import { Faqs } from "../../../../interfaces/faqs";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { OwlOptions } from "ngx-owl-carousel-o";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-single-faq",
@@ -16,26 +17,35 @@ export class SingleFaqComponent implements OnInit {
   id: any;
   alldestinationCards: Faqs[] = [];
   desSlug = "";
+  desName:any;
+  faqName:any;
 
-  constructor(public _homeService: HomeserviceService) {}
+  constructor(public _homeService: HomeserviceService,private _Active:ActivatedRoute) {}
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
     this.idFaq = localStorage.getItem("idFaq");
     this.id = localStorage.getItem("id");
+    this.idFaq = this._Active.snapshot.params.slug
+    this.id = this._Active.snapshot.params.id
     //  this._ActivatedRoute.snapshot.params.id;
     this._homeService.getSingleFaq(this.idFaq).subscribe((result) => {
       this.singleFaq = result.data;
     });
-    this._homeService.getHomeBlog().subscribe((result) => {
-      this.desSlug = result.data[0].destination_slug;
-    });
+    
 
-    this._homeService.getDestinationFact(this.id).subscribe((res) => {
+    this._homeService.getDestinationFact(this.id).subscribe(res => {
       this.alldestinationCards = res.data;
+      this.desName =res.data[0].destination_name;
+      this.desSlug =res.data[0].destination_slug;
 
-      console.log(this.alldestinationCards);
+      console.log(this.desName);
     });
+    this._homeService.getOneDestinationDetails(this.id).subscribe(res => {
+
+      this.faqName = res.data[0].categories[5].name  
+      
+  }) 
   }
   customOptions: OwlOptions = {
     loop: true,

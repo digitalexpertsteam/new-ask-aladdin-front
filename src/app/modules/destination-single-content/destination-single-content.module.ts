@@ -13,6 +13,9 @@ import { ExcursionsSplendorComponent } from "./singleComponents/excursions-splen
 import { CarouselModule } from "ngx-owl-carousel-o";
 import { SingleFaqComponent } from './singleComponents/single-faq/single-faq.component';
 import { SingleGuideComponent } from './singleComponents/single-guide/single-guide.component';
+import { SingleHotelComponent } from './singleComponents/single-hotel/single-hotel.component';
+
+
 
 
 import { IvyGalleryModule } from "angular-gallery";
@@ -29,6 +32,7 @@ import { DestinationSingleContentRoutingModule } from "./destination-single-cont
     MapPipe,
     SingleFaqComponent,
     SingleGuideComponent,
+    SingleHotelComponent
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

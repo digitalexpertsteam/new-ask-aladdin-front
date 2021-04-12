@@ -38,7 +38,7 @@ export class AllBlogsComponent implements OnInit {
     // console.log(this._active.snapshot.params.slug);
     
 
-    this.id = localStorage.getItem('id')
+    this.id = this._active.snapshot.params.slug
 
     this._blogs.getDestinationBlogs(this.id).subscribe(result => {
       this.blogContainer = result.data     

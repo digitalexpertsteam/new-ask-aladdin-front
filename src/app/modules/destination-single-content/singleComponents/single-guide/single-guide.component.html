@@ -20,9 +20,11 @@
 
 <section>
   <div class="container">
-    <div *ngFor="let single of singleGuide" class="page-links py-2">
-      <span>Home / </span>
-      <span class="main-color">{{ single.slug }}</span>
+    <div *ngFor='let single of singleGuide'  class="page-links py-2">
+     <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+     <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{desName}} / </span>  </a>
+     <a class="hover-color" routerLink="/{{desSlug}}/travel-guides"> <span > {{GuideName}} / </span>  </a>
+      <span class="main-color">{{single.name}}</span>  
     </div>
   </div>
 </section>

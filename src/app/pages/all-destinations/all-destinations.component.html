@@ -35,7 +35,7 @@
                     <a  routerLink="/{{des.slug}}" (click)="setId(des.id)">
                         <img src="{{des.thumb}}" class="img-fluid" alt="{{des.thumb_alt}}" />
                         <div class="overlay">
-                            <a class="text-white" (click)="setId(des.id)" routerLink="/{{des.id}}">{{des.name}}</a>
+                            <a class="text-white" (click)="setId(des.id)" routerLink="/{{des.slug}}">{{des.name}}</a>
                         </div>
                     </a>
                 </div>

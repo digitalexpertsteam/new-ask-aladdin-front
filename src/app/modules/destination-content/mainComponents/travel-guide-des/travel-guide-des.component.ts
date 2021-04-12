@@ -29,35 +29,13 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
 
 
   constructor(private _blogs:HomeserviceService , private _active:ActivatedRoute,private locate:Location,private _route:Router ,private _Meta : Meta , private _Title : Title ) {
-    // this.id = this._active.snapshot.params.id
-    // this._blogs.getDestinationGuides(this.id).subscribe(result => {
-    // //  this.navigate = this.id.replace( this.id ,`${result.data[0].destination_slug}`) 
-    // //   this.locate.replaceState(`${this.navigate}/travel-guide`)
-    // //   // this.desSlug = result.data[0].destination_slug;
-    // //   // this.desSlug = this.id
-    // //   // console.log(result.data);
-    // //   // this.locate.go(`${this.desSlug}/travel-guide`)
-      
-    // this.desSlug = result.data[0].destination_slug;
-
-    // if(
-    //   this.id = this._active.snapshot.params.id
-    // ){
-    //   this.id.replace(this.desSlug)
-    // }
-      
-    // })
-   
-
+    
    }
 
   ngOnInit(): void {
-    // this.id = this._active.snapshot.params.slug
-    // console.log(this._active.snapshot.params.slug);
-    this.id = localStorage.getItem('id')
-    console.log(this.id);
+    this.id = this._active.snapshot.params.id
+   
     
-    // this.locate.go(`${this.desSlug}/travel-guide`)
     
     
 

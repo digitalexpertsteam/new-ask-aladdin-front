@@ -4,6 +4,7 @@ import { Meta, Title } from "@angular/platform-browser";
 import { Faqs } from "../../../../interfaces/faqs";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { destination } from "../../../../interfaces/destination";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-travel-facts-des",
@@ -17,6 +18,7 @@ export class TravelFactsDesComponent implements OnInit {
   faqsDes: string = "";
   desName: string = "";
   desSlug: string = "";
+  faName:any;
   category: string = "";
   title!: String;
   id: any;
@@ -24,13 +26,14 @@ export class TravelFactsDesComponent implements OnInit {
 
   constructor(
     private _faqs: HomeserviceService,
+    private _Active:ActivatedRoute,
     private _Meta: Meta,
     private _Title: Title
   ) {}
 
   ngOnInit(): void {
-    this.id = localStorage.getItem("id");
-
+    this.id = this._Active.snapshot.params.slug
+ 
     this._faqs.getDestinationFact(this.id).subscribe((result) => {
       this.faqsContainer = result.data;
       this.faqs_name = result.data[0].destination_name + " Facts & Myths";
@@ -51,9 +54,10 @@ export class TravelFactsDesComponent implements OnInit {
         },
       ]);
     });
-
-    this._faqs.getOneDestinationDetails(this.id).subscribe((res) => {
+    
+    this._faqs.getOneDestinationDetails(5).subscribe((res) => {
       this.allFaqs = res.data[0].categories;
+      this.faName = res.data[0].categories[5].name
       this.category = res.data[0].categories[5].slug;
       console.log(this.category);
     });

@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { TranslateService } from "@ngx-translate/core";
 import { environment } from "../../environments/environment.prod";
 
+
 @Injectable({
   providedIn: "root",
 })
@@ -30,6 +31,8 @@ export class HomeserviceService {
       `${environment.ApiUrl}destinations/${this.currentLang}`
     );
   }
+  
+  
   getBlogs(): Observable<any> {
     return this._http.get(`${environment.ApiUrl}blog/1/${this.currentLang}`);
   }
@@ -65,12 +68,12 @@ export class HomeserviceService {
   getSingleDestinationDetails(id: any): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}destination/${id}/${this.currentLang}`
-    );
+    )
   }
   getStaticDes(): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}categories/1/${this.currentLang}`
-    );
+    )
   }
 
   getOneDistination(id: any): Observable<any> {
@@ -146,4 +149,13 @@ export class HomeserviceService {
       `${environment.ApiUrl}counter`
     );
   }
+  getSingleHotel(id:any): Observable<any> {
+    return this._http.get(
+      `${environment.ApiUrl}hotel/${id}/${this.currentLang}`
+    );
+  }
 }
+function mergeMap(mergeMap: any): Observable<any> {
+  throw new Error("Function not implemented.");
+}
+
