@@ -18,6 +18,8 @@ export class AllDestinationsComponent implements OnInit {
   }
   setId(id:any){
     localStorage.setItem("id", id);
+    
+    
   }
 }
  

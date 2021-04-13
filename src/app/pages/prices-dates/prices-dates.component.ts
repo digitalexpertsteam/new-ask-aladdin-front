@@ -22,9 +22,8 @@ export class PricesDatesComponent implements OnInit {
   
 
   ngOnInit(): void {
-
     this.id = localStorage.getItem("idPack");
-    this._prices.getTravelGuide(this.id).subscribe(result => {
+    this._prices.getSinglepackage(this.id).subscribe(result => {
       this.prices = result.data[0].prices;
       
       

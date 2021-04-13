@@ -3,6 +3,7 @@
         [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + pack.thumb + ')' }">
         <div class="container">
             <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+
                 <h1><span class="main-color des-Name font-weight-bold"> {{pack.name}}</span>  </h1>
             </div>
             <p class="mt-2"></p>
@@ -37,7 +38,7 @@
             <div *ngFor="let package of packagesNames" class="col-12 col-md-4 mb-4">
                 <div *ngFor='let pack of packageContent|slice:1:2'>
                 <div  class="blogs overflow-hidden">
-                    <a routerLink="/{{package.slug}}/{{pack.slug}}" (click)="setId(package.id)" class="text-dark">
+                    <a routerLink="/{{package.slug}}/travel-package" (click)="setId(package.id)" class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="package.thumb" class="img-fluid" alt=" ">
                             <div class="card-led">

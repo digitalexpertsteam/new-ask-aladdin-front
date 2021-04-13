@@ -5,6 +5,8 @@ footer {
     background-position: 100% 100%;
     position: relative;
     background-size: cover;
+    overflow: hidden;
+
 }
 
 footer .shortcuts{
@@ -86,6 +88,19 @@ footer .shortcuts li a:hover {
 .pain:hover i , .yout:hover i
 {
     color: rgb(238, 6, 6);
+}
+
+@media only screen and (min-width: 1200px){
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .footer-links img {
+        width: 32px;
+        margin-right: 10px;
+    }
+
+    
 }
 
 @media only screen and (max-width: 786px){
