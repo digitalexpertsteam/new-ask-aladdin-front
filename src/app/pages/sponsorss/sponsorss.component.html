@@ -7,7 +7,7 @@
             <ng-template *ngFor="let log of logo" carouselSlide>
               <div class="slide">
                 <div class="blogs w-50 m-auto overflow-hidden">
-                  <a routerLink="/" class="text-dark">
+                  <a href="{{log.link}}" class="text-dark">
                     <div class="card w-100 main-card text-center anotherCard">
                       <img
                         [src]="log.small_image_on_slider"
@@ -21,40 +21,7 @@
                 </div>
               </div>
             </ng-template>
-            <ng-template *ngFor="let log of logo" carouselSlide>
-                <div class="slide">
-                  <div class="blogs w-50 m-auto overflow-hidden">
-                    <a routerLink="/" class="text-dark">
-                      <div class="card main-card text-center anotherCard">
-                        <img
-                          [src]="log.small_image_on_slider"
-                          class="">
-                          
-                        
-        
-                        
-                      </div> 
-                    </a>
-                  </div>
-                </div>
-              </ng-template>
-            <ng-template *ngFor="let log of logo" carouselSlide>
-                <div class="slide">
-                  <div class="blogs w-50 m-auto overflow-hidden">
-                    <a routerLink="/" class="text-dark">
-                      <div class="card main-card text-center anotherCard">
-                        <img
-                          [src]="log.small_image_on_slider"
-                          class="">
-                          
-                        
-        
-                        
-                      </div> 
-                    </a>
-                  </div>
-                </div>
-              </ng-template>
+           
           </owl-carousel-o>
     </div> 
     
