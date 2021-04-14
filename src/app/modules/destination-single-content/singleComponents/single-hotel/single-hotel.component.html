@@ -26,7 +26,8 @@
         <!-- tag -->
 
 
-        <div class="services text-center bg-white d-flex justify-content-between rounded mt-3">
+
+        <!-- <div class="services text-center bg-white d-flex justify-content-between rounded mt-3">
             <div class="services-content">
                 <a (click)="Itinerary()">
                     <i class="fas fa-map-marked-alt"></i>
@@ -48,13 +49,28 @@
 
             <div class="services-content">
                 <a (click)="gallery()"> <i class="far fa-play-circle"></i>
+
+                <a (click)="trav()"> <i class="fas fa-globe-americas"></i>
+                    <p class="d-none d-sm-block mb-0">Travel Experiences</p>
+                </a>
+            </div>
+            <div class="services-content">
+                <a (click)="accomodation()">
+                    <i class="fas fa-bed"></i>
+                    <p class="d-none d-sm-block mb-0">accomodation</p>
+                </a>
+            </div>
+
+            <div class="services-content">
+                <a (click)="Gallery()"> <i class="far fa-play-circle"></i>
                     <p class="d-none d-sm-block mb-0">Gallery</p>
                 </a>
             </div>
 
 
 
-        </div>
+
+        </div> -->
         <!-- End tags -->
         <div class="row mt-4">
             <div class="col-12 col-md-9">
@@ -72,7 +88,7 @@
                             </div>
 
                         </div>
-                            <!-- <img src="{{hot.thumb}}" alt="{{hot.thumb_alt}}" class="img-fluid "> -->
+
 
 
                             <h4 class="mt-3 " [innerHTML]="hot.overview"></h4>
@@ -92,11 +108,13 @@
                                 </div>
                                 <div class="">
                                     <ul class="list-group p-0">
+
                                         <li *ngFor='let hot of hotel[0].services'
                                             class="list-group-item d-flex px-0 py-2">
                                             <img src="assets/imgs/right.svg" class="img-fluid">
                                             <span>{{hot.content}}</span>
                                         </li>
+
 
                                     </ul>
                                 </div>
@@ -196,6 +214,7 @@
                         </li>
                     </ul>
                 </section> -->
+
 
             </div>
         </div>

@@ -31,6 +31,7 @@ import { SingleCruisesComponent } from "./pages/single-cruises/single-cruises.co
 import { PageComponent } from "./pages/page/page.component";
 import { SingleHotelComponent } from "./modules/destination-single-content/singleComponents/single-hotel/single-hotel.component";
 
+
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "home", component: HomeComponent },
@@ -59,7 +60,7 @@ const routes: Routes = [
   // excursion
   { path: ":slug/travel-excursions", component: TravelExcursionsDesComponent },
   {
-    path: ":slug/travel-excursions/:slug",
+    path: ":id/travel-excursions/:slug",
     component: SingleExcursionsComponent,
   },
 
@@ -89,7 +90,12 @@ const routes: Routes = [
   { path: "page", pathMatch: "full", component: PageComponent },
 
   { path: ":slug", pathMatch: "full", component: OneDestinationComponent },
+
   { path: ":slug/:id", pathMatch: "full", component: SingleHotelComponent },
+
+
+
+
 ];
 
 @NgModule({
