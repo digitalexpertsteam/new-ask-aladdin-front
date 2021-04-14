@@ -72,6 +72,8 @@ import { SingleCruisesComponent } from './pages/single-cruises/single-cruises.co
  import { CountUpModule } from 'ngx-countup';
 import { SinglePageComponent } from './pages/single-page/single-page.component';
 import { PageComponent } from './pages/page/page.component';
+// Import library module
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 // components & pages
@@ -149,7 +151,7 @@ import { PageComponent } from './pages/page/page.component';
     RatingModule.forRoot(),
     BsDatepickerModule.forRoot(),
     NgbModule,
-
+    NgxSpinnerModule,
     IvyGalleryModule,
     NgxGalleryModule,
     CountUpModule,

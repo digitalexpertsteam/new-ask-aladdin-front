@@ -8,10 +8,10 @@
                     </div>
                 </a>
             </div> -->
-            <div class="col-12 col-md-3" *ngFor="let spon of logo">
+            <div class="col-12 col-md-3" *ngFor="let spon of logo|slice:2:6">
                 <a href="{{spon.link}}">
                     <div class="logo-img">
-                        <img src="{{spon.large_image}}" class="img-fluid " />
+                        <img [src]="spon.large_image" class="img-fluid " />
                     </div>
                 </a>
             </div>

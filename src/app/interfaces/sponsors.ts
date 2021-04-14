@@ -3,7 +3,7 @@ export interface sponsors {
     link:string;
     small_image_on_slider:string;
     large_image:string;
-    showed_on_large_slider:string;
+    showed_on_large_slider:boolean;
 
 
   }

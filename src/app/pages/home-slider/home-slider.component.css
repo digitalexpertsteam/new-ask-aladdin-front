@@ -16,6 +16,22 @@
 .carousel-caption button {
     font-size: 13px;
 }
+.input-group{
+    position: absolute;
+    top: 50%;
+
+    
+}
+.alaadin-banner{
+    position: relative;
+
+
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* .alaadin-banner {
     background-image: url("../../../assets/imgs/203-2036768_ancient-history-historic-site-cairo-tourism-egypt-egypt.jpg");
     background-size: cover;
