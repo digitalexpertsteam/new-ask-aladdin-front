@@ -1,11 +1,11 @@
-
 import { Component, HostListener, OnInit } from '@angular/core';
-import {Router} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 import { destination } from '../../interfaces/destination';
 import { HomeserviceService } from '../../services/homeservice.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { SeoService } from '../../services/destinationsSeo.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { mergeMap } from 'rxjs/operators';
+
 
 
 @Component({
@@ -16,6 +16,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export class OneDestinationComponent implements OnInit {
   id:any;
   singleDestination:destination[]=[]
+  ides:any;
 
   singleDestinationContent:destination[]=[]
   packageOffer:destination[]=[]
@@ -31,10 +32,14 @@ export class OneDestinationComponent implements OnInit {
   // singleSlideOffset = true;
   // noWrap = false;
  
-  constructor( private _Home : HomeserviceService , private route : Router   , private _Meta : Meta , private _Title : Title ) { }
+  constructor( private _Home : HomeserviceService ,
+    private _active:ActivatedRoute   ,
+     private _Meta : Meta ,
+      private _Title : Title 
+      ) { }
  
   ngOnInit(): void {
-    this.id = localStorage.getItem('id');
+    this.id = this._active.snapshot.params.slug;
 
     this._Home.getOneDistination(this.id).subscribe(res => {
       this.singleDestination = res.data  
@@ -45,18 +50,21 @@ export class OneDestinationComponent implements OnInit {
         { name: 'robots', content: `${res.data.seo_robots}` },
         { name: 'description', content: `${res.data.seo_description}`},
       ]);
+      this.singleDestination.filter(idData => {
+        let idDes = idData.id
+        this._Home.getOneDestinationDetails(idDes).subscribe(result => {
+          this.singleDestinationContent = result.data[0].categories;
+          console.log(this.singleDestinationContent);
+          
+            this.packageOffer = result.data[0].packages_hot_offers 
+            this.excursionsOffer = result.data[0].excursions_hot_offers
+            this.cruisesOffer =result.data[0].cruises_hot_offers
+            this.relatedPages = result.data[0].related_pages
+           
+        })
+      })
+      
     })
-    this._Home.getOneDestinationDetails(this.id).subscribe(res => {
-      this.singleDestinationContent = res.data[0].categories;
-        this.packageOffer = res.data[0].packages_hot_offers 
-        this.excursionsOffer = res.data[0].excursions_hot_offers
-        this.cruisesOffer =res.data[0].cruises_hot_offers
-        this.relatedPages = res.data[0].related_pages
-       
-    })
-    
-
-  
   }
 
   setSlug(slug:any){
@@ -120,5 +128,3 @@ export class OneDestinationComponent implements OnInit {
   
 
 }
-
-

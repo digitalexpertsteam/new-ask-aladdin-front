@@ -15,7 +15,7 @@ export class SecondBannerComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = localStorage.getItem("idPack");
-    this. _banner.getTravelGuide(this.id).subscribe(result => {
+    this. _banner.getSinglepackage(this.id).subscribe(result => {
      
       
       
