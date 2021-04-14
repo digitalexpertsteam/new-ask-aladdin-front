@@ -6,6 +6,7 @@ import { NgxGalleryImage } from '@kolkov/ngx-gallery';
 import { Gallery } from 'angular-gallery';
 
 
+
 @Component({
   selector: 'app-single-hotel',
   templateUrl: './single-hotel.component.html',
@@ -38,6 +39,7 @@ export class SingleHotelComponent implements OnInit {
   isReadonly = true;
 
   constructor(private _hotel: HomeserviceService) { }
+
 
   ngOnInit(): void {
     this.id = localStorage.getItem("idHotel");
@@ -80,6 +82,7 @@ export class SingleHotelComponent implements OnInit {
 
     })
   }
+
 
 
 }

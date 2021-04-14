@@ -57,6 +57,7 @@ export class TravelExcursionsDesComponent implements OnInit {
     this.id = localStorage.getItem("id");
     this._excursions.getDestinationExcursions(this.id).subscribe(result => {
       this.getDestinationExcursions = result.data;
+
       this.desName = result.data[0].destination_name;
       this.exName = result.data.excursion_name;
       this.name = result.data;
@@ -74,6 +75,8 @@ export class TravelExcursionsDesComponent implements OnInit {
 
   setId(id: any , price:any ){
     localStorage.setItem("idex", id);
+    console.log(id);
+    
     localStorage.setItem('price' , price)
   }
 

@@ -3,6 +3,7 @@ import { singleDestination } from '../../../../interfaces/single-destination';
 import { HomeserviceService } from '../../../../services/homeservice.service';
 import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -47,11 +48,15 @@ export class PackageDetailsComponent implements OnInit {
   resetStar(): void {
     this.overStar = void 0;
   }
-  constructor(private _singleDes:HomeserviceService, private sanitizer:DomSanitizer , private _Meta : Meta , private _Title : Title ,private ngMod:NgbModal) { }
+  constructor(private _singleDes:HomeserviceService, private sanitizer:DomSanitizer ,
+     private _Meta : Meta ,
+      private _Title : Title ,
+      private _active:ActivatedRoute , 
+      private ngMod:NgbModal) { }
 
   ngOnInit(): void {
-    this.id = localStorage.getItem("id")
-    this
+    this.id = this._active.snapshot.params.slug
+    
     this._singleDes.getSingleDestination(this.id).subscribe(result =>{
       this.destinationContainer = result.data
       this.nameCountry = result.data[0].destination_name;

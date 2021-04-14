@@ -64,7 +64,9 @@ import { DestinationContentRoutingModule } from "../destination-content/destinat
         deps: [HttpClient],
       },
     }),
+
     DestinationContentRoutingModule,
+
 
     IvyGalleryModule,
     NgxGalleryModule,

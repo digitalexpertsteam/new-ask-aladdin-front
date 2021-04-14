@@ -4,6 +4,9 @@ import { HomeserviceService } from "../../../../services/homeservice.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { destination } from '../../../../interfaces/destination';
 
+import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-travel-cruises-des',
   templateUrl: './travel-cruises-des.component.html',
@@ -13,7 +16,10 @@ import { destination } from '../../../../interfaces/destination';
 })
 export class TravelCruisesDesComponent implements OnInit {
 
-  constructor( private _excursions: HomeserviceService, private modalService: NgbModal) { }
+  constructor( 
+    private _excursions: HomeserviceService,
+    private _Active:ActivatedRoute , 
+     private modalService: NgbModal) { }
 
   x = 1;
   max = 5;
@@ -40,7 +46,7 @@ readonly = true
 
   ngOnInit(): void {
 
-    this.id = localStorage.getItem("id");
+    this.id = this._Active.snapshot.params.slug
     this._excursions.getTravelCruises(this.id).subscribe((result) => {
       this.cruises = result.data;
       this.desName=result.data[0].destination_name;  
