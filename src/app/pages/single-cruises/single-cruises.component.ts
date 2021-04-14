@@ -3,6 +3,9 @@ import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
 import {NgxGalleryImage} from '@kolkov/ngx-gallery';
 import { HomeserviceService } from '../../services/homeservice.service';
 import { Blog } from '../../interfaces/blog';
+import {Gallery} from 'angular-gallery';
+import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
+
 @Component({
   selector: 'app-single-cruises',
   templateUrl: './single-cruises.component.html',
@@ -47,8 +50,32 @@ export class SingleCruisesComponent implements OnInit {
   prices:any
   startPrices:any
   cruises:any
-  constructor(public _cruises:HomeserviceService) { }
+  constructor(public _cruises:HomeserviceService,  private gallery: Gallery) { }
   ngOnInit(): void {
+    
+    this.galleryOptions = [
+      {
+        width: '825px',
+        height: '500px',
+        thumbnailsColumns: 4,
+        imageAnimation: NgxGalleryAnimation.Slide
+      },
+      // max-width 800
+      {
+        breakpoint: 800,
+        width: '100%',
+        height: '600px',
+        imagePercent: 80,
+        thumbnailsPercent: 20,
+        thumbnailsMargin: 20,
+        thumbnailMargin: 20
+      },
+      // max-width 400
+      {
+        breakpoint: 400,
+        preview: false
+      }
+    ];
     this.idCru = localStorage.getItem("idcru");
     this.id = localStorage.getItem('id')
     this._cruises.getTravelCruises(this.id).subscribe(result => {
@@ -58,6 +85,18 @@ export class SingleCruisesComponent implements OnInit {
     this._cruises.getSingleCruise(this.idCru).subscribe(result => {
       this.cruises = result.data[0]; 
       this.related = result.data[0].related_cruises; 
+      
+      this.img=result.data[0].gallery
+      this.galleryImages=[]
+      this.img.forEach(ele => {
+        
+        this.galleryImages.push({
+          small: ele,
+          medium: ele,
+          big: ele,
+        }
+        )
+}) 
     })
   }
   setId(id:any){

@@ -29,7 +29,8 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
 
 
   constructor(private _blogs:HomeserviceService , private _active:ActivatedRoute,private locate:Location,private _route:Router ,private _Meta : Meta , private _Title : Title ) {
-    
+
+ 
    }
 
   ngOnInit(): void {

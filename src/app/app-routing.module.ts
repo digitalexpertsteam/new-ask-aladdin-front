@@ -29,6 +29,8 @@ import { transform } from "typescript";
 import { TravelCruisesDesComponent } from "./modules/destination-content/mainComponents/travel-cruises-des/travel-cruises-des.component";
 import { SingleCruisesComponent } from "./pages/single-cruises/single-cruises.component";
 import { PageComponent } from "./pages/page/page.component";
+import { SingleHotelComponent } from "./modules/destination-single-content/singleComponents/single-hotel/single-hotel.component";
+
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -88,6 +90,10 @@ const routes: Routes = [
   { path: "page", pathMatch: "full", component: PageComponent },
 
   { path: ":slug", pathMatch: "full", component: OneDestinationComponent },
+
+  { path: ":slug/:id", pathMatch: "full", component: SingleHotelComponent },
+
+
 
 
 ];

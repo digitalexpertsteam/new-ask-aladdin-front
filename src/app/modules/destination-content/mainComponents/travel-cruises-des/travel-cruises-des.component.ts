@@ -3,7 +3,9 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { destination } from '../../../../interfaces/destination';
+
 import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-travel-cruises-des',

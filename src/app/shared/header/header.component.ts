@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import { HomeserviceService } from "../../services/homeservice.service";
+import { destination } from "../../interfaces/destination";
+import { socials } from "../../interfaces/socials";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

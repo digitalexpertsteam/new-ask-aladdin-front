@@ -57,7 +57,7 @@ export class TravelExcursionsDesComponent implements OnInit {
     this.id = localStorage.getItem("id");
     this._excursions.getDestinationExcursions(this.id).subscribe(result => {
       this.getDestinationExcursions = result.data;
-      console.log(this.getDestinationExcursions);
+
       this.desName = result.data[0].destination_name;
       this.exName = result.data.excursion_name;
       this.name = result.data;

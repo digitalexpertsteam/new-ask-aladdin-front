@@ -4,6 +4,7 @@ import { Faq } from "../../../../interfaces/faq";
 import { Faqs } from "../../../../interfaces/faqs";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { OwlOptions } from "ngx-owl-carousel-o";
+
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -17,6 +18,7 @@ export class SingleFaqComponent implements OnInit {
   id: any;
   alldestinationCards: Faqs[] = [];
   desSlug = "";
+
   desName:any;
   faqName:any;
 
@@ -24,14 +26,15 @@ export class SingleFaqComponent implements OnInit {
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
-    this.idFaq = localStorage.getItem("idFaq");
-    this.id = localStorage.getItem("id");
+    
+
     this.idFaq = this._Active.snapshot.params.slug
     this.id = this._Active.snapshot.params.id
     //  this._ActivatedRoute.snapshot.params.id;
     this._homeService.getSingleFaq(this.idFaq).subscribe((result) => {
       this.singleFaq = result.data;
     });
+
     
 
     this._homeService.getDestinationFact(this.id).subscribe(res => {

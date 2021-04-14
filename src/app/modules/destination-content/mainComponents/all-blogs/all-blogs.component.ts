@@ -38,6 +38,7 @@ export class AllBlogsComponent implements OnInit {
     // console.log(this._active.snapshot.params.slug);
     
 
+
     this.id = this._active.snapshot.params.slug
 
     this._blogs.getDestinationBlogs(this.id).subscribe(result => {

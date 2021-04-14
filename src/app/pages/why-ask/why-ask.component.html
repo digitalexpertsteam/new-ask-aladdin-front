@@ -1,12 +1,12 @@
 <section class="about my-5 py-5">
-    <div class="container">
+    <div class="container " *ngFor="let about of aboutContainer">
         <div class="head-title text-center mb-5">
             <p class="sat-font main-color mb-0">About Us</p>
-            <h2 class="font-weight-bold text-white">{{"Why Ask Aladdin" |translate}}</h2>
+            <h2 class="font-weight-bold text-white">{{about.title}}</h2>
         </div>
         <div class="about-more">
             <div class="row mr-0 ml-0">
-                <ng-container *ngFor="let about of aboutContainer">
+                <ng-container >
 
                     <div class=" video col-lg-5 m-auto ">
                         <img class="img-fluid" src="../../../assets/imgs/oman.jpg" data-toggle="modal"
@@ -15,7 +15,7 @@
                         data-target=".bd-example-modal-lg">
                             <i class="fas fa-play main-color"></i>
                         </span>
-                        <div class="modal fade bd-example-modal-lg" #pause tabindex="-1" role="dialog"
+                         <div class="modal fade bd-example-modal-lg" #pause tabindex="-1" role="dialog"
                             aria-labelledby="myLargeModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
 
                     </div>
                     <div class="col-lg-7 col-md-6 col-sm-12 ">

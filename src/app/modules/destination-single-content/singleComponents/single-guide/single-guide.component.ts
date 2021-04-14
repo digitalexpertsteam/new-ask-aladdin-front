@@ -18,6 +18,7 @@ export class SingleGuideComponent implements OnInit {
   id: any;
   alldestinationCards: TravelGuide[] = [];
   desSlug = "";
+
   desName:any;
   GuideName:any;
 
@@ -34,6 +35,7 @@ export class SingleGuideComponent implements OnInit {
       this.relatedPages = result.data[0].related_pages
       
     });
+
     
 
     this._homeService.getDestinationGuides(this.id).subscribe((res) => {

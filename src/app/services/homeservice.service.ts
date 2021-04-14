@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { TranslateService } from "@ngx-translate/core";
@@ -26,6 +26,7 @@ export class HomeserviceService {
   getSlider(): Observable<any> {
     return this._http.get(`${environment.ApiUrl}sliders/${this.currentLang}`);
   }
+
   getAlldestination(): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}destinations/${this.currentLang}`
@@ -149,13 +150,18 @@ export class HomeserviceService {
       `${environment.ApiUrl}counter`
     );
   }
+
   getSingleHotel(id:any): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}hotel/${id}/${this.currentLang}`
     );
   }
-}
-function mergeMap(mergeMap: any): Observable<any> {
-  throw new Error("Function not implemented.");
-}
+
+  getLogo(): Observable<any> {
+    return this._http.get(`${environment.ApiUrl}testimonials`);
+  }
+
+
+
+
 

@@ -71,20 +71,6 @@ export class SingleExcursionsComponent implements OnInit {
       }
     ];
 
-    // this.galleryImages = [
-    //   {
-    //     small: this.img,
-    //     medium: this.img,
-    //     big: this.img
-    //   },
-
-
-    // ];
-    
-
-    
-  // ------------------------------------------------
-
     this.startPrices = localStorage.getItem('price')
     // this.idex = localStorage.getItem("idex");
     this.idex = this._Active.snapshot.params.slug

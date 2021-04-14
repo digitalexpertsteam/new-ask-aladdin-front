@@ -28,6 +28,7 @@ import { TravExpComponent } from "../../pages/trav-exp/trav-exp.component";
 
 import { IvyGalleryModule } from "angular-gallery";
 import { NgxGalleryModule } from "@kolkov/ngx-gallery";
+import { DestinationContentRoutingModule } from "../destination-content/destination-content-routing.module";
 
 @NgModule({
   declarations: [
@@ -63,6 +64,9 @@ import { NgxGalleryModule } from "@kolkov/ngx-gallery";
         deps: [HttpClient],
       },
     }),
+
+    DestinationContentRoutingModule,
+
 
     IvyGalleryModule,
     NgxGalleryModule,

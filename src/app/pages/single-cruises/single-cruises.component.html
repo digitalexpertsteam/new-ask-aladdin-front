@@ -256,9 +256,12 @@
                     </div>
                 </section>
                 <!-- <app-trav-exp></app-trav-exp>    -->
-                <section id="Gallery">
+                <section id="Gallery" class="pt-3">
 
 
+                    <div class="m-auto" >
+                        <ngx-gallery  [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+                      </div>
 
                 </section>
             </div>
@@ -345,7 +348,7 @@
                                         </rating>
                                     </div>
                                     <div class="acco-link mb-2">
-                                        <a href="#" class="main-btn">View Details</a>
+                                        <a href="/egypt/{{acc.slug}}" class="main-btn">View Details</a>
                                     </div>
                                 </div>
                             </div>

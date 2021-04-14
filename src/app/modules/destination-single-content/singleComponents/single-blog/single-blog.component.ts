@@ -20,6 +20,7 @@ export class SingleBlogComponent implements OnInit {
   alldestinationCards: destinationBlog[] = [];
   desSlug = "";
   desName='';
+
   ides :any;
   blogName:any;
 
