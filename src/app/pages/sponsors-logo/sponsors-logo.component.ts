@@ -21,7 +21,6 @@ export class SponsorsLogoComponent implements OnInit {
       this.logo = result.data;
       
       this.logo.forEach(s=>{
-        console.log(s);
         if(s.showed_on_large_slider==true){
           s.large_image = s.small_image_on_slider
         }else{

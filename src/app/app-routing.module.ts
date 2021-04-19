@@ -44,7 +44,7 @@ const routes: Routes = [
     component: TourPackageComponent,
   },
   {
-    path: ":slug/travel-package/:slug",
+    path: ":id/travel-package/:slug",
     pathMatch: "full",
     component: TourDetailsComponent,
   },

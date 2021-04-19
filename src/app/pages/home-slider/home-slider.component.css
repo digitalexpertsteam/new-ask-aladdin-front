@@ -1,9 +1,35 @@
+/* .private{
+    position: relative;
+}
+.video{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.view{
+    position: absolute;
+    top: 0;
+    z-index: 222222;
+    
+} */
+.vid {
+    height: 1100px;
+}
+.layout{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
 .view img {
     height: 85vh;
     object-fit: cover;
 }
 .carousel-caption {
-    top:27%
+    top:27%;
+    height: 300px;
+    
 }
 .carousel-caption h3 {
     font-size: 50px;
@@ -32,6 +58,7 @@
     justify-content: center;
     align-items: center;
 }
+
 /* .alaadin-banner {
     background-image: url("../../../assets/imgs/203-2036768_ancient-history-historic-site-cairo-tourism-egypt-egypt.jpg");
     background-size: cover;

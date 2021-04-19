@@ -51,15 +51,14 @@ export class TravelFactsDesComponent implements OnInit {
       this.title = result.data[0].destination_seo_title;
       this._Title.setTitle(`${this.title}`);
       this._Meta.addTags([
-        {
-          name: "keywords",
-          content: `${result.data[0].destination_seo_keywords}`,
-        },
-        { name: "robots", content: `${result.data[0].destination_seo_robots}` },
-        {
-          name: "description",
-          content: `${result.data[0].destination_seo_description}`,
-        },
+        { name: "keywords", content: `${result.data[0].destination_seo_keywords}`,},
+        { name: "robots", content: `${result.data[0].destination_seo_robots}`},
+        { name: "description", content: `${result.data[0].destination_seo_description}`,},
+        { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
+        { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
+        { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
+        { name: 'twitter:image', property:"og:image", content: `${result.data[0].destination_twitter_image}` },
+        { name: 'facebook:image', property:"og:image", content: `${result.data[0].destination_facebook_image}` },
       ]);
     });
 

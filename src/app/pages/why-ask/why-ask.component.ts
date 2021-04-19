@@ -55,7 +55,7 @@ export class WhyAskComponent implements OnInit {
       this.img.forEach(ele => {
         
         this.galleryImages.push({
-          // small: ele,
+          small: ele,
           medium: ele,
           big: ele,
         }

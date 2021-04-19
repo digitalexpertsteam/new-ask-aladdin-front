@@ -6,6 +6,7 @@ import { Blog } from "../../../../interfaces/blog";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { destinationBlog } from "../../../../interfaces/destinationBlog";
+import { Meta, Title } from "@angular/platform-browser";
 
 
 @Component({
@@ -23,10 +24,13 @@ export class SingleBlogComponent implements OnInit {
 
   ides :any;
   blogName:any;
+  Title: any;
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
-    public _homeService: HomeserviceService
+    public _homeService: HomeserviceService,
+    private _Meta : Meta ,
+    private _Title : Title
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +47,20 @@ export class SingleBlogComponent implements OnInit {
     this._homeService.getSingleBlogs(this.idBlogs).subscribe((result) => {
       this.singleBlog = result.data;
       console.log(this.singleBlog);
+      this.Title = result.data[0].seo_title;
+      this._Title.setTitle(`${this.Title}`)
+      this._Meta.addTags([
+        { name: 'keywords', content: `${result.data[0].seo_keywords}` },
+        { name: 'robots', content: `${result.data[0].seo_robots}` },
+        { name: 'description', content: `${result.data[0].seo_description}`},
+        { name: 'facebook:description', content: `${result.data[0].facebook_description}`},
+        { name: 'twitter:title', content: `${result.data[0].twitter_title}`},
+        { name: 'twitter:description', content: `${result.data[0].twitter_description}`},
+        { name: "twitter:image", content: `${result.data[0].twitter_description}`},
+        { name: 'twitter:image', property:"og:image", content: `${result.data[0].twitter_image}`},
+        { name: 'facebook:image', property:"og:image", content: `${result.data[0].facebook_image}`},
+        
+      ]); 
       
     });
     this._homeService.getHomeBlog().subscribe((result) => {

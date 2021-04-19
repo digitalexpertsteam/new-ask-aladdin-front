@@ -162,3 +162,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 /* font-family: 'Poppins', sans-serif !important; */
+
+::ng-deep .owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 20px !important;
+    margin: 5px;
+    padding: 10px;
+    background: #f68800;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 20px;
+}
