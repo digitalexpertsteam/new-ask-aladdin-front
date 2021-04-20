@@ -78,7 +78,7 @@ const routes: Routes = [
 
   // cruises
   { path: ":slug/travel-cruises", component: TravelCruisesDesComponent },
-  { path: ":slug/single-cruises/:slug", component:SingleCruisesComponent},
+  { path: ":id/single-cruises/:slug", component:SingleCruisesComponent},
   
   // {path:":slug/:slug/:slug" , pathMatch: 'full', loadChildren:()=>import('./modules/destination-single-content/destination-single-content.module').then(m=> m.DestinationSingleContentModule)},
   { path: "travelguide", component: TravelGuideComponent },

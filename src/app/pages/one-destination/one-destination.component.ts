@@ -27,6 +27,7 @@ export class OneDestinationComponent implements OnInit {
   Meta:any;
 
   image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
+  errors: any;
   
   // itemsPerSlide = 3;
   // singleSlideOffset = true;
