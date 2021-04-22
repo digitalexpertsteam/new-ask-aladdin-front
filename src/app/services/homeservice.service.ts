@@ -160,8 +160,13 @@ export class HomeserviceService {
   getLogo(): Observable<any> {
     return this._http.get(`${environment.ApiUrl}testimonials`);
   }
+  search(term:string): Observable<any> {
+    return this._http.get(`${environment.ApiUrl}search/${term}/${this.currentLang}`
+    );
+  }
 
 
+}
 
 
 

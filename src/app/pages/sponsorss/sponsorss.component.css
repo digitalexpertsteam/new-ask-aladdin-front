@@ -1,7 +1,7 @@
 .sponsors{
     position: relative;
 }
-::ng-deep .owl-carousel .owl-theme .owl-loaded .owl-responsive{
+/* ::ng-deep .owl-carousel .owl-theme .owl-loaded .owl-responsive{
     width: 100px;
     margin: auto;
 }
@@ -24,4 +24,4 @@ left: -3%;
     position: absolute;
     top: 10%;
     right: -3%;
-    }
+    } */

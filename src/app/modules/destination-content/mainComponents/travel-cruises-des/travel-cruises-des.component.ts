@@ -28,6 +28,7 @@ export class TravelCruisesDesComponent implements OnInit {
   num: any;
   name: any;
   desName=''
+  desSlug:any;
   cruContent:destination[]=[];
   cruName:any;
 
@@ -50,6 +51,7 @@ readonly = true
     this._excursions.getTravelCruises(this.id).subscribe((result) => {
       this.cruises = result.data;
       this.desName=result.data[0].destination_name;  
+      this.desSlug=result.data[0].destination_slug;  
       console.log(this.desName);
       
     });

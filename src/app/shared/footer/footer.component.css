@@ -8,6 +8,16 @@ footer {
     overflow: hidden;
 
 }
+/* .accept img{
+    width: 300% !important;
+
+} */
+.we{
+    color: white;
+}
+.acc{
+    background-color:#f68800 ;
+}
 
 footer .shortcuts{
     width: 80%;

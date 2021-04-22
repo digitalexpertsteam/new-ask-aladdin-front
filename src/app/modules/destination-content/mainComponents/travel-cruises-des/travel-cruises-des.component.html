@@ -20,7 +20,7 @@
         <div class="container">
           <div  class="page-links py-2">
            <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-           <a class="hover-color" routerLink="/"> <span >{{desName}} / </span>  </a>
+           <a class="hover-color" routerLink="/{{desSlug}}"> <span >{{desName}} / </span>  </a>
             <span class="main-color">{{cruName}}</span>  
           </div>
         </div>
@@ -36,7 +36,7 @@
                 <div class="col-12 col-md-9">
                     <section>
     
-                        <h2 class="info main-bg text-white font-weight-bold"> {{desName}} travel-excursions with <span>756
+                        <h2 class="info main-bg text-white font-weight-bold"> {{desName}} {{cruContent[3].name}} with <span>756
                                 Reviews</span></h2>
                         <ng-container *ngFor="let cru of cruises ">
                             <div class="data-box bg-white mt-3 p-2">
@@ -254,6 +254,8 @@
     
     
     <app-destination-blog></app-destination-blog>
+    <app-sponsors-logo></app-sponsors-logo>
+
     <app-sponsorss></app-sponsorss>
     
     

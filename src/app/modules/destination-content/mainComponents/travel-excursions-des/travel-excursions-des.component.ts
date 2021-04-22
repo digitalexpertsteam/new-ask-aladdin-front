@@ -5,6 +5,7 @@ import { Excursions } from "../../../../interfaces/excursions";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { destination } from "../../../../interfaces/destination";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-travel-excursions-des",
@@ -44,21 +45,25 @@ export class TravelExcursionsDesComponent implements OnInit {
   getDestinationExcursions: Excursions[] = [];
   exContent:destination[] = [];
   desName:any;
+  desSlug:any;
   exName:any;
 
 
   constructor(
     private _excursions: HomeserviceService,
     private sanitizer: DomSanitizer,
+    private  _active:ActivatedRoute,
     private modalService: NgbModal
   ) {}
 
   ngOnInit(): void {
-    this.id = localStorage.getItem("id");
+    // this.id = localStorage.getItem("id");
+    this.id = this._active.snapshot.params.slug
     this._excursions.getDestinationExcursions(this.id).subscribe(result => {
       this.getDestinationExcursions = result.data;
 
       this.desName = result.data[0].destination_name;
+      this.desSlug = result.data[0].destination_slug
       this.exName = result.data.excursion_name;
       this.name = result.data;
     });

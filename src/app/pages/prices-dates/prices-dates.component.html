@@ -1,46 +1,15 @@
-<section id="prices" class="bg-white mt-3 px-2 py-4">
-    <div class="container">
+<section *ngIf="flag != null;else noPrice" id="prices" class="bg-white mt-3 px-2 py-4">
+    <div    class="container">
         <div class="head mb-4">
             <h3 class="font-weight-bold">Prices & Departure Dates</h3>
             <p class="main-color">Tour Package Price</p>
         </div>
-
-
         <div *ngFor="let price of prices ;let i=index; " class="tab">
-
-
             <div  class="time-group">
                 <p class="d-flex align-items-center mb-4">
                     <img src="assets/imgs/dot.svg" class="img-fluid">
                     <span class="font-weight-bold"> Valid From {{price?.attributes.season_start_date |date}} To {{price?.attributes.season_end_date|date}}</span>
                 </p>
-                <!-- <div class="period-details">
-
-                    For (January - February - March - April)
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <div class="details text-center">
-                                <h4 class="position-relative m-auto main-bg text-white">Per Person at</h4>
-                                <p>Double Room</p>
-                                <p>Single Room Supplement</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="details text-center">
-                                <h4 class="position-relative m-auto main-bg text-white">5 Stars Hotels</h4>
-                                <p>$1,390.00 USD</p>
-                                <p>$430.00 USD</p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="details text-center">
-                                <h4 class="position-relative m-auto main-bg text-white">5 stars Deluxe Hotels</h4>
-                                <p>$1,680.00 USD</p>
-                                <p>$490.00 USD</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
               <ul class="nav nav-tabs justify-content-around" >
                 <li class="nav-item " role="presentation">
@@ -55,11 +24,7 @@
                   <li class="nav-item " role="presentation">
                       <a class="nav-link" id="contact-tab" data-toggle="tab" href="#per{{i}}" role="tab" aria-controls="contact" aria-selected="false">7-10 persons</a>
                     </li>
-
               </ul>
-
-
-
               <div class="tab-content "  id="myTabConten">
                 <div #home class="tab-pane  fade show active" id="home{{i}}"  role="tabpane" aria-labelledby="home-tab">
                  
@@ -147,7 +112,7 @@
                     </tbody>
                   </table>
                 </div>
-                <div class="tab-pane fade" id="per{{i}}" data-id="{{price.key}}" role="tabpane" aria-labelledby="contact-tab">
+                <div class="tab-pane fade" id="per{{i}}"  role="tabpane" aria-labelledby="contact-tab">
 
                   <table class="table">
                     <thead class="thead-dark">
@@ -178,23 +143,11 @@
               </div>
         </div>
 
-
-
-        <!-- <ul class="list-group p-0 mt-2">
-            <li class="list-group-item d-flex px-0 py-1">
-                <img src="assets/imgs/dot.svg" class="img-fluid">
-                <span>If you wish to add an international flight to the package - <a href="#"
-                        class="main-color text-decoration-none">Please Ask for a quotation.</a></span>
-            </li>
-            <li class="list-group-item d-flex px-0 py-1">
-                <img src="assets/imgs/dot.svg" class="img-fluid">
-                <span>This is a private tour with a private guide and private transportation.</span>
-            </li>
-            <li class="list-group-item d-flex px-0 py-1">
-                <img src="assets/imgs/dot.svg" class="img-fluid">
-                <span>Check the difference between <a href="#" class="main-color text-decoration-none">Five-star Hotel
-                        Vs Five Star Deluxe Hotels</a></span>
-            </li>
-        </ul> -->
     </div>
+
 </section>
+<ng-template #noPrice >
+
+  <!-- <h1 class="text-center font-weight-bold ">oops no prices</h1> -->
+</ng-template>
+
