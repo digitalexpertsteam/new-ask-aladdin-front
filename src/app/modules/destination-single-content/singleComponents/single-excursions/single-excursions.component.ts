@@ -7,6 +7,7 @@ import {NgxGalleryOptions} from '@kolkov/ngx-gallery';
 import {NgxGalleryImage} from '@kolkov/ngx-gallery';
 import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
 import { ActivatedRoute } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 
@@ -41,7 +42,9 @@ export class SingleExcursionsComponent implements OnInit {
   prices:any
   startPrices:any;
   desName:any;
-  constructor(public _excursion:HomeserviceService,private _Active:ActivatedRoute, private gallery: Gallery, ) { }
+  Title: any;
+  constructor(public _excursion:HomeserviceService,private _Active:ActivatedRoute, private gallery: Gallery,private _Meta : Meta ,
+    private _Title : Title ) { }
 
   
   ngOnInit(): void {
@@ -94,7 +97,23 @@ export class SingleExcursionsComponent implements OnInit {
           big: ele,
         }
         )
-})     
+
+})  
+
+this.Title = result.data[0].seo_title;
+this._Title.setTitle(`${this.Title}`)
+this._Meta.addTags([
+  { name: 'keywords', content: `${result.data[0].seo_keywords}` },
+  { name: 'robots', content: `${result.data[0].seo_robots}` },
+  { name: 'description', content: `${result.data[0].seo_description}`},
+  { name: 'facebook:description', content: `${result.data[0].facebook_description}`},
+  { name: 'twitter:title', content: `${result.data[0].twitter_title}`},
+  { name: 'twitter:description', content: `${result.data[0].twitter_description}`},
+  { name: "twitter:image", content: `${result.data[0].twitter_description}`},
+  { name: 'twitter:image', property:"og:image", content: `${result.data[0].twitter_image}`},
+  { name: 'facebook:image', property:"og:image", content: `${result.data[0].facebook_image}`},
+  
+]); 
   })
 
   this._excursion.getDestinationExcursions(this.id).subscribe(result => {

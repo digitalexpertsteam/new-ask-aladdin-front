@@ -40,12 +40,12 @@ export class HomeserviceService {
   getDestinationEgy(): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}destination/blogs/1/${this.currentLang}`
-    );
+    )
   }
   getSingleBlogs(id: any): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}blog/${id}/${this.currentLang}`
-    );
+    )
   }
   getDestinationBlogs(id: any): Observable<any> {
     return this._http.get(
@@ -125,7 +125,7 @@ export class HomeserviceService {
 
   getDestinationExcursions(id: any): Observable<any> {
     return this._http.get(`${environment.ApiUrl}destination/excursions/${id}/${this.currentLang}`
-    );
+    )
   }
   getSingleExcursion(id: any): Observable<any> {
     return this._http.get(
@@ -135,9 +135,7 @@ export class HomeserviceService {
 
   getTravelCruises(id: any): Observable<any> {
     return this._http.get(`${environment.ApiUrl}destination/cruises/${id}/${this.currentLang}`
-    );
-
-    
+    );  
   }
 
   getSingleCruise(id: any): Observable<any> {
@@ -161,7 +159,7 @@ export class HomeserviceService {
     return this._http.get(`${environment.ApiUrl}testimonials`);
   }
 
-
+}
 
 
 

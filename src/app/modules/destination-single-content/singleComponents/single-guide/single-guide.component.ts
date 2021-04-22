@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Guide } from '../../../../interfaces/guide';
 import { TravelGuide } from '../../../../interfaces/travel-guide';
@@ -21,8 +22,11 @@ export class SingleGuideComponent implements OnInit {
 
   desName:any;
   GuideName:any;
+  Title: any;
 
-  constructor(public _homeService: HomeserviceService) {}
+  constructor(public _homeService: HomeserviceService,
+    private _Meta : Meta ,
+    private _Title : Title) {}
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
@@ -33,6 +37,20 @@ export class SingleGuideComponent implements OnInit {
       this.singleGuide= result.data;
       this.relatedGuide = result.data[0].related_travel_guides;
       this.relatedPages = result.data[0].related_pages
+      this.Title = result.data[0].seo_title;
+      this._Title.setTitle(`${this.Title}`)
+      this._Meta.addTags([
+        { name: 'keywords', content: `${result.data[0].seo_keywords}` },
+        { name: 'robots', content: `${result.data[0].seo_robots}` },
+        { name: 'description', content: `${result.data[0].seo_description}`},
+        { name: 'facebook:description', content: `${result.data[0].facebook_description}`},
+        { name: 'twitter:title', content: `${result.data[0].twitter_title}`},
+        { name: 'twitter:description', content: `${result.data[0].twitter_description}`},
+        { name: "twitter:image", content: `${result.data[0].twitter_description}`},
+        { name: 'twitter:image', property:"og:image", content: `${result.data[0].twitter_image}`},
+        { name: 'facebook:image', property:"og:image", content: `${result.data[0].facebook_image}`},
+        
+      ]); 
       
     });
 

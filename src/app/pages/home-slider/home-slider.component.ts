@@ -9,23 +9,47 @@ import { HomeserviceService } from '../../services/homeservice.service';
   styleUrls: ['./home-slider.component.css']
 })
 export class HomeSliderComponent implements OnInit {
-  image:any;
-  video='';
+  image = [{
+    img:``,
+    title:``,
+    small_text:``
+
+  }]
+  videos = [{
+    video:``
+  }]
    sliderContainer:sliders[] = []
-   imageSlide:Image[]=[]
+   imageSlide:sliders[]=[]
+
   constructor(private _slider:HomeserviceService) { }
 
   ngOnInit(): void {
     this._slider.getSlider().subscribe(result => {
       this.sliderContainer = result.data
-      this.imageSlide = result.data.image
+      this.imageSlide = result.data
       
+      this.imageSlide.forEach(ele => {
+        if (ele.image.type == "Video") {
+          
+          this.videos.push({
+            video:`${ele.image.url}`
+          }) 
+          console.log(this.videos);
+          
+        }
+        if (ele.image.type == "Image") {
+          
+          this.image.push({
+            img:`${ele.image.url}`,
+            title:`${ele.title}`,
+            small_text:`${ele.small_text}`
+          })
+         
+          console.log(this.image);
+        }
+        
+      })
       
-      // if(result.data.image.type == "Video"){
-      //   this.video= result.data.image.type
-      //   console.log(this.video);
-
-      // }
      
     })
     

@@ -27,6 +27,7 @@ export class OneDestinationComponent implements OnInit {
   Meta:any;
 
   image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
+  errors: any;
   
   // itemsPerSlide = 3;
   // singleSlideOffset = true;
@@ -46,9 +47,16 @@ export class OneDestinationComponent implements OnInit {
       this.Title = res.data[0].seo_title;
       this._Title.setTitle(`${this.Title}`)
       this._Meta.addTags([
-        { name: 'keywords', content: `${res.data.seo_keywords}` },
-        { name: 'robots', content: `${res.data.seo_robots}` },
-        { name: 'description', content: `${res.data.seo_description}`},
+        { name: 'keywords', content: `${res.data[0].seo_keywords}` },
+        { name: 'robots', content: `${res.data[0].seo_robots}` },
+        { name: 'description', content: `${res.data[0].seo_description}`},
+        { name: 'facebook:description', content: `${res.data[0].facebook_description}`},
+        { name: 'twitter:title', content: `${res.data[0].twitter_title}`},
+        { name: 'twitter:description', content: `${res.data[0].twitter_description}`},
+        { name: "twitter:image", content: `${res.data[0].twitter_description}`},
+        { name: 'twitter:image', property:"og:image", content: `${res.data[0].twitter_image}`},
+        { name: 'facebook:image', property:"og:image", content: `${res.data[0].facebook_image}`},
+        
       ]);
       this.singleDestination.filter(idData => {
         let idDes = idData.id
