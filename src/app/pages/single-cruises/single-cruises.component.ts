@@ -94,7 +94,7 @@ export class SingleCruisesComponent implements OnInit {
 
       this.cruisesName = res.data[0].categories[3].name  
       
-  })
+  }) 
     this._cruises.getSingleCruise(this.idCru).subscribe(result => {
       this.cruises = result.data[0]; 
       this.cruName = result.data[0].name;

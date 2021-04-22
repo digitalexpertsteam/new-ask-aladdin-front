@@ -38,6 +38,18 @@
     cursor: pointer;
     transition: all .2s;
 }
+.video .span {
+    position: absolute;
+    top: 70%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+    transition: all .2s;
+}
 .video span i {
     width: 2rem;
     height: 2rem;

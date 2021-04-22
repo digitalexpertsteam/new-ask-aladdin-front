@@ -174,3 +174,26 @@ a:hover
     line-height: 1.6rem;
 }
 
+
+
+.sec-banne {
+    height: 60vh;
+    /* background-image: linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) ,url('../src/assets/imgs/Best-Egypt-Jordan-9-min.jpg'); */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+.sec-banne .head h1 {
+    border-bottom: 1px solid rgba(255, 255, 255, .6);
+}
+.sec-banne p {
+    font-size: .9rem;
+}
+.over_banner img{
+max-width: 420px;
+min-width: 420px;
+max-height:100px ;
+}

@@ -46,14 +46,15 @@ export class TravelExcursionsDesComponent implements OnInit {
   getDestinationExcursions: Excursions[] = [];
   exContent:destination[] = [];
   desName:any;
+  desSlug:any;
   exName:any;
-  desSlug:any
 
 
   constructor(
     private _excursions: HomeserviceService,
     private _Active:ActivatedRoute,
     private sanitizer: DomSanitizer,
+
     private modalService: NgbModal,
     private _Meta : Meta ,
     private _Title : Title 
@@ -66,6 +67,7 @@ export class TravelExcursionsDesComponent implements OnInit {
       this.getDestinationExcursions = result.data;
 
       this.desName = result.data[0].destination_name;
+
       this.desSlug = result.data[0].destination_slug;
       this.exName = result.data.excursion_name;
       this.name = result.data;

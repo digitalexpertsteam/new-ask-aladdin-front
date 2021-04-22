@@ -132,7 +132,7 @@
         <!-- <app-prices-dates></app-prices-dates> -->
 
 
-        <section id="prices">
+        <section *ngIf="prices.price_1!=null ;else noDeata" id="prices">
         <div class="tab">
           <div class="time-group pt-3">
             <p class="d-flex align-items-center mb-4">
@@ -173,6 +173,7 @@
         </div>
 
       </section>
+      <ng-template #noDeata></ng-template>
 
         <!-- End prices-dates -->
 
@@ -269,6 +270,5 @@
 </div> -->
 
 
-<app-sponsors-logo></app-sponsors-logo>
 <app-sponsorss></app-sponsorss>
 

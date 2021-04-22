@@ -87,6 +87,8 @@ export class SingleExcursionsComponent implements OnInit {
 
       
       this.prices=result.data[0]
+      console.log(this.prices);
+      
       this.img=result.data[0].gallery
       this.galleryImages=[]
       this.img.forEach(ele => {

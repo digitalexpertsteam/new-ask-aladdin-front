@@ -30,3 +30,10 @@
   background-color: transparent;
   color: #f68800;
 }
+
+.card-body{
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

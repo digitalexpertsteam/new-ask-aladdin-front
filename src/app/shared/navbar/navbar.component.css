@@ -3,7 +3,7 @@ nav {
 }
 .main-nav {
     background-color: #fff;
-    z-index:99999;
+    z-index:999;
 }
 .navbar img {
     height: 3.5rem;

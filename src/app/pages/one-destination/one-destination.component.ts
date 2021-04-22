@@ -65,6 +65,7 @@ export class OneDestinationComponent implements OnInit {
           console.log(this.singleDestinationContent);
           
             this.packageOffer = result.data[0].packages_hot_offers 
+            console.log(this.packageOffer);
             this.excursionsOffer = result.data[0].excursions_hot_offers
             this.cruisesOffer =result.data[0].cruises_hot_offers
             this.relatedPages = result.data[0].related_pages

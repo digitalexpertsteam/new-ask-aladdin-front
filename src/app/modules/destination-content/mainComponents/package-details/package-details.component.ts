@@ -22,7 +22,7 @@ import { ActivatedRoute } from '@angular/router';
         background-color: #5cb3fd;
       }
     `,
-  ],
+  ], 
 
 })
 export class PackageDetailsComponent implements OnInit {
@@ -37,6 +37,7 @@ export class PackageDetailsComponent implements OnInit {
     this.overStar = value;
     this.percent = (value / this.max) * 100;
   }
+  image = "../../../../../../../assets/imgs/default.png"
   id:any;
   idpackage:any
   nameCountry = '';
