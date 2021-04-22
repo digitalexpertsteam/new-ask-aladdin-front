@@ -6,6 +6,7 @@ import { HomeserviceService } from "../../../../services/homeservice.service";
 import { OwlOptions } from "ngx-owl-carousel-o";
 
 import { ActivatedRoute } from "@angular/router";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-single-faq",
@@ -21,8 +22,10 @@ export class SingleFaqComponent implements OnInit {
 
   desName:any;
   faqName:any;
+  Title: any;
 
-  constructor(public _homeService: HomeserviceService,private _Active:ActivatedRoute) {}
+  constructor(public _homeService: HomeserviceService,private _Active:ActivatedRoute , private _Meta : Meta ,
+    private _Title : Title) {}
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
@@ -41,6 +44,20 @@ export class SingleFaqComponent implements OnInit {
       this.alldestinationCards = res.data;
       this.desName =res.data[0].destination_name;
       this.desSlug =res.data[0].destination_slug;
+      this.Title = res.data[0].seo_title;
+      this._Title.setTitle(`${this.Title}`)
+      this._Meta.addTags([
+        { name: 'keywords', content: `${res.data[0].seo_keywords}` },
+        { name: 'robots', content: `${res.data[0].seo_robots}` },
+        { name: 'description', content: `${res.data[0].seo_description}`},
+        { name: 'facebook:description', content: `${res.data[0].facebook_description}`},
+        { name: 'twitter:title', content: `${res.data[0].twitter_title}`},
+        { name: 'twitter:description', content: `${res.data[0].twitter_description}`},
+        { name: "twitter:image", content: `${res.data[0].twitter_description}`},
+        { name: 'twitter:image', property:"og:image", content: `${res.data[0].twitter_image}`},
+        { name: 'facebook:image', property:"og:image", content: `${res.data[0].facebook_image}`},
+        
+      ]); 
 
       console.log(this.desName);
     });

@@ -35,7 +35,7 @@
                     </h6>
                     <ul *ngFor="let guideName of destinationContainer" class="footer-links">
                         <li *ngFor="let guide of guidesSlug |slice:0:1" class="mb-2">
-                            <a href="/{{guideName.slug}}/{{guide.slug}}" (click)="setId(guideName.id)"  class="text-dark">{{guideName.name}} {{guide.name}} </a>
+                            <a href="/{{guideName.slug}}/travel-guides" (click)="setId(guideName.id)"  class="text-dark">{{guideName.name}} {{guide.name}} </a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@
                     </h6>
                     <ul *ngFor="let packName of destinationContainer" class="footer-links">
                         <li *ngFor="let pack of packagesName |slice:1:2" class="">
-                            <a href="/{{packName.slug}}/{{pack.slug}}" (click)="setId(packName.id)"  class="text-dark">{{packName.name}} {{pack.name}} </a>
+                            <a href="/{{packName.slug}}/travel-package" (click)="setId(packName.id)"  class="text-dark">{{packName.name}} {{pack.name}} </a>
                         </li>
                         
                     </ul>

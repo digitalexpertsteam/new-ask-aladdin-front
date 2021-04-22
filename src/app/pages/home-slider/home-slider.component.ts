@@ -11,13 +11,21 @@ import { HomeserviceService } from '../../services/homeservice.service';
   styleUrls: ['./home-slider.component.css']
 })
 export class HomeSliderComponent implements OnInit {
-  image: any;
   img="../../../../../assets/imgs/default.png"
-  video = '';
   desSlug:any
   term: any;
+  image = [{
+    img:``,
+    title:``,
+    small_text:``
+
+  }]
+  videos = [{
+    video:``
+  }]
+   imageSlide:sliders[]=[]
+
   sliderContainer: sliders[] = [];
-  imageSlide: Image[] = [];
   blogs: Blog[] = [];
   destinations: Blog[] = [];
   package: Blog[] = [];
@@ -39,31 +47,37 @@ export class HomeSliderComponent implements OnInit {
 
   constructor(private _slider: HomeserviceService) { }
 
+  
+  
   ngOnInit(): void {
     this._slider.getSlider().subscribe(result => {
       this.sliderContainer = result.data
-      this.imageSlide = result.data.image
 
-
-      // this._slider.search("egypt").subscribe(result => {
-
-      //   this.search = result.data
-      //   console.log(this.search);
-      // })
-
-      // 
-      // 
-
-
-
-
-
-      // if(result.data.image.type == "Video"){
-      //   this.video= result.data.image.type
-      //   console.log(this.video);
-
-      // }
-
+      this.imageSlide = result.data
+      
+      this.imageSlide.forEach(ele => {
+        if (ele.image.type == "Video") {
+          
+          this.videos.push({
+            video:`${ele.image.url}`
+          }) 
+          console.log(this.videos);
+          
+        }
+        if (ele.image.type == "Image") {
+          
+          this.image.push({
+            img:`${ele.image.url}`,
+            title:`${ele.title}`,
+            small_text:`${ele.small_text}`
+          })
+         
+          console.log(this.image);
+        }
+        
+      })
+      
+     
     })
 
 

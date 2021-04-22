@@ -22,7 +22,7 @@ export class SponsorsLogoComponent implements OnInit {
       this.logo = result.data;
       
       this.logo.forEach(s=>{
-         
+
         if(s.showed_on_large_slider==true){
            
           this.show.push({img:`${s.large_image}`,link:`${s.link}`} )

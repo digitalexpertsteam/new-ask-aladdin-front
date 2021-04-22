@@ -1,5 +1,5 @@
 import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
-import { DomSanitizer } from "@angular/platform-browser";
+import { DomSanitizer, Meta, Title } from "@angular/platform-browser";
 import { HomeserviceService } from "../../../../services/homeservice.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { destination } from '../../../../interfaces/destination';
@@ -15,11 +15,13 @@ import { ActivatedRoute } from '@angular/router';
 
 })
 export class TravelCruisesDesComponent implements OnInit {
+  title: any;
 
   constructor( 
     private _excursions: HomeserviceService,
     private _Active:ActivatedRoute , 
-     private modalService: NgbModal) { }
+     private modalService: NgbModal,
+     private _Meta:Meta , private _Title:Title ) { }
 
   x = 1;
   max = 5;
@@ -51,9 +53,21 @@ readonly = true
     this._excursions.getTravelCruises(this.id).subscribe((result) => {
       this.cruises = result.data;
       this.desName=result.data[0].destination_name;  
-      this.desSlug=result.data[0].destination_slug;  
+      this.desSlug = result.data[0].destination_slug ;
       console.log(this.desName);
-      
+      this.title = result.data[0].destination_seo_title;
+      this._Title.setTitle(`${this.title}`)
+      this._Meta.addTags([
+        { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
+	      { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
+        { name: 'description', content: `${result.data[0].destination_seo_description}` },
+        { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
+        { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
+        { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
+        { name: 'twitter:image', property:"og:image", content: `${result.data[0].destination_twitter_image}` },
+        { name: 'facebook:image', property:"og:image", content: `${result.data[0].destination_facebook_image}` },
+
+      ]);
     });
 
     this._excursions.getOneDestinationDetails(1).subscribe(res => {
