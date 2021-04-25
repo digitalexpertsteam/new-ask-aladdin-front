@@ -14,6 +14,9 @@
 .single-blog-content p {
     font-size: 18px;
 }
+ img {
+    max-width: 600px;
+}
 
 .img-slide{
     height: 250px;

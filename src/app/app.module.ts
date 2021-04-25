@@ -74,6 +74,7 @@ import { SinglePageComponent } from './pages/single-page/single-page.component';
 import { PageComponent } from './pages/page/page.component';
 // Import library module
 import { NgxSpinnerModule } from "ngx-spinner";
+import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-footer.component';
 
 
 // components & pages
@@ -135,7 +136,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     AllFaqDestinationComponent,
     SingleCruisesComponent,
     SinglePageComponent,
-    PageComponent,   
+    PageComponent,
+    CategoreyFooterComponent,   
   ],
   imports: [
     BrowserModule,

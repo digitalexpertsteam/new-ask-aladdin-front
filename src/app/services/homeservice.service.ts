@@ -120,7 +120,15 @@ export class HomeserviceService {
 
   getPage(id:any): Observable<any> {
     return this._http.get(
-      `${environment.ApiUrl}${id}/pages/${this.currentLang}`);}
+      `${environment.ApiUrl}${id}/pages/${this.currentLang}`);
+    }
+
+    getSinglePage(id:any):Observable<any>{
+      return this._http.get(
+        `${environment.ApiUrl}page/${id}/en`
+      )
+    }
+
 
 
   getDestinationExcursions(id: any): Observable<any> {
