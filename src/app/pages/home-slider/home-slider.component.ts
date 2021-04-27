@@ -21,7 +21,9 @@ export class HomeSliderComponent implements OnInit {
 
   }]
   videos = [{
-    video:``
+    video:``,
+    title:``,
+    small_text:``,
   }]
    imageSlide:sliders[]=[]
 
@@ -30,6 +32,7 @@ export class HomeSliderComponent implements OnInit {
   destinations: Blog[] = [];
   package: Blog[] = [];
   cruise: Blog[] = [];
+
 
   faq: Blog[] = [];
   excursion: Blog[] = [];
@@ -59,7 +62,9 @@ export class HomeSliderComponent implements OnInit {
         if (ele.image.type == "Video") {
           
           this.videos.push({
-            video:`${ele.image.url}`
+            video:`${ele.image.url}`,
+            title:`${ele.title}`,
+            small_text:`${ele.small_text}`
           }) 
           console.log(this.videos);
           

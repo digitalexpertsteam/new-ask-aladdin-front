@@ -1,6 +1,4 @@
-
 import { Component, OnInit } from "@angular/core";
-
 import { ActivatedRoute } from "@angular/router";
 import { Blog } from "../../../../interfaces/blog";
 import { HomeserviceService } from "../../../../services/homeservice.service";
@@ -75,7 +73,7 @@ export class SingleBlogComponent implements OnInit {
       console.log(this.desName);
     });
 
-    this._homeService.getOneDestinationDetails(this.ides).subscribe(res => {
+    this._homeService.getOneDestinationDetails(1).subscribe(res => {
 
       this.blogName = res.data[0].categories[4].name  
       

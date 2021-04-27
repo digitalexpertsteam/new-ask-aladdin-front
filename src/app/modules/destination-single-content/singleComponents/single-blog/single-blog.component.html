@@ -41,7 +41,7 @@
                     <p class="font-weight-bold">{{blog.created_at}}</p>
                 </div>
                 <div class="single-blog-content w-75 mb-5">
-                    <p [innerHTML]="blog.overview"></p>
+                    <p [innerHtml]="blog.overview|safe :'html'"></p>
                   
                 </div>
 

@@ -48,7 +48,6 @@ export class TravelExcursionsDesComponent implements OnInit {
   desName:any;
   desSlug:any;
   exName:any;
-  desSlug:any
 
 
   constructor(

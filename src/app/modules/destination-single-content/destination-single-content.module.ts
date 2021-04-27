@@ -20,6 +20,8 @@ import { SingleHotelComponent } from './singleComponents/single-hotel/single-hot
 
 import { IvyGalleryModule } from "angular-gallery";
 import { DestinationSingleContentRoutingModule } from "./destination-single-content-routing.module";
+import { SafePipe } from "../../pipes/InnerHtml.pipe";
+import { SafeHtmlPipe } from "ngx-spinner/lib/safe-html.pipe";
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { DestinationSingleContentRoutingModule } from "./destination-single-cont
     TagsExcursionsComponent,
     ExcursionsSplendorComponent,
     MapPipe,
+    SafePipe,
     SingleFaqComponent,
     SingleGuideComponent,
     SingleHotelComponent

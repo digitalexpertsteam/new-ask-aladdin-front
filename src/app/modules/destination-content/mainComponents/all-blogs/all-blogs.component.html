@@ -35,8 +35,8 @@
                             <img src="{{blog.blog_thumb}}" class="card-img-top" alt="{{blog.blog_thumb_alt}}">
                             <div class="card-body">
                                 <h3 class="card-title">{{blog.blog_name}}</h3>
-                                <p class="card-text" [innerHTML]="blog.blog_description|slice:0:200"></p>
-                                <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}"   (click)="setId(blog.blog_id)" class="btn main-btn blog-btn">Read More</a>
+                                <p class="card-text h-50" [innerHTML]="blog.blog_description|slice:0:200"></p>
+                                <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}"   (click)="setId(blog.blog_id)" class="btn main-btn blog-btn w-75 m-auto">Read More</a>
                             </div>
                         </div>
                     </a>
@@ -45,5 +45,4 @@
         </div>
     </div>
 </section>
-<app-sponsors-logo></app-sponsors-logo>
 <app-sponsorss></app-sponsorss>

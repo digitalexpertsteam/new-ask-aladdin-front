@@ -43,7 +43,7 @@
           <p class="font-weight-bold">{{ faq.created_at }}</p>
         </div>
         <div class="single-blog-content w-75 mb-5">
-          <p [innerHTML]="faq.overview"></p>
+          <p [innerHTML]="faq.overview| safe:'html'"></p>
         </div>
 
         <div class="text-center sec-bg">

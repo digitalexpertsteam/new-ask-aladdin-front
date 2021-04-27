@@ -30,6 +30,8 @@ import { TravelCruisesDesComponent } from "./modules/destination-content/mainCom
 import { SingleCruisesComponent } from "./pages/single-cruises/single-cruises.component";
 import { PageComponent } from "./pages/page/page.component";
 import { SingleHotelComponent } from "./modules/destination-single-content/singleComponents/single-hotel/single-hotel.component";
+import { SinglePageComponent } from "./pages/single-page/single-page.component";
+import { CategoreyFooterComponent } from "./shared/categorey-footer/categorey-footer.component";
 
 
 const routes: Routes = [
@@ -78,7 +80,7 @@ const routes: Routes = [
 
   // cruises
   { path: ":slug/travel-cruises", component: TravelCruisesDesComponent },
-  { path: ":id/single-cruises/:slug", component:SingleCruisesComponent},
+  { path: ":id/travel-cruises/:slug", component:SingleCruisesComponent},
   
   // {path:":slug/:slug/:slug" , pathMatch: 'full', loadChildren:()=>import('./modules/destination-single-content/destination-single-content.module').then(m=> m.DestinationSingleContentModule)},
   { path: "travelguide", component: TravelGuideComponent },
@@ -88,10 +90,12 @@ const routes: Routes = [
   { path: "our-story", component: OurStoryComponent },
   { path: "contactUs", component: ContactUsComponent },
   { path: "page", pathMatch: "full", component: PageComponent },
+  { path: "single-page", pathMatch: "full", component: SinglePageComponent },
+  { path: "single-page/:slug", pathMatch: "full", component: SinglePageComponent },
+  {path:"categorey" , component:CategoreyFooterComponent},
+  { path: ":slug", component: OneDestinationComponent },
+  { path: ":slug/:id",  component: SingleHotelComponent },
 
-  { path: ":slug", pathMatch: "full", component: OneDestinationComponent },
-
-  { path: ":slug/:id", pathMatch: "full", component: SingleHotelComponent },
 
 
 

@@ -6,7 +6,7 @@
         </div>
         <div class="destination-package mt-4">
             <div class="row">
-                <div class="col-12 col-md-4 mb-4" *ngFor="let des of destinationContainer|slice:0:1">
+                <div class="col-12 col-md-4 mb-4" *ngFor="let des of destinationContainer|slice:1:2">
                     <div class="destination-details">
                         <a routerLink="/{{des.slug}}">
                             <img src="{{des.thumb}}" class="img-fluid" alt="{{des.thumb_alt}}" />
@@ -17,7 +17,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-12 col-md-8" *ngFor="let des of destinationContainer|slice:1:2">
+                <div class="col-12 col-md-8" *ngFor="let des of destinationContainer|slice:0:1">
                     <div class="destination-details">
                         <a routerLink="/{{des.slug}}">
                             <img src="{{des.thumb}}" class="img-fluid w-100" alt="{{des.thumb_alt}}" />

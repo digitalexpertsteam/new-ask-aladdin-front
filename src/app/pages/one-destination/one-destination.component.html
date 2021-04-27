@@ -208,7 +208,7 @@
       <ng-template *ngFor="let pack of packageOffer" carouselSlide>
         <div class="slide">
           <div class="blogs overflow-hidden">
-            <a routerLink="/" class="text-dark">
+            <a routerLink="/{{singleDestination[0].name}}/travel-package/{{pack.slug}}" class="text-dark">
               <div class="card main-card text-center anotherCard offerCard">
                 <div class="img">
                   <img src="../../../assets/imgs/hot4.png" class="top" alt="" />
@@ -230,7 +230,7 @@
       <ng-template *ngFor="let excurs of excursionsOffer" carouselSlide>
         <div class="slide">
           <div class="blogs overflow-hidden">
-            <a routerLink="/" class="text-dark">
+            <a routerLink="/{{singleDestination[0].name}}/travel-excursions/{{excurs.slug}}" class="text-dark">
               <div class="card main-card text-center anotherCard offerCard">
                 <div class="img">
                   <img src="../../../assets/imgs/hot4.png" class="top" alt="" />
@@ -253,7 +253,7 @@
         <div class="slide">
 
           <div class="blogs overflow-hidden">
-            <a routerLink="/" class="text-dark">
+            <a routerLink="/{{singleDestination[0].name}}/travel-cruises/{{curies.slug}}" class="text-dark">
               <div class="card main-card text-center anotherCard offerCard">
                 <div class="img">
                   <img src="../../../assets/imgs/hot4.png" class="top" alt="" />

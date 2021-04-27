@@ -101,7 +101,7 @@ export class HomeserviceService {
   }
   getSingleFaq(id: any): Observable<any> {
     return this._http.get(`${environment.ApiUrl}faq/${id}/${this.currentLang}`);
-  }
+  } 
 
   getDestinationGuides(id: any): Observable<any> {
     return this._http.get(
@@ -120,7 +120,15 @@ export class HomeserviceService {
 
   getPage(id:any): Observable<any> {
     return this._http.get(
-      `${environment.ApiUrl}${id}/pages/${this.currentLang}`);}
+      `${environment.ApiUrl}${id}/pages/${this.currentLang}`);
+    }
+
+    getSinglePage(id:any):Observable<any>{
+      return this._http.get(
+        `${environment.ApiUrl}page/${id}/en`
+      )
+    }
+
 
 
   getDestinationExcursions(id: any): Observable<any> {
@@ -162,6 +170,11 @@ export class HomeserviceService {
     return this._http.get(`${environment.ApiUrl}search/${term}/${this.currentLang}`
     );
   }
+
+  categoryFooter(id:any):Observable<any>{
+    return this._http.get(`${environment.ApiUrl}destination/footer/${id}/${this.currentLang}`)
+  }
+
 
 
 }

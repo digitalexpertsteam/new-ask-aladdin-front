@@ -40,7 +40,7 @@
                             <div class="card-body">
                                 <h3 class="card-title">{{guide.travel_guide_name}}</h3>
                                 <p class="card-text" [innerHTML]="guide.travel_guide_description"></p>
-                                <a routerLink="/{{desSlug}}/travel-guides/{{guide.travel_guide_slug}}"   (click)="setId(guide.travel_guide__id)" class="btn main-btn blog-btn">Read More</a>
+                                <a routerLink="/{{desSlug}}/travel-guides/{{guide.travel_guide_slug}}"   (click)="setId(guide.travel_guide__id)" class="btn w-75 m-auto main-btn blog-btn">Read More</a>
                             </div>
                         </div>
                     </a>
@@ -49,5 +49,4 @@
         </div>
     </div>
 </section>
-<app-sponsors-logo></app-sponsors-logo>
 <app-sponsorss></app-sponsorss>
