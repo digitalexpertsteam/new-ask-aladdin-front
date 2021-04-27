@@ -101,7 +101,7 @@ export class HomeserviceService {
   }
   getSingleFaq(id: any): Observable<any> {
     return this._http.get(`${environment.ApiUrl}faq/${id}/${this.currentLang}`);
-  }
+  } 
 
   getDestinationGuides(id: any): Observable<any> {
     return this._http.get(
@@ -169,6 +169,10 @@ export class HomeserviceService {
   search(term:string): Observable<any> {
     return this._http.get(`${environment.ApiUrl}search/${term}/${this.currentLang}`
     );
+  }
+
+  categoryFooter(id:any):Observable<any>{
+    return this._http.get(`${environment.ApiUrl}destination/footer/${id}/${this.currentLang}`)
   }
 
 

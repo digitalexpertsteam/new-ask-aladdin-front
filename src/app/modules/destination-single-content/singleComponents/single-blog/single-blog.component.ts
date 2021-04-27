@@ -1,6 +1,4 @@
-
 import { Component, OnInit } from "@angular/core";
-
 import { ActivatedRoute } from "@angular/router";
 import { Blog } from "../../../../interfaces/blog";
 import { HomeserviceService } from "../../../../services/homeservice.service";
