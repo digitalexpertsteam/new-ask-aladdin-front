@@ -47,7 +47,14 @@ export class TourDetailsComponent implements OnInit {
       this._Title.setTitle(`${this.Title}`)
       this._Meta.addTags([
 
+
     
+
+      this.highlights.getOneDestinationDetails(2).subscribe(res => {
+
+        this.packName = res.data[0].categories[1].name  
+        this.overBanner = result.data[0].image_over_banner;
+        console.log(this.overBanner);
         { name: 'keywords', content: `${result.data[0].seo_keywords}` },
         { name: 'robots', content: `${result.data[0].seo_robots}` },
         { name: 'description', content: `${result.data[0].seo_description}`},
@@ -80,3 +87,7 @@ export class TourDetailsComponent implements OnInit {
   })
 }
   }
+  })}
+  
+
+}

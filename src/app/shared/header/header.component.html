@@ -21,6 +21,16 @@
             </div>
           
        <!-- <a href="{{social.facebook}}"> <li class="d-flex align-items-center mr-4"><i class="fab fa-facebook-f text-white"></i>
+    <ul class="d-flex align-items-center p-0 m-0">
+
+        <div class="d-flex align-items-center p-0 m-0" *ngFor="let social of socialsContainer">
+            <div class="input-group w-50 m-auto">
+                <input type="search" class="form-control w-50 mt-1 rounded" placeholder="Search"
+                    aria-label="Search" aria-describedby="search-addon" data-toggle="modal" data-target="#exampleModal" />
+
+    
+            </div>
+       <a href="{{social.facebook}}"> <li class="d-flex align-items-center mr-4"><i class="fab fa-facebook-f text-white"></i>
         </li></a>
 
         <a href="{{social.twitter}}">
@@ -41,6 +51,7 @@
         <a class="ins" href="{{social.instagram}}"><li class="mr-2 social"><i class="fab fa-instagram"></i></li></a>
         <a class="yout" href="{{social.youtube}}"><li class="mr-2 social"><i class="fab fa-youtube"></i></li></a>
       
+
 
     </div>
         <li class=" align-items-center lang-btn">
