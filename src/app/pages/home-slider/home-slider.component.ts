@@ -33,6 +33,7 @@ export class HomeSliderComponent implements OnInit {
   package: Blog[] = [];
   cruise: Blog[] = [];
 
+
   faq: Blog[] = [];
   excursion: Blog[] = [];
   category: Blog[] = [];

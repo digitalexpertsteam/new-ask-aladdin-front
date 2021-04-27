@@ -175,6 +175,12 @@ export class HomeserviceService {
     return this._http.get(`${environment.ApiUrl}destination/footer/${id}/${this.currentLang}`)
   }
 
+  side(): Observable<any> {
+    return this._http.get(`${environment.ApiUrl}side-photos`);
+  }
+  lang(): Observable<any> {
+    return this._http.get(`${environment.ApiUrl}lang-control`);
+  }
 
 }
 

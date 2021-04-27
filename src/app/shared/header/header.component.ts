@@ -32,6 +32,12 @@ export class HeaderComponent implements OnInit {
   hotel: Blog[] = [];
   page: Blog[] = [];
   travel_guide: Blog[] = [];
+  en:any[]=[]
+  fr:any[]=[]
+  sp:any[]=[]
+  ger:any[]=[]
+  ru:any[]=[]
+
 
 
 
@@ -63,8 +69,15 @@ export class HeaderComponent implements OnInit {
     this.header.getSlider().subscribe(result => {
       this.sliderContainer = result.data
       this.imageSlide = result.data.image
+    })
+    this.header.lang().subscribe(result => {
+      this.en = result.data[0].english;
+      this.fr = result.data[0].french;
+      this.sp = result.data[0].spanish;
+      this.ger = result.data[0].deutsch;
+      this.ru = result.data[0].russian;
 
-
+      
     })
   }
 

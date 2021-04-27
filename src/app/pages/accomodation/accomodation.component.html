@@ -1,9 +1,9 @@
 <section id="accomodation" class="accomodation my-3">
     <div class="container">
         <div class="head mb-4">
-            <h2 class="font-weight-bold"> Accommodation for This Package </h2>
+            <h2 class="font-weight-bold">Accommodation for 5 star deluxe package</h2>
         </div>
-        <div class="row">
+        <div *ngIf="flag?.length > 0 ;else accommodation" class="row">
             <div *ngFor="let acc of accomodation.hotels" class="col-12 col-md-3 pt-2">
                 <div class="card overflow-hidden">
                     <a routerLink="/egypt/{{acc.slug}}"  >
@@ -38,3 +38,7 @@
 
     </div>
 </section>
+<ng-template #accommodation >
+
+    <h1 class=" text-center  ">  <img src="assets/imgs/dot.svg" class="img-fluid"> No Accommodation Yet</h1>
+  </ng-template>

@@ -33,6 +33,7 @@ export class TravelCruisesDesComponent implements OnInit {
   desSlug:any;
   cruContent:destination[]=[];
   cruName:any;
+  count:any
 
 readonly = true
   overStar: number | undefined;
@@ -52,9 +53,10 @@ readonly = true
     this.id = this._Active.snapshot.params.slug
     this._excursions.getTravelCruises(this.id).subscribe((result) => {
       this.cruises = result.data;
+      this.count = result.data.length;
+
       this.desName=result.data[0].destination_name;  
       this.desSlug = result.data[0].destination_slug ;
-      console.log(this.desName);
       this.title = result.data[0].destination_seo_title;
       this._Title.setTitle(`${this.title}`)
       this._Meta.addTags([

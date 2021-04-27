@@ -28,7 +28,6 @@ export class PricesDatesComponent implements OnInit {
     this._prices.getSinglepackage(this.id).subscribe(result => {
       this.prices = result.data[0].prices;
       this.flag = result.data[0].prices[0].attributes.season_start_date
-      console.log(this.flag);
       
       
       

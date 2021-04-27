@@ -1,36 +1,27 @@
 <section class="sec-banner text-center"
-    [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + cruises?.banner + ')' }">
+    [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + banener?.banner + ')' }">
 
     <div class="container">
         <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
-            <h1><span class="main-color font-weight-bold">{{cruises?.name}} </span>
+            <h1><span class="main-color font-weight-bold">{{banener?.name}} </span>
             </h1>
         </div>
-        <p class="mt-2">{{cruises?.description}}</p>
+        <p class="mt-2">{{banener?.description}}</p>
         <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
             <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a>
 
 
 
-            <!-- <a class="call-btn d-flex align-items-center">
+            <a class="call-btn d-flex align-items-center">
                 <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
                 <span class="phone-text text-dark">Call Us: <strong>{{contact?.phone1}}</strong></span>
-            </a> -->
+            </a>
         </div>
     </div>
 
 </section>
-<section>
-    <div class="container">
-  
-      <div  class="page-links py-2">
-       <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{desName}} / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}/travel-cruises"> <span > {{cruisesName}} / </span>  </a>
-        <span class="main-color">{{cruName}}</span>  
-      </div>
-    </div>
-  </section><section class="sec-bg p-3 mb-5">
+<app-page-links></app-page-links>
+<section class="sec-bg p-3 mb-5">
     <div class="container">
         <!-- <app-tags></app-tags> -->
         <!-- tag -->
@@ -268,11 +259,15 @@
                 <section id="Gallery" class="pt-3">
 
 
-                    <div class="m-auto" >
+                    <div *ngIf="galery?.length >0 ;else img" class="m-auto" >
                         <ngx-gallery  [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
                       </div>
 
                 </section>
+                <ng-template #img >
+
+                    <h1 class=" bg-white mt-3 px-3 py-4 text-center  "> No Gallery Yet</h1>
+                  </ng-template>
             </div>
             <div class="col-12 col-md-3">
                 <section class="bg-white mt-3 px-3 py-4">
@@ -283,8 +278,7 @@
                                 class="main-color"> $</span></h4>
                         <h4 class=""> <span> <i class="fas fa-route"></i> check in</span> {{cruises?.checkin}} </h4>
                         <h4 class=""> <span> <i class="fas fa-route"></i> check out</span> {{cruises?.checkout}} </h4>
-                        <rating [(ngModel)]="cruises.rate" [max]="max" [readonly]="isReadonly">
-                        </rating>
+                        <rating [(ngModel)]="cruises.rate" [max]="max" [readonly]="isReadonly"></rating>
 
                     </div>
                     <div class="">
@@ -336,6 +330,7 @@
         <div class="head mb-4">
             <h2 class="font-weight-bold">Accommodation for 5 star deluxe cruises</h2>
         </div>
+        <div *ngIf="ttt.length > 0 ; else accommodation"  > 
         <div class="row">
             <div *ngFor="let acc of cruises.hotels" class="col-12 col-md-3 pt-2">
                 <div class="card overflow-hidden">
@@ -365,8 +360,13 @@
                     </a>
                 </div>
             </div>
-
         </div>
+
+    </div>
+    <ng-template #accommodation >
+
+        <h1 class="text-center  "> No Accommodation Yet</h1>
+      </ng-template>
 
 
     </div>

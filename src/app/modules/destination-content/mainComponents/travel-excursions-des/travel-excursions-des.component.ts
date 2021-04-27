@@ -48,6 +48,8 @@ export class TravelExcursionsDesComponent implements OnInit {
   desName:any;
   desSlug:any;
   exName:any;
+  count:any
+
 
 
   constructor(
@@ -71,6 +73,8 @@ export class TravelExcursionsDesComponent implements OnInit {
       this.desSlug = result.data[0].destination_slug;
       this.exName = result.data.excursion_name;
       this.name = result.data;
+      this.count = result.data.length;
+
       this.title = result.data[0].destination_seo_title;
       this._Title.setTitle(`${this.title}`)
       this._Meta.addTags([

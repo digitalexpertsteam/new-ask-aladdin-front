@@ -15,13 +15,13 @@ import { SingleFaqComponent } from './singleComponents/single-faq/single-faq.com
 import { SingleGuideComponent } from './singleComponents/single-guide/single-guide.component';
 import { SingleHotelComponent } from './singleComponents/single-hotel/single-hotel.component';
 
+import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { BrowserModule } from "@angular/platform-browser";
 
 
-
-import { IvyGalleryModule } from "angular-gallery";
 import { DestinationSingleContentRoutingModule } from "./destination-single-content-routing.module";
 import { SafePipe } from "../../pipes/InnerHtml.pipe";
-import { SafeHtmlPipe } from "ngx-spinner/lib/safe-html.pipe";
 
 @NgModule({
   declarations: [
@@ -35,14 +35,20 @@ import { SafeHtmlPipe } from "ngx-spinner/lib/safe-html.pipe";
     SafePipe,
     SingleFaqComponent,
     SingleGuideComponent,
-    SingleHotelComponent
+    SingleHotelComponent,
+   
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [CommonModule,
      ShareModule,
      DestinationSingleContentRoutingModule,
+
+     BrowserModule,
+     NgxYoutubePlayerModule.forRoot(),
+
     ],
 
 })
 export class DestinationSingleContentModule {}
+platformBrowserDynamic().bootstrapModule(DestinationSingleContentModule);
