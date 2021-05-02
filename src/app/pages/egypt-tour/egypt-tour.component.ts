@@ -10,6 +10,7 @@ import { HomeserviceService } from '../../services/homeservice.service';
 export class EgyptTourComponent implements OnInit {
 
   packageContainer:packages[] = []
+  image = "../../../../../assets/imgs/default.png"
   constructor(private _package:HomeserviceService) { }
 
   ngOnInit(): void {

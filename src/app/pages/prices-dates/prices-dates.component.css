@@ -60,3 +60,7 @@
     width: 100%;
 }
 }
+h1 img {
+    height: 20px;
+    margin-top: 3px;
+}

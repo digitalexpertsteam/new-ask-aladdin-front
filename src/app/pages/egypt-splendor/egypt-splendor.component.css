@@ -41,6 +41,11 @@
 .detail img{
     height: 20px;
 }
+@media only screen and (max-width: 600px) {
+    detail img {
+      width: 20%;
+    }
+  }
 .buttons{
     border-radius: none;
 }
@@ -72,6 +77,10 @@
     
 }
 
+.tour i{
+    color: #f68800;
+
+}
 
 
 

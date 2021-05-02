@@ -1,20 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TagsExcursionsComponent } from './tags-excursions.component';
 
-describe('TagsExcursionsComponent', () => {
-  let component: TagsExcursionsComponent;
-  let fixture: ComponentFixture<TagsExcursionsComponent>;
+import { SingleFaqComponent } from './single-faq.component';
+
+describe('SingleFaqComponent', () => {
+  let component: SingleFaqComponent;
+  let fixture: ComponentFixture<SingleFaqComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TagsExcursionsComponent ]
+      declarations: [ SingleFaqComponent ]
+
+
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TagsExcursionsComponent);
+
+    fixture = TestBed.createComponent(SingleFaqComponent);
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

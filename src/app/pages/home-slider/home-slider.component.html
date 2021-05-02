@@ -1,30 +1,713 @@
 <section class="alaadin-banner text-center">
-    <mdb-carousel  [isControls]="true" class="carousel slide" [animation]="'fade'">
-        <mdb-carousel-item *ngFor="let slider of sliderContainer">
-            <div  class="view w-100">
-                <img  [src]="slider.image.type?slider.image.url:''" class="img-fluid w-100" />
-                 
-            </div>
-            <div class="carousel-caption">
-                <div class="animated delay-1s">
-                    <h3 class="h3-responsive">{{slider.title}}</h3>
-                    <p>{{slider.small_text}}</p>
-                    <div class="row">
-                        <div class="col-12 col-md-3"></div>
-                        <div class="col-12 col-md-6">
-                            <div class="input-group">
-                                <input type="search" class="form-control rounded" placeholder="Enter Destination Name"
-                                    aria-label="Search" aria-describedby="search-addon" />
-                                <button type="button" class="btn main-btn" ><i class="fas fa-search"></i> Search
-                                    Now</button>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-3"></div>
+
+    
+        <mdb-carousel  [isControls]="true" class="carousel slide" [animation]="'fade'">
+            <mdb-carousel-item #imge *ngFor="let img of image|slice:1">
+                <div class="private" >
+                    <div id="image"  class="view w-100">
+                        <img  [src]="img.img"  class="img-fluid w-100" />
+                        
                     </div>
                 </div>
+                   
+                
+                <div class="carousel-caption">
+                    <div class="animated delay-1s">
+                        <h1 class="h3-responsive">{{img.title}}</h1>
+                        <p>{{img.small_text}}</p>
+                        <div class="row">
+                            <div class="col-12 col-md-3"></div>
+                            <div class="col-12 col-md-6">
+    
+                            </div>
+                            <div class="col-12 col-md-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </mdb-carousel-item>
+            
+                <mdb-carousel-item *ngFor="let video of videos|slice:1">
+                    <div class="private" >
+                        
+                        <div id="video" class="videos w-100">
+                            <video class="vid" autoplay [muted]="true"  loop   [src]="video.video" >
+                                <source  [src]="video.video">
+                            </video>
+                        </div>
+                        <div class="layout">
+                          <div class="carousel-caption">
+                            <mdb-carousel  [isControls]="false" class="carousel slide" [animation]="'fade'">
+                              <mdb-carousel-item > 
+                                <div class="animated delay-1s w-75 m-auto">
+                                  <img src="../../../assets/imgs/trustpilot.png" alt="" >
+                                  <h1 class="h3-responsive">{{video.title}}</h1>
+                                  <p>{{video.small_text}}</p>
+                                    </div>
+                              </mdb-carousel-item >
+                              <mdb-carousel-item >
+                                <div class="animated delay-1s w-75 m-auto">
+                                  <img src="../../../assets/imgs/trustpilot.png" alt="" >
+                                  <h1 class="h3-responsive"> EGYPT TRAVEL EXPERTS </h1>
+                                  <p></p>
+                                    </div>
+                              </mdb-carousel-item >
+                            </mdb-carousel>
+                            
+                            </div>
+                        </div>
+                    </div>
+                       
+                    
+                   
+                    
+                </mdb-carousel-item>
+        </mdb-carousel>
+        
+        
+    
+    
+  
+    <!-- <div>
+        <table>
+        <thead *ngFor="let blog of blogs">
+            <th> {{blog.name}}</th>
+
+        </thead>
+    </table>
+
+    </div> -->
+
+    <!-- Button trigger modal
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+
+    <!-- Modal
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                     <h4 class="modal-title text-center " id="exampleModalLabel">search</h4>
+                    <div class="modal-body ">
+                        <label class="labelSearch w-100 d-flex" for="">
+
+                        <input type="search mt-5" [(ngModel)]="term" (keyup)="termS(term)"
+                            class="form-control  mt-1 " placeholder="Search"
+                            aria-label="Search" aria-describedby="search-addon" />
+                        </label>
+
+
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="destinations.length>0" class="mt-2"> <a  href="/all-destinations">Destinations </a> </h2>
+                            <div class="row">
+
+                                <div *ngFor="let destination of destinations" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}" class="text-dark">
+                                          <div class="card main-card text-center anotherCard">
+                                            <img
+                                              [src]="destination.thumb"
+                                              class="img-fluid"
+                                              alt="{{ destination.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ destination.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle"  >
+                            <h2 *ngIf="blogs.length>0" class="mt-2"> <a  href="{{desSlug}}/blogs">Blog </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+                                <div *ngFor="let blog of blogs" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/blogs/{{blog.slug}}" class="text-dark">
+                                          <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="searchTitle ">
+                            <h2 *ngIf="package.length>0" class="mt-2"> <a  href="/all-Packages">Packages </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let packag of package" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/travel-package/{{packag.slug}}" class="text-dark">
+                                          <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="packag.thumb=='1'?img: packag.thumb"
+                                              class="img-fluid"
+                                              alt="{{ packag.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ packag.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="cruise.length>0" class="mt-2"> <a  href="{{desSlug}}/travel-cruises">Travel Cruise </a> </h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of cruise" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/single-cruises/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="excursion.length>0" class="mt-2"> <a  href="{{desSlug}}/travel-excursions">Excursion </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of excursion" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/travel-excursions/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="searchTitle">
+                            <h2 *ngIf="category.length>0" class="mt-2"><a >Category </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of category" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="searchTitle">
+                            <h2 *ngIf="faq.length>0" class="mt-2"><a  href="{{desSlug}}/facts-myths">Facts & Myths </a> </h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of faq" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/facts-myths/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="searchTitle">
+                            <h2 *ngIf="hotel.length>0" class="mt-2">Hotel</h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of hotel" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="page.length>0" class="mt-2"><a  href="/page">Pages</a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of page" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 *ngIf="travel_guide.length>0" class="mt-2"><a  href="{{desSlug}}/travel-guides">Travel Guides</a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+                                <div *ngFor="let blog of travel_guide" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/travel-guides/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                </div>
+
+
+
             </div>
-        </mdb-carousel-item>
+        </div>
 
 
-    </mdb-carousel>
+
+        <div class="input-group w-50 m-auto">
+            <input type="search" class="form-control w-50 mt-1 rounded" placeholder="Enter Destination Name"
+                aria-label="Search" aria-describedby="search-addon" data-toggle="modal" data-target="#exampleModal" />
+            <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn main-btn ml-3 mb-2"><i
+                    class="fas fa-search"></i> Search</button>
+
+        </div>
+
+
+    </div> -->
+    <!-- <div>
+        <table>
+        <thead *ngFor="let blog of blogs">
+            <th> {{blog.name}}</th>
+
+        </thead>
+    </table>
+
+    </div> -->
+
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>  -->
+
+    <!-- Modal
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center " id="exampleModalLabel">search</h4>
+                    <div class="modal-body ">
+                        <label class="labelSearch w-100 d-flex" for="">
+
+                        <input type="search mt-5" [(ngModel)]="term" (keyup)="termS(term)"
+                            class="form-control  mt-1 " placeholder="Search"
+                            aria-label="Search" aria-describedby="search-addon" />
+                        </label>
+
+
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="destinations.length>0" class="mt-2"> <a  href="/all-destinations">Destinations </a> </h2>
+                            <div class="row">
+
+                                <div *ngFor="let destination of destinations" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}" class="text-dark">
+                                          <div class="card main-card text-center anotherCard">
+                                            <img
+                                              [src]="destination.thumb"
+                                              class="img-fluid"
+                                              alt="{{ destination.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ destination.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle"  >
+                            <h2 *ngIf="blogs.length>0" class="mt-2"> <a  href="{{desSlug}}/blogs">Blog </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+                                <div *ngFor="let blog of blogs" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/blogs/{{blog.slug}}" class="text-dark">
+                                          <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="searchTitle ">
+                            <h2 *ngIf="package.length>0" class="mt-2"> <a  href="/all-Packages">Packages </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let packag of package" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/travel-package/{{packag.slug}}" class="text-dark">
+                                          <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="packag.thumb=='1'?img: packag.thumb"
+                                              class="img-fluid"
+                                              alt="{{ packag.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ packag.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="cruise.length>0" class="mt-2"> <a  href="{{desSlug}}/travel-cruises">Travel Cruise </a> </h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of cruise" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/single-cruises/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="excursion.length>0" class="mt-2"> <a  href="{{desSlug}}/travel-excursions">Excursion </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of excursion" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/travel-excursions/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="searchTitle">
+                            <h2 *ngIf="category.length>0" class="mt-2"><a >Category </a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of category" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="searchTitle">
+                            <h2 *ngIf="faq.length>0" class="mt-2"><a  href="{{desSlug}}/facts-myths">Facts & Myths </a> </h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of faq" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/facts-myths/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div class="searchTitle">
+                            <h2 *ngIf="hotel.length>0" class="mt-2">Hotel</h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of hotel" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="searchTitle">
+                            <h2 *ngIf="page.length>0" class="mt-2"><a  href="/page">Pages</a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+
+                                <div *ngFor="let blog of page" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                         </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2 *ngIf="travel_guide.length>0" class="mt-2"><a  href="{{desSlug}}/travel-guides">Travel Guides</a></h2>
+                            <div *ngFor="let destination of destinations" class="row">
+                                <div *ngFor="let blog of travel_guide" class="d-flex flex-wrap">
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/{{destination.slug}}/travel-guides/{{blog.slug}}" class="text-dark">
+                                            <div class="card main-card text-center blogCard anotherCard">
+                                            <img
+                                              [src]="blog.thumb"
+                                              class="img-fluid"
+                                              alt="{{ blog.thumb_alt }}"
+                                            />
+                            
+                                            <div class="card-body card-details des-antherCard">
+                                              <h6 class="card-title">{{ blog.name }}</h6>
+                                            </div>
+                                          </div>
+                                        </a>
+                                      </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>  -->
 </section>

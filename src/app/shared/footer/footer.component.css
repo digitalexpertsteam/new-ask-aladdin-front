@@ -8,6 +8,16 @@ footer {
     overflow: hidden;
 
 }
+/* .accept img{
+    width: 300% !important;
+
+} */
+.we{
+    color: white;
+}
+.acc{
+    background-color:#f68800 ;
+}
 
 footer .shortcuts{
     width: 80%;
@@ -48,7 +58,7 @@ footer .shortcuts li a:hover {
 }
 .copyright
 {
-    transform: translateY(80px);
+    transform: translateY(70px);
     color: #fff;
     display: flex;
 

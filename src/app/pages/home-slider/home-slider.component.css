@@ -1,61 +1,94 @@
+/* .private{
+    position: relative;
+}
+.video{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.view{
+    position: absolute;
+    top: 0;
+    z-index: 222222;
+    
+} */
+.vid {
+    height: 1080px;
+}
+.layout{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
 .view img {
     height: 85vh;
     object-fit: cover;
 }
 .carousel-caption {
-    top:27%
+    top: 20%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
-.carousel-caption h3 {
-    font-size: 50px;
+.carousel-caption h1 {
+    font-size: 25px;
     font-weight: bold;
+    font-family: trade gothic,roboto condensed,sans-serif !important;
+
 }
 .carousel-caption p {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 25px;
 }
 .carousel-caption button {
     font-size: 13px;
 }
-/* .alaadin-banner {
-    background-image: url("../../../assets/imgs/203-2036768_ancient-history-historic-site-cairo-tourism-egypt-egypt.jpg");
-    background-size: cover;
-    background-position: 0% 20%;
-    position: relative;
+.input-group{
+    position: absolute;
+    top: 50%;
+
     
 }
-.banner-head {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.banner-head h1 {
-    text-shadow: 0 1rem 2rem rgb(0 0 0 / 50%);
-}
-.banner-head p {
-    font-size: 1.3rem;
-}
-.search-places {
-    width: 100%;
-    background-color: rgba(0, 0, 0, .5);
-    position: absolute;
-    bottom: 0;
-    padding: 2.5rem;
-}
- */
- .search-places .search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 255, 255, .2);
-    padding: .5rem .3rem;
-    padding-left: .9rem;
-    flex: 0 0 60%;
-    transition: all .2s;
-    border-radius: 6px;
+.alaadin-banner{
+    position: relative;
+
+
 }
 
-@media only screen  and (max-width:767px){
+
+
+
+@media only screen  and (max-width:1440px){
+    .vid{
+        height:800px;
+    }    
+}  
+@media only screen  and (max-width:1315px){
+    .vid{
+        height:900px;
+    }    
+}
+@media only screen  and (max-width:1280px){
+    .vid{
+        height:710px;
+    }    
+}
+@media only screen  and (max-width:1062px){
+    .vid{
+        height:575px;
+    }    
+}
+@media only screen  and (max-width:768px){
+    .vid{
+        height:440px;
+    }
     .carousel-caption h3 {
         font-size: 28px;
         font-weight: bold;
@@ -65,4 +98,20 @@
     }
     
 }
+@media only screen  and (max-width:500px){
+    .vid{
+        height:230px;
+    }    
+}
+@media only screen  and (max-width:380px){
+    .vid{
+        height:210px;
+    }    
+}
+@media only screen  and (max-width:360px){
+    .vid{
+        height:200px;
+    }    
+}
+
 

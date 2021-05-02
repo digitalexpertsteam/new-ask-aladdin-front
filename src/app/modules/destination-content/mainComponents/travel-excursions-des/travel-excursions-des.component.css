@@ -1,3 +1,18 @@
+.banner{
+    background-size: cover;
+    height: 450px;
+    background-size: cover ;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.des-Name{
+    font-family: 'Cormorant Unicase', serif;
+    letter-spacing: 3px;
+    font-size: 45px;
+}
 
 .tags {
     display: flex;
@@ -80,4 +95,27 @@
     font-size: 0.7rem;
     display: flex;
     color: #9c9c9c;
+
+}
+/* .pack-icons{
+    margin-top: 80px;
+} */
+.package-text{
+    height: 70%;
+}
+@media only  screen and (max-width:480px) {
+    .pack-icons{
+        margin-top: 20px;
+    }
+    .card-title{
+        margin-top: 30px;
+        text-align: center !important;
+    }
+    .day-night{
+        text-align: center !important;
+    }
+    
+    .package-text{
+        height: 35%;
+    }
 }

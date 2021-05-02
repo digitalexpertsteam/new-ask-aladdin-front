@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeserviceService } from '../../services/homeservice.service';
+import { sponsors } from '../../interfaces/sponsors';
+
+
 
 @Component({
   selector: 'app-sponsors-logo',
@@ -7,9 +11,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SponsorsLogoComponent implements OnInit {
 
-  constructor() { }
+  logo:sponsors[]=[]
+  flag:any;
+  showed=[]
+  show=[{img:``, link:``}]
+  constructor( private _sponsors:HomeserviceService) { }
 
   ngOnInit(): void {
+    this._sponsors.getLogo().subscribe(result => {
+      this.logo = result.data;
+      
+      this.logo.forEach(s=>{
+
+        if(s.showed_on_large_slider==true){
+           
+          this.show.push({img:`${s.large_image}`,link:`${s.link}`} )
+          
+          
+        }else{
+          null
+        }
+      })
+
+})
   }
 
 }

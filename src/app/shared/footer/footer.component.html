@@ -35,7 +35,7 @@
                     </h6>
                     <ul *ngFor="let guideName of destinationContainer" class="footer-links">
                         <li *ngFor="let guide of guidesSlug |slice:0:1" class="mb-2">
-                            <a href="/{{guideName.slug}}/{{guide.slug}}" (click)="setId(guideName.id)"  class="text-dark">{{guideName.name}} {{guide.name}} </a>
+                            <a href="/{{guideName.slug}}/travel-guides" (click)="setId(guideName.id)"  class="text-dark">{{guideName.name}} {{guide.name}} </a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +45,7 @@
                     </h6>
                     <ul *ngFor="let packName of destinationContainer" class="footer-links">
                         <li *ngFor="let pack of packagesName |slice:1:2" class="">
-                            <a href="/{{packName.slug}}/{{pack.slug}}" (click)="setId(packName.id)"  class="text-dark">{{packName.name}} {{pack.name}} </a>
+                            <a href="/{{packName.slug}}/travel-package" (click)="setId(packName.id)"  class="text-dark">{{packName.name}} {{pack.name}} </a>
                         </li>
                         
                     </ul>
@@ -68,8 +68,8 @@
                         <ng-container *ngFor="let social of socialsContainer">
                             <div class="row">
                                 <div class="col-2 p-0">
-                                    <!-- <i class="fas fa-map-marker-alt main-color mt-1"></i> -->
-                                    <img  src="../../../assets/imgs/31.svg" alt="">
+                                    <i class="fas fa-map-marker-alt main-color mt-1"></i>
+                                    <!-- <img  src="../../../assets/imgs/31.svg" alt=""> -->
                                 </div>
                                 <div class="col-10 p-0">
                                     <p class="mb-1 font-weight-bold text-justify">USA - Office</p>
@@ -78,8 +78,8 @@
                             </div>
                             <div class="row mt-3">
                                 <div class="col-2 p-0">
-                                    <!-- <i class="fas fa-map-marker-alt main-color mt-1"></i> -->
-                                    <img  src="../../../assets/imgs/31.svg" alt="">
+                                    <i class="fas fa-map-marker-alt main-color mt-1"></i>
+                                    <!-- <img  src="../../../assets/imgs/31.svg" alt=""> -->
                                 </div>
                                 <div class="col-10 p-0">
                                     <p class="mb-1 font-weight-bold text-justify">Egypt - Office</p>
@@ -110,23 +110,36 @@
                                     <p class="mt-1">{{social.mail}}</p>
                                 </div>
                             </div>
+                            
+
+ 
+
+
+
                         </ng-container>
                     </ul>
                 </div>
+
+
             </div>
+
+
         </div>
+
     </div>
-    <div class="container px-5 copyright">
+
+
+
+    <div class="container  copyright mt-4">
+       
         <div class="link-copyright">
-
-
             <p>Copyright©1999-{{date | date:'yyyy'}} Ask-Aladdin (<a> DMCA Protected </a>)</p>
         </div>
         <div class="link-parivacy">
             <p> <a  target="_blank" > Privacy Policy | Disclaimer</a></p>
         </div>
 
-        <div class="link-social overfollow-hidden">
+        <div class="link-social overfollow-hidden ">
             <div class="followUs">
                 <p>Follow Us :</p>
             </div>
@@ -138,12 +151,15 @@
                 <a class="lin" href="{{social.linkedin}}"><i class="fab fa-linkedin"></i></a>
                 <a class="ins" href="{{social.instagram}}"><i class="fab fa-instagram"></i></a>
                 <a class="yout" href="{{social.youtube}}"><i class="fab fa-youtube"></i></a>
-                
-                
-                
-                
-                
             </div>
         </div>
+        <div class="link-weAccept">
+            <p>We Accept : <span><img src="../../../assets/imgs/we_accept_logo.png" alt=""></span></p>
+         </div>
+
     </div>
+   
+
+
 </footer>
+

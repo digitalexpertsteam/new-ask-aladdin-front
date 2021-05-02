@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeserviceService } from '../../services/homeservice.service';
+import { HomeserviceService } from '../../../../services/homeservice.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -18,7 +19,7 @@ export class ExcursionsSplendorComponent implements OnInit {
   imageTrue='assets/imgs/right.svg';
   num : any;
 
-  constructor(private _splendor:HomeserviceService) { }
+  constructor(private _splendor:HomeserviceService,private active:ActivatedRoute,) { }
 
   customOptions: OwlOptions = {
     loop: true,
@@ -50,14 +51,9 @@ export class ExcursionsSplendorComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.id = localStorage.getItem("idPack");
+    this.id = this.active.snapshot.params.slug
     this._splendor.getSingleExcursion(this.id).subscribe(result => {
       this.guide = result.data[0];
-      
-     
-      
-     
-
   })
   }
 

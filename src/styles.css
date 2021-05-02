@@ -6,6 +6,7 @@
 }
 * {
     box-sizing: border-box;
+    font-family: trade gothic,roboto condensed,sans-serif;
 }
 .main-color {
     color: #f68800;
@@ -138,13 +139,38 @@ ul {
 /* end destination */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: trade gothic,roboto condensed,sans-serif; }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: trade gothic,roboto condensed,sans-serif; }
 @media only screen  and (max-width:767px){
     .head-title h2 {
         font-size: 2rem;
     }
     
+
+}
+
+.ngx-gallery { display: inline-block; margin-bottom: 20px; }
+
+.hover-color{
+    color: #000;
+    text-decoration: none;
+}
+.hover-color:hover{
+    color: #f68800;
+    text-decoration: none;
+}
+
+/* font-family: 'Poppins', sans-serif !important; */
+
+::ng-deep .owl-theme .owl-nav [class*=owl-] {
+    color: #FFF;
+    font-size: 20px !important;
+    margin: 5px;
+    padding: 10px;
+    background: #f68800;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 20px;
 }

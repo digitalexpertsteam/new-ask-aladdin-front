@@ -1,7 +1,46 @@
-<section class="sponsors">
-    <div class="container">
-        <carousel [images]="images" [cellsToShow]="cellsToShow" [autoplay]="autoplay" [arrowsOutside]="arrowsOutside"
+<section class=" sponsors py-4">
+     <div  class="container" >
+        <!-- <carousel  [images]="" [cellsToShow]="cellsToShow" [autoplay]="autoplay" [arrowsOutside]="arrowsOutside"
             [height]="height">
-        </carousel>
-    </div>
+        </carousel> -->
+        <!-- <owl-carousel-o [options]="customOptions" >
+            <ng-template *ngFor="let log of logo" carouselSlide>
+              <div class="slide">
+                <div class="blogs w-50 m-auto overflow-hidden">
+                  <a href="{{log.link}}" class="text-dark">
+                    <div class="card w-100 main-card text-center anotherCard">
+                      <img
+                        [src]="log.small_image_on_slider"
+                        class="m-auto">
+                        
+                      
+      
+                      
+                    </div> 
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+           
+          </owl-carousel-o> -->
+          <div  class="row">
+            <div *ngFor="let log of logo" class="col-lg-2">
+              <div class="blogs w-100  overflow-hidden">
+                <a href="{{log.link}}" class="text-dark">
+                  <div class="card  ">
+                    <img
+                      [src]="log.small_image_on_slider"
+                      class="">
+                      
+                    
+    
+                    
+                  </div> 
+                </a>
+              </div>
+            </div>
+          </div>
+    </div> 
+
+    
 </section>

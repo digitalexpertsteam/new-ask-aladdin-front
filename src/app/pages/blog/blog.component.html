@@ -1,44 +1,43 @@
 <section class="my-5 mt-5">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-5">
-                <div class="blog-video position-relative">
-                    <video poster="assets/imgs/2018-Egypt-Luxor-temples-124.jpg">
-                        <source src="assets/imgs/blog-video.mp4" type="video/mp4">
-                        <span><i class="fas fa-play"></i></span>
-                    </video>
-                </div>
-            </div>
-            <div class="col-12 col-md-7">
+            <div class=" col-sm-12">
                 <div class="blog-section">
-                    <div class="blog-title">
-                        <h2 class="font-weight-bold">From Our Blog</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aene an commodo dolor. Aenean Massa.
-                            Cum sociis the</p>
+                    <div class="blog-title text-center">
+                        <h1 class="font-weight-bold mb-5">From Our Blog</h1>
                     </div>
-                   
+                    <owl-carousel-o [options]="customOptions">
+                        <ng-template *ngFor="let blog of blogContainer" carouselSlide>
+                            <div class="slide">
+                                <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}" on (click)="setId(blog.blog_id) "
+                                    class="text-dark">
 
-                    <div class="blog-content border-bottom py-3" *ngFor="let blog of blogContainer">
-                        <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}" (click)="setId(blog.blog_id)">
-                        <div class="row">
-                            <div class="col-3">
-                                <img src="{{blog.blog_thumb}}" class="img-fluid " alt="{{blog.blog_thumb_alt}}" />
+                                    <div class="blogs overflow-hidden">
+                                        <div class="card main-card text-center ">
+                                            <img [src]="blog.blog_thumb" class=" img-slide"
+                                                alt="{{blog.blog_thumb_alt}}">
+                                            <div class="card-body card-details des-antherCard">
+                                                <h3 class="card-title font-weight-bold"> {{blog.blog_name}} </h3>
+                                                <p [innerHTML]="blog.blog_description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="col-9">
-                                <div class="blog-details">
-                                    <h5 class="font-weight-bold">{{blog.blog_name}}</h5>
-                                    <p class="" [innerHTML]="blog.blog_content"></p>
-                                    <span class="mr-2">{{blog.blog_created_at}}</span>
-                                    <!-- <span class="ml-2"><i class="far fa-comment mr-2"></i>1 Comment</span> -->
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    </div>
-                
+                        </ng-template>
+
+
+
+                    </owl-carousel-o>
+
+
+
 
                 </div>
             </div>
         </div>
+
+
     </div>
+
 </section>

@@ -1,4 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { HomeserviceService } from '../../services/homeservice.service';
+import { sponsors } from '../../interfaces/sponsors';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 
 @Component({
   selector: 'app-sponsorss',
@@ -7,19 +11,18 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class SponsorssComponent implements OnInit {
 
+  logo:sponsors[]=[]
+
   cellsToShow:number = 4;
   arrowsOutside:boolean = false;
   height:number = 132;
   loop:boolean=true;
+  logos:sponsors[]=[]
   autoplay:boolean=true;
   images = [
-    {path: '../../../assets/imgs/1.png'},
-    {path: '../../../assets/imgs/5.jpg'},
-    {path: '../../../assets/imgs/6.jpg'},
-    {path: '../../../assets/imgs/logo-spon.jpg'},
-    {path: '../../../assets/imgs/sponsor.jpg'},
-    {path:'../../../assets/imgs/2 (1).jpg'}
-]
+    {path:''}
+  ]
+  galleryImages=[]
 @HostListener("window:resize", []) updateDays() {
   // lg (for laptops and desktops - screens equal to or greater than 1200px wide)
   // md (for small laptops - screens equal to or greater than 992px wide)
@@ -36,9 +39,42 @@ export class SponsorssComponent implements OnInit {
     this.cellsToShow = 1;//xs
   }
 }
-  constructor() { }
+customOptions: OwlOptions = {
+  loop: true,
+  mouseDrag: false,
+  touchDrag: false,
+  autoplay:true,
+  autoplayTimeout:5000,
+  pullDrag: true,
+  
+  dots: false,
+  navSpeed: 700,
+  navText: ['<', '>'],
+  responsive: {
+    0: {
+      items: 1 
+    },
+    400: {
+      items: 1
+    },
+    740: {
+      items: 3
+    },
+    940: {
+      items: 4
+    }
+  },
+  nav: true
+}
+  constructor(private _sponsors:HomeserviceService) { }
 
   ngOnInit(): void {
+    this._sponsors.getLogo().subscribe(result => {
+      this.logo = result.data
+      
+      
+ 
+})
+  
   }
-
-}
+  }

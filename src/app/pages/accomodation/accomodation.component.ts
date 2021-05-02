@@ -17,7 +17,7 @@ export class AccomodationComponent implements OnInit {
   isReadonly = true;
   overStar: number | undefined;
   percent: number | undefined;
-  
+  flag:any
   
   ngOnInit(): void {
 
@@ -25,6 +25,8 @@ export class AccomodationComponent implements OnInit {
     this.id = localStorage.getItem("idPack");
     this._accomodation.getSinglepackage(this.id).subscribe(result => {
       this.accomodation = result.data[0];
+      this.flag = result.data[0].hotels
+
 
 
 

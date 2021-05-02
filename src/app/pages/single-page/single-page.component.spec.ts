@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TourDetailsComponent } from './tour-details.component';
+import { SinglePageComponent } from './single-page.component';
 
-describe('TourDetailsComponent', () => {
-  let component: TourDetailsComponent;
-  let fixture: ComponentFixture<TourDetailsComponent>;
+describe('SinglePageComponent', () => {
+  let component: SinglePageComponent;
+  let fixture: ComponentFixture<SinglePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TourDetailsComponent ]
+      declarations: [ SinglePageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TourDetailsComponent);
+    fixture = TestBed.createComponent(SinglePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,17 @@
+.banner {
+    background-size: cover;
+    height: 450px;
+    background-position: center center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .des-Name {
+    font-family: "Cormorant Unicase", serif;
+    font-size: 35px;
+  }
+
 
 /* Included */
 .list-group-item img {
@@ -45,12 +59,15 @@
 .list-group-item{
     border: 0px;
 }
-.list-group-item span {
+
+/* .list-group-item span {
+>>>>>>> 1504a24d8630e536a0fa81f5c1797e8d04dc3076
     font-size: 1rem;
     margin-left: 0.6rem;
     color: #707070;
     line-height: 1.6rem;
-}
+
+} */
 .nav-item{
     background-color: black;
 }
@@ -177,7 +194,8 @@
     object-fit: cover;
 }
 
-.list-group-item {
+
+.llist-group-item {
     border: 0px;
     border-bottom: 1px solid #ccc;
 }

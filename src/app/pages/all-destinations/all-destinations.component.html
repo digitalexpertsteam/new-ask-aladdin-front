@@ -17,12 +17,12 @@
 </section>
 <section>
     <div class="container">
-        <div class="page-links py-2">
-            <span>Home / </span>
-            <span class="main-color">All Destination</span>
-        </div>
+      <div  class="page-links py-2">
+       <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+        <span class="main-color">All Destinations</span>  
+      </div>
     </div>
-</section>
+  </section> 
 <section class="sec-bg py-4">
     <div class="container">
         <div class="head-title text-center">
@@ -32,10 +32,10 @@
         <div class="row">
             <div class="col-12 col-md-4 mb-4" *ngFor="let des of destinationContainer">
                 <div class="destination-details">
-                    <a (click)="setId(des.id)" routerLink="/{{des.slug}}">
+                    <a  routerLink="/{{des.slug}}" (click)="setId(des.id)">
                         <img src="{{des.thumb}}" class="img-fluid" alt="{{des.thumb_alt}}" />
                         <div class="overlay">
-                            <a class="text-white" (click)="setId(des.id)" routerLink="/{{des.slug}}">{{des.name}}</a>
+                            <a class="text-white" (click)="setId(des.id)" routerLink="/{{des.id}}">{{des.name}}</a>
                         </div>
                     </a>
                 </div>
@@ -43,4 +43,5 @@
         </div>
     </div>
 </section>
+<app-sponsors-logo></app-sponsors-logo>
 <app-sponsorss></app-sponsorss>

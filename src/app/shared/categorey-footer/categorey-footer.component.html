@@ -1,0 +1,51 @@
+<section class="container-fluid main">
+    <div class="category  ">
+    <div *ngFor="let category of categoryFooter" class="row">
+        <div class="col-12 col-lg-2 col-md-6">
+            <ul  class="list">
+                <h3 class="font-weight-bold">{{category.title}}</h3>
+                <div *ngFor="let cate of category.categories ">
+                    <a  class="hover-color"><li>{{cate.name}}</li></a>
+                </div>
+            </ul>  
+        </div>
+        <div class="col-12 col-lg-2 col-md-6">
+            <ul class="list">
+                <h3 class="font-weight-bold">Category Name</h3>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+            </ul>  
+        </div>
+        <div class="col-12 col-lg-2 col-md-6">
+            <ul class="list">
+                <h3 class="font-weight-bold">Category Name</h3>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+            </ul>  
+        </div>
+        <div class="col-12 col-lg-2 col-md-6">
+            <ul class="list">
+                <h3 class="font-weight-bold">Category Name</h3>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+            </ul>  
+        </div>
+        <div class="col-12 col-lg-2 col-md-6">
+            <ul class="list">
+                <h3 class="font-weight-bold">Category Name</h3>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+                <a class="hover-color"><li>Page Name</li></a>
+            </ul>  
+        </div>
+      
+    </div>
+</div>
+</section>

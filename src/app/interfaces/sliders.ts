@@ -3,7 +3,7 @@ export interface sliders {
     title:string;
     alt:string;
     image:{
-      type:"Image";
+      type:string;
       url:string;
     };
     small_text:string;
