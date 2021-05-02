@@ -6,7 +6,7 @@
 }
 .dropdown-menu {
     width: 75px !important;
-    transform: translateX(-20px ) !important;
+    transform: translateX(-40px ) !important;
     z-index: 999999;
 }
 .dropdown-menu  a {
@@ -31,7 +31,10 @@
      
     
 }
-
+.main-btn
+{
+    background-color: transparent;
+}
 
 .list-dropdown h3 {
     font-size: 14px;

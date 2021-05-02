@@ -6,51 +6,55 @@
     <li class="mr-4"><i class="fas fa-phone-alt main-color"></i>
       <span class="ml-3 text-white">+8(888) 213-555</span>
     </li>
+    <li>
+      <div class=" link-social   " *ngFor="let social of socialsContainer">
 
+       
+  
+  
+  
+        <a class="fb " href="{{social.facebook}}">
+          <li class="mr-2 social "> <i class="fab fa-facebook-f"></i></li>
+        </a>
+        <a class="twt" href="{{social.twitter}}">
+          <li class="mr-2 social"><i class="fab fa-twitter"></i></li>
+        </a>
+        <a class="pain" href="{{social.pinterest}}">
+          <li class="mr-2 social"><i class="fab fa-pinterest-p"></i></li>
+        </a>
+        <a class="fli" href="{{social.flickr}}">
+          <li class="mr-2 social"><i class="fab fa-flickr"></i></li>
+        </a>
+        <a class="lin" href="{{social.linkedin}}">
+          <li class="mr-2 social"><i class="fab fa-linkedin-in"></i></li>
+        </a>
+        <a class="ins" href="{{social.instagram}}">
+          <li class="mr-2 social"><i class="fab fa-instagram"></i></li>
+        </a>
+        <a class="yout" href="{{social.youtube}}">
+          <li class="mr-2 social"><i class="fab fa-youtube"></i></li>
+        </a>
+  
+  
+  
+      </div>
+    </li>
   </ul>
   <ul class="d-flex align-items-center justify-content-between contacts p-0 m-0">
-
-    <div class=" link-social   " *ngFor="let social of socialsContainer">
-
-      <div class="input-group w-50 m-auto">
+    <li>
+      <div class="input-group  m-auto">
         <!-- <input type="search" class="form-control w-50 mt-1 rounded" placeholder="Search"
                     aria-label="Search" aria-describedby="search-addon" data-toggle="modal" data-target="#exampleModal" /> -->
         <i class="fas fa-search" data-toggle="modal" data-target="#exampleModal"></i>
 
 
       </div>
-
-
-
-      <a class="fb " href="{{social.facebook}}">
-        <li class="mr-2 social "> <i class="fab fa-facebook-f"></i></li>
-      </a>
-      <a class="twt" href="{{social.twitter}}">
-        <li class="mr-2 social"><i class="fab fa-twitter"></i></li>
-      </a>
-      <a class="pain" href="{{social.pinterest}}">
-        <li class="mr-2 social"><i class="fab fa-pinterest-p"></i></li>
-      </a>
-      <a class="fli" href="{{social.flickr}}">
-        <li class="mr-2 social"><i class="fab fa-flickr"></i></li>
-      </a>
-      <a class="lin" href="{{social.linkedin}}">
-        <li class="mr-2 social"><i class="fab fa-linkedin-in"></i></li>
-      </a>
-      <a class="ins" href="{{social.instagram}}">
-        <li class="mr-2 social"><i class="fab fa-instagram"></i></li>
-      </a>
-      <a class="yout" href="{{social.youtube}}">
-        <li class="mr-2 social"><i class="fab fa-youtube"></i></li>
-      </a>
-
-
-
-    </div>
+    </li>
+    
     <li class=" align-items-center lang-btn">
       <div class="btn-group" dropdown>
         <a id="button-basic" dropdownToggle class="main-btn text-white dropdown-toggle" aria-controls="dropdown-basic">
-          {{textLang || 'Languages'}} <img class="img-lang " [src]="imgLang" alt=""> <span class="caret"></span>
+          {{'English' |translate}} <img class="img-lang " [src]="imgLang" alt=""> <span class="caret"></span>
         </a>
         <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
 
@@ -120,6 +124,7 @@
         </ul>
       </div>
     </li>
+   
   </ul>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

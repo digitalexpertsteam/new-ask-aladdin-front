@@ -89,12 +89,20 @@
     .vid{
         height:440px;
     }
-    .carousel-caption h3 {
-        font-size: 28px;
-        font-weight: bold;
+    .carousel-caption {
+        top: 30%;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .carousel-caption h1 {
+        font-size: 18px;
+        font-weight: 100;
     }
     .carousel-caption p {
-        font-size: 16px;
+        font-size: 14px;
     }
     
 }
