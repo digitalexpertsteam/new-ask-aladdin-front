@@ -24,6 +24,7 @@ export class TourDetailsComponent implements OnInit {
   public iid: any[] = [];
   savePlayer(player: YT.Player) {
     this.player = player;
+
     console.log("player instance", player);
   }
   onStateChange(event: any) {

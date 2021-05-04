@@ -69,7 +69,41 @@
 .package-img {
     height: 209px;
     object-fit: cover;
+    position: relative;
 }
+.hot{
+    position: absolute;
+
+    top: 1px;
+    left: 0px;
+    width: 100px;
+}
+
+.tour i{
+    color: #f68800;
+
+}
+
+.discount{
+    position: absolute;
+    /* top: -16px; */
+    /* left: 0px; */
+    width: 80px;
+    color: #ffffff;
+    bottom: 120px;
+    left: 9px;
+    background-color: rgb(172 4 4);
+    z-index: 9999999999;
+    /* transform: rotate(-49deg); */
+    border-radius: 20px;
+    /* border: 2px solid red; */
+}
+.dis {
+    background-color: red;
+    width: 10px;
+
+}
+
 .map-details {
     border-radius: 5px;
 }

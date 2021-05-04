@@ -49,7 +49,7 @@ export class WhyAskComponent implements OnInit {
     this._about.getAboutAs().subscribe(result => {this.aboutContainer = result.data;
     
       this.img=result.data[0].video
-      console.log(this.img);
+  
       
       this.galleryImages=[]
       this.img.forEach(ele => {

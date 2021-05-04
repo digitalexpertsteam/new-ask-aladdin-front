@@ -24,7 +24,6 @@ export class BlogComponent implements OnInit {
     this._blog.getHomeBlog().subscribe(result => {
       this.blogContainer = result.data;
       this.desSlug = result.data[0].destination_slug;
-      console.log(result.data[0].destination_slug);
 
     })
     this.id = localStorage.getItem('id')

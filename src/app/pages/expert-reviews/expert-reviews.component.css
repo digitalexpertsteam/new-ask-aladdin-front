@@ -5,6 +5,11 @@
     font-size: 1.1rem;
     margin-bottom: 0.1rem;
 }
+.img-rev{
+    width: 200px;
+    margin: auto;
+}
+
 /* ul li a img {        
     max-width: 60px;
     margin: auto !important;

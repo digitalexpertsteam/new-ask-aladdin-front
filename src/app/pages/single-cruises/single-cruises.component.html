@@ -328,13 +328,13 @@
 <section id="accomodation" class="accomodation my-3">
     <div class="container">
         <div class="head mb-4">
-            <h2 class="font-weight-bold">Accommodation for 5 star deluxe cruises</h2>
+            <h2 class="font-weight-bold">Accommodation For This Cruises</h2>
         </div>
         <div *ngIf="ttt.length > 0 ; else accommodation"  > 
         <div class="row">
             <div *ngFor="let acc of cruises.hotels" class="col-12 col-md-3 pt-2">
                 <div class="card overflow-hidden">
-                    <a>
+                    <a  href="/{{acc.slug}}" >
                         <div class="row ">
                             <div class="col-sm-12 ">
                                 <div class="acco-image">
@@ -352,7 +352,7 @@
                                         </rating>
                                     </div>
                                     <div class="acco-link mb-2">
-                                        <a href="/egypt/{{acc.slug}}" class="main-btn">View Details</a>
+                                        <a href="/{{acc.slug}}" class="main-btn">View Details</a>
                                     </div>
                                 </div>
                             </div>

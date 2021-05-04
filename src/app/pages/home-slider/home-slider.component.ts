@@ -66,7 +66,6 @@ export class HomeSliderComponent implements OnInit {
             title:`${ele.title}`,
             small_text:`${ele.small_text}`
           }) 
-          console.log(this.videos);
           
         }
         if (ele.image.type == "Image") {
@@ -77,7 +76,6 @@ export class HomeSliderComponent implements OnInit {
             small_text:`${ele.small_text}`
           })
          
-          console.log(this.image);
         }
         
       })
@@ -93,7 +91,7 @@ export class HomeSliderComponent implements OnInit {
       this.blogs = result.data.blogs
       this.destinations = result.data.destinations
       this.desSlug = result.data.destinations[0].slug
-      console.log(this.desSlug);
+ 
       
       this.package = result.data.package
       this.cruise = result.data.cruise
@@ -108,7 +106,6 @@ export class HomeSliderComponent implements OnInit {
 
 
 
-      console.log(this.destinations);
     })
   }
 

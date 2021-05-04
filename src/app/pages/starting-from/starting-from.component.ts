@@ -22,7 +22,6 @@ export class StartingFromComponent implements OnInit {
     this.start_form.getSinglepackage(this.id).subscribe(result => {
       this.start = result.data[0];
       this.include = result.data[0].included;
-      console.log(this.include);
       
 
 

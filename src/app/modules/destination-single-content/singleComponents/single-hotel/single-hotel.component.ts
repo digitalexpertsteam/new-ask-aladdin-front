@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../../../../interfaces/hotel';
 import { HomeserviceService } from '../../../../services/homeservice.service';
 import { NgxGalleryAnimation, NgxGalleryOptions } from '@kolkov/ngx-gallery';
-import { NgxGalleryImage } from '@kolkov/ngx-gallery';
-import { Gallery } from 'angular-gallery';
-import { Meta, Title } from '@angular/platform-browser';
+import {NgxGalleryImage} from '@kolkov/ngx-gallery';import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+
+
 
 
 
@@ -43,15 +43,19 @@ export class SingleHotelComponent implements OnInit {
 
   constructor(private _hotel: HomeserviceService,
     private _Meta : Meta ,
-    private _Title : Title,
-    private active:ActivatedRoute) { }
+    private _active: ActivatedRoute,
+    private _Title : Title) { }
 
 
   ngOnInit(): void {
-    this.id = this.active.snapshot.params.id
-    // this.id = localStorage.getItem("idHotel");
+    this.id = this._active.snapshot.params.slug
+    console.log(this.id);
+    
+
     this._hotel.getSingleHotel(this.id).subscribe(result => {
       this.hotel = result.data;
+      console.log(this.hotel);
+      
       this.img=result.data[0].gallery
       this.galleryImages=[]
       this.img.forEach(ele => {

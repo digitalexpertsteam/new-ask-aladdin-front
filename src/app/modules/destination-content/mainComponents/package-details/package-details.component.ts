@@ -26,7 +26,6 @@ import { ActivatedRoute } from '@angular/router';
 
 })
 export class PackageDetailsComponent implements OnInit {
-
   max = 5;
   rate = 3;
   count:any
@@ -37,8 +36,7 @@ export class PackageDetailsComponent implements OnInit {
   modalService: any;
   hoveringOver(value: number): void {
     this.overStar = value;
-    this.percent = (value / this.max) * 100;
-  }
+    this.percent = (value / this.max) * 100;}
   image = "../../../../../../../assets/imgs/default.png"
   id:any;
   idpackage:any
@@ -47,6 +45,8 @@ export class PackageDetailsComponent implements OnInit {
   Title:any;
   category: string = ''; 
   x:number=1;
+  hot:any[]=[]
+  descount:any
 
   resetStar(): void {
     this.overStar = void 0;
@@ -62,6 +62,14 @@ export class PackageDetailsComponent implements OnInit {
     
     this._singleDes.getSingleDestination(this.id).subscribe(result =>{
       this.destinationContainer = result.data
+      
+
+      this.descount= result.data.discount+"%"
+
+
+      this.hot = result.data.hot_offer
+      
+
       this.nameCountry = result.data[0].destination_name;
       this.count = result.data.length
 

@@ -6,6 +6,7 @@
     <li class="mr-4"><i class="fas fa-phone-alt main-color"></i>
       <span class="ml-3 text-white">+8(888) 213-555</span>
     </li>
+
     <li>
       <div class=" link-social   " *ngFor="let social of socialsContainer">
 
@@ -112,9 +113,12 @@
                 </div>
                 <div><img class="flag  " [src]="language.image" /></div>
 
+
               </a>
             </li>
           </div>
+
+
 
 
 
@@ -132,6 +136,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
+
           <!-- <h4 class="modal-title text-center " id="exampleModalLabel">search</h4> -->
           <div class="modal-body ">
             <label class="labelSearch w-100 d-flex" for="">
@@ -192,6 +197,15 @@
               <h2 *ngIf="package.length>0" class="mt-2"> <a href="/all-Packages">Packages </a></h2>
               <div *ngFor="let destination of destinations" class="row">
 
+
+              </div>
+            </div>
+            <hr>
+
+            <div class="searchTitle ">
+              <h2 *ngIf="package.length>0" class="mt-2"> <a href="/all-Packages">Packages </a></h2>
+              <div *ngFor="let destination of destinations" class="row">
+
                 <div *ngFor="let packag of package" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
                     <a href="/{{destination.slug}}/travel-package/{{packag.slug}}" class="text-dark">
@@ -207,6 +221,9 @@
                   </div>
                 </div>
 
+
+              </div>
+            </div>
 
 
               </div>
@@ -324,6 +341,7 @@
               </div>
             </div>
 
+
             <div class="searchTitle">
               <h2 *ngIf="page.length>0" class="mt-2"><a href="/page">Pages</a></h2>
               <div *ngFor="let destination of destinations" class="row">
@@ -384,7 +402,7 @@
 
 
       </div>
-    </div>
-  </div>
+      
+    
 
 </section>

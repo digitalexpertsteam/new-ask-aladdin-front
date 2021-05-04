@@ -20,13 +20,11 @@ export class OptionalExpertsComponent implements OnInit {
     this.id = localStorage.getItem("id");
     this._optional.getSinglepackage(this.idPack).subscribe(result => {
       this.optional = result.data[0].related_packages
-      console.log(this.optional);
   })
 
   this._optional.getSingleDestination(this.id).subscribe(result => {
     this.des = result.data[0].destination_slug
 
-    console.log(this.des);
 
     })
 

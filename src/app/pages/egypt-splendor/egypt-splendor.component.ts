@@ -17,6 +17,7 @@ export class EgyptSplendorComponent implements OnInit {
   num : any;
   tour:any
 
+
   constructor(private _splendor:HomeserviceService) { }
   customOptions: OwlOptions = {
     loop: true,
@@ -70,6 +71,3 @@ export class EgyptSplendorComponent implements OnInit {
   // }
 
   }
-
-
-  

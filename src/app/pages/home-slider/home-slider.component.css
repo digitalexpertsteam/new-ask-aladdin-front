@@ -70,11 +70,16 @@
         height:800px;
     }    
 }  
-@media only screen  and (max-width:1315px){
+@media only screen  and (max-width:1550px){
+    .vid{
+        height:860px;
+    }    
+}  
+/* @media only screen  and (max-width:1315px){
     .vid{
         height:900px;
     }    
-}
+} */
 @media only screen  and (max-width:1280px){
     .vid{
         height:710px;
