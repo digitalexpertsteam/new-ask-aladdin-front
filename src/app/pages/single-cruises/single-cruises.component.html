@@ -20,17 +20,8 @@
     </div>
 
 </section>
-<section>
-    <div class="container">
-  
-      <div  class="page-links py-2">
-       <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{desName}} / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}/travel-cruises"> <span > {{cruisesName}} / </span>  </a>
-        <span class="main-color">{{cruName}}</span>  
-      </div>
-    </div>
-  </section><section class="sec-bg p-3 mb-5">
+<app-page-links></app-page-links>
+<section class="sec-bg p-3 mb-5">
     <div class="container">
         <!-- <app-tags></app-tags> -->
         <!-- tag -->
@@ -268,11 +259,15 @@
                 <section id="Gallery" class="pt-3">
 
 
-                    <div class="m-auto" >
+                    <div *ngIf="galery?.length >0 ;else img" class="m-auto" >
                         <ngx-gallery  [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
                       </div>
 
                 </section>
+                <ng-template #img >
+
+                    <h1 class=" bg-white mt-3 px-3 py-4 text-center  "> No Gallery Yet</h1>
+                  </ng-template>
             </div>
             <div class="col-12 col-md-3">
                 <section class="bg-white mt-3 px-3 py-4">
@@ -283,8 +278,7 @@
                                 class="main-color"> $</span></h4>
                         <h4 class=""> <span> <i class="fas fa-route"></i> check in</span> {{cruises?.checkin}} </h4>
                         <h4 class=""> <span> <i class="fas fa-route"></i> check out</span> {{cruises?.checkout}} </h4>
-                        <rating [(ngModel)]="cruises.rate" [max]="max" [readonly]="isReadonly">
-                        </rating>
+                        <rating [(ngModel)]="cruises.rate" [max]="max" [readonly]="isReadonly"></rating>
 
                     </div>
                     <div class="">
@@ -334,12 +328,13 @@
 <section id="accomodation" class="accomodation my-3">
     <div class="container">
         <div class="head mb-4">
-            <h2 class="font-weight-bold">Accommodation for 5 star deluxe cruises</h2>
+            <h2 class="font-weight-bold">Accommodation For This Cruises</h2>
         </div>
+        <div *ngIf="ttt.length > 0 ; else accommodation"  > 
         <div class="row">
             <div *ngFor="let acc of cruises.hotels" class="col-12 col-md-3 pt-2">
                 <div class="card overflow-hidden">
-                    <a>
+                    <a  href="/{{acc.slug}}" >
                         <div class="row ">
                             <div class="col-sm-12 ">
                                 <div class="acco-image">
@@ -357,7 +352,7 @@
                                         </rating>
                                     </div>
                                     <div class="acco-link mb-2">
-                                        <a href="/egypt/{{acc.slug}}" class="main-btn">View Details</a>
+                                        <a href="/{{acc.slug}}" class="main-btn">View Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -365,8 +360,13 @@
                     </a>
                 </div>
             </div>
-
         </div>
+
+    </div>
+    <ng-template #accommodation >
+
+        <h1 class="text-center  "> No Accommodation Yet</h1>
+      </ng-template>
 
 
     </div>
@@ -374,5 +374,4 @@
 
 <!-- videos -->
 
-<app-sponsors-logo></app-sponsors-logo>
 <app-sponsorss></app-sponsorss>

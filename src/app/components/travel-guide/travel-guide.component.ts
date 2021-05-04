@@ -21,7 +21,6 @@ export class TravelGuideComponent implements OnInit {
       .subscribe((result) => (this.GuidesNames = result.data));
     this._destinationPack.getOneDestinationDetails(5).subscribe((res) => {
       this.GuidesContent = res.data[0].categories[0];
-      console.log(this.GuidesContent);
     });
   }
 

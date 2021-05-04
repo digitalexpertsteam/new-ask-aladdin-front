@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DayPickerComponent } from 'ngx-bootstrap/datepicker';
+import { ActivatedRoute } from '@angular/router';
 import { HomeserviceService } from '../../services/homeservice.service';
 
 
@@ -14,17 +14,21 @@ export class PricesDatesComponent implements OnInit {
   prices: any = [];
   standred_1=[];
   date=new Date();
-  
-  constructor(private _prices: HomeserviceService) {
+  flag:any
+  constructor(private _prices: HomeserviceService, private active:ActivatedRoute) {
+
 
 
   }
   
 
   ngOnInit(): void {
-    this.id = localStorage.getItem("idPack");
+    this.id=this.active.snapshot.params.slug
+
     this._prices.getSinglepackage(this.id).subscribe(result => {
       this.prices = result.data[0].prices;
+      this.flag = result.data[0].prices[0].attributes.season_start_date
+      
       
       
     })

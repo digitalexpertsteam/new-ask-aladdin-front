@@ -12,8 +12,9 @@ import { sponsors } from '../../interfaces/sponsors';
 export class SponsorsLogoComponent implements OnInit {
 
   logo:sponsors[]=[]
-  flag:any
-  show:any
+  flag:any;
+  showed=[]
+  show=[{img:``, link:``}]
   constructor( private _sponsors:HomeserviceService) { }
 
   ngOnInit(): void {
@@ -21,19 +22,16 @@ export class SponsorsLogoComponent implements OnInit {
       this.logo = result.data;
       
       this.logo.forEach(s=>{
+
         if(s.showed_on_large_slider==true){
-          s.large_image = s.small_image_on_slider
+           
+          this.show.push({img:`${s.large_image}`,link:`${s.link}`} )
+          
+          
         }else{
           null
         }
-        
       })
-      // console.log(this.show);
-      
-      
-
-
-      
 
 })
   }

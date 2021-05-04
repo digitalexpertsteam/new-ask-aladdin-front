@@ -21,18 +21,22 @@
     <div class="container">
         <div class="splendor mb-4">
             <div class="head mb-2">
-                <h3 class="font-weight-bold">{{guide.name}}</h3>
+                <h2 class=" font-weight-bold">{{guide.name}}</h2>
             </div>
             <p>{{num}} nights / {{guide.days}}{{"days" |translate}}</p>
             <h4 [innerHTML]="guide.overview"></h4>
-            <h3> Including </h3>
-                <div *ngFor='let x of guide.included'>
-                    <span> {{x.content}},</span>
-                </div>
+            <!-- <span> Including </span>
+           <span *ngFor='let x of guide.included'> {{x.content}},</span> -->
          
             </div>
+
+
+
+            <span class="tour" *ngFor='let ggu of tour'> <i class="fas fa-female"></i>  {{  ggu}} </span>
+
+
         <div class="package-itinerary">
-            <div class="head mb-4">
+            <div class="head mb-4 mt-2">
                 <h2 class="font-weight-bold"> Itinerary</h2>
             </div>
             <div class="package-details" class="package">
@@ -61,11 +65,11 @@
                         </div>
                         <div class="meal-details d-flex">
                             <div class="detail ml-2 py-2">
-                                <img [src]="day.breakfast ?  imageTrue  :  ''" />
+                                <img [src]="day.breakfast ?  imageTrue  : imageFalse " />
                                 <span>breakfast</span>
                             </div>
                             <div class="detail ml-2 py-2">
-                                <img [src]="day.lunch ? imageTrue : ''" />
+                                <img [src]="day.lunch ? imageTrue : imageFalse" />
                                 <span>Lunch</span>
                             </div>
                             <div class="detail ml-2 py-2" >

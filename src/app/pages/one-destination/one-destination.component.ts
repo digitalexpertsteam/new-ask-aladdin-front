@@ -4,7 +4,6 @@ import { destination } from '../../interfaces/destination';
 import { HomeserviceService } from '../../services/homeservice.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Meta, Title } from '@angular/platform-browser';
-import { mergeMap } from 'rxjs/operators';
 
 
 
@@ -29,9 +28,7 @@ export class OneDestinationComponent implements OnInit {
   image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
   errors: any;
   
-  // itemsPerSlide = 3;
-  // singleSlideOffset = true;
-  // noWrap = false;
+
  
   constructor( private _Home : HomeserviceService ,
     private _active:ActivatedRoute   ,
@@ -62,7 +59,6 @@ export class OneDestinationComponent implements OnInit {
         let idDes = idData.id
         this._Home.getOneDestinationDetails(idDes).subscribe(result => {
           this.singleDestinationContent = result.data[0].categories;
-          console.log(this.singleDestinationContent);
           
             this.packageOffer = result.data[0].packages_hot_offers 
             this.excursionsOffer = result.data[0].excursions_hot_offers

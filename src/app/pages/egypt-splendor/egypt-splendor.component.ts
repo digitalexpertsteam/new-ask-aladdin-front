@@ -12,9 +12,11 @@ export class EgyptSplendorComponent implements OnInit {
   guide:any = [];
   id:any;
   selectTrue = true
-  imageFalse= '';
+  imageFalse= 'assets/imgs/wrong.svg';
   imageTrue='assets/imgs/right.svg';
   num : any;
+  tour:any
+
 
   constructor(private _splendor:HomeserviceService) { }
   customOptions: OwlOptions = {
@@ -50,6 +52,10 @@ export class EgyptSplendorComponent implements OnInit {
     this.id = localStorage.getItem("idPack");
     this._splendor.getSinglepackage(this.id).subscribe(result => {
       this.guide = result.data[0];
+      
+      this.tour = result.data[0].tour_type;
+
+     
      
       
       let x = 1
@@ -65,6 +71,3 @@ export class EgyptSplendorComponent implements OnInit {
   // }
 
   }
-
-
-  

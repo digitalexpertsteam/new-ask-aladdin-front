@@ -10,7 +10,7 @@
                     <div class="col-12 col-md-3 mb-3" *ngIf="i == 0 || i == 7 || i == 8 ">
                         <div class="package overflow-hidden rounded-img position-relative">
                             <a routerLink="/travel-package/{{package.slug}}" (click)="setId(package.id)">
-                                <img class="img-fluid" src="{{package.thumb}}" alt="{{package.thumb_alt}}" />
+                                <img class="img-fluid" src="{{package.thumb=='1'?image: package.thumb}}" alt="{{package.thumb_alt}}" />
                                 <div class="overlay">
                                     <div class="tour-info">
                                         <h6 class="title text-center text-white">{{package.name}}</h6>
@@ -22,7 +22,7 @@
                     <div class="col-12 col-md-3 mb-3" *ngIf="i > 0 && i != 7 && i != 8">
                         <div class="package overflow-hidden position-relative">
                             <a routerLink="/travel-package/{{package.slug}}" (click)="setId(package.id)">
-                                <img class="img-fluid" src="{{package.thumb}}" alt="{{package.thumb_alt}}" />
+                                <img class="img-fluid" src="{{package.thumb=='1'?image: package.thumb}}" alt="{{package.thumb_alt}}" />
                                 <div class="overlay">
                                     <div class="tour-info">
                                         <h6 class="font-weight-bold text-white">{{package.name}}</h6>

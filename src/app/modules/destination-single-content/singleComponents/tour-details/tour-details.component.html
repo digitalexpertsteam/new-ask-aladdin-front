@@ -1,12 +1,11 @@
-<section class="sec-banner text-center" [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + banener.banner + ')' }">
+<section class="sec-banne text-center"
+    [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + banener.banner + ')' }">
 
-    <div class="container">
-        <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
-            <h1><span class="main-color font-weight-bold">{{banener.name}} </span> 
-            </h1>
+    <div class="container mt-5">
+        <div class="head text-uppercase d-inline-block font-weight-bold pb-1 mt-4">
+            <h1><span class="main-color font-weight-bold">{{banener.name}} </span> </h1>
         </div>
-        <p class="mt-2">{{banener.description}}</p>
-        <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+        <!-- <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
             <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a> 
            
                
@@ -15,30 +14,37 @@
                 <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
                 <span class="phone-text text-dark">Call Us: <strong>{{contact.phone1}}</strong></span>
             </a>
-        </div>
-     </div>
-    
-</section>  
+        </div> -->
+    </div>
+
+    <div class="over_banner">
+        <img src="{{overBanner}}" alt="" srcset="">
+    </div>
+
+    <p class=" mx-auto mt-3 w-50 ">{{banener.description}}</p>
+
+</section>
+
 <section>
     <div class="container">
-      <div class="page-links py-2">
-       <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{ desName }} / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}/travel-package"> <span > {{packName}} / </span>  </a>
-        <span class="main-color">{{banener.name}}</span>  
-      </div>
+        <div class="page-links py-2">
+            <a class="hover-color" routerLink="/"> <span> Home / </span> </a>
+            <a class="hover-color" routerLink="/{{desSlug}}"> <span> {{ desName }} / </span> </a>
+            <a class="hover-color" routerLink="/{{desSlug}}/travel-package"> <span> {{packName}} / </span> </a>
+            <span class="main-color">{{banener.name}}</span>
+        </div>
     </div>
-  </section>
-  <section class="sec-bg p-3 mb-5">
+</section>
+<section class="sec-bg p-3 mb-5">
     <div class="container">
         <app-tags></app-tags>
 
-        
+
         <div class="row mt-4">
             <div class="col-12 col-md-9">
                 <!-- egypt splendor -->
-                <app-egypt-splendor></app-egypt-splendor> 
- 
+                <app-egypt-splendor></app-egypt-splendor>
+
                 <!-- end egypt-splendor -->
 
 
@@ -51,20 +57,37 @@
 
                 <app-package-included></app-package-included>
                 <!-- end included -->
- 
+
                 <app-prices-dates></app-prices-dates>
 
-                <app-trav-exp></app-trav-exp>   
+                <app-trav-exp></app-trav-exp>
+                <section id="videos" class="bg-white mt-3 px-2 py-4">
+                    <div *ngIf="video.length > 0 ;else noData" class="row">
+
+                        <div *ngFor="let vid of video" class="col-12  col-md-6 ">
+                        <youtube-player [videoId]="vid" (ready)="savePlayer($event)" (change)="onStateChange($event)">
+                        </youtube-player>
+                        </div>
+                        
+                    </div>
+
+
+                    <ng-template #noData >
+
+                        <h1 class="text-center  "> <img src="assets/imgs/dot.svg" class="img-fluid">  No Videos Yet</h1>
+                      </ng-template>
+
+
+                </section>
             </div>
             <div class="col-12 col-md-3">
                 <app-aside></app-aside>
             </div>
         </div>
     </div>
-</section>  
+</section>
 <app-accomodation></app-accomodation>
 
 <!-- videos -->
 
-<app-sponsors-logo></app-sponsors-logo>
 <app-sponsorss></app-sponsorss>
