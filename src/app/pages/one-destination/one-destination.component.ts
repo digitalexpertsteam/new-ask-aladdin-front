@@ -5,6 +5,7 @@ import { HomeserviceService } from '../../services/homeservice.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Meta, Title } from '@angular/platform-browser';
 import { mergeMap } from 'rxjs/operators';
+import { Category } from '../../interfaces/category';
 
 
 
@@ -17,6 +18,8 @@ export class OneDestinationComponent implements OnInit {
   id:any;
   singleDestination:destination[]=[]
   ides:any;
+  categoryFooter:Category[]=[] 
+
 
   singleDestinationContent:destination[]=[]
   packageOffer:destination[]=[]
@@ -71,10 +74,16 @@ export class OneDestinationComponent implements OnInit {
             this.relatedPages = result.data[0].related_pages
            
         })
+        this._Home.categoryFooter(idDes).subscribe(res => {
+          this.categoryFooter = res.data
+          
+        })
       })
       
     })
+   
   }
+
 
   setSlug(slug:any){
      localStorage.setItem("slug" , slug)  

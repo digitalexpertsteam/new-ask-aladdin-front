@@ -94,7 +94,7 @@ const routes: Routes = [
   { path: "single-page/:slug", pathMatch: "full", component: SinglePageComponent },
   {path:"categorey" , component:CategoreyFooterComponent},
   { path: ":slug", component: OneDestinationComponent },
-  { path: ":slug/:id",  component: SingleHotelComponent },
+  { path: "egypt/:id",  component: SingleHotelComponent },
 
 
 

@@ -6,7 +6,8 @@
 }
 * {
     box-sizing: border-box;
-    font-family: trade gothic,roboto condensed,sans-serif;
+    /* font-family: 'Poppins', sans-serif !important; */
+
 }
 .main-color {
     color: #f68800;
@@ -37,7 +38,8 @@ ul {
     text-decoration: none;
 }
 .head-title h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    font-weight: 800;
 }
 .sat-font {
     font-family: satisfy, cursive;
@@ -139,10 +141,12 @@ ul {
 /* end destination */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: trade gothic,roboto condensed,sans-serif; }
+body { margin: 0;     font-family: 'Poppins', sans-serif 
+}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: trade gothic,roboto condensed,sans-serif; }
+body { margin: 0;   font-family: 'Poppins', sans-serif !important;
+}
 @media only screen  and (max-width:767px){
     .head-title h2 {
         font-size: 2rem;

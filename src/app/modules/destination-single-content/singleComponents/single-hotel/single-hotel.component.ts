@@ -5,6 +5,7 @@ import { NgxGalleryAnimation, NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import { NgxGalleryImage } from '@kolkov/ngx-gallery';
 import { Gallery } from 'angular-gallery';
 import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 
 
@@ -42,11 +43,13 @@ export class SingleHotelComponent implements OnInit {
 
   constructor(private _hotel: HomeserviceService,
     private _Meta : Meta ,
-    private _Title : Title) { }
+    private _Title : Title,
+    private active:ActivatedRoute) { }
 
 
   ngOnInit(): void {
-    this.id = localStorage.getItem("idHotel");
+    this.id = this.active.snapshot.params.id
+    // this.id = localStorage.getItem("idHotel");
     this._hotel.getSingleHotel(this.id).subscribe(result => {
       this.hotel = result.data;
       this.img=result.data[0].gallery
