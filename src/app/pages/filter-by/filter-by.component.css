@@ -1,0 +1,9 @@
+.filter {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.7rem;
+}
+.form-check label {
+    font-size: 14px;
+    margin-top: 4px;
+}

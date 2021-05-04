@@ -1,0 +1,138 @@
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tags .tag {
+    padding: 0.3rem 0.8rem;
+    text-align: center;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.info {
+    padding: 0.6rem 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.info span {
+    color: #fffa66;
+}
+.data-box {
+    border-radius: 5px;
+}
+.pricing {
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+}
+.price {
+    font-size: 1.1rem;
+    word-spacing: 0.3rem;
+}
+.pricing a {
+    font-size: .7rem;
+}
+.book {
+    color: #f68800;
+}
+.pricing p {
+    font-size: 0.9rem;
+}
+.pricing h4 {
+    font-size: 1rem;
+}
+.data-box .package-content h5{
+    font-size: 1.1rem;
+}
+.package-content span ,.package-content .package-text{
+    color: #9c9c9c;
+    font-size: .8rem;
+}
+.package-content .hashtag {
+    font-size: .9rem;
+}
+.package-content .advatnage{
+    border-right: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fafbfc;
+    display: flex;
+    padding: 0.8rem 0.6rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.package-content .advatnage span {
+    font-size: 0.8rem;
+}
+.package-img {
+    height: 209px;
+    object-fit: cover;
+    position: relative;
+}
+.hot{
+    position: absolute;
+
+    top: 1px;
+    left: 0px;
+    width: 100px;
+}
+
+.tour i{
+    color: #f68800;
+
+}
+
+.discount{
+    position: absolute;
+    /* top: -16px; */
+    /* left: 0px; */
+    width: 80px;
+    color: #ffffff;
+    bottom: 120px;
+    left: 9px;
+    background-color: rgb(172 4 4);
+    z-index: 9999999999;
+    /* transform: rotate(-49deg); */
+    border-radius: 20px;
+    /* border: 2px solid red; */
+}
+.dis {
+    background-color: red;
+    width: 10px;
+
+}
+
+.map-details {
+    border-radius: 5px;
+}
+.embed-responsive{
+    height: 6.25rem;
+}
+.details p {
+    font-size: 0.7rem;
+    display: flex;
+    color: #9c9c9c;
+}
+
+.package-text{
+    height: 70%;
+}
+@media only  screen and (max-width:480px) {
+    .pack-icons{
+        margin-top: 20px;
+    }
+    .card-title{
+
+        margin-top: 30px;
+        text-align: center !important;
+    }
+    .day-night{
+        text-align: center !important;
+    }
+
+    .package-text{
+        height: 35%;
+    }
+}

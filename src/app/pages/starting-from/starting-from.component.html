@@ -1,0 +1,29 @@
+<section class="bg-white mt-3 px-3 py-4">
+    <div class="head mb-2">
+        <h3 class="font-weight-bolder">Starting from <span class="main-color">{{start.start_price}} USD</span></h3>
+        <!-- <p class="mb-1">per person in a double room</p> -->
+    </div>
+    <div class="">
+        <ul class="p-0">
+
+             <!-- <li  class="list-group-item d-flex px-0 py-2">
+                
+                <span >  tour type  {{tour}}</span> 
+
+
+            </li>  -->
+            <li class="list-group-item d-flex px-0 py-2">
+                <img src="assets/imgs/right.svg" class="img-fluid">
+                <span>{{num}} nights / {{start.days}} days</span>
+            </li>
+
+
+            <li *ngFor='let x of include|slice:0:4' class="list-group-item d-flex px-0 py-2">
+                <img src="assets/imgs/right.svg" class="img-fluid">
+                <span>{{x.content}}</span>
+            </li>
+
+            
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,268 @@
+/* .private{
+    position: relative;
+}
+.video{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.view{
+    position: absolute;
+    top: 0;
+    z-index: 222222;
+    
+} */
+.vid {
+    height: 1100px;
+}
+.layout{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+.view img {
+    height: 85vh;
+    object-fit: cover;
+}
+.carousel-caption {
+    top:27%;
+    height: 300px;
+    
+}
+.carousel-caption h3 {
+    font-size: 50px;
+    font-weight: bold;
+}
+.carousel-caption p {
+    font-size: 25px;
+    line-height: 25px;
+}
+.carousel-caption button {
+    font-size: 13px;
+}
+.input-group{
+    position: absolute;
+    top: 50%;
+
+    
+}
+.alaadin-banner{
+    position: relative;
+
+
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .alaadin-banner {
+    background-image: url("../../../assets/imgs/203-2036768_ancient-history-historic-site-cairo-tourism-egypt-egypt.jpg");
+    background-size: cover;
+    background-position: 0% 20%;
+    position: relative;
+    
+}
+.banner-head {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.banner-head h1 {
+    text-shadow: 0 1rem 2rem rgb(0 0 0 / 50%);
+}
+.banner-head p {
+    font-size: 1.3rem;
+}
+.search-places {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    bottom: 0;
+    padding: 2.5rem;
+}
+ */
+ .search-places .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .2);
+    padding: .5rem .3rem;
+    padding-left: .9rem;
+    flex: 0 0 60%;
+    transition: all .2s;
+    border-radius: 6px;
+}
+
+@media only screen  and (max-width:767px){
+    .carousel-caption h3 {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .carousel-caption p {
+        font-size: 16px;
+    }
+    
+}
+
+
+.searchTitle h2  {
+    font-family: 'Goudy Bookletter 1911', serif;    
+    color: #f68800;
+    font-size: 2rem;
+    text-align: left;
+}
+.searchTitle h2 a{
+    color: #f68800;
+    text-decoration: none;
+
+}
+.searchTitle h2 a:hover{
+color: #fff;
+}
+.modal-dialog{
+    width: 100%;
+    max-width: 100%;
+    
+}
+
+
+.modal
+{
+    padding-right: 0 !important;
+      
+}
+.modal-header{
+    border-bottom: none !important; 
+}
+.modal-body{
+    /* background-color: transparent !important; */
+        background-color: rgba(7, 4, 0, 0.9) !important;
+        border-radius: 5px;
+
+}
+.modal-body input{
+    background-color: transparent;
+    color: #f68800;
+    border-top: none ;
+    border-left: none;
+    border-right: none;
+    padding: 20px 5px;
+    border-radius: 0;
+    width: 75%;
+    margin: auto;
+}
+.labelSearch i{
+transform: translatex(300px);
+}
+.modal-body input:focus{
+    box-shadow: none;
+    border-color: #f68800;
+}
+.modal-body input::before
+{
+    content: \f002;
+    width: 100px;
+    color: #f68800;
+    background-color: #f68800;
+}
+.close span {
+    font-size: 45px;
+    font-weight: 100;
+    position: absolute;
+    right: 3%;
+    color: #ffffff;
+    transition: all ease .5s;
+}
+
+.close span:hover {
+    transform: rotate(360deg);
+    color: #f68800;
+}
+
+
+
+.modal-content
+{
+    background: none !important;
+}
+hr{
+    color: #f68800;
+}
+/* card for search style */
+.blogs{
+    border-radius: 0;
+}
+.blogs a {
+    text-decoration: none;
+}
+.blogs img {
+    height: 300px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 0.5s ease 0s;
+}
+.blogs:hover img {
+    transform: scale(1.1);
+    
+    
+    
+}
+.main-card{
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.5);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+}
+.card-title{
+    font-size: 16px;
+
+}
+.main-card:hover .card-details
+{
+   background-color: rgba(0,0,0,0.5);
+   height: 100%;
+   top: 0;
+   
+   color: #fff;
+   
+}
+
+.card-details{
+    position: absolute;
+    top: 85%;
+    width: 100%;
+    height: 50px;
+    
+    color: #f68800;
+    background: rgba(0,0,0,0.8);
+    transition: ease .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.anotherCard{
+
+  
+
+    height: 250px;
+    width: 200px;
+    margin: 10px;
+
+    
+}
+.blogCard .card-details{
+    top: 70%;
+    height: 100px;
+}
+

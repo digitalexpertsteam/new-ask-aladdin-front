@@ -1,0 +1,17 @@
+<section id="highlights" class="bg-white mt-3 px-2 py-4">
+    <div class="container">
+        <div class="head mb-4">
+            <h3 class="font-weight-bold">Highlights</h3>
+            <p class="main-color">List of key highlights included in this tour package:</p>
+        </div>
+        <div class="">
+            <ul class="list-group p-0">
+                <li *ngFor="let li of lights" class="list-group-item d-flex px-0 py-2">
+                    <img src="assets/imgs/dot.svg" class="img-fluid">
+                    <span>{{li.content}}</span>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</section>

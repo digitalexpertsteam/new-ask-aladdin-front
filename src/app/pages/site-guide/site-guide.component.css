@@ -1,0 +1,19 @@
+.site-details i {
+    font-size: 1.5rem;
+}
+.site-details {
+   border-bottom: 1px solid #dee2e6;
+}
+.with-border {
+    border-right: 1px solid #dee2e6;
+}
+.site-details p {
+    font-size: .8rem;
+}
+.site-details a:hover {
+   background-color:  #f68800;
+   text-decoration: none;
+   transition: all .5s ease;
+   color: #fff;
+   padding: 15px;
+}

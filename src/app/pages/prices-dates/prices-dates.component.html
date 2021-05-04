@@ -1,0 +1,155 @@
+<section id="prices" class="bg-white mt-3 px-2 py-4">
+    <div    class="container">
+        <div class="head mb-4">
+            <h3 class="font-weight-bold">Prices & Departure Dates</h3>
+            <!-- <p class="main-color">Tour Package Price</p> -->
+        </div>
+        <div *ngIf="flag != null;else noPrice" >
+        <div *ngFor="let price of prices ;let i=index; " class="tab">
+            <div  class="time-group">
+                <p class="d-flex align-items-center mb-4">
+                    <img src="assets/imgs/dot.svg" class="img-fluid">
+                    <span class="font-weight-bold"> Valid From {{price?.attributes.season_start_date |date}} To {{price?.attributes.season_end_date|date}}</span>
+                </p>
+            </div>
+              <ul class="nav nav-tabs justify-content-around" >
+                <li class="nav-item " role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home{{i}}" role="tab" aria-controls="home" aria-selected="true">per person</a>
+                  </li>
+                  <li class="nav-item " role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile{{i}}" role="tab" aria-controls="profile" aria-selected="false">2-3 per person</a>
+                  </li>
+                  <li class="nav-item " role="presentation">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact{{i}}" role="tab" aria-controls="contact" aria-selected="false">4-7 persons</a>
+                  </li>
+                  <li class="nav-item " role="presentation">
+                      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#per{{i}}" role="tab" aria-controls="contact" aria-selected="false">7-10 persons</a>
+                    </li>
+              </ul>
+              <div class="tab-content "  id="myTabConten">
+                <div #home class="tab-pane  fade show active" id="home{{i}}"  role="tabpane" aria-labelledby="home-tab">
+                 
+                    <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Standard Hotels</th>
+                            <th scope="col">Comfort Hotels</th>
+                            <th scope="col">Deluxe Hotels</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Double Room</td>
+                            <td>{{price.attributes.double_room_standard_1}}</td>
+                            <td> {{price.attributes.double_room_comfort_1}}</td>
+                            <td>{{price.attributes.Single_room_comfort_1}}</td>
+                          </tr>
+                          <tr>
+                            <td>Single Room</td>
+                            <td>{{price.attributes.single_room_standard_1}}</td>
+                            <td>{{price.attributes.Single_room_comfort_1}}</td>
+                            <td>{{price.attributes.Single_room_deluxe_1}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                        
+                          
+                          
+                    
+                        
+               
+                </div>
+                <div #profile class="tab-pane fade" id="profile{{i}}"  role="tabpane" aria-labelledby="profile-tab">
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Standard Hotels</th>
+                        <th scope="col">Comfort Hotels</th>
+                        <th scope="col">Deluxe Hotels</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Double Room</td>
+                        <td>{{price.attributes.double_room_standard_2}}</td>
+                        <td> {{price.attributes.double_room_comfort_2}}</td>
+                        <td>{{price.attributes.Single_room_comfort_2}}</td>
+                      </tr>
+                      <tr>
+                        <td>Single Room</td>
+                        <td>{{price.attributes.single_room_standard_2}}</td>
+                        <td>{{price.attributes.Single_room_comfort_2}}</td>
+                        <td>{{price.attributes.Single_room_deluxe_2}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane fade" id="contact{{i}}"  role="tabpane" aria-labelledby="contact-tab">
+
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Standard Hotels</th>
+                        <th scope="col">Comfort Hotels</th>
+                        <th scope="col">Deluxe Hotels</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Double Room</td>
+                        <td>{{price.attributes.double_room_standard_3}}</td>
+                        <td> {{price.attributes.double_room_comfort_3}}</td>
+                        <td>{{price.attributes.Single_room_comfort_3}}</td>
+                      </tr>
+                      <tr>
+                        <td>Single Room</td>
+                        <td>{{price.attributes.single_room_standard_3}}</td>
+                        <td>{{price.attributes.Single_room_comfort_3}}</td>
+                        <td>{{price.attributes.Single_room_deluxe_3}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane fade" id="per{{i}}"  role="tabpane" aria-labelledby="contact-tab">
+
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Standard Hotels</th>
+                        <th scope="col">Comfort Hotels</th>
+                        <th scope="col">Deluxe Hotels</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Double Room</td>
+                        <td>{{price.attributes.double_room_standard_4}}</td>
+                        <td> {{price.attributes.double_room_comfort_4}}</td>
+                        <td>{{price.attributes.Single_room_comfort_4}}</td>
+                      </tr>
+                      <tr>
+                        <td>Single Room</td>
+                        <td>{{price.attributes.single_room_standard_4}}</td>
+                        <td>{{price.attributes.Single_room_comfort_4}}</td>
+                        <td>{{price.attributes.Single_room_deluxe_4}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+        </div>
+
+    </div>
+
+  </div>
+</section>
+<ng-template #noPrice >
+
+  <h1 class="text-center  "> <img src="assets/imgs/dot.svg" class="img-fluid">  No Prices Yet</h1>
+</ng-template>
+

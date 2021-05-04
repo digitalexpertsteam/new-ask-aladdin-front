@@ -1,0 +1,46 @@
+.tips-content .card-body {
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.tips-content img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+.travel-content .tips-content:hover img , .travel-center:hover img {
+    transform: scale(1.1);
+    transition: all 0.5s ease 0s;
+}
+.travel-content .tips-content a {
+    text-decoration: none;
+}
+.travel-content .tips-content:hover a  .card-body p,.travel-content .tips-content:hover a  .card-body h5{
+    color: #f68800 !important;
+    transition: all 0.5s ease 0s;
+}
+.travel-center  .over-lay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 6px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.travel-center img {
+    height: 140px;
+    object-fit: cover;
+    transition: all .5s;
+}
+.travel-text span {
+    font-size: 1.50rem;
+}
+.travel-icon i {
+    font-size: 2.5rem;
+}
