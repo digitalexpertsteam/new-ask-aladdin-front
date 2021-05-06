@@ -2,4 +2,6 @@
     border: none;
     background-color: none !important;
 }
-
+.card img{
+    height: 55px;
+}

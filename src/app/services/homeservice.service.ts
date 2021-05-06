@@ -182,6 +182,11 @@ export class HomeserviceService {
     return this._http.get(`${environment.ApiUrl}lang-control`);
   }
 
+  globalSeo(): Observable<any> {
+    return this._http.get(`${environment.ApiUrl}global-seo/${this.currentLang}`);
+  }
+
+
 }
 
 

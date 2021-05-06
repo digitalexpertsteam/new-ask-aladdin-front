@@ -1,113 +1,49 @@
-<!-- <section class="sec-banner text-center"
-    [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + banener?.banner + ')' }">
+<section class="sec-banner text-center"
+    [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + panner + ')' }">
 
     <div class="container">
         <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
-            <h1><span class="main-color font-weight-bold">{{banener?.name}} </span>
+            <h1><span class="main-color font-weight-bold">{{hotel[0].name}} </span>
             </h1>
         </div>
-        <p class="mt-2">{{banener?.description}}</p>
-        <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+        <p class="mt-2">{{pannerDescription}}</p>
+        <!-- <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
             <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a>
-
-
-
         <a class="call-btn d-flex align-items-center">
                 <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
-                <span class="phone-text text-dark">Call Us: <strong>{{contact?.phone1}}</strong></span>
+                <span class="phone-text text-dark">Call Us: <strong>{{hotel[0]}}</strong></span>
             </a>
-        </div>
+        </div> -->
     </div>
-
-</section> -->
+</section>
 <app-page-links></app-page-links>
 <section class="sec-bg p-3 mb-5">
     <div class="container">
-        <!-- tag -->
-
-
-
-        <!-- <div class="services text-center bg-white d-flex justify-content-between rounded mt-3">
-            <div class="services-content">
-                <a (click)="Itinerary()">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <p class="d-none d-sm-block mb-0">Itinerary</p>
-                </a>
-            </div>
-
-            <div class="services-content">
-                <a (click)="Services()"> <i class="far fa-lightbulb"></i>
-                    <p class="d-none d-sm-block mb-0">Services</p>
-                </a>
-            </div>
-            <div class="services-content">
-
-                <a (click)="Location()"> <i class="fas fa-map-marked-alt"></i> 
-                 <p class="d-none d-sm-block mb-0">Location</p></a>
-             </div>
-
-
-            <div class="services-content">
-                <a (click)="gallery()"> <i class="far fa-play-circle"></i>
-
-                <a (click)="trav()"> <i class="fas fa-globe-americas"></i>
-                    <p class="d-none d-sm-block mb-0">Travel Experiences</p>
-                </a>
-            </div>
-            <div class="services-content">
-                <a (click)="accomodation()">
-                    <i class="fas fa-bed"></i>
-                    <p class="d-none d-sm-block mb-0">accomodation</p>
-                </a>
-            </div>
-
-            <div class="services-content">
-                <a (click)="Gallery()"> <i class="far fa-play-circle"></i>
-                    <p class="d-none d-sm-block mb-0">Gallery</p>
-                </a>
-            </div>
-
-
-
-
-        </div> -->
-        <!-- End tags -->
         <div class="row mt-4">
             <div class="col-12 col-md-9">
-
                 <section id="Itinerary" class="bg-white mt-3 px-2 py-4">
                     <div class="container">
-
                         <div class="" *ngFor="let hot of hotel">
                             <div class="d-flex ">
-                                <h3 class="font-weight-bold">{{hot?.name}}</h3>
+                                <h1 class="h3 font-weight-bold">{{hot?.name}}</h1>
                                 <div class="pl-3 pt-1">
-
                                     <rating [(ngModel)]="hot.rate" [max]="max" [readonly]="isReadonly">
                                     </rating>
                                 </div>
-
                             </div>
-
-
-
-                            <h4 class="mt-3 " [innerHTML]="hot?.overview"></h4>
-
-
+                            <p class="mt-3 " [innerHTML]="hot?.overview"></p>
                         </div>
                     </div>
                 </section>
-
                 <section id="Services" class="bg-white mt-3 px-2 py-4">
                     <div class="container">
                         <div class="row">
-
                             <div class="col-12 col-md-12">
                                 <div class="head mb-4">
                                     <h4 class="font-weight-bold pt-2">services</h4>
                                 </div>
 
-                                <div class="">
+                                <!-- <div class="">
                                     <ul class="list-group p-0">
                                         <li *ngFor='let hot of hotel[0].services'
                                             class="list-group-item d-flex px-0 py-2">
@@ -115,14 +51,23 @@
                                             <span>{{hot?.content}}</span>
                                         </li>
                                     </ul>
+                                </div> -->
+                                <div class="d-flex flex-wrap ">
+                                    <div *ngFor='let hot of hotel[0].services' class=" list-group-item  px-0 py-2">
+
+
+                                        <img src="assets/imgs/right.svg" class="ml-2 img-fluid">
+
+                                        <span>{{hot?.content}}</span>
+
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-12">
                                 <div class="head mb-4">
                                     <h4 class="font-weight-bold pt-2 ">Activities</h4>
                                 </div>
-
-                                <div class="">
+                                <!-- <div class="">
                                     <ul class="list-group p-0">
                                         <li *ngFor='let gg of hotel[0].activities'
                                             class="list-group-item d-flex px-0 py-2">
@@ -130,16 +75,23 @@
                                             <span>{{gg?.content}}</span>
                                         </li>
                                     </ul>
+                                </div> -->
+                                <div class="d-flex flex-wrap ">
+                                    <div *ngFor='let gg of hotel[0].activities' class=" list-group-item  px-0 py-2">
+
+
+                                        <img src="assets/imgs/right.svg" class="ml-2 img-fluid">
+
+                                        <span>{{gg?.content}}</span>
+
+                                    </div>
                                 </div>
                             </div>
-
-
-
                             <div class="col-12 col-md-12">
                                 <div class="head mb-4">
                                     <h4 class="font-weight-bold pt-2">Amenities</h4>
                                 </div>
-                                <div class="">
+                                <!-- <div class="">
                                     <ul class="list-group p-0">
                                         <li *ngFor='let gg of hotel[0].amenities'
                                             class="list-group-item d-flex px-0 py-2">
@@ -147,30 +99,33 @@
                                             <span>{{gg?.content}}</span>
                                         </li>
                                     </ul>
+                                </div> -->
+                                <div class="d-flex flex-wrap ">
+                                    <div *ngFor='let gg of hotel[0].amenities' class=" list-group-item  px-0 py-2">
+
+
+                                        <img src="assets/imgs/right.svg" class="ml-2 img-fluid">
+
+                                        <span>{{gg?.content}}</span>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-
                 <section id="Location" class="bg-white mt-3  py-2">
                     <div class="container">
                         <div class="head mb-4">
-                            <h3 class="pl-2 font-weight-bold">Location</h3>
+                            <h4 class="pl-2 mt-2 font-weight-bold">Location</h4>
                         </div>
-
-                        <div class="pl-2 font-weight-bold " *ngFor="let hot of hotel">
-                            <h3 class="">Arrive Location : {{ hot?.checkin }}</h3>
-
-                            <h3 class="">Departure Location : {{ hot?.checkout }}
-                            </h3>
-
+                        <div class=" pl-2 d-flex justify-content-between " *ngFor="let hot of hotel">
+                            <h5 class="">Check In <span class="location">: </span>{{ hot?.checkin }}</h5>
+                            <h5 class="">Check Out <span class="location">: </span> {{ hot?.checkout }}</h5>
                         </div>
                         <div class="col-sm-12">
                             <div class="map-details border mt-2">
-
                                 <div class="embed-responsive" *ngFor="let hot of hotel">
-
                                     <iframe class="embed-responsive-item" [src]="hot?.location_map | map"
                                         allowfullscreen="">
                                     </iframe>
@@ -184,11 +139,9 @@
                         <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery">
                         </ngx-gallery>
                     </div>
-
                 </section>
             </div>
             <div class="col-12 col-md-3">
-
                 <app-expert-reviews></app-expert-reviews>
                 <app-tour-booking></app-tour-booking>
                 <app-optional-experts></app-optional-experts>
@@ -196,6 +149,4 @@
         </div>
     </div>
 </section>
-
-
 <app-sponsorss></app-sponsorss>

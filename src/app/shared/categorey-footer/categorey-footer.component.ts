@@ -14,7 +14,6 @@ export class CategoreyFooterComponent implements OnInit {
   ngOnInit(): void {
     this.footer.categoryFooter(1).subscribe(res => {
       this.categoryFooter = res.data
-      console.log(res.data);
       
     })
   }

@@ -6,6 +6,8 @@
 }
 * {
     box-sizing: border-box;
+    /* font-family: 'Poppins', sans-serif !important; */
+
 }
 .main-color {
     color: #f68800;
@@ -36,7 +38,8 @@ ul {
     text-decoration: none;
 }
 .head-title h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    font-weight: 800;
 }
 .sat-font {
     font-family: satisfy, cursive;
@@ -61,6 +64,19 @@ ul {
     height: 85vh;
     width: 100%;
 } 
+.head-title h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+h1
+h2 {
+    font-size: 1.5rem;
+}
+h3
+.head-title p{
+    font-size: 18px;
+    font-weight: 300;
+}
 /* start second banner */
 .sec-banner {
     height: 60vh;
@@ -138,10 +154,12 @@ ul {
 /* end destination */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;     font-family: 'Poppins', sans-serif 
+}
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0;   font-family: 'Poppins', sans-serif !important;
+}
 @media only screen  and (max-width:767px){
     .head-title h2 {
         font-size: 2rem;

@@ -1,12 +1,13 @@
 <section id="Itinerary" class="bg-white mt-3 px-2 py-4">
     <div class="container">
-        <div class="splendor mb-4">
+        <div class=" head-title  mb-4">
             <div class="head mb-2">
-                <h3 class="font-weight-bold">{{guide.name}}</h3>
+                <h1 class="h5">{{guide.name}}</h1>
+                <p [innerHTML]="guide.overview"></p>
             </div>
            
 
-            <h4 [innerHTML]="guide.overview"></h4>
+           
            <span class="font-weight-bold">  Included  </span>
                 <span *ngFor='let x of guide.included'>
                     <span> {{x.content}} , </span>

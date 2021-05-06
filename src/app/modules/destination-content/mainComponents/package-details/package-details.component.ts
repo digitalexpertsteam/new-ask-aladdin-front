@@ -29,6 +29,7 @@ export class PackageDetailsComponent implements OnInit {
   max = 5;
   rate = 3;
   count:any
+
   isReadonly = false;
   overStar: number | undefined;
   percent: number | undefined;
@@ -67,12 +68,9 @@ export class PackageDetailsComponent implements OnInit {
 
 
       this.hot = result.data.hot_offer
-      
 
       this.nameCountry = result.data[0].destination_name;
       this.count = result.data.length
-
-      
       this.Title = result.data[0].destination_seo_title;
       this._Title.setTitle(`${this.Title}`)
       this._Meta.addTags([

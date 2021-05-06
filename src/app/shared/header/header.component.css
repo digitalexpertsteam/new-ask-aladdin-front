@@ -6,7 +6,7 @@
 }
 .dropdown-menu {
     width: 75px !important;
-    transform: translateX(-20px ) !important;
+    transform: translateX(-40px ) !important;
     z-index: 999999;
 }
 .dropdown-menu  a {
@@ -27,14 +27,17 @@
 .flag , .img-lang
 {
     width: 20px;
-    /* margin-bottom: 10px; */
-    margin-top:  11px;
 
+    margin-bottom: 10px;
+     
+    
 }
-h3{
-    margin-top: 6px;
+.main-btn
+{
+    background-color: transparent;
+}
 
-}
+
 .list-dropdown h3 {
     font-size: 14px;
 }

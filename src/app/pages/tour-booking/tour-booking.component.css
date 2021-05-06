@@ -63,3 +63,14 @@
 form button {
     font-size: 14px;
 }
+.submit{
+    position: sticky;
+    top: 9%;
+    z-index: 999999999;
+}
+.send{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: rgb(255, 255, 255);
+}

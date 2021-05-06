@@ -8,7 +8,7 @@
         </div>
         <p class="mt-2">{{banener?.description}}</p>
         <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
-            <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a>
+            <!-- <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a> -->
 
 
 
@@ -120,10 +120,10 @@
                     <div class="container">
                         <div class="splendor mb-4">
                             <div class="head mb-2">
-                                <h3 class="font-weight-bold">{{cruises?.name}}</h3>
+                                <h3 class="h4 font-weight-bold">{{cruises?.name}}</h3>
                             </div>
                             <!-- <p>{{num}} nights / {{cruises.days}}{{"days" |translate}}</p> -->
-                            <h4 [innerHTML]="cruises?.description"></h4>
+                            <p [innerHTML]="cruises?.description"></p>
                             <!-- <h3> Including </h3>
                 <div *ngFor='let x of cruises.included'>
                     <span> {{x.content}},</span>
@@ -132,7 +132,7 @@
                         </div>
                         <div class="package-itinerary">
                             <div class="head mb-4">
-                                <h2 class="font-weight-bold"> Itinerary</h2>
+                                <h3 class="h4 font-weight-bold"> Itinerary</h3>
                             </div>
                             <div class="package-details" class="package">
 
@@ -204,7 +204,7 @@
                         <div class="row">
                             <div class="col-12 col-md-7">
                                 <div class="head mb-4">
-                                    <h4 class="font-weight-bold px-3">services</h4>
+                                    <h3 class="font-weight-bold px-3">services</h3>
                                 </div>
                                 <div class="">
                                     <ul class="list-group p-0">
@@ -219,7 +219,7 @@
                             </div>
                             <div class="col-12 col-md-5">
                                 <div class="head mb-4">
-                                    <h4 class="font-weight-bold">activities</h4>
+                                    <h3 class="font-weight-bold">activities</h3>
                                 </div>
                                 <div class="">
                                     <ul class="p-0">
@@ -272,12 +272,12 @@
             <div class="col-12 col-md-3">
                 <section class="bg-white mt-3 px-3 py-4">
                     <div class="head mb-2">
-                        <h4 class="font-weight-bolder"> I Room : {{cruises?.single_room_price}}<span class="main-color">
-                                $</span></h4>
-                        <h4 class="font-weight-bolder"> II Room : {{cruises?.double_room_price}} <span
-                                class="main-color"> $</span></h4>
-                        <h4 class=""> <span> <i class="fas fa-route"></i> check in</span> {{cruises?.checkin}} </h4>
-                        <h4 class=""> <span> <i class="fas fa-route"></i> check out</span> {{cruises?.checkout}} </h4>
+                        <h4 class="h6 font-weight-bolder"> I Room : {{cruises?.single_room_price}}<span class="main-color">
+                                USD</span></h4>
+                        <h4 class="h6 font-weight-bolder"> II Room : {{cruises?.double_room_price}} <span
+                                class="main-color"> USD</span></h4>
+                        <h4 class="h6"> <span> <i class="fas fa-route"></i> check in</span> {{cruises?.checkin}} </h4>
+                        <h4 class="h6"> <span> <i class="fas fa-route"></i> check out</span> {{cruises?.checkout}} </h4>
                         <rating [(ngModel)]="cruises.rate" [max]="max" [readonly]="isReadonly"></rating>
 
                     </div>
@@ -328,13 +328,13 @@
 <section id="accomodation" class="accomodation my-3">
     <div class="container">
         <div class="head mb-4">
-            <h2 class="font-weight-bold">Accommodation For This Cruises</h2>
+            <h2 class="h3 font-weight-bold">Accommodations For This Cruises</h2>
         </div>
         <div *ngIf="ttt.length > 0 ; else accommodation"  > 
         <div class="row">
             <div *ngFor="let acc of cruises.hotels" class="col-12 col-md-3 pt-2">
                 <div class="card overflow-hidden">
-                    <a  href="/{{acc.slug}}" >
+                    <a  href="/hotel/{{acc.slug}}" >
                         <div class="row ">
                             <div class="col-sm-12 ">
                                 <div class="acco-image">
@@ -352,7 +352,7 @@
                                         </rating>
                                     </div>
                                     <div class="acco-link mb-2">
-                                        <a href="/{{acc.slug}}" class="main-btn">View Details</a>
+                                        <a href="/hotel/{{acc.slug}}" class="main-btn">View Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -365,7 +365,7 @@
     </div>
     <ng-template #accommodation >
 
-        <h1 class="text-center  "> No Accommodation Yet</h1>
+        <h1 class="text-center  "> No Accommodations Yet</h1>
       </ng-template>
 
 

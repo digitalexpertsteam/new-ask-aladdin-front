@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HomeserviceService } from '../../services/homeservice.service';
-
 @Component({
   selector: 'app-egypt-splendor',
   templateUrl: './egypt-splendor.component.html',
   styleUrls: ['./egypt-splendor.component.css']
 })
 export class EgyptSplendorComponent implements OnInit {
-
   guide:any = [];
   id:any;
   selectTrue = true
@@ -16,8 +14,6 @@ export class EgyptSplendorComponent implements OnInit {
   imageTrue='assets/imgs/right.svg';
   num : any;
   tour:any
-
-
   constructor(private _splendor:HomeserviceService) { }
   customOptions: OwlOptions = {
     loop: true,
@@ -45,29 +41,12 @@ export class EgyptSplendorComponent implements OnInit {
     },
     nav: false
   }
-
-  
-
   ngOnInit(): void {
     this.id = localStorage.getItem("idPack");
     this._splendor.getSinglepackage(this.id).subscribe(result => {
       this.guide = result.data[0];
-      
       this.tour = result.data[0].tour_type;
-
-     
-     
-      
       let x = 1
       this.num = result.data[0].days - x
-     
-
   })}
-
-  // setSlug(id:any)
-  // {
-  //   localStorage.setItem("idPack",id)
-
-  // }
-
   }

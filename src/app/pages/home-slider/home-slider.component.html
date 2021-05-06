@@ -13,7 +13,7 @@
                 
                 <div class="carousel-caption">
                     <div class="animated delay-1s">
-                        <h3 class="h3-responsive">{{img.title}}</h3>
+                        <h1 class="h3-responsive">{{img.title}}</h1>
                         <p>{{img.small_text}}</p>
                         <div class="row">
                             <div class="col-12 col-md-3"></div>
@@ -35,24 +35,31 @@
                             </video>
                         </div>
                         <div class="layout">
-                         
+                          <div class="carousel-caption">
+                            <mdb-carousel  [isControls]="false" class="carousel slide" [animation]="'fade'">
+                              <mdb-carousel-item > 
+                                <div class="animated delay-1s w-75 m-auto">
+                                  <img class="img-fluid" src="../../../assets/imgs/trustpilot.png" alt="" >
+                                  <h1 class="h3-responsive">{{video.title}}</h1>
+                                  <p>{{video.small_text}}</p>
+                                    </div>
+                              </mdb-carousel-item >
+                              <mdb-carousel-item >
+                                <div class="animated delay-1s w-75 m-auto">
+                                  <img class="img-fluid" src="../../../assets/imgs/trustpilot.png" alt="" >
+                                  <h1 class="h3-responsive"> EGYPT TRAVEL EXPERTS </h1>
+                                  <p></p>
+                                    </div>
+                              </mdb-carousel-item >
+                            </mdb-carousel>
+                            
+                            </div>
                         </div>
                     </div>
                        
                     
-                    <div class="carousel-caption">
-                        <div class="animated delay-1s">
-                          <h3 class="h3-responsive">{{video.title}}</h3>
-                          <p>{{video.small_text}}</p>
-                            <div class="row">
-                                <div class="col-12 col-md-3"></div>
-                                <div class="col-12 col-md-6">
-        
-                                </div>
-                                <div class="col-12 col-md-3"></div>
-                            </div>
-                        </div>
-                    </div>
+                   
+                    
                 </mdb-carousel-item>
         </mdb-carousel>
         
@@ -60,28 +67,28 @@
     
     
   
-    <div>
-        <!-- <table>
+    <!-- <div>
+        <table>
         <thead *ngFor="let blog of blogs">
             <th> {{blog.name}}</th>
 
         </thead>
-    </table> -->
+    </table>
 
-    </div>
+    </div> -->
 
-    <!-- Button trigger modal -->
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <!-- Button trigger modal
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
   </button> -->
 
-    <!-- Modal -->
+    <!-- Modal
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <!-- <h4 class="modal-title text-center " id="exampleModalLabel">search</h4> -->
+                     <h4 class="modal-title text-center " id="exampleModalLabel">search</h4>
                     <div class="modal-body ">
                         <label class="labelSearch w-100 d-flex" for="">
 
@@ -311,7 +318,7 @@
 
                                 <div *ngFor="let blog of page" class="d-flex flex-wrap">
                                     <div class="blogs overflow-hidden">
-                                        <!-- <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark"> -->
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
                                             <div class="card main-card text-center blogCard anotherCard">
                                             <img
                                               [src]="blog.thumb"
@@ -323,7 +330,7 @@
                                               <h6 class="card-title">{{ blog.name }}</h6>
                                             </div>
                                           </div>
-                                        <!-- </a> -->
+                                        </a>
                                       </div>
                                 </div>
 
@@ -386,29 +393,29 @@
         </div>
 
 
-    </div>
-    <div>
-        <!-- <table>
+    </div> -->
+    <!-- <div>
+        <table>
         <thead *ngFor="let blog of blogs">
             <th> {{blog.name}}</th>
 
         </thead>
-    </table> -->
+    </table>
 
-    </div>
+    </div> -->
 
     <!-- Button trigger modal -->
     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
     Launch demo modal
-  </button> -->
+  </button>  -->
 
-    <!-- Modal -->
+    <!-- Modal
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <!-- <h4 class="modal-title text-center " id="exampleModalLabel">search</h4> -->
+                    <h4 class="modal-title text-center " id="exampleModalLabel">search</h4>
                     <div class="modal-body ">
                         <label class="labelSearch w-100 d-flex" for="">
 
@@ -638,7 +645,7 @@
 
                                 <div *ngFor="let blog of page" class="d-flex flex-wrap">
                                     <div class="blogs overflow-hidden">
-                                        <!-- <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark"> -->
+                                        <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
                                             <div class="card main-card text-center blogCard anotherCard">
                                             <img
                                               [src]="blog.thumb"
@@ -650,7 +657,7 @@
                                               <h6 class="card-title">{{ blog.name }}</h6>
                                             </div>
                                           </div>
-                                        <!-- </a> -->
+                                         </a>
                                       </div>
                                 </div>
 
@@ -702,5 +709,5 @@
             </div>
         </div>
 
-    </div>
+    </div>  -->
 </section>

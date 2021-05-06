@@ -40,6 +40,7 @@ export class HeaderComponent implements OnInit {
   oneLang: any[] = []
   langArr:any[]=[]
   currentLang: string = '';
+
   Languages = [
     { lnaguage: "English", image: "assets/imgs/en.png" },
     { lnaguage: "French", image: "assets/imgs/fr.png" },
@@ -78,11 +79,9 @@ export class HeaderComponent implements OnInit {
       this.sp = result.data[0].spanish;
       this.ger = result.data[0].deutsch;
       this.ru = result.data[0].russian;
-      this.oneLang = result.data[0];
+
+
       
-
-
-
     })
   }
 
