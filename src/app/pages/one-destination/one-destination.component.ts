@@ -32,6 +32,7 @@ export class OneDestinationComponent implements OnInit {
 
   image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
   errors: any;
+  desSlug: any;
   
 
  
@@ -46,6 +47,9 @@ export class OneDestinationComponent implements OnInit {
 
     this._Home.getOneDistination(this.id).subscribe(res => {
       this.singleDestination = res.data  
+      this.desSlug = res.data[0].slug
+      
+      
       this.Title = res.data[0].seo_title;
       this._Title.setTitle(`${this.Title}`)
       this._Meta.addTags([

@@ -8,6 +8,8 @@ import { HomeserviceService } from '../../services/homeservice.service';
   styleUrls: ['./accomodation.component.css']
 })
 export class AccomodationComponent implements OnInit {
+  desName: any;
+  desSlug: any;
 
   constructor(private _accomodation:HomeserviceService,private _active: ActivatedRoute) { }
 
@@ -29,14 +31,15 @@ export class AccomodationComponent implements OnInit {
 
     this._accomodation.getSinglepackage(this.id).subscribe(result => {
       this.accomodation = result.data[0];
+      console.log(this.accomodation);
+      
       this.flag = result.data[0].hotels
-
-
-
-
-
-
-  })}
+  })
+  this._accomodation.getSingleDestination(this.id).subscribe(res => {
+    this.desName = res.data[0].destination_name
+    this.desSlug = res.data[0].destination_slug
+  })
+}
   setId(id: any) {
     localStorage.setItem("idcru", id);
   }

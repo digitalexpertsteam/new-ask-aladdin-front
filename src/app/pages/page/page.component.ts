@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Pages } from '../../interfaces/pages';
 import { HomeserviceService } from '../../services/homeservice.service';
 
@@ -9,10 +10,12 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class PageComponent implements OnInit {
   pagesContent:Pages[]=[];
-  constructor(private _Page:HomeserviceService) { }
+  id:any;
+  constructor(private _Page:HomeserviceService , private _active:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this._Page.getPage(100).subscribe(res => {
+    this.id = this._active.snapshot.params.slug
+    this._Page.getPage(this.id).subscribe(res => {
       console.log(res.data[0]);
       this.pagesContent = res.data
       

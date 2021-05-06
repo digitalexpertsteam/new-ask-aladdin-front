@@ -64,7 +64,7 @@
                 alt="{{ faqs.faq_thumb_alt }}"
               />
               <div class="card-body">
-                <h3 class="card-title">{{ faqs.faq_name }}</h3>
+                <h3 class="card-title title-category">{{ faqs.faq_name }}</h3>
                 <p class="card-text" [innerHTML]="faqs.faq_description"></p>
                 <a
                   routerLink="/{{ desSlug }}/facts-myths/{{ faqs.faq_slug }}"
