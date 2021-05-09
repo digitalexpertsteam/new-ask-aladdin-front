@@ -36,6 +36,20 @@ export class SingleFaqComponent implements OnInit {
     //  this._ActivatedRoute.snapshot.params.id;
     this._homeService.getSingleFaq(this.idFaq).subscribe((result) => {
       this.singleFaq = result.data;
+      this.Title = result.data[0].seo_title;
+      this._Title.setTitle(`${this.Title}`)
+      this._Meta.addTags([
+        { name: 'keywords', content: `${result.data[0].seo_keywords}` },
+        { name: 'robots', content: `${result.data[0].seo_robots}` },
+        { name: 'description', content: `${result.data[0].seo_description}`},
+        { name: 'facebook:description', content: `${result.data[0].facebook_description}`},
+        { name: 'twitter:title', content: `${result.data[0].twitter_title}`},
+        { name: 'twitter:description', content: `${result.data[0].twitter_description}`},
+        { name: "twitter:image", content: `${result.data[0].twitter_description}`},
+        { name: 'twitter:image', property:"og:image", content: `${result.data[0].twitter_image}`},
+        { name: 'facebook:image', property:"og:image", content: `${result.data[0].facebook_image}`},
+        
+      ]); 
     });
 
     
@@ -43,25 +57,13 @@ export class SingleFaqComponent implements OnInit {
     this._homeService.getDestinationFact(this.id).subscribe(res => {
       this.alldestinationCards = res.data;
       this.desName =res.data[0].destination_name;
+      console.log(this.desName)
       this.desSlug =res.data[0].destination_slug;
-      this.Title = res.data[0].seo_title;
-      this._Title.setTitle(`${this.Title}`)
-      this._Meta.addTags([
-        { name: 'keywords', content: `${res.data[0].seo_keywords}` },
-        { name: 'robots', content: `${res.data[0].seo_robots}` },
-        { name: 'description', content: `${res.data[0].seo_description}`},
-        { name: 'facebook:description', content: `${res.data[0].facebook_description}`},
-        { name: 'twitter:title', content: `${res.data[0].twitter_title}`},
-        { name: 'twitter:description', content: `${res.data[0].twitter_description}`},
-        { name: "twitter:image", content: `${res.data[0].twitter_description}`},
-        { name: 'twitter:image', property:"og:image", content: `${res.data[0].twitter_image}`},
-        { name: 'facebook:image', property:"og:image", content: `${res.data[0].facebook_image}`},
-        
-      ]); 
+      
 
       console.log(this.desName);
     });
-    this._homeService.getOneDestinationDetails(this.id).subscribe(res => {
+    this._homeService.getOneDestinationDetails(1).subscribe(res => {
 
       this.faqName = res.data[0].categories[5].name  
       

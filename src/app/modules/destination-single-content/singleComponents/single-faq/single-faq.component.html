@@ -33,7 +33,7 @@
   </div>
 </section>
 <section class="sec-bg py-4">
-  <div class="container-fluid px-5">
+  <div class="container ">
     <div *ngFor="let faq of singleFaq" class="row">
       <div class="col-lg-9  col-sm-12">
         <!-- <div class="mb-3">
@@ -50,7 +50,7 @@
         </div>
 
         <div class="text-center sec-bg">
-          <h2 class="mb-5">Related Facts & MyThs</h2>
+          <h2 class=" font-weight-light mb-5">Related Facts & MyThs</h2>
 
           <owl-carousel-o [options]="customOptions">
             <ng-template *ngFor="let faq of alldestinationCards" carouselSlide>
@@ -77,6 +77,7 @@
         </div>
       </div>
       <div class="col-lg-2 col-md-3">
+
         <app-expert-reviews></app-expert-reviews>
       </div>
     </div>

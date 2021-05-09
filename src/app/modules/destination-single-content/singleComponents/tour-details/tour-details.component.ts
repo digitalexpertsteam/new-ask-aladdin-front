@@ -24,9 +24,7 @@ export class TourDetailsComponent implements OnInit {
   public iid: any[] = [];
   savePlayer(player: YT.Player) {
     this.player = player;
-
   }
-
   constructor(public highlights: HomeserviceService, private _active: ActivatedRoute, private _Meta: Meta, private _Title: Title,) { }
   ngOnInit(): void {
     this.idPack = this._active.snapshot.params.slug

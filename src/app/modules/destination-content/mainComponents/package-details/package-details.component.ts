@@ -69,6 +69,7 @@ export class PackageDetailsComponent implements OnInit {
 
       this.hot = result.data.hot_offer
 
+
       this.nameCountry = result.data[0].destination_name;
       this.count = result.data.length
       this.Title = result.data[0].destination_seo_title;

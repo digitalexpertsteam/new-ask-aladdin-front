@@ -29,7 +29,7 @@
 <section class="sec-bg py-4">
     <div class="container">
         <div class="head-title text-center mb-5">
-            <h2 class="font-weight-bold">{{guide_name}}</h2>
+            <h2 class="">{{guide_name}}</h2>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let guide of guidesContainer">
@@ -38,7 +38,7 @@
                         <div class="card text-center">
                             <img src="{{guide.travel_guide_thumb}}" class="card-img-top" alt="{{guide.travel_guide_thumb_alt}}">
                             <div class="card-body">
-                                <h3 class="card-title">{{guide.travel_guide_name}}</h3>
+                                <h3 class="card-title title-category">{{guide.travel_guide_name}}</h3>
                                 <p class="card-text" [innerHTML]="guide.travel_guide_description"></p>
                                 <a routerLink="/{{desSlug}}/travel-guides/{{guide.travel_guide_slug}}"   (click)="setId(guide.travel_guide__id)" class="btn w-75 m-auto main-btn blog-btn">Read More</a>
                             </div>

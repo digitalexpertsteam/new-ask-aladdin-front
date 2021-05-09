@@ -69,7 +69,7 @@ const routes: Routes = [
   // facts
   { path: ":slug/facts-myths", component: TravelFactsDesComponent },
   {
-    path: ":slug/facts-myths/:slug",
+    path: ":id/facts-myths/:slug",
     component: SingleFaqComponent,
   },
   // travel-guide
@@ -89,10 +89,10 @@ const routes: Routes = [
   { path: "single-package", component: TourDetailsComponent },
   { path: "our-story", component: OurStoryComponent },
   { path: "contactUs", component: ContactUsComponent },
-  { path: "page", pathMatch: "full", component: PageComponent },
-  { path: "single-page", pathMatch: "full", component: SinglePageComponent },
-  { path: "single-page/:slug", pathMatch: "full", component: SinglePageComponent },
-  { path: "hotel/:slug",  component: SingleHotelComponent },
+
+  { path: ":id/category/:slug", pathMatch: "full", component: PageComponent },
+  { path: ":id/page/:cate/:slug", pathMatch: "full", component: SinglePageComponent },
+  { path: ":id/hotel/:slug",  component: SingleHotelComponent },
 
   { path: ":slug", component: OneDestinationComponent },
 

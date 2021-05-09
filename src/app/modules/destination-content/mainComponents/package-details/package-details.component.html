@@ -1,12 +1,14 @@
 <section class="">
     <h2 class="info main-bg text-white font-weight-bold">{{count}} {{nameCountry}} Tour Packages</h2>
     <div  class="">
+
     <ng-container *ngFor="let singleDes of destinationContainer">
         <div class="data-box   bg-white mt-3 p-2">
             <div class="row mx-0">
                 <div class="col-xl-10 ">
                     <div class="card border-0">
                         <div class="row px-0 ">
+
                             <div class="col-md-5 px-0">
                                 <img class="img-fluid package-img"
                                     src="{{singleDes.package_thumb=='1'?image: singleDes.package_thumb}}">
@@ -15,6 +17,7 @@
 
                                     <h6 *ngIf="singleDes.discount!==null" class=" font-weight-bold discount">
                                         {{singleDes.discount + "% off"}} </h6>
+
                                 </div>
                                 <div class="map-details border mt-2">
                                     <div class="row mx-0 px-0">
@@ -38,6 +41,7 @@
                                     <div class=" d-flex flex-wrap"> 
                                     <span class="tour  ml-2 mt-1" *ngFor="let x of singleDes.tour_type "> <i class="m-1 fas fa-plane-departure"></i> {{  x}}</span>
                                     </div>
+
                                     <div class="row mt-2 px-0">
                                         <div class="col-6 col-sm-4 px-0">
                                             <div class="advatnage">
@@ -50,6 +54,7 @@
                                             <div class="advatnage">
                                                 <i class="fas fa-clipboard-list main-color"></i>
                                                 <span class="text-center ml-1">{{singleDes?.itinerary}} Days</span>
+
                                             </div>
                                         </div>
                                         <div class="col-6 col-sm-4 px-0">
@@ -200,4 +205,5 @@
     </ng-container>
 </div>
     
+
 </section>

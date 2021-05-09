@@ -62,7 +62,7 @@ export class AllBlogsComponent implements OnInit {
       ]);
     }) 
 
-    this._blogs.getOneDestinationDetails(this.id).subscribe(res => {
+    this._blogs.getOneDestinationDetails(1).subscribe(res => {
         this.allBlog = res.data[0].categories
         this.category = res.data[0].categories[4].slug 
         this.blogName = res.data[0].categories[4].name  

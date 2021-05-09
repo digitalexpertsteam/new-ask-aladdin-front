@@ -3,11 +3,13 @@
         <div class="splendor mb-4">
             <div class="head mb-2">
                 <h1 class=" h3 font-weight-bold">{{guide.name}}</h1>
+
             </div>
             <p>{{num}} nights / {{guide.days}}{{"days" |translate}}</p>
             <p [innerHTML]="guide.overview"></p>
             </div>
             <span class="tour" *ngFor='let ggu of tour'> <i class="m-1 fas fa-plane-departure"></i>  {{  ggu}} </span>
+
         <div class="package-itinerary">
             <div class="head mb-4 mt-2">
                 <h2 class=" h3 font-weight-bold"> Itinerary</h2>

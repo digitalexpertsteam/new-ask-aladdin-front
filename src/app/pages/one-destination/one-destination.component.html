@@ -18,9 +18,6 @@
       </div>
       <p class="mt-2" [innerHTML]="des.description"></p>
       <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
-        <a href="" class="main-btn mr-3"
-          >Read More <i class="fas fa-arrow-right"></i
-        ></a>
         <a href="" class="call-btn d-flex align-items-center">
           <span class="phone-icon"
             ><i class="fas fa-phone-alt main-color"></i
@@ -305,15 +302,14 @@
     </owl-carousel-o>
   </div>
 </section>
-<app-sponsors-logo></app-sponsors-logo>
 <section class="container-fluid mt-2 main">
   <div class="category  ">
   <div  class="row">
       <div *ngFor="let category of categoryFooter|slice :0:5" class="col-12 col-lg-2 col-md-6">
           <ul  class="list">
-              <h5 class="font-weight-bold">{{category.title}}</h5>
+              <h1 class="title-category">{{category.title}}</h1>
               <div *ngFor="let cate of category.categories ">
-                  <a  class="hover-color"><li>{{cate.name}}</li></a>
+                  <a href="/{{category.destination_slug}}/category/{{cate.slug}}" class="hover-color"><li>{{cate.name}}</li></a>
               </div>
           </ul>  
       </div>
