@@ -1,7 +1,8 @@
 <section id="accomodation" class="accomodation my-3">
     <div class="container">
         <div class="head mb-4">
-           <h2 class="font-weight-bold">Accommodation for This Package</h2>
+           <h2 class=" h3 font-weight-bold">Accommodations for This Package</h2>
+
 
         </div>
         <div *ngIf="flag?.length > 0 ;else accommodation" class="row">
@@ -11,7 +12,7 @@
                         <div class="row ">
                             <div class="col-sm-12 ">
                                 <div class="acco-image">
-                                    <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}" class="img-fluid " />
+                                    <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}" class="img-fluid"/>
                                 </div>
                             </div>
                             <div class="col-sm-12 text-center p-0">
@@ -41,5 +42,5 @@
 </section>
 <ng-template #accommodation >
 
-    <h1 class=" text-center  ">  <img src="assets/imgs/dot.svg" class="img-fluid"> No Accommodation Yet</h1>
+    <h4 class=" text-center  ">  <img src="assets/imgs/dot.svg" class="img-fluid"> No Accommodations Yet</h4>
   </ng-template>

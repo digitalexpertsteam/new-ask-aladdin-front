@@ -193,9 +193,10 @@ a:hover
     font-size: .9rem;
 }
 .over_banner img{
-max-width: 420px;
-min-width: 420px;
+max-width: 390px;
+min-width: 390px;
 max-height:100px ;
+width: 380px;
 }
 
 h1 img {

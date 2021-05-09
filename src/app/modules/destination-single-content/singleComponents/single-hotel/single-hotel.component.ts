@@ -4,11 +4,6 @@ import { HomeserviceService } from '../../../../services/homeservice.service';
 import { NgxGalleryAnimation, NgxGalleryOptions } from '@kolkov/ngx-gallery';
 import {NgxGalleryImage} from '@kolkov/ngx-gallery';import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-
-
-
-
-
 @Component({
   selector: 'app-single-hotel',
   templateUrl: './single-hotel.component.html',
@@ -37,6 +32,9 @@ export class SingleHotelComponent implements OnInit {
   hotel: Hotel[] = []
   img=[];
 
+  panner:any
+  pannerDescription:any
+
   id: any
   max: any
   isReadonly = true;
@@ -49,12 +47,15 @@ export class SingleHotelComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this._active.snapshot.params.slug
-    console.log(this.id);
-    
-
-    this._hotel.getSingleHotel(this.id).subscribe(result => {
+ this._hotel.getSingleHotel(this.id).subscribe(result => {
       this.hotel = result.data;
-      console.log(this.hotel);
+      this.panner = result.data[0].banner;
+      this.pannerDescription = result.data[0].description;
+      this.panner = result.data[0].banner;
+
+
+      console.log(this.panner);
+
       
       this.img=result.data[0].gallery
       this.galleryImages=[]

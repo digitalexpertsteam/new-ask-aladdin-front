@@ -155,12 +155,29 @@ footer .shortcuts li a:hover {
         margin-left: 9%;
     }
     .copyright{
+
         transform: translateY(-15px);
         
     }
     .footer-links img {
         width: 32px;
         margin-right: 10px;
+    }
+
+    
+}
+@media only screen and (max-width: 1300px){
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+        transform: translateY(15px);
+        
+    }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
     }
 
     

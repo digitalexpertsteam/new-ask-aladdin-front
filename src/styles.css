@@ -69,6 +69,19 @@ ul {
     height: 85vh;
     width: 100%;
 } 
+.head-title h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+h1
+h2 {
+    font-size: 1.5rem;
+}
+h3
+.head-title p{
+    font-size: 18px;
+    font-weight: 300;
+}
 /* start second banner */
 .sec-banner {
     height: 60vh;

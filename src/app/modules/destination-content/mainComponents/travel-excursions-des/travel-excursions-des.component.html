@@ -37,15 +37,8 @@
             <!-- travel-excursions -->
             <div class="col-12 col-md-9">
                 <section>
-
-
                     <h2 class="info main-bg text-white font-weight-bold">{{count}}  {{name?.destination_name}} travel-excursions
-                        with <span>756 Reviews</span></h2>
-
-
-
-
-
+                 </h2>
                     <ng-container *ngFor="let ex of getDestinationExcursions">
                         <div class="data-box bg-white mt-3 p-2">
                             <div class="row mx-0">
@@ -53,7 +46,6 @@
                                     <div class="card border-0">
                                         <div class="row px-0">
                                             <div class="col-md-5 px-0">
-
                                                 <img src="{{ex.excursion_thumb}}" alt="{{ex.excursion_thumb_alt}}"
                                                     class="img-fluid package-img">
                                                 <div class="map-details border mt-2">

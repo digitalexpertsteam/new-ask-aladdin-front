@@ -24,11 +24,6 @@ export class TourDetailsComponent implements OnInit {
   public iid: any[] = [];
   savePlayer(player: YT.Player) {
     this.player = player;
-
-    console.log("player instance", player);
-  }
-  onStateChange(event: any) {
-    console.log("player state", event.data);
   }
   constructor(public highlights: HomeserviceService, private _active: ActivatedRoute, private _Meta: Meta, private _Title: Title,) { }
   ngOnInit(): void {
@@ -51,8 +46,8 @@ export class TourDetailsComponent implements OnInit {
         this.overBanner = result.data[0].image_over_banner;
       })
       this.highlights.getSingleDestination(this.id).subscribe(result => {
-        this.desName = result.data[0].destination_name;
-        this.desSlug = result.data[0].destination_slug;
+        this.desName = result.data[0]?.destination_name;
+        this.desSlug = result.data[0]?.destination_slug;
       })
     })
     // video

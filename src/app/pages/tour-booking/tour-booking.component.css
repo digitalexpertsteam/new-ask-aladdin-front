@@ -1,6 +1,7 @@
 .head h3 {
     font-size: 1.1rem;
     margin-bottom: 0.1rem;
+    color: #f68800;
 }
 .form-row {
     display: flex;
@@ -62,4 +63,20 @@
 }
 form button {
     font-size: 14px;
+}
+.submit{
+    position: sticky;
+    top: 9%;
+    z-index: 999999999;
+}
+.send{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.trip{
+    background-color: #00759a;
+  
 }

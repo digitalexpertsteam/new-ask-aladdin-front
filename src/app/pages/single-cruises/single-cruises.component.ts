@@ -38,7 +38,7 @@ export class SingleCruisesComponent implements OnInit {
   desSlug:any
   related:Blog[]=[];
   selectTrue = true
-  imageFalse= '';
+  imageFalse= 'assets/imgs/wrong.svg';
   imageTrue='assets/imgs/right.svg';
   num : any;
   img=[];

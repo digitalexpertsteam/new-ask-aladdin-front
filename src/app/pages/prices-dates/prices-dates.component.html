@@ -1,7 +1,7 @@
 <section id="prices" class="bg-white mt-3 px-2 py-4">
     <div    class="container">
         <div class="head mb-4">
-            <h3 class="font-weight-bold">Prices & Departure Dates</h3>
+            <h1 class="h4 font-weight-bold">Prices & Departure Dates</h1>
             <!-- <p class="main-color">Tour Package Price</p> -->
         </div>
         <div *ngIf="flag != null;else noPrice" >
@@ -41,15 +41,15 @@
                         <tbody>
                           <tr>
                             <td>Double Room</td>
-                            <td>{{price.attributes.double_room_standard_1}}</td>
-                            <td> {{price.attributes.double_room_comfort_1}}</td>
-                            <td>{{price.attributes.Single_room_comfort_1}}</td>
+                            <td>{{price?.attributes.double_room_standard_1}}</td>
+                            <td> {{price?.attributes.double_room_comfort_1}}</td>
+                            <td>{{price?.attributes.Single_room_comfort_1}}</td>
                           </tr>
                           <tr>
                             <td>Single Room</td>
-                            <td>{{price.attributes.single_room_standard_1}}</td>
-                            <td>{{price.attributes.Single_room_comfort_1}}</td>
-                            <td>{{price.attributes.Single_room_deluxe_1}}</td>
+                            <td>{{price?.attributes.single_room_standard_1}}</td>
+                            <td>{{price?.attributes.Single_room_comfort_1}}</td>
+                            <td>{{price?.attributes.Single_room_deluxe_1}}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -73,15 +73,15 @@
                     <tbody>
                       <tr>
                         <td>Double Room</td>
-                        <td>{{price.attributes.double_room_standard_2}}</td>
-                        <td> {{price.attributes.double_room_comfort_2}}</td>
-                        <td>{{price.attributes.Single_room_comfort_2}}</td>
+                        <td>{{price?.attributes.double_room_standard_2}}</td>
+                        <td> {{price?.attributes.double_room_comfort_2}}</td>
+                        <td>{{price?.attributes.Single_room_comfort_2}}</td>
                       </tr>
                       <tr>
                         <td>Single Room</td>
-                        <td>{{price.attributes.single_room_standard_2}}</td>
-                        <td>{{price.attributes.Single_room_comfort_2}}</td>
-                        <td>{{price.attributes.Single_room_deluxe_2}}</td>
+                        <td>{{price?.attributes.single_room_standard_2}}</td>
+                        <td>{{price?.attributes.Single_room_comfort_2}}</td>
+                        <td>{{price?.attributes.Single_room_deluxe_2}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -100,15 +100,15 @@
                     <tbody>
                       <tr>
                         <td>Double Room</td>
-                        <td>{{price.attributes.double_room_standard_3}}</td>
-                        <td> {{price.attributes.double_room_comfort_3}}</td>
-                        <td>{{price.attributes.Single_room_comfort_3}}</td>
+                        <td>{{price?.attributes.double_room_standard_3}}</td>
+                        <td> {{price?.attributes.double_room_comfort_3}}</td>
+                        <td>{{price?.attributes.Single_room_comfort_3}}</td>
                       </tr>
                       <tr>
                         <td>Single Room</td>
-                        <td>{{price.attributes.single_room_standard_3}}</td>
-                        <td>{{price.attributes.Single_room_comfort_3}}</td>
-                        <td>{{price.attributes.Single_room_deluxe_3}}</td>
+                        <td>{{price?.attributes.single_room_standard_3}}</td>
+                        <td>{{price?.attributes.Single_room_comfort_3}}</td>
+                        <td>{{price?.attributes.Single_room_deluxe_3}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -127,15 +127,15 @@
                     <tbody>
                       <tr>
                         <td>Double Room</td>
-                        <td>{{price.attributes.double_room_standard_4}}</td>
-                        <td> {{price.attributes.double_room_comfort_4}}</td>
-                        <td>{{price.attributes.Single_room_comfort_4}}</td>
+                        <td>{{price?.attributes.double_room_standard_4}}</td>
+                        <td> {{price?.attributes.double_room_comfort_4}}</td>
+                        <td>{{price?.attributes.Single_room_comfort_4}}</td>
                       </tr>
                       <tr>
                         <td>Single Room</td>
-                        <td>{{price.attributes.single_room_standard_4}}</td>
-                        <td>{{price.attributes.Single_room_comfort_4}}</td>
-                        <td>{{price.attributes.Single_room_deluxe_4}}</td>
+                        <td>{{price?.attributes.single_room_standard_4}}</td>
+                        <td>{{price?.attributes.Single_room_comfort_4}}</td>
+                        <td>{{price?.attributes.Single_room_deluxe_4}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -150,6 +150,6 @@
 </section>
 <ng-template #noPrice >
 
-  <h1 class="text-center  "> <img src="assets/imgs/dot.svg" class="img-fluid">  No Prices Yet</h1>
+  <h1 class="h3 text-center  "> <img src="assets/imgs/dot.svg" class="img-fluid">  No Prices Yet</h1>
 </ng-template>
 
