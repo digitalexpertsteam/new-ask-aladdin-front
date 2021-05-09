@@ -9,7 +9,7 @@ export interface socials {
     pinterest: string;
     address1:string;
     address2:string;
-    phone1:string;
+    phone1:number;
     phone2:string;
     mail:string;
 }

@@ -20,4 +20,10 @@ export class TourBookingComponent implements OnInit {
     console.log(content);
     
   }
+
+  openVertically(Trip:any) {
+    this.ngMod.open(Trip, { centered: false });
+    console.log(Trip);
+    
+  }
 }
