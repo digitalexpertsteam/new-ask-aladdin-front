@@ -58,7 +58,7 @@ footer .shortcuts li a:hover {
 }
 .copyright
 {
-    transform: translateY(70px);
+    transform: translateY(30px);
     color: #fff;
     display: flex;
 
@@ -99,24 +99,7 @@ footer .shortcuts li a:hover {
 {
     color: rgb(238, 6, 6);
 }
-
-@media only screen and (min-width: 1200px){
-    footer .shortcuts{
-        width: 100%;
-        margin-left: 9%;
-    }
-    .copyright{
-        transform: translateY(15px);
-        
-    }
-    .footer-links img {
-        width: 32px;
-        margin-right: 10px;
-    }
-
-    
-}
-@media only screen and (max-width: 1300px){
+@media only screen and (max-width: 1440px){
     .footer{
         min-height: 0;
     }
@@ -125,7 +108,7 @@ footer .shortcuts li a:hover {
         margin-left: 9%;
     }
     .copyright{
-        transform: translateY(20px);
+        transform: translateY(35px);
         
     }
     footer .shortcuts h6{
@@ -141,6 +124,48 @@ footer .shortcuts li a:hover {
 
     
 }
+@media only screen and (max-width: 1300px){
+    .footer{
+        min-height: 0;
+    }
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+        transform: translateY(50px);
+        
+    }
+    footer .shortcuts h6{
+        font-size: 12px;
+     }
+     footer .shortcuts a{
+        font-size: .7rem;
+     }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
+    }
+
+    
+}
+@media only screen and (max-width: 1200px){
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+        transform: translateY(-15px);
+        
+    }
+    .footer-links img {
+        width: 32px;
+        margin-right: 10px;
+    }
+
+    
+}
+
 @media only screen and (max-width: 1024px){
     .footer {
        
@@ -159,7 +184,7 @@ footer .shortcuts li a:hover {
         font-size: .5rem;
      }
     .copyright{
-        transform: translateY(25px);
+        transform: translateY(50px);
         font-size: 12px;
         
     }
