@@ -34,12 +34,14 @@ export class AccomodationComponent implements OnInit {
       console.log(this.accomodation);
       
       this.flag = result.data[0].hotels
-  })
-  this._accomodation.getSingleDestination(this.id).subscribe(res => {
-    this.desName = res.data[0].destination_name
-    this.desSlug = res.data[0].destination_slug
-  })
-}
+
+
+
+
+
+
+  })}
+
   setId(id: any) {
     localStorage.setItem("idcru", id);
   }

@@ -45,7 +45,21 @@
     detail img {
       width: 20%;
     }
+
   }
+  @media only screen and (max-width: 400px) {
+
+    .package{
+        padding-left: 1rem;
+
+    }
+
+  }
+
+ 
+.offers {
+    margin: 1rem;
+}
 .buttons{
     border-radius: none;
 }

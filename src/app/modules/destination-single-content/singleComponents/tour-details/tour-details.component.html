@@ -31,7 +31,7 @@
             <a class="hover-color" routerLink="/"> <span> Home / </span> </a>
             <a class="hover-color" routerLink="/{{desSlug}}"> <span> {{ desName }} / </span> </a>
             <a class="hover-color" routerLink="/{{desSlug}}/travel-package"> <span> {{packName}} / </span> </a>
-            <span class="main-color">{{banener.name}}</span>
+            <span class="main-color">{{banener?.name}}</span>
         </div>
     </div>
 </section>
@@ -61,11 +61,11 @@
                 <app-prices-dates></app-prices-dates>
 
                 <app-trav-exp></app-trav-exp>
-                <section id="videos" class="bg-white mt-3 px-2 py-4">
+                <section id="videos" class="bg-white mt-3 pl-2 ">
                     <div *ngIf="video.length > 0 ;else noData" class="row">
 
-                        <div *ngFor="let vid of video" class="col-12  col-md-6 ">
-                        <youtube-player [videoId]="vid" (ready)="savePlayer($event)" (change)="onStateChange($event)">
+                        <div *ngFor="let vid of video" class="col-12  col-md-6 col-sm-12">
+                        <youtube-player class="you" [videoId]="vid" [width]="300" [height]="250" (ready)="savePlayer($event)" >
                         </youtube-player>
                         </div>
                         
@@ -74,7 +74,7 @@
 
                     <ng-template #noData >
 
-                        <h1 class="text-center  "> <img src="assets/imgs/dot.svg" class="img-fluid">  No Videos Yet</h1>
+                        <h1 class="h3 text-center  "> <img src="assets/imgs/dot.svg" class="img-fluid">  No Videos Yet</h1>
                       </ng-template>
 
 

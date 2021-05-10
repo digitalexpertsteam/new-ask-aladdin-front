@@ -74,6 +74,33 @@
 .hot{
     position: absolute;
 
+    top: -6px;
+    left: -6px;
+    width: 100px;
+}
+
+.tour i{
+    color: #f68800;
+
+}
+.discount{
+    position: absolute;
+    width: 80px;
+    color: #ffffff;
+    bottom: 120px;
+    left: 9px;
+    background-color: rgb(172 4 4);
+    z-index: 99;
+    border-radius: 20px;
+}
+.dis {
+    background-color: red;
+    width: 10px;
+
+}
+.hot{
+    position: absolute;
+
     top: 1px;
     left: 0px;
     width: 100px;
@@ -115,7 +142,6 @@
     display: flex;
     color: #9c9c9c;
 }
-
 .package-text{
     height: 70%;
 }

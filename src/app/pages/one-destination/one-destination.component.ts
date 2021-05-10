@@ -5,6 +5,7 @@ import { HomeserviceService } from '../../services/homeservice.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Meta, Title } from '@angular/platform-browser';
 
+
 import { mergeMap } from 'rxjs/operators';
 import { Category } from '../../interfaces/category';
 

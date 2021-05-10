@@ -59,8 +59,29 @@
 {
     width: 100%;
 }
+h1 img {
+    height: 20px;
+    margin-top: 3px;
+}
+
+
+.table thead tr th{
+    font-size: 10px;
+}
+ul li a{
+    font-size: 10px;
+}
 }
 h1 img {
     height: 20px;
     margin-top: 3px;
 }
+
+
+.table thead tr th{
+    font-size: 10px;
+}
+ul li a{
+    font-size: 10px;
+}
+

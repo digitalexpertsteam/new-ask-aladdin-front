@@ -1,74 +1,198 @@
-<section class="bg-white mt-3 px-3 py-4">
-    <div class="head mb-2">
-        <h3 class="font-weight-bolder">Tour Booking</h3>
+<!-- <section id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" class="bg-white mt-3 px-3 py-4">
+    
+        <div class="head mb-2">
+            <h3 class="font-weight-bolder">Tour Booking</h3>
+        </div>
+        <form class="mt-4">
+            <div class="starting-date">
+                <h6>Preferred starting Date</h6>
+                <div class="form-row text-center">
+                    <div class="col">
+                        <input class="form-control" type="text">
+                        <span class="text-center">MM</span>
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text">
+                        <span class="text-center">DD</span>
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text">
+                        <span class="text-center">YY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="select-package mt-3">
+                <h5>Select Your Tour Package</h5>
+                <div class="form-row">
+                    <div class="col">
+                        <select class="form-control">
+                            <option>Select Your Tour Package</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="select-package mt-3">
+                <h5>Total number of Travelers</h5>
+                <div class="form-row">
+                    <div class="col">
+                        <select class="form-control">
+                            <option></option>
+                            <option>Test</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                            <option>Test</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="informations mt-3">
+                <h5>Your Information</h5>
+                <div class="form-row">
+                    <div class="col-12 mb-3">
+                        <label for="email">Your E-mail</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label>Your Name</label>
+                        <input type="text" class="form-control" placeholder="First Name">
+                    </div>
+                    <div class="col">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" placeholder="Last Name">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <label>Any additional request to add?</label>
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="main-btn w-100 mt-3">Send Your Enquiry</button>
+        </form>
+    </section> -->
+    <div class="submit">
+    <div class="position-relative ">
+<button (click)="openVerticallyCentered(content)" data-toggle="modal" data-target="#exampleModalLong"
+    class="main-btn w-100 mt-3  "> Send Your Enquiry</button>
+    <div class="send"><i class="fab fa-telegram-plane fa-2x mt-2"></i></div>
+</div>
+<div class="position-relative ">
+    <button (click)="openVertically(Trip)" data-toggle="modal" data-target="#exampleModalLong"
+        class="main-btn w-100 mt-3 trip  ">TRIP DOSSIER</button>
+        <div class="send"> <i class="fas fa-download fa-2x mt-1"></i> </div>
     </div>
-    <form class="mt-4">
-        <div class="starting-date">
-            <h6>Preferred starting Date</h6>
-            <div class="form-row text-center">
-                <div class="col">
-                    <input class="form-control" type="text">
-                    <span class="text-center">MM</span>
-                </div>
-                <div class="col">
-                    <input class="form-control" type="text">
-                    <span class="text-center">DD</span>
-                </div>
-                <div class="col">
-                    <input class="form-control" type="text">
-                    <span class="text-center">YY</span>
-                </div>
+</div>
+
+
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-body">
+        <section class="bg-white mt-3 px-3 py-4 booking">
+            <div class="head mb-2">
+                <h3 class="font-weight-bolder">Booking</h3>
             </div>
-        </div>
-        <div class="select-package mt-3">
-            <h5>Select Your Tour Package</h5>
-            <div class="form-row">
-                <div class="col">
-                    <select class="form-control">
-                        <option>Select Your Tour Package</option>
-                        <option>Test</option>
-                        <option>Test</option>
-                        <option>Test</option>
-                        <option>Test</option>
-                    </select>
+            <form class="mt-4">
+                <div class="starting-date">
+                    <h6>Preferred starting Date</h6>
+                    <div class="form-row text-center">
+                        <div class="col">
+                            <input class="form-control" type="text">
+                            <span class="text-center">MM</span>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text">
+                            <span class="text-center">DD</span>
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text">
+                            <span class="text-center">YY</span>
+                        </div>
+                    </div>
                 </div>
+                <div class="select-package mt-3">
+                    <h5>Select Your Tour Package</h5>
+                    <div class="form-row">
+                        <div class="col">
+                            <select class="form-control">
+                                <option>Select Your Tour Package</option>
+                                <option>Test</option>
+                                <option>Test</option>
+                                <option>Test</option>
+                                <option>Test</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="select-package mt-3">
+                    <h5>Total number of Travelers</h5>
+                    <div class="form-row">
+                        <div class="col">
+                            <select class="form-control">
+                                <option></option>
+                                <option>Test</option>
+                                <option>Test</option>
+                                <option>Test</option>
+                                <option>Test</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="informations mt-3">
+                    <h5>Your Information</h5>
+                    <div class="form-row">
+                        <div class="col-12 mb-3">
+                            <label for="email">Your E-mail</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>Your Name</label>
+                            <input type="text" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="col">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" placeholder="Last Name">
+                        </div>
+                        <div class="col-12 mt-3">
+                            <label>Any additional request to add?</label>
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="main-btn w-100 mt-3">Send Your
+                    Enquiry</button>
+            </form>
+        </section>
+
+    </div>
+    <!-- <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div> -->
+</ng-template>
+
+<ng-template #Trip let-modal>
+    <div class="modal-body">
+        <section class="bg-white mt-3 px-3 py-4 booking">
+            <div class="head mb-2">
+                <h3 class="font-weight-bolder head ">Please fill in the blew fields to get a download link!</h3>
+                <hr>
             </div>
-        </div>
-        <div class="select-package mt-3">
-            <h5>Total number of Travelers</h5>
-            <div class="form-row">
-                <div class="col">
-                    <select class="form-control">
-                        <option></option>
-                        <option>Test</option>
-                        <option>Test</option>
-                        <option>Test</option>
-                        <option>Test</option>
-                    </select>
+            <form class="mt-4">
+
+                <div class="informations mt-3">
+                    <input class="form-control" type="text" placeholder="Enter Your Name" >
+                    <input class="form-control mt-3" type="text" placeholder="Enter Your Email ID" >
+                    <input class="form-control mt-3" type="text" placeholder="Enter Your Phone Number" >
+                    <textarea class="form-control mt-3" rows="5" placeholder="Enter Your Comments"></textarea>
                 </div>
-            </div>
-        </div>
-        <div class="informations mt-3">
-            <h5>Your Information</h5>
-            <div class="form-row">
-                <div class="col-12 mb-3">
-                    <label for="email">Your E-mail</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col">
-                    <label>Your Name</label>
-                    <input type="text" class="form-control" placeholder="First Name">
-                </div>
-                <div class="col">
-                    <label>Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last Name">
-                </div>
-                <div class="col-12 mt-3">
-                    <label>Any additional request to add?</label>
-                    <textarea class="form-control" rows="5"></textarea>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="main-btn w-100 mt-3">Send Your Enquiry</button>
-    </form>
-</section>
+                <button type="submit" class="main-btn w-100 mt-3">Submit</button>
+            </form>
+        </section>
+
+    </div>
+
+</ng-template>
