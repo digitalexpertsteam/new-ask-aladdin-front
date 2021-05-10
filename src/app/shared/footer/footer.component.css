@@ -58,7 +58,7 @@ footer .shortcuts li a:hover {
 }
 .copyright
 {
-    transform: translateY(70px);
+    transform: translateY(30px);
     color: #fff;
     display: flex;
 
@@ -99,14 +99,89 @@ footer .shortcuts li a:hover {
 {
     color: rgb(238, 6, 6);
 }
-
-@media only screen and (min-width: 1200px){
+@media only screen and (max-width: 1550px){
+    .footer{
+        min-height: 0;
+    }
     footer .shortcuts{
         width: 100%;
         margin-left: 9%;
     }
     .copyright{
-        transform: translateY(15px);
+        transform: translateY(35px);
+        
+    }
+    footer .shortcuts h6{
+        font-size: 12px;
+     }
+     footer .shortcuts a{
+        font-size: .7rem;
+     }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
+    }
+
+    
+}
+@media only screen and (max-width: 1440px){
+    .footer{
+        min-height: 0;
+    }
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+        transform: translateY(-30px);
+        
+    }
+    footer .shortcuts h6{
+        font-size: 12px;
+     }
+     footer .shortcuts a{
+        font-size: .7rem;
+     }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
+    }
+
+    
+}
+@media only screen and (max-width: 1300px){
+    .footer{
+        min-height: 0;
+    }
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+        transform: translateY(50px);
+        
+    }
+    footer .shortcuts h6{
+        font-size: 12px;
+     }
+     footer .shortcuts a{
+        font-size: .7rem;
+     }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
+    }
+
+    
+}
+@media only screen and (max-width: 1200px){
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+
+        transform: translateY(-15px);
         
     }
     .footer-links img {
@@ -133,6 +208,36 @@ footer .shortcuts li a:hover {
     
 }
 
+@media only screen and (max-width: 1024px){
+    .footer {
+       
+        min-height: 400px;
+       
+    
+    }
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 2%;
+    }
+    footer .shortcuts h6{
+        font-size: 10px;
+     }
+     footer .shortcuts a{
+        font-size: .5rem;
+     }
+    .copyright{
+        transform: translateY(50px);
+        font-size: 12px;
+        
+    }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
+    }
+
+    
+}
+
 @media only screen and (max-width: 786px){
    .copyright{
        transform: translateY(0);
@@ -145,6 +250,8 @@ footer .shortcuts li a:hover {
 
 }
 
+
+
 @media only screen and (max-width : 480px){
     footer {
         min-height: 800px;
@@ -155,6 +262,7 @@ footer .shortcuts li a:hover {
         width: 100%;
         
     }
+    
     .link-copyright {
         color: black;
         transition: ease .5s;

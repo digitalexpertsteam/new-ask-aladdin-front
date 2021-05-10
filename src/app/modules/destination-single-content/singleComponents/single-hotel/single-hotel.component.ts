@@ -47,8 +47,7 @@ export class SingleHotelComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this._active.snapshot.params.slug
-    
-    this._hotel.getSingleHotel(this.id).subscribe(result => {
+ this._hotel.getSingleHotel(this.id).subscribe(result => {
       this.hotel = result.data;
       this.panner = result.data[0].banner;
       this.pannerDescription = result.data[0].description;
@@ -56,6 +55,7 @@ export class SingleHotelComponent implements OnInit {
 
 
       console.log(this.panner);
+
       
       this.img=result.data[0].gallery
       this.galleryImages=[]

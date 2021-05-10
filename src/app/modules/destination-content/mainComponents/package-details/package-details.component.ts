@@ -48,6 +48,7 @@ export class PackageDetailsComponent implements OnInit {
   hot:any[]=[]
   descount:any
 
+  tour:any
   resetStar(): void {
     this.overStar = void 0;
   }
@@ -62,12 +63,17 @@ export class PackageDetailsComponent implements OnInit {
     
     this._singleDes.getSingleDestination(this.id).subscribe(result =>{
       this.destinationContainer = result.data
+      this.tour = result.data.tour_type
+      console.log(this.tour);
+      
+
       
 
       this.descount= result.data.discount+"%"
 
 
       this.hot = result.data.hot_offer
+
 
       this.nameCountry = result.data[0].destination_name;
       this.count = result.data.length

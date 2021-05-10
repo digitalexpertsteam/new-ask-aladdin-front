@@ -23,5 +23,9 @@ export interface singleDestination {
   accommodations: number;
   flights: number;
   guide_tour: number;
-  hot_offer: number;
+  hot_offer: boolean;
+  top_sale: boolean;
+  reviews:number;
+  rate:any;
+
 }

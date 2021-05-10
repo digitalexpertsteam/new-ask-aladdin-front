@@ -29,106 +29,52 @@
 
         <div class="services text-center bg-white d-flex justify-content-between rounded mt-3">
             <div class="services-content">
+                <a (click)="Gallery()">
+                    <i class="fas fa-images"></i>
+                    <p class="d-none d-sm-block mb-0">Gallery</p>
+                </a>
+            </div>
+            <div class="services-content">
                 <a (click)="Itinerary()">
                     <i class="fas fa-map-marked-alt"></i>
                     <p class="d-none d-sm-block mb-0">Itinerary</p>
                 </a>
             </div>
-
             <div class="services-content">
                 <a (click)="Services()"> <i class="far fa-lightbulb"></i>
                     <p class="d-none d-sm-block mb-0">Services</p>
                 </a>
             </div>
-
-
-            <!-- <div class="services-content">
-                <a (click)="Included()"><i class="fas fa-plus-circle"></i>
-                <p class="d-none d-sm-block mb-0">What's Included</p></a>
-            </div> -->
-
-            <!-- <div class="services-content">
-                <a (click)="prices()"> <i class="fas fa-dollar-sign"></i>
-                 <p class="d-none d-sm-block mb-0">Prices&Dates</p></a>
-             </div> -->
-
-
             <div class="services-content">
                 <a (click)="trav()"> <i class="fas fa-globe-americas"></i>
                     <p class="d-none d-sm-block mb-0">Travel Experiences</p>
                 </a>
             </div>
-
-
-
-
-
             <div class="services-content">
                 <a (click)="accomodation()">
                     <i class="fas fa-bed"></i>
                     <p class="d-none d-sm-block mb-0">accomodation</p>
                 </a>
             </div>
-
-            <div class="services-content">
-                <a (click)="Gallery()"> <i class="far fa-play-circle"></i>
-                    <p class="d-none d-sm-block mb-0">Gallery</p>
-                </a>
-            </div>
-            <!-- <div class="services-content">
-                <a href=""> <i class="fas fa-shopping-basket font-weight-bold"></i>
-                <p class="d-none d-sm-block mb-0">Shops</p></a>
-            </div>
-            <div class="services-content">
-                <a href=""><i class="fas fa-plane font-weight-bold"></i>
-                <p class="d-none d-sm-block mb-0">Flights</p></a> 
-            </div>
-        
-           <div class="services-content">
-               <a (click)="toItinerary()"> <i class="fas fa-hotel font-weight-bold"></i>
-                <p class="d-none d-sm-block mb-0">Hotels</p></a>
-            </div>
-        
-        -->
-
-
         </div>
         <!-- End tags -->
         <div class="row mt-4">
             <div class="col-12 col-md-9">
-                <!-- egypt splendor -->
-                <!-- 
- <owl-carousel-o [options]="customOptions">
-    <ng-template *ngFor='let page of relatedPages'  carouselSlide>
-                   <div class="slide">
-   <div class="blogs overflow-hidden">
-                       <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)"  class="text-dark">
-                           <div class="card main-card text-center">
-                               <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
-                              
-                               <div class="card-body card-details">
-                                   <h5 class="card-title "> {{content.name || 'Travel Guide'}}  </h5>
-                                   
-                               </div>
-                           </div>
-                       </a>
-                   </div>
-   </div>
-   </ng-template>
-   </owl-carousel-o>  -->
+
+                <section id="Gallery" class="pt-3">
+                    <div *ngIf="galery?.length >0 ;else img" class="m-auto">
+                        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery">
+                        </ngx-gallery>
+                    </div>
+
+                </section>
                 <section id="Itinerary" class="bg-white mt-3 px-2 py-4">
                     <div class="container">
                         <div class="splendor mb-4">
                             <div class="head mb-2">
                                 <h3 class="h4 font-weight-bold">{{cruises?.name}}</h3>
                             </div>
-                            <!-- <p>{{num}} nights / {{cruises.days}}{{"days" |translate}}</p> -->
                             <p [innerHTML]="cruises?.description"></p>
-                            <!-- <h3> Including </h3>
-                <div *ngFor='let x of cruises.included'>
-                    <span> {{x.content}},</span>
-                </div> -->
-
                         </div>
                         <div class="package-itinerary">
                             <div class="head mb-4">
@@ -147,8 +93,7 @@
                                             <p
                                                 class="main-bg text-center d-flex align-items-center justify-content-center">
 
-                                                <span
-                                                    class="d-flex align-items-center justify-content-center text-white m-auto pl-2">{{day?.day_number}}</span>
+                                                <span class="d-flex align-items-center justify-content-center text-white m-auto pl-2">{{day?.day_number}}</span>
                                             </p>
                                         </div>
                                     </h3>
@@ -185,19 +130,7 @@
                         </div>
                     </div>
                 </section>
-
-
-
                 <!-- end egypt-splendor -->
-
-
-                <!-- hightlightes -->
-
-                <!-- end hightlightes -->
-
-                <!-- included -->
-
-                <!-- <app-package-included></app-package-included> -->
 
                 <section id="Services" class="bg-white mt-3 px-2 py-4">
                     <div class="container">
@@ -213,7 +146,6 @@
                                             <img src="assets/imgs/right.svg" class="img-fluid">
                                             <span>{{in.content}}</span>
                                         </li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -234,10 +166,6 @@
                         </div>
                     </div>
                 </section>
-                <!-- end included -->
-
-                <!-- <app-prices-dates></app-prices-dates> -->
-
                 <section id="trav" class="bg-white mt-3 px-2 py-4">
                     <div class="container">
                         <div class="head mb-4">
@@ -250,29 +178,73 @@
                                     <img src="assets/imgs/dot.svg" class="img-fluid">
                                     <span [innerHTML]="e"></span>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
                 </section>
-                <!-- <app-trav-exp></app-trav-exp>    -->
-                <section id="Gallery" class="pt-3">
+
+                <section id="accomodation" class="accomodation my-3 bg-white mt-3 px-2 py-4">
+                    <div class="container">
+                        <div class="head mb-4">
+                            <h3 class=" font-weight-bold">Accommodations For This Cruises</h3>
+
+                        </div>
+                        <div *ngIf="ttt.length > 0 ; else accommodation">
+                            <div class="row">
+                                <div *ngFor="let acc of cruises.hotels" class="col-12 col-md-3 pt-2">
+                                    <div class="card overflow-hidden">
+                                        <a href="/hotel/{{acc.slug}}">
+
+                                            <div class="row ">
+                                                <div class="col-sm-12 ">
+                                                    <div class="acco-image m-auto">
+                                                        <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}"        
+                                                            class="img-fluid  " />
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 text-center p-0">
+                                                    <div class="card-body">
+                                                        <h6 class="text-dark  px-2 font-weight-bold">
+                                                            {{acc.name}}
+                                                        </h6>
+                                                        <div class="mb-3">
+
+                                                            <rating [(ngModel)]="acc.rate" [max]="max"
+                                                                [readonly]="isReadonly">
+                                                            </rating>
+                                                        </div>
+                                                        <div class="acco-link mb-2">
+                                                            <a href="/hotel/{{acc.slug}}" class="main-btn">View
+                                                                Details</a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <ng-template #accommodation>
+
+                            <h1 class="text-center  "> No Accommodations Yet</h1>
+                        </ng-template>
 
 
-                    <div *ngIf="galery?.length >0 ;else img" class="m-auto" >
-                        <ngx-gallery  [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
-                      </div>
-
+                    </div>
                 </section>
-                <ng-template #img >
+                <ng-template #img>
 
                     <h1 class=" bg-white mt-3 px-3 py-4 text-center  "> No Gallery Yet</h1>
-                  </ng-template>
+                </ng-template>
             </div>
             <div class="col-12 col-md-3">
                 <section class="bg-white mt-3 px-3 py-4">
                     <div class="head mb-2">
-                        <h4 class="h6 font-weight-bolder"> I Room : {{cruises?.single_room_price}}<span class="main-color">
+                        <h4 class="h6 font-weight-bolder"> I Room : {{cruises?.single_room_price}}<span
+                                class="main-color">
                                 USD</span></h4>
                         <h4 class="h6 font-weight-bolder"> II Room : {{cruises?.double_room_price}} <span
                                 class="main-color"> USD</span></h4>
@@ -293,6 +265,7 @@
                         </ul>
                     </div>
                 </section>
+
                 <app-expert-reviews></app-expert-reviews>
                 <app-tour-booking></app-tour-booking>
                 <app-optional-experts></app-optional-experts>
@@ -313,7 +286,8 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{ ex.name }}</h5>
                                         <!-- <p class="card-text">Trip By Flight</p> -->
-                                        <a class="main-btn d-block" href="/{{desSlug}}/single-cruises/{{ex.slug}}" (click)="setId(ex.id)">Explain More</a>
+                                        <a class="main-btn d-block" href="/{{desSlug}}/single-cruises/{{ex.slug}}"
+                                            (click)="setId(ex.id)">Explain More</a>
                                     </div>
                                 </div>
                             </div>
@@ -321,56 +295,12 @@
                     </ul>
                 </section>
             </div>
+
         </div>
     </div>
 </section>
 <!-- <app-accomodation></app-accomodation> -->
-<section id="accomodation" class="accomodation my-3">
-    <div class="container">
-        <div class="head mb-4">
-            <h2 class="h3 font-weight-bold">Accommodations For This Cruises</h2>
-        </div>
-        <div *ngIf="ttt.length > 0 ; else accommodation"  > 
-        <div class="row">
-            <div *ngFor="let acc of cruises.hotels" class="col-12 col-md-3 pt-2">
-                <div class="card overflow-hidden">
-                    <a  href="/hotel/{{acc.slug}}" >
-                        <div class="row ">
-                            <div class="col-sm-12 ">
-                                <div class="acco-image">
-                                    <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}" class="img-fluid " />
-                                </div>
-                            </div>
-                            <div class="col-sm-12 text-center p-0">
-                                <div class="card-body">
-                                    <p class="text-dark mb-1  font-weight-bold">
-                                        {{acc.name}}
-                                    </p>
-                                    <div class="mb-3">
 
-                                        <rating [(ngModel)]="acc.rate" [max]="max" [readonly]="isReadonly">
-                                        </rating>
-                                    </div>
-                                    <div class="acco-link mb-2">
-                                        <a href="/hotel/{{acc.slug}}" class="main-btn">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <ng-template #accommodation >
-
-        <h1 class="text-center  "> No Accommodations Yet</h1>
-      </ng-template>
-
-
-    </div>
-</section>
 
 <!-- videos -->
 

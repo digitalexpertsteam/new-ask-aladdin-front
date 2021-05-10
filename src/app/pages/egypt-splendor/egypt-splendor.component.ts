@@ -14,6 +14,7 @@ export class EgyptSplendorComponent implements OnInit {
   imageTrue='assets/imgs/right.svg';
   num : any;
   tour:any
+
   constructor(private _splendor:HomeserviceService) { }
   customOptions: OwlOptions = {
     loop: true,
@@ -49,4 +50,5 @@ export class EgyptSplendorComponent implements OnInit {
       let x = 1
       this.num = result.data[0].days - x
   })}
+
   }

@@ -94,3 +94,7 @@
     align-items: center;
     justify-content: center;
 }
+.ngx-gallery{
+    width: 750px !important;
+    height: 500px;
+}
