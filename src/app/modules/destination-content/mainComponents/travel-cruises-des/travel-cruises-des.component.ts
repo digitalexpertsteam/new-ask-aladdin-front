@@ -49,10 +49,11 @@ readonly = true
   idpackage: any;
 
   ngOnInit(): void {
-
     this.id = this._Active.snapshot.params.slug
     this._excursions.getTravelCruises(this.id).subscribe((result) => {
+
       this.cruises = result.data;
+
       this.count = result.data.length;
 
       this.desName=result.data[0].destination_name;  
@@ -70,21 +71,23 @@ readonly = true
         { name: 'facebook:image', property:"og:image", content: `${result.data[0].destination_facebook_image}` },
 
       ]);
+      
     });
-
     this._excursions.getOneDestinationDetails(1).subscribe(res => {
+      
       this.cruContent = res.data[0].categories;
       this.cruName = res.data[0].categories[3].name;
-
-           
     })
   }
 
   // transform(url: any) {
   //   return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   // }
+
   setId(id: any) {
+
     localStorage.setItem("idcru", id);
+
   }
 
   openVerticallyCentered(content: any) {

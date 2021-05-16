@@ -14,6 +14,8 @@ import { TravelExcursionsDesComponent } from "./mainComponents/travel-excursions
 import { TravelFactsDesComponent } from "./mainComponents/travel-facts-des/travel-facts-des.component";
 import { TravelGuideDesComponent } from "./mainComponents/travel-guide-des/travel-guide-des.component";
 import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/travel-hotels-des.component";
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+
 
 import { RatingModule } from "ngx-bootstrap/rating";
 
@@ -32,8 +34,10 @@ import { RatingModule } from "ngx-bootstrap/rating";
   ],
   imports: [
     CommonModule,
+    NgxSliderModule,
     DestinationContentRoutingModule,
     CollapseModule.forRoot(),
+    
 
     RatingModule.forRoot(),
     ShareModule,

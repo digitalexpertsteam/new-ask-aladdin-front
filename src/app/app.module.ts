@@ -2,15 +2,11 @@ import { BrowserModule, Meta, Title } from "@angular/platform-browser";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
-
-
-import { AccomodationComponent } from "./pages/accomodation/accomodation.component";
 import { AllDestinationsComponent } from "./pages/all-destinations/all-destinations.component";
 import { AllFaqDestinationComponent } from "./components/all-faq-destination/all-faq-destination.component";
 import { AllPackagesDestinationComponent } from "./components/all-packages-destination/all-packages-destination.component";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { AsideComponent } from "./components/aside/aside.component";
 import { BlogComponent } from "./pages/blog/blog.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
@@ -21,15 +17,10 @@ import { CollapseModule } from "ngx-bootstrap/collapse";
 import { ContactUsComponent } from "./pages/contact-us/contact-us.component";
 import { DashboardComponent } from "./shared/dashboard/dashboard.component";
 import { DestinationBlogComponent } from "./pages/destination-blog/destination-blog.component";
-import { DestinationContentModule } from "./modules/destination-content/destination-content.module";
-import { DestinationSingleContentModule } from "./modules/destination-single-content/destination-single-content.module";
-import { EgyptSplendorComponent } from "./pages/egypt-splendor/egypt-splendor.component";
 import { EgyptTourComponent } from "./pages/egypt-tour/egypt-tour.component";
-import { ExpertReviewsComponent } from "./pages/expert-reviews/expert-reviews.component";
 import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from "./shared/header/header.component";
-import { HightlightesComponent } from "./pages/hightlightes/hightlightes.component";
 import { HomeComponent } from "./components/home/home.component";
 import { HomeSliderComponent } from "./pages/home-slider/home-slider.component";
 import { IvyCarouselModule } from "angular-responsive-carousel";
@@ -38,10 +29,8 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { OneDestinationComponent } from "./pages/one-destination/one-destination.component";
-import { OptionalExpertsComponent } from "./pages/optional-experts/optional-experts.component";
 import { OurStoryComponent } from "./pages/our-story/our-story.component";
-import { PackageIncludedComponent } from "./pages/package-included/package-included.component";
-import { PricesDatesComponent } from "./pages/prices-dates/prices-dates.component";
+
 import { PrivacyPolicyComponent } from "./pages/privacy-policy/privacy-policy.component";
 import { RatingModule } from "ngx-bootstrap/rating";
 import { RegisterComponent } from "./pages/register/register.component";
@@ -52,13 +41,10 @@ import { ShareModule } from "./modules/share/share.module";
 import { SinglePackageComponent } from "./pages/single-package/single-package.component";
 import { SiteGuideComponent } from "./pages/site-guide/site-guide.component";
 import { SponsorsComponent } from "./pages/sponsors/sponsors.component";
-import { SponsorsLogoComponent } from "./pages/sponsors-logo/sponsors-logo.component";
-import { StartingFromComponent } from "./pages/starting-from/starting-from.component";
-import { TagsComponent } from "./pages/tags/tags.component";
+
 import { TestimonialsComponent } from "./pages/testimonials/testimonials.component";
 import { TopDestinationComponent } from "./pages/top-destination/top-destination.component";
-import { TourBookingComponent } from "./pages/tour-booking/tour-booking.component";
-import { TourDetailsComponent } from "./modules/destination-single-content/singleComponents/tour-details/tour-details.component";
+
 import { TourSliderComponent } from "./pages/tour-slider/tour-slider.component";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { TravExpComponent } from "./pages/trav-exp/trav-exp.component";
@@ -95,12 +81,8 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
     HomeSliderComponent,
     // AccomodationComponent,
     BlogComponent,
-    // EgyptSplendorComponent,
     EgyptTourComponent,
-    // ExpertReviewsComponent,
-    // HightlightesComponent,
-    // OptionalExpertsComponent,
-    // PricesDatesComponent,
+
     RelatedToursComponent,
     ReviewsComponent,
     // StartingFromComponent,
@@ -140,7 +122,7 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
     CategoreyFooterComponent,   
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
