@@ -16,6 +16,7 @@ export class AccomodationComponent implements OnInit {
   accomodation:any = [];
   id:any;
   idhotel: any;
+  // id pack
   idPack:any
   max = 5;
   isReadonly = true;
@@ -31,7 +32,7 @@ export class AccomodationComponent implements OnInit {
 
     this._accomodation.getSinglepackage(this.id).subscribe(result => {
       this.accomodation = result.data[0];
-      console.log(this.accomodation);
+      console.log(this.accomodation)
       
       this.flag = result.data[0].hotels
 

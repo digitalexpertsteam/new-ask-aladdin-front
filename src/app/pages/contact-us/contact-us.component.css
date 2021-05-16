@@ -1,3 +1,6 @@
 .contact-details p {
     font-size: 18px;
 }
+.frame{
+    border: solid 1px red;
+}

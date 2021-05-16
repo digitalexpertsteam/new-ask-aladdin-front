@@ -2,15 +2,12 @@ import { BrowserModule, Meta, Title } from "@angular/platform-browser";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
-
-
 import { AccomodationComponent } from "./pages/accomodation/accomodation.component";
 import { AllDestinationsComponent } from "./pages/all-destinations/all-destinations.component";
 import { AllFaqDestinationComponent } from "./components/all-faq-destination/all-faq-destination.component";
 import { AllPackagesDestinationComponent } from "./components/all-packages-destination/all-packages-destination.component";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { AsideComponent } from "./components/aside/aside.component";
 import { BlogComponent } from "./pages/blog/blog.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";

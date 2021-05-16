@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-slider/ngx-slider": "^2.0.3",
     "@angular/animations": "~11.0.5",
     "@angular/cdk": "^11.1.1",
     "@angular/common": "~11.0.5",
@@ -37,6 +38,7 @@
     "daypilot-pro-angular": "https://npm.daypilot.org/daypilot-pro-angular/trial/8.4.3056.tar.gz",
     "hammerjs": "^2.0.8",
     "jquery": "^3.5.1",
+    "ng-range-filter": "^0.1.0",
     "ngx-bootstrap": "^6.2.0",
     "ngx-countup": "^7.3.3",
     "ngx-owl-carousel-o": "^5.0.0",

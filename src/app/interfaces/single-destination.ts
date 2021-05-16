@@ -22,7 +22,7 @@ export interface singleDestination {
   meals: number;
   accommodations: number;
   flights: number;
-  guide_tour: number;
+  guid_tour: number;
   hot_offer: boolean;
   top_sale: boolean;
   reviews:number;
