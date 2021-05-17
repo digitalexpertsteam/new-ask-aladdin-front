@@ -32,6 +32,7 @@ import { PageComponent } from "./pages/page/page.component";
 import { SingleHotelComponent } from "./modules/destination-single-content/singleComponents/single-hotel/single-hotel.component";
 import { SinglePageComponent } from "./pages/single-page/single-page.component";
 import { CategoreyFooterComponent } from "./shared/categorey-footer/categorey-footer.component";
+import { ReviewsComponent } from "./pages/reviews/reviews.component";
 
 
 const routes: Routes = [
@@ -72,10 +73,10 @@ const routes: Routes = [
     path: ":id/facts-myths/:slug",
     component: SingleFaqComponent,
   },
-  // travel-guide
+  // travel-guide 
   { path: ":id/travel-guides", component: TravelGuideDesComponent },
   {
-    path: ":slug/travel-guides/:slug", component: SingleGuideComponent,
+    path: ":id/travel-guides/:slug", component: SingleGuideComponent,
   },
 
   // cruises
@@ -84,6 +85,8 @@ const routes: Routes = [
   
   // {path:":slug/:slug/:slug" , pathMatch: 'full', loadChildren:()=>import('./modules/destination-single-content/destination-single-content.module').then(m=> m.DestinationSingleContentModule)},
   { path: "travelguide", component: TravelGuideComponent },
+  { path: ":id/reviews",  component: ReviewsComponent },
+
   { path: "privacypolicy", component: PrivacyPolicyComponent },
   { path: "all-Packages", component: AllPackagesDestinationComponent },
   { path: "single-package", component: TourDetailsComponent },

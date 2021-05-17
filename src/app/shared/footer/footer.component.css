@@ -279,6 +279,12 @@ footer .shortcuts li{
    .footer-links i {
     font-size: 20px;
 }
+footer .shortcuts h6{
+    font-size: 12px;
+ }
+ footer .shortcuts a{
+    font-size: 1rem;
+ }
 
 }
 

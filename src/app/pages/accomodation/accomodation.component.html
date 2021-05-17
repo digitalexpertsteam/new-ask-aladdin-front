@@ -8,7 +8,7 @@
         <div *ngIf="flag?.length > 0 ;else accommodation" class="row">
             <div *ngFor="let acc of accomodation.hotels" class="col-12 col-md-3 pt-2">
                 <div class="card overflow-hidden">
-                    <a href="/hotel/{{acc.slug}}"  >
+                    <a href="{{desSlug}}/hotel/{{acc.slug}}"  >
                         <div class="row ">
                             <div class="col-sm-12 ">
                                 <div class="acco-image">
@@ -26,7 +26,7 @@
                                         </rating>
                                     </div>
                                     <div class="acco-link">
-                                        <a href="/hotel/{{acc.slug}}" class="main-btn">View Details</a>
+                                        <a href="{{desSlug}}/hotel/{{acc.slug}}" class="main-btn">View Details</a>
                                     </div>
                                 </div>
                             </div>

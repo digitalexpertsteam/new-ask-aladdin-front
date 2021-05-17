@@ -18,6 +18,9 @@ export class TravelFactsDesComponent implements OnInit {
   faqs_name: any;
   blogBanner: string = `../../../assets/imgs/5b14a68e3de5a.jpg`;
   faqsDes: string = "";
+  open: boolean = false;
+  plus = `plus`
+  minus = `minus`
   desName: string = "";
   desSlug: string = "";
 
@@ -73,5 +76,11 @@ export class TravelFactsDesComponent implements OnInit {
   }
   setId(id: any) {
     localStorage.setItem("idFaq", id);
+  }
+  openPlus(i:any){
+    i=!this.open
+    this.open = !this.open
+    console.log(i+this.open);
+    
   }
 }
