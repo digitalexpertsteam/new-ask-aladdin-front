@@ -15,9 +15,13 @@ import { TravelFactsDesComponent } from "./mainComponents/travel-facts-des/trave
 import { TravelGuideDesComponent } from "./mainComponents/travel-guide-des/travel-guide-des.component";
 import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/travel-hotels-des.component";
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 
 import { RatingModule } from "ngx-bootstrap/rating";
+import { HttpClient } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -37,7 +41,14 @@ import { RatingModule } from "ngx-bootstrap/rating";
     NgxSliderModule,
     DestinationContentRoutingModule,
     CollapseModule.forRoot(),
-    
+    TranslateModule.forRoot({
+      defaultLanguage: "en",
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
 
     RatingModule.forRoot(),
     ShareModule,
@@ -45,3 +56,6 @@ import { RatingModule } from "ngx-bootstrap/rating";
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DestinationContentModule {}
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}
