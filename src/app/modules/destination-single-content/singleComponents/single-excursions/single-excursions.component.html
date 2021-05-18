@@ -23,7 +23,7 @@
             ><i class="fas fa-phone-alt main-color"></i
           ></span>
           <span class="phone-text text-dark"
-            >Call Us: <strong>+1(888) 513-5971</strong></span
+            >{{"Call Us"|translate}}: <strong>+1(888) 513-5971</strong></span
           >
         </a>
       </div>
@@ -35,8 +35,8 @@
 <section>
   <div class="container">
     <div class="page-links py-2">
-     <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-     <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{ desName }} / </span>  </a>
+     <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}} / </span>  </a>
+     <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{ desName }} / </span>  </a>
      <a class="hover-color" routerLink="/{{desSlug}}/travel-excursions"> <span > {{exName}} / </span>  </a>
       <span class="main-color">{{nameEx}}</span>  
     </div>
@@ -58,13 +58,13 @@
         <section id="highlights" class="bg-white mt-3 px-2 py-4">
           <div class="container">
             <div class="head mb-4">
-              <h3 class="pl-2 font-weight-bold">Location</h3>
+              <h3 class="pl-2 font-weight-bold">{{"Location"|translate}}</h3>
             </div>
 
             <div class="pl-2 font-weight-bold">
-              <h3 class="h6">Arrive Location : {{ included.arrive_location }}</h3>
+              <h3 class="h6">{{"Arrive Location"|translate}} : {{ included.arrive_location }}</h3>
 
-              <h3 class="h6">Departure Location : {{ included.departure_location }}</h3>
+              <h3 class="h6">{{"Departure Location"|translate}} : {{ included.departure_location }}</h3>
             </div>
             <p class="pl-2 text-muted">{{ included.location_description }}</p>
 
@@ -92,7 +92,7 @@
             <div class="row">
               <div class="col-12 col-md-7">
                 <div class="head mb-4">
-                  <h5 class="">What's Included</h5>
+                  <h5 class="">{{"What's Included"|translate}}</h5>
                 </div>
                 <div class="">
                   <ul class="list-group p-0">
@@ -108,7 +108,7 @@
               </div>
               <div class="col-12 col-md-5">
                 <div class="head mb-4">
-                  <h5 class="">What's Not Included</h5>
+                  <h5 class="">{{"What's Not Included"|translate}}</h5>
                 </div>
                 <div class="">
                   <ul class="p-0">
@@ -146,11 +146,11 @@
               <table class="table table-bordered">
                 <thead class="thead-dark">
                   <tr class="text-center">
-                    <th scope="col">One Person</th>
-                    <th scope="col">2-3 Persons</th>
-                    <th scope="col">4-6 Persons</th>
-                    <th scope="col">7-10 Persons</th>
-                    <th scope="col">+11 Persons</th>
+                    <th scope="col">{{"One Person"|translate}}</th>
+                    <th scope="col">2-3 {{"Persons"|translate}}</th>
+                    <th scope="col">4-6 {{"Persons"|translate}}</th>
+                    <th scope="col">7-10 {{"Persons"|translate}}</th>
+                    <th scope="col">+11 {{"Persons"|translate}}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -182,7 +182,7 @@
         <!-- start from -->
         <section class="bg-white mt-3 px-3 py-4">
           <div class="head mb-2">
-               <h3 class="font-weight-bolder">Starting from <span class="main-color">{{startPrices}} USD</span></h3> 
+               <h3 class="font-weight-bolder">{{"Starting from"|translate}} <span class="main-color">{{startPrices}} USD</span></h3> 
               <!-- <p class="mb-1">per person in a double room</p> -->
           </div>
           <div class="">
@@ -199,7 +199,7 @@
 
         <section class="bg-white mt-3 px-3 py-4">
           <div class="head mb-2">
-            <h3 class="font-weight-bolder">Related Excursions</h3>
+            <h3 class="font-weight-bolder">{{"Related Excursions"|translate}}</h3>
           </div>
           <ul class="p-0">
             <li
@@ -220,7 +220,7 @@
                 <div class="col-md-7 px-0">
                   <div class="card-body">
                     <h5 class="card-title">{{ ex.name }}</h5>
-                    <a class="main-btn d-block" href="/{{desSlug}}/travel-excursions/{{ex.slug}}" (click)="setid(ex.id)">Explain More</a>
+                    <a class="main-btn d-block" href="/{{desSlug}}/travel-excursions/{{ex.slug}}" (click)="setid(ex.id)">{{"Explain More"|translate}}</a>
                   </div>
                 </div>
               </div>

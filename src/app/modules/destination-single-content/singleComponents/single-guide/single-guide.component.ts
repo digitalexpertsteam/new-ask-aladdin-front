@@ -32,10 +32,11 @@ export class SingleGuideComponent implements OnInit {
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
-    this.idGuid = localStorage.getItem("idGuid");
-    this.id = localStorage.getItem("id");
     this.id =  this._active.snapshot.params.id;
+    
     this.idGuid =  this._active.snapshot.params.slug;
+    console.log(this.id , this.idGuid);
+
     this._homeService.getSingleGuide(this.idGuid).subscribe(result => {
       this.singleGuide= result.data;
       this.relatedGuide = result.data[0].related_travel_guides;

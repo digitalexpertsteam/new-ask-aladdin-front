@@ -10,10 +10,12 @@ import { SingleExcursionsComponent } from "../destination-single-content/singleC
 import { TourDetailsComponent } from "../destination-single-content/singleComponents/tour-details/tour-details.component";
 import { TagsExcursionsComponent } from "./singleComponents/tags-excursions/tags-excursions.component";
 import { ExcursionsSplendorComponent } from "./singleComponents/excursions-splendor/excursions-splendor.component";
-import { CarouselModule } from "ngx-owl-carousel-o";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { SingleFaqComponent } from './singleComponents/single-faq/single-faq.component';
 import { SingleGuideComponent } from './singleComponents/single-guide/single-guide.component';
 import { SingleHotelComponent } from './singleComponents/single-hotel/single-hotel.component';
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { HttpClient } from "@angular/common/http";
 
 import { NgxYoutubePlayerModule  } from "ngx-youtube-player";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
@@ -43,6 +45,14 @@ import { SafePipe } from "../../pipes/InnerHtml.pipe";
   imports: [CommonModule,
      ShareModule,
      DestinationSingleContentRoutingModule,
+     TranslateModule.forRoot({
+      defaultLanguage: "en",
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
 
      BrowserModule,
      NgxYoutubePlayerModule.forRoot(),
@@ -52,3 +62,6 @@ import { SafePipe } from "../../pipes/InnerHtml.pipe";
 })
 export class DestinationSingleContentModule {}
 platformBrowserDynamic().bootstrapModule(DestinationSingleContentModule);
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}

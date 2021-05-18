@@ -1,5 +1,4 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
-
 import { AllBlogsComponent } from "./mainComponents/all-blogs/all-blogs.component";
 import { CollapseModule } from "ngx-bootstrap/collapse";
 import { CommonModule } from "@angular/common";
@@ -13,9 +12,12 @@ import { TravelCruisesDesComponent } from "./mainComponents/travel-cruises-des/t
 import { TravelExcursionsDesComponent } from "./mainComponents/travel-excursions-des/travel-excursions-des.component";
 import { TravelFactsDesComponent } from "./mainComponents/travel-facts-des/travel-facts-des.component";
 import { TravelGuideDesComponent } from "./mainComponents/travel-guide-des/travel-guide-des.component";
-import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/travel-hotels-des.component";
-
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { RatingModule } from "ngx-bootstrap/rating";
+import { HttpClient } from "@angular/common/http";
+
+import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/travel-hotels-des.component";
 
 @NgModule({
   declarations: [
@@ -34,6 +36,14 @@ import { RatingModule } from "ngx-bootstrap/rating";
     CommonModule,
     DestinationContentRoutingModule,
     CollapseModule.forRoot(),
+    TranslateModule.forRoot({
+      defaultLanguage: "en",
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+    }),
 
     RatingModule.forRoot(),
     ShareModule,
@@ -41,3 +51,6 @@ import { RatingModule } from "ngx-bootstrap/rating";
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DestinationContentModule {}
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
+}

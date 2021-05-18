@@ -9,7 +9,6 @@ import { AllFaqDestinationComponent } from "./components/all-faq-destination/all
 import { AllPackagesDestinationComponent } from "./components/all-packages-destination/all-packages-destination.component";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { AsideComponent } from "./components/aside/aside.component";
 import { BlogComponent } from "./pages/blog/blog.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
@@ -28,6 +27,9 @@ import { ExpertReviewsComponent } from "./pages/expert-reviews/expert-reviews.co
 import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from "./shared/header/header.component";
+import { AboutUsComponent } from "./pages/about-us/about-us.component";
+
+
 import { HightlightesComponent } from "./pages/hightlightes/hightlightes.component";
 import { HomeComponent } from "./components/home/home.component";
 import { HomeSliderComponent } from "./pages/home-slider/home-slider.component";
@@ -74,6 +76,7 @@ import { PageComponent } from './pages/page/page.component';
 // Import library module
 import { NgxSpinnerModule } from "ngx-spinner";
 import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-footer.component';
+import { MeetOurTeamComponent } from './pages/meet-our-team/meet-our-team.component';
 
 
 // components & pages
@@ -88,6 +91,7 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutUsComponent,
     // TourDetailsComponent,
     NavbarComponent,
     FooterComponent,
@@ -136,7 +140,8 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
     SingleCruisesComponent,
     SinglePageComponent,
     PageComponent,
-    CategoreyFooterComponent,   
+    CategoreyFooterComponent,
+    MeetOurTeamComponent,   
   ],
   imports: [
     BrowserModule,

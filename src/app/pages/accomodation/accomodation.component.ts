@@ -17,6 +17,7 @@ export class AccomodationComponent implements OnInit {
   accomodation:any = [];
   id:any;
   idhotel: any;
+  // id pack
   idPack:any
   max = 5;
   isReadonly = true;
@@ -27,12 +28,14 @@ export class AccomodationComponent implements OnInit {
   ngOnInit(): void {
 
     this.id = this._active.snapshot.params.id
+    console.log(this.id);
+    
     this.slug = this._active.snapshot.params.slug
 
 
     this._accomodation.getSinglepackage(this.slug).subscribe(result => {
       this.accomodation = result.data[0];
-      console.log(this.accomodation);
+      console.log(this.accomodation)
       
       this.flag = result.data[0].hotels
 
@@ -46,13 +49,10 @@ export class AccomodationComponent implements OnInit {
   this._accomodation.getSingleDestination(this.id).subscribe(res => {
     this.desName = res.data[0].destination_name
     this.desSlug = res.data[0].destination_slug
-    
   })
 }
 
   
 
-  setId(id: any) {
-    localStorage.setItem("idcru", id);
-  }
+  
   }

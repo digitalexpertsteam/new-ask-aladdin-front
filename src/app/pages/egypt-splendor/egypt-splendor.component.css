@@ -95,7 +95,11 @@
     color: #f68800;
 
 }
-
+.tour{
+    border: 1px solid #f68800;
+    border-radius: 20px;
+    padding: 3px;
+}
 
 
 /* card */

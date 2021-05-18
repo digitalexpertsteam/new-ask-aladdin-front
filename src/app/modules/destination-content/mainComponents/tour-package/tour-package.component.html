@@ -10,7 +10,7 @@
             <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
                 <a href="" class="call-btn d-flex align-items-center">
                     <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
-                    <span class="phone-text text-dark">Call Us: <strong>+1(888) 513-5971</strong></span>
+                    <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>+1(888) 513-5971</strong></span>
                 </a>
             </div>
         </div>
@@ -22,23 +22,23 @@
 <section>
     <div class="container">
       <div   class="page-links py-2">
-       <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{desName}} / </span>  </a>
+       <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}} / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{desName}} / </span>  </a>
         <span class="main-color">{{packName}}</span>  
       </div>
     </div>
   </section>    
 <section class="sec-bg p-3 mb-5">
     <div class="container">
-        <div class="row mt-4">
-            <div class="col-12 col-md-3">
+        <!-- <div class="row mt-4"> -->
+            <!-- <div class="col-12 col-md-3">
                 <app-filter-by></app-filter-by>
-            </div>
-            <div class="col-12 col-md-9">
+            </div> -->
+            <div class="">
                <app-package-details></app-package-details>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </section>
 <app-destination-blog></app-destination-blog>
 <!-- <app-sponsors-logo></app-sponsors-logo> -->

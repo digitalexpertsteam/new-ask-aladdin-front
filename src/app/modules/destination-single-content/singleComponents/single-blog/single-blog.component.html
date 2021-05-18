@@ -10,7 +10,7 @@
             <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
                 <a href="" class="call-btn d-flex align-items-center">
                     <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
-                    <span class="phone-text text-dark">Call Us: <strong>+1(888) 513-5971</strong></span>
+                    <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>+1(888) 513-5971</strong></span>
                 </a>
             </div>
         </div>
@@ -20,8 +20,8 @@
 <section>
     <div class="container">
       <div *ngFor='let single of singleBlog '  class="page-links py-2">
-       <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{desName}} / </span>  </a>
+       <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}} / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{desName}} / </span>  </a>
        <a class="hover-color" routerLink="/{{desSlug}}/blogs"> <span > {{blogName}} / </span>  </a>
         <span class="main-color">{{single.name}}</span>  
       </div>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class=" text-center sec-bg">
-                    <h2 class=" mb-5">Related Blogs</h2>
+                    <h2 class=" mb-5">{{"Related Blogs"|translate}}</h2>
 
                         <!-- <div *ngFor="let blog of alldestinationCards" class="col-lg-4 col-md-6 col-sm-12">
                             <div class="blogs overflow-hidden">

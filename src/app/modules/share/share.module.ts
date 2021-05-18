@@ -1,7 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { CollapseModule, MDBBootstrapModule } from "angular-bootstrap-md";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
-
 import { AccomodationComponent } from "../../pages/accomodation/accomodation.component";
 import { AsideComponent } from "../../components/aside/aside.component";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
@@ -25,12 +24,14 @@ import { TagsComponent } from "../../pages/tags/tags.component";
 import { TourBookingComponent } from "../../pages/tour-booking/tour-booking.component";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { TravExpComponent } from "../../pages/trav-exp/trav-exp.component";
-
 import { IvyGalleryModule } from "angular-gallery";
 import { NgxGalleryModule } from "@kolkov/ngx-gallery";
 import { DestinationContentRoutingModule } from "../destination-content/destination-content-routing.module";
 import { ReviewsComponent } from "../../pages/reviews/reviews.component";
 import { AccordionModule } from "ngx-bootstrap/accordion";
+import { NgxSliderModule } from "@angular-slider/ngx-slider";
+
+
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AccordionModule } from "ngx-bootstrap/accordion";
     TourBookingComponent,
     StartingFromComponent,
     ExpertReviewsComponent,
+
     EgyptSplendorComponent,
     HightlightesComponent,
     TagsComponent,
@@ -56,6 +58,7 @@ import { AccordionModule } from "ngx-bootstrap/accordion";
     CarouselModule,
     IvyCarouselModule,
     AccordionModule,
+    NgxSliderModule,
 
     FormsModule,
     BsDropdownModule.forRoot(),
@@ -71,10 +74,9 @@ import { AccordionModule } from "ngx-bootstrap/accordion";
     }),
 
     DestinationContentRoutingModule,
-
-
     IvyGalleryModule,
     NgxGalleryModule,
+
 
   ],
 
@@ -82,6 +84,8 @@ import { AccordionModule } from "ngx-bootstrap/accordion";
     PageLinksComponent,
     SponsorssComponent,
     AsideComponent,
+    NgxSliderModule,
+
     CarouselModule,
     TourBookingComponent,
     StartingFromComponent,

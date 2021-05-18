@@ -52,9 +52,8 @@ export class SingleHotelComponent implements OnInit {
       this.panner = result.data[0].banner;
       this.pannerDescription = result.data[0].description;
       this.panner = result.data[0].banner;
-
-
-      console.log(this.panner);
+      console.log(this.id);
+      
 
       
       this.img=result.data[0].gallery

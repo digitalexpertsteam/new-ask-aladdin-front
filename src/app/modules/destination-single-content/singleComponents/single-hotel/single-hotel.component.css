@@ -7,6 +7,9 @@
 {
     width: 100%;
 }
+.check{
+    font-size: 11px;
+}
 }
 /* map */
 .map-details {
@@ -120,4 +123,7 @@
 
 .location{
     color: #f68800;
+}
+.check{
+    font-size: 15px;
 }

@@ -3,23 +3,32 @@
         <div class="splendor mb-4">
             <div class="head mb-2">
                 <h1 class=" h3 font-weight-bold">{{guide.name}}</h1>
-
             </div>
-            <p>{{num}} nights / {{guide.days}}{{"days" |translate}}</p>
+            <p>{{num}} {{"nights"|translate}} / {{guide.days }}{{" days" |translate}}</p>
             <p [innerHTML]="guide.overview"></p>
-            </div>
-            <span class="tour" *ngFor='let ggu of tour'> <i class="m-1 fas fa-plane-departure"></i>  {{  ggu}} </span>
+        </div>
+
+        <div class="d-flex flex-wrap m-2 text-muted">
+            <span class="mt-2 font-weight-bold">{{"Tour Type"|translate}} : </span>
+            <span class="tour ml-2 mt-2" *ngFor='let ggu of tour|slice:0:1'> <i class=" fas fa-plane-departure"></i> {{
+                ggu}} </span>
+            <span class="tour ml-2 mt-2" *ngFor='let ggu of tour|slice:1:2'> <i class="fas fa-crown"></i> {{ ggu}} </span>
+            <span class="tour ml-2 mt-2" *ngFor='let ggu of tour|slice:2:3'> <i class="fab fa-font-awesome-flag"></i> {{
+                ggu}} </span>
+            <span class="tour ml-2 mt-2" *ngFor='let ggu of tour|slice:3'> <i class="fas fa-gem"></i> {{ ggu}} </span>
+
+        </div>
 
         <div class="package-itinerary">
             <div class="head mb-4 mt-2">
-                <h2 class=" h3 font-weight-bold"> Itinerary</h2>
+                <h2 class=" h3 font-weight-bold">{{"Itinerary"|translate}} </h2>
             </div>
             <div class="package-details" class="package">
                 <div *ngFor='let day of guide.day_data' class="package-details">
                     <h3 class="position-relative">
                         <div class="py-2">
-                        <span class="font-weight-bold py-2">Day {{day.day_number}} :- {{day.day_title}}</span>
-                    </div>
+                            <span class="font-weight-bold py-2">{{"Day"|translate}} {{day.day_number}} :- {{day.day_title}}</span>
+                        </div>
                         <div class="number d-none d-xl-block">
                             <p class="main-bg text-center d-flex align-items-center justify-content-center">
                                 <span
@@ -27,56 +36,29 @@
                             </p>
                         </div>
                     </h3>
-                    <p  [innerHTML]="day.day_summary"></p>
+                    <p [innerHTML]="day.day_summary"></p>
                     <div class="offers d-flex">
                         <div class="meal mr-2 ml-2 py-2">
                             <img src="assets/imgs/meal.svg" />
-                            <span>Meals </span>
+                            <span>{{"Meals"|translate}} </span>
                         </div>
                         <div class="meal-details d-flex">
                             <div class="detail ml-2 py-2">
                                 <img [src]="day.breakfast ?  imageTrue  : imageFalse " />
-                                <span>breakfast</span>
+                                <span>{{"breakfast"|translate}}</span>
                             </div>
                             <div class="detail ml-2 py-2">
                                 <img [src]="day.lunch ? imageTrue : imageFalse" />
-                                <span>Lunch</span>
+                                <span>{{"Lunch"|translate}}</span>
                             </div>
-                            <div class="detail ml-2 py-2" >
+                            <div class="detail ml-2 py-2">
                                 <img [src]="day.dinner ? imageTrue  : imageFalse" />
-                                <span>dinner</span>
+                                <span>{{"dinner"|translate}}</span>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
 </section>
-
-
-<!-- <section class="py-5 ">
-    <h1>Related Packages</h1>
-
-    <owl-carousel-o>
-        <ng-template *ngFor='let guid of guide.related_packages' carouselSlide>
-            <div class="slide">
-                <div class="blogs overflow-hidden">
-                    <a routerLink="/{{guide.slug}}" (click)="setSlug(guide.id)" class="text-dark">
-                        <div class="card main-card text-center">
-                            <img alt="{{guid.thumb_alt}}" [src]="guid.thumb " class="img-fluid ">
-
-                            <div class="card-body card-details">
-                                <h5 class="card-title "> {{guide.name}} </h5>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </ng-template>
-    </owl-carousel-o>
-</section> -->

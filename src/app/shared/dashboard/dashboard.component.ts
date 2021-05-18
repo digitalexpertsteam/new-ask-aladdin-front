@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
   constructor() {
-    document.location.href = 'https://new.ask-aladdin.com/admin/public/api'
    }
 
   ngOnInit(): void {

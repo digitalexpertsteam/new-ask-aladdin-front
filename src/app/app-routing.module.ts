@@ -33,6 +33,8 @@ import { SingleHotelComponent } from "./modules/destination-single-content/singl
 import { SinglePageComponent } from "./pages/single-page/single-page.component";
 import { CategoreyFooterComponent } from "./shared/categorey-footer/categorey-footer.component";
 import { ReviewsComponent } from "./pages/reviews/reviews.component";
+import { AboutUsComponent } from "./pages/about-us/about-us.component";
+import { MeetOurTeamComponent } from "./pages/meet-our-team/meet-our-team.component";
 
 
 const routes: Routes = [
@@ -92,12 +94,16 @@ const routes: Routes = [
   { path: "single-package", component: TourDetailsComponent },
   { path: "our-story", component: OurStoryComponent },
   { path: "contactUs", component: ContactUsComponent },
+  { path: "about-us", component: AboutUsComponent },
+  { path: "meet-the-team", component: MeetOurTeamComponent },
+
 
   { path: ":id/category/:slug", pathMatch: "full", component: PageComponent },
   { path: ":id/page/:cate/:slug", pathMatch: "full", component: SinglePageComponent },
   { path: ":id/hotel/:slug",  component: SingleHotelComponent },
 
-  { path: ":slug", component: OneDestinationComponent },
+  { path: ":slug/destination", component: OneDestinationComponent },
+  { path: "**", component: DashboardComponent },
 
 
 

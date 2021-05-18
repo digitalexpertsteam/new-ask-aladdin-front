@@ -26,7 +26,7 @@
   <div class="container">
     <div *ngFor='let single of singleFaq' class="page-links py-2">
       <a class="hover-color" routerLink="/"> <span> Home / </span> </a>
-      <a class="hover-color" routerLink="/{{desSlug}}"> <span> {{desName}} / </span> </a>
+      <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span> {{desName}} / </span> </a>
       <a class="hover-color" routerLink="/{{desSlug}}/facts-myths"> <span> {{faqName}} / </span> </a>
       <span class="main-color">{{single.name}}</span>
     </div>

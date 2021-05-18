@@ -1,7 +1,7 @@
 <section class="sec-bg py-4">
     <div class="container">
         <div class="head-title text-center mb-4">
-            <h2 class="font-weight-bold">Destination Blogs</h2>
+            <h2 class="font-weight-bold">{{"Destination Blogs"|translate}}</h2>
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4" *ngFor="let blog of destinationBlog">
@@ -12,7 +12,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{blog.blog_name}}</h5>
                                 <p class="card-text" [innerHTML]="blog.blog_description"></p>
-                                <a routerLink="/singleblog" class="btn main-btn blog-btn">Read More</a>
+                                <a routerLink="/singleblog" class="btn main-btn blog-btn">{{"Read More"|translate}}</a>
                             </div>
                         </div>
                     </a>

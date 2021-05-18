@@ -5,6 +5,7 @@ import { HomeserviceService } from '../../services/homeservice.service';
 import { Blog } from '../../interfaces/blog';
 import {Gallery} from 'angular-gallery';
 import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-cruises',
@@ -12,6 +13,8 @@ import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
   styleUrls: ['./single-cruises.component.css']
 })
 export class SingleCruisesComponent implements OnInit {
+  desName: any;
+  cruName: any;
   Itinerary(){
     document.getElementById('Itinerary')?.scrollIntoView({behavior:'smooth'})
   }
@@ -52,7 +55,7 @@ export class SingleCruisesComponent implements OnInit {
   cruises:any
   galery:any
   ttt:any
-  constructor(public _cruises:HomeserviceService,  private gallery: Gallery) { }
+  constructor(public _cruises:HomeserviceService,  private gallery: Gallery , private active:ActivatedRoute) { }
   ngOnInit(): void {
     
     this.galleryOptions = [
@@ -78,14 +81,25 @@ export class SingleCruisesComponent implements OnInit {
         preview: false
       }
     ];
-    this.idCru = localStorage.getItem("idcru");
-    this.id = localStorage.getItem('id')
+    this.idCru = this.active.snapshot.params.slug
+    this.id = this.active.snapshot.params.id
+    console.log(this.id , this.idCru);
+    
     this._cruises.getTravelCruises(this.id).subscribe(result => {
       this.desSlug = result.data[0].destination_slug;  
+      this.desName = result.data[0].destination_name;  
+      let idName = result.data[0].destination__id; 
+      this._cruises.getOneDestinationDetails(idName).subscribe(res => {
+
+        this.cruName = res.data[0].categories[3].name  
+        
+    })
 
     });
     this._cruises.getSingleCruise(this.idCru).subscribe(result => {
       this.cruises = result.data[0]; 
+      console.log(this.cruises);
+      
       this.ttt = result.data[0].hotels; 
       
       this.galery = result.data[0].gallery; 
