@@ -77,6 +77,7 @@ import { PageComponent } from './pages/page/page.component';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-footer.component';
 import { MeetOurTeamComponent } from './pages/meet-our-team/meet-our-team.component';
+import { CookiesComponent } from './pages/cookies/cookies.component';
 
 
 // components & pages
@@ -141,7 +142,8 @@ import { MeetOurTeamComponent } from './pages/meet-our-team/meet-our-team.compon
     SinglePageComponent,
     PageComponent,
     CategoreyFooterComponent,
-    MeetOurTeamComponent,   
+    MeetOurTeamComponent,
+    CookiesComponent,   
   ],
   imports: [
     BrowserModule,
