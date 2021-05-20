@@ -38,7 +38,7 @@ export class SingleCruisesComponent implements OnInit {
   contact:any=[];
   idCru:any;
   id:any
-  Deafult = `../../../assets/imgs/7.jpg`
+  Deafult = `../../../assets/imgs/the-best-10-river-nile-cruises-in-egypt.jpg`
   desSlug:any
   related:Blog[]=[];
   selectTrue = true
@@ -99,6 +99,13 @@ export class SingleCruisesComponent implements OnInit {
     });
     this._cruises.getSingleCruise(this.idCru).subscribe(result => {
       this.cruises = result.data[0]; 
+      if(this.cruises.banner == 1){
+        
+        
+        this.cruises.banner = this.Deafult
+      }
+      console.log(this.cruises.banner);
+
       console.log(this.cruises);
       
       this.ttt = result.data[0].hotels; 
