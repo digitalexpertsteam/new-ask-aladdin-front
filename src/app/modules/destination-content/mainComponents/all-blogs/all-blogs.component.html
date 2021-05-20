@@ -30,13 +30,13 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let blog of blogContainer">
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}" (click)="setId(blog.blog_id)"  class="text-dark">
+                    <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}"   class="text-dark">
                         <div class="card text-center">
                             <img src="{{blog.blog_thumb}}" class="card-img-top" alt="{{blog.blog_thumb_alt}}">
                             <div class="card-body">
                                 <h3 class="card-title title-category">{{blog.blog_name}}</h3>
                                 <p class="card-text h-50" [innerHTML]="blog.blog_description|slice:0:200"></p>
-                                <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}"   (click)="setId(blog.blog_id)" class="btn main-btn blog-btn w-75 m-auto">Read More</a>
+                                <a routerLink="/{{desSlug}}/blogs/{{blog.blog_slug}}"    class="btn main-btn blog-btn w-75 m-auto">Read More</a>
                             </div>
                         </div>
                     </a>

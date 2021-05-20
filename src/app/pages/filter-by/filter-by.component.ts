@@ -11,7 +11,7 @@ if(!/localhost/.test(document.location.host)) {
   styleUrls: ['./filter-by.component.css']
 })
 export class FilterByComponent implements OnInit {
-  isCollapsed = false;
+  isCollapsed = true;
   isCollapsed2 = true;
   isCollapsed3 = true;
   isCollapsed4 = true;

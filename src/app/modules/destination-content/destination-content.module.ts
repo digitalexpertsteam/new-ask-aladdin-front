@@ -12,11 +12,11 @@ import { TravelCruisesDesComponent } from "./mainComponents/travel-cruises-des/t
 import { TravelExcursionsDesComponent } from "./mainComponents/travel-excursions-des/travel-excursions-des.component";
 import { TravelFactsDesComponent } from "./mainComponents/travel-facts-des/travel-facts-des.component";
 import { TravelGuideDesComponent } from "./mainComponents/travel-guide-des/travel-guide-des.component";
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { RatingModule } from "ngx-bootstrap/rating";
 import { HttpClient } from "@angular/common/http";
-
 import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/travel-hotels-des.component";
 
 @NgModule({
@@ -34,6 +34,7 @@ import { TravelHotelsDesComponent } from "./mainComponents/travel-hotels-des/tra
   ],
   imports: [
     CommonModule,
+    NgxSliderModule,
     DestinationContentRoutingModule,
     CollapseModule.forRoot(),
     TranslateModule.forRoot({

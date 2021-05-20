@@ -35,16 +35,13 @@ export class SingleBlogComponent implements OnInit {
     // Get Id From Loacal Storage
     // this.idBlogs = localStorage.getItem("idBlog");
     this.idBlogs = this._ActivatedRoute.snapshot.params.id
-    console.log(this.idBlogs);
     
      this.ides = localStorage.getItem("id");
     this.id = this._ActivatedRoute.snapshot.params.slug
     //  this._ActivatedRoute.snapshot.params.id;
-    console.log(this.id);
     
     this._homeService.getSingleBlogs(this.idBlogs).subscribe((result) => {
       this.singleBlog = result.data;
-      console.log(this.singleBlog);
       this.Title = result.data[0].seo_title;
       this._Title.setTitle(`${this.Title}`)
       this._Meta.addTags([
@@ -70,7 +67,6 @@ export class SingleBlogComponent implements OnInit {
       
       
       this.desName = res.data[0].destination_name
-      console.log(this.desName);
     });
 
     this._homeService.getOneDestinationDetails(1).subscribe(res => {

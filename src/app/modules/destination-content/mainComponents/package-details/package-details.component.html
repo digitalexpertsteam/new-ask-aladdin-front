@@ -60,7 +60,7 @@
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed2" [isAnimated]="true">
                         
-                    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+                    <!-- <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider> -->
 
                 </div>
             </div>
@@ -162,8 +162,6 @@
                                 <div class="col-md-5 px-0">
                                     <img class="img-fluid package-img"
                                         src="{{singleDes.package_thumb=='1'?image: singleDes.package_thumb}}">
-                                    <!-- <img *ngIf="singleDes.hot_offer" class="  hot" src="../../../../../assets/imgs/hot4.png"> -->
-                                    <!-- <img *ngIf="singleDes.hot_offer" class="  hot" src="../../../../../assets/imgs/bestoffers.png"> -->
                                     <p *ngIf="singleDes.hot_offer" class="affe">
                                         <span class="offerr">
                                             {{"Hot Offer"|translate}}
@@ -172,17 +170,15 @@
 
                                     <p *ngIf="singleDes.top_sale" class="top-sale">
                                         <span class="sale ">
-                                            Top Sale
+                                            {{"Best Sale"|translate}}
                                         </span>
                                     </p>
-
-
-                                    <div class="dis text-center">
-
-                                        <h6 *ngIf="singleDes.discount!==null" class=" font-weight-bold discount">
-                                            {{singleDes.discount + "% off"}} </h6>
-
-                                    </div>
+                                    <p *ngIf="singleDes.discount" class="orang">
+                                        <span  *ngIf="singleDes.discount!==null" class="orang-sale ">
+                                            
+                                                {{singleDes.discount + "% off"}}
+                                        </span>
+                                    </p>
                                     <div class="map-details border mt-2">
                                         <div class="row mx-0 px-0">
                                             <div class="col-12 px-0">
@@ -280,7 +276,7 @@
                             <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}}
                                 {{"Days"|translate}}/{{singleDes.duration_in_days -x}} {{"Nights"|translate}}
                             </p>
-                            <a class="main-btn p-2 view d-block mb-2 font-weight-bold" (click)="setId(singleDes.package__id)"
+                            <a class="main-btn p-2 view d-block mb-2 font-weight-bold" 
                                 routerLink="/{{singleDes.destination_slug}}/travel-package/{{singleDes.package_slug}}">{{"View Tour Details"|translate}}</a>
 
                             <a class="main-btn book bg-white p-2 d-block font-weight-bold pt-2"

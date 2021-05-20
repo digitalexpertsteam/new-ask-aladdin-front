@@ -85,9 +85,11 @@
     font-size: .9rem;
 }
 .package-content .advatnage{
-    border-right: 3px solid #e5e5e5;
-    border-bottom: 2px solid #e5e5e5;
-    background-color: #fafbfc;
+    border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+
     display: flex;
     padding: 0.7rem 0.5rem;
     text-align: center;
@@ -98,7 +100,7 @@
     font-size: 0.8rem;
 }
 .package-img {
-    height: 275px;
+    height: 290px;
     object-fit: cover;
     position: relative;
 }
@@ -197,6 +199,16 @@
     border: 1px solid white;
  
 }
+.orang{
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    font-size: 0.7rem;
+    -webkit-clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    border: 1px solid white;
+    /* height: 25px; */
+}
 /* ff5948 */
 .sale{
     color: white;
@@ -205,8 +217,17 @@
     display: inline-block;
     width: 100%;
     padding: 0.1rem 1.5rem;
-    background-color:#f68800;
+    background-color:#7fcb35;
 
+}
+.orang-sale{
+    color: white;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+    background-color:#f68800;
 }
 .discount{
     position: absolute;
@@ -214,17 +235,25 @@
     color: #ffffff;
     top: 13rem;
     left: 9px;
-    background-color: #ff5948;
+    background-color: #f68800;
     z-index: 999;
     
 
     border-radius: 20px;
    
 }
-.dis {
-    background-color: red;
-    width: 10px;
 
+.hoot{
+    grid-template: k;
+    inset-block: 2;
+    height: 20;
+}
+.rate{
+    font-size: 1.5rem ;
+}
+
+.reviews{
+    font-size: .9rem !important;
 }
 .hoot{
     grid-template: k;

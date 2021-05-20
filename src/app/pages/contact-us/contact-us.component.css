@@ -1,15 +1,188 @@
-.contact-details p {
+/* .contact-details p {
     font-size: 18px;
 }
 .frame{
     border: solid 1px red;
 } 
 .contact{
-    box-shadow: 0px 15px 8px #888888;
 
+
+}
+
+.form4 {
+ 
+    background-size: cover
+}
+
+.top {
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+
+.form {
+    background-color: white !important;
+    padding: 20px
+}
+
+.form-group {
+    margin-bottom: 20px
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0
+}
+
+.form-control {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #61615e;
+    background: transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s
+}
+
+button.btn {
+    display: block;
+    padding: 11px 32px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    margin: 30px 0px
+}
+
+.btn-blue {
+    background-color: #f68800;
+    color: #fff;
+    border: 1px solid #f68800
+} */
+
+
+
+/* *-------- */
+/* .wrapper {
+    height: 100vh;
+    background: rgb(255, 0, 0);
+    background: url("https://i.imgur.com/g63vXfd.jpg");
+    background-size: cover;
+    width: 100%
+} */
+
+.overlay {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8)
+}
+
+.contact-us {
+    margin-top: 50px;
+    margin-bottom: 50px
+}
+
+.contact-us h3,
+p {
+    color: rgb(3, 3, 3)
+}
+
+.address {
+    margin-top: 14px !important;
+    margin-left: 10px
+}
+
+.address span {
+    color: #f68800
+}
+
+.icons {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.icons i {
+    font-size: 50px;
+    color: #f68800;
+}
+
+.forms {
+    padding: 20px;
+
+}
+
+.inputs input {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #eee
+}
+
+.inputs input:focus {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #f68800;
+    box-shadow: none
+}
+
+.inputs textarea {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #eee;
+    width: 100%;
+    resize: none
+}
+
+.inputs textarea:focus {
+    margin-bottom: 13px;
+    border: none;
+    border-bottom: 2px solid #f68800;
+    box-shadow: none;
+    resize: none
+}
+
+.form-control {
+    padding: .375rem .25rem
 }
 .us{
     text-decoration: underline;
+color: #f68800;
+}
 
-    color: #f68800;
+.map-details {
+    /* border:  solid 1px #070606; */
+    border-radius: 5px;
+    width: 76%;
+    margin: auto;
+    height: 400px;
+
+}
+.embed-responsive{
+    height: 400px;
+}
+.embed-responsive-item{
+    height: 100%;
+}
+.btn{
+    background-color: #f68800;
+    width: 200px;
+    color: #fff;
+}
+.alll{
+    border: solid 2px #080807;
+    border-radius: 10px;
+    box-shadow: 10px 10px  #dfdede;
+
 }

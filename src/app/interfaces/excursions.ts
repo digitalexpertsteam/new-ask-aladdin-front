@@ -16,6 +16,17 @@ export interface Excursions {
     duration:number;
     travellers:string;
 
+    meals:number;
+    rate:number;
+    reviews:number;
+    services_number:number;
+    activities_number:number;
+    guide_tour:number;
+    discount:number;
+    best_sale:boolean;
+
+    hot_offer:boolean;
+
 
 
 

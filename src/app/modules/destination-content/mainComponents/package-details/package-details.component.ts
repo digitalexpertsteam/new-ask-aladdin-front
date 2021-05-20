@@ -76,7 +76,7 @@ export class PackageDetailsComponent implements OnInit {
   }
   // filter BY
   isCollapsed = true;
-  isCollapsed2 = false;
+  isCollapsed2 = true;
   isCollapsed3 = true;
   isCollapsed4 = true;
   isCollapsed5 = true;
@@ -142,9 +142,7 @@ export class PackageDetailsComponent implements OnInit {
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-  setId(id: any) {
-    localStorage.setItem('idPack', id)
-  }
+  
   openVerticallyCentered(content: any) {
     this.ngMod.open(content, { centered: true });
     console.log(content);

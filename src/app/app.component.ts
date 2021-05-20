@@ -41,7 +41,6 @@ export class AppComponent {
 
       this.seo.getDestinationFact(1).subscribe(res => {
         if(res.data[0].destination_seo_title == null){
-          console.log('null');
         
           this._title.setTitle(`${this.Title}`)
         }

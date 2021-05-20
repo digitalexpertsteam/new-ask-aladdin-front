@@ -51,6 +51,13 @@ export class TravelFactsDesComponent implements OnInit {
       this.faqsDes = result.data[0].destination_description;
       this.desName = result.data[0].destination_name;
       this.desSlug = result.data[0].destination_slug;
+      let idfaq = result.data[0].destination__id;
+      this._faqs.getOneDestinationDetails(idfaq).subscribe((res) => {
+        this.allFaqs = res.data[0].categories;
+        this.faName = res.data[0].categories[5].name
+        this.category = res.data[0].categories[5].slug;
+      });
+    
       this.Title = result.data[0].destination_seo_title;
       this._Title.setTitle(`${this.Title}`);
       this._Meta.addTags([
@@ -66,21 +73,12 @@ export class TravelFactsDesComponent implements OnInit {
     });
 
     
-    this._faqs.getOneDestinationDetails(5).subscribe((res) => {
-      this.allFaqs = res.data[0].categories;
-      this.faName = res.data[0].categories[5].name
-
-      this.category = res.data[0].categories[5].slug;
-      console.log(this.category);
-    });
   }
   setId(id: any) {
     localStorage.setItem("idFaq", id);
   }
   openPlus(i:any){
     i=!this.open
-    this.open = !this.open
-    console.log(i+this.open);
-    
+    this.open = !this.open    
   }
 }

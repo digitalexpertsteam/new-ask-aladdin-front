@@ -34,6 +34,7 @@ export class TravelCruisesDesComponent implements OnInit {
   cruContent:destination[]=[];
   cruName:any;
   count:any
+  phone:any
 
 readonly = true
   overStar: number | undefined;
@@ -49,6 +50,9 @@ readonly = true
   idpackage: any;
 
   ngOnInit(): void {
+    this._excursions.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
+    });
     this.id = this._Active.snapshot.params.slug
     this._excursions.getTravelCruises(this.id).subscribe((result) => {
 

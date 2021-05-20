@@ -22,7 +22,7 @@
       <div  class="page-links py-2">
        <a class="hover-color" routerLink="/"> <span > {{"Home"|translate}} / </span>  </a>
        <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{desName}} / </span>  </a>
-        <span class="main-color">{{guide_name}}</span>  
+        <span class="main-color">{{name}}</span>  
       </div>
     </div>
   </section>
@@ -34,13 +34,13 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let guide of guidesContainer">
                 <div class="blogs overflow-hidden">
-                    <a routerLink="/{{desSlug}}/travel-guides/{{guide.travel_guide_slug}}" (click)="setId(guide.travel_guide__id)"  class="text-dark">
+                    <a routerLink="/{{desSlug}}/travel-guides/{{guide.travel_guide_slug}}"   class="text-dark">
                         <div class="card text-center">
                             <img src="{{guide.travel_guide_thumb}}" class="card-img-top" alt="{{guide.travel_guide_thumb_alt}}">
                             <div class="card-body">
                                 <h3 class="card-title title-category">{{guide.travel_guide_name}}</h3>
                                 <p class="card-text" [innerHTML]="guide.travel_guide_description"></p>
-                                <a routerLink="/{{desSlug}}/travel-guides/{{guide.travel_guide_slug}}" (click)="setId(guide.travel_guide__id)" class="btn w-75 m-auto main-btn blog-btn"> {{"Read More"|translate}}</a>
+                                <a routerLink="/{{desSlug}}/travel-guides/{{guide.travel_guide_slug}}"  class="btn w-75 m-auto main-btn blog-btn"> {{"Read More"|translate}}</a>
                             </div>
                         </div>
                     </a>

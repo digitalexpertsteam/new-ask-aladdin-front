@@ -30,13 +30,16 @@ import { ActivatedRoute } from "@angular/router";
 export class TravelExcursionsDesComponent implements OnInit {
   x = 1;
   max = 5;
-  isReadonly = false;
+  isReadonly = true;
+  readonly = true
+ 
   // duration_in_days;
   num: any;
   name: any;
   overStar: number | undefined;
   percent: number | undefined;
   title: any;
+  phone:any
   hoveringOver(value: number): void {
     this.overStar = value;
     this.percent = (value / this.max) * 100;
@@ -65,6 +68,9 @@ export class TravelExcursionsDesComponent implements OnInit {
   ngOnInit(): void {
     this.id = localStorage.getItem("id");
     this.id = this._Active.snapshot.params.slug;
+    this._excursions.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
+    });
     this._excursions.getDestinationExcursions(this.id).subscribe(result => {
       this.getDestinationExcursions = result.data;
 

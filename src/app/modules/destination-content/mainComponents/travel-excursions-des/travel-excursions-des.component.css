@@ -18,6 +18,9 @@
     display: flex;
     flex-wrap: wrap;
 }
+.reviews{
+    font-size: .9rem !important;
+}
 .tags .tag {
     padding: 0.3rem 0.8rem;
     text-align: center;
@@ -63,14 +66,16 @@
 }
 .package-content span ,.package-content .package-text{
     color: #9c9c9c;
-    font-size: .8rem;
+    font-size: 1rem;
 }
 .package-content .hashtag {
     font-size: .9rem;
 }
 .package-content .advatnage{
     border-right: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
     background-color: #fafbfc;
     display: flex;
     padding: 0.8rem 0.6rem;
@@ -82,7 +87,7 @@
     font-size: 0.8rem;
 }
 .package-img {
-    height: 209px;
+    height: 280px;
     object-fit: cover;
 }
 .map-details {
@@ -97,6 +102,15 @@
     color: #9c9c9c;
 
 }
+.rate{
+    font-size: 1.5rem !important;
+}
+.tour i{
+    color: #f68800;
+    }
+    .tour{
+        margin-bottom: 10px;
+    }
 /* .pack-icons{
     margin-top: 80px;
 } */
@@ -119,3 +133,64 @@
         height: 35%;
     }
 }
+
+.affe{
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 0.7rem;
+    -webkit-clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    border: 1px solid white;
+    background-color: #ff5948;
+}
+.offerr{
+
+    color: white;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+    background-color: #ff5948;
+}
+.top-sale{
+    position: absolute;
+    top: 2.6rem;
+    left: 0;
+    font-size: 0.7rem;
+    -webkit-clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    border: 1px solid white;
+ 
+}
+.sale{
+    color: white;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+    background-color:#7fcb35;
+
+}
+.orang{
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    font-size: 0.7rem;
+    -webkit-clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    border: 1px solid white;
+    /* height: 25px; */
+}
+.orang-sale{
+    color: white;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+    background-color:#f68800;
+}
+

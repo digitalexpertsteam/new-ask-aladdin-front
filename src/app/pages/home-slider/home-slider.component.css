@@ -1,17 +1,4 @@
-/* .private{
-    position: relative;
-}
-.video{
-    position: absolute;
-    top: 0;
-    z-index: 1;
-}
-.view{
-    position: absolute;
-    top: 0;
-    z-index: 222222;
-    
-} */
+
 .vid {
     height: 1070px;
 }
@@ -99,7 +86,7 @@
 }  
 @media only screen  and (max-width:1440px){
     .vid{
-        height:800px;
+        height:750px;
     }    
 }  
 @media only screen  and (max-width:1400px){

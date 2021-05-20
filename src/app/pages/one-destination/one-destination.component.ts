@@ -34,7 +34,7 @@ export class OneDestinationComponent implements OnInit {
   image = '../../../assets/imgs/Egypt-Shopping-Guide.jpg'
   errors: any;
   desSlug: any;
-  
+  phone:any
 
  
   constructor( private _Home : HomeserviceService ,
@@ -45,7 +45,9 @@ export class OneDestinationComponent implements OnInit {
  
   ngOnInit(): void {
     this.id = this._active.snapshot.params.slug;
-
+    this._Home.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
+    });
     this._Home.getOneDistination(this.id).subscribe(res => {
       this.singleDestination = res.data  
       this.desSlug = res.data[0].slug
@@ -87,11 +89,7 @@ export class OneDestinationComponent implements OnInit {
   }
 
 
-  setSlug(slug:any){
-     localStorage.setItem("slug" , slug)  
-    
-    
-  }
+  
 
   customOptions: OwlOptions = {
     loop: true,

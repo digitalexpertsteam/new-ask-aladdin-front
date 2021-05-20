@@ -35,7 +35,6 @@
      "Below you'll find the wide variety of attractions here in Egypt. Keep any of these in mind when planning your trip!":"Below you'll find the wide variety of attractions here in Egypt. Keep any of these in mind when planning your trip!",
      "Reviews":"Reviews",
      "Days":"Days",
-
      "Highlights":"Highlights",
      "Hotels":"Hotels",
      "Flights":"Flights",
@@ -45,10 +44,8 @@
      "Pricing":"Pricing",
      "Nights":"Nights",
      "View Tour Details":"View Tour Details",
-
      "Package Booking":"Package Booking",
      "Booking Inquiry":"Booking Inquiry",
-     
      "Send Your Enquiry":"Send Your Enquiry",
      "TAILOR MADE":"TAILOR MADE",
      "Your entire holiday is designed around your requirements":"Your entire holiday is designed around your requirements",
@@ -100,22 +97,19 @@
        "Prices&Dates":"Prices&Dates",
        "No Videos Yet":"No Videos Yet",
        "No Accommodations Yet":"No Accommodations Yet",
-
        "Destination Blogs":"Destination Blogs",
        "breakfast":"breakfast",
        "Lunch":"Lunch",
-       "dinner":"dinner"
-
-
-       
-
-
-
-
-
-
-
-
-
-
+       "dinner":"dinner",
+       "Travel Expert Reviews":"LuTravel Expert Reviewsnch",
+       "EGYPT TRAVEL EXPERTS":"EGYPT TRAVEL EXPERTS",
+       "Hot Offers":"Hot Offers",
+       "Optional Trips & Exentions":"Optional Trips & Exentions",
+       "our-story":"our-story",
+       "Top Sale":"Top Sale",
+       "Best Sale":"Best Sale",
+       "Do you have any questions? Please do not hesitate to contact us directly":"Do you have any questions? Please do not hesitate to contact us directly",
+       "Our team will come back to you within a matter of hours to help you":"Our team will come back to you within a matter of hours to help you",
+       "UAE Head Office":"UAE Head Office",
+       "Send":"Send"
 }

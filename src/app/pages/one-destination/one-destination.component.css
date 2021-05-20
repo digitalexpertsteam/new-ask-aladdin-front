@@ -92,20 +92,32 @@
     width: 250px;
 
 }
-.offerCard .top
-{
-    position: absolute;
-    top: 0;
-    
-    width: 120px;
-    height: 120px;
-    z-index: 2;
-   
-}
-.offerCard .main-top{
+
+/* .offerCard .main-top{
     position: absolute;
     top: 0;
     z-index: 1;
+} */
+.affe{
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    z-index: 2;
+    font-size: 0.7rem;
+    -webkit-clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    border: 1px solid white;
+    background-color: #ff5948;
+}
+.offerr{
+
+    color: white;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+    background-color: #ff5948;
 }
 
 .des-antherCard{
@@ -139,6 +151,7 @@
     transform: translateX(-20px);
 
 }
+
 
 .list li::before{
     content: "\2022";
