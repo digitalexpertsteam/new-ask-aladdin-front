@@ -92,20 +92,32 @@
     width: 250px;
 
 }
-.offerCard .top
-{
-    position: absolute;
-    top: 0;
-    
-    width: 120px;
-    height: 120px;
-    z-index: 2;
-   
-}
-.offerCard .main-top{
+
+/* .offerCard .main-top{
     position: absolute;
     top: 0;
     z-index: 1;
+} */
+.affe{
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    z-index: 2;
+    font-size: 0.7rem;
+    -webkit-clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);
+    border: 1px solid white;
+    background-color: #ff5948;
+}
+.offerr{
+
+    color: white;
+    text-align: center;
+    font-size: 0.7rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0.1rem 1.5rem;
+    background-color: #ff5948;
 }
 
 .des-antherCard{
@@ -122,7 +134,7 @@
     text-decoration: none;
 }
 .main{
-    background: linear-gradient(70deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 35%) ,url('../../../assets/imgs/doodle.jpg');
+    background: linear-gradient(70deg, rgba(245, 234, 234, 0.87) 0%, rgba(255, 255, 255, 0.795) 35%) ,url('../../../assets/imgs/book2.jpg');
     background-position: center;
     padding:30px 0;
     overflow: hidden;
@@ -136,11 +148,11 @@
 .title-category{
     font-weight: 600;
     font-size: 1.2rem;
-}
-footer .shortcuts h6{
-   font-size: 16px;
+    transform: translateX(-20px);
 
 }
+
+
 .list li::before{
     content: "\2022";
     color: #f68800;
@@ -157,11 +169,32 @@ footer .shortcuts a{
 .list li{
     margin-top: 7px;
 }
-.hover-color{
-    color: #000;
-    text-decoration: none;
-}
+
 .hover-color:hover li{
     color: #da7800;
     text-decoration: none;
+}
+@media only screen and (max-width: 1550px) {
+    .title-category{
+        font-weight: 800;
+        font-size: 0.7rem;
+        transform: translateX(-20px);
+    
+    }
+    .list li{
+        font-size: 0.7rem;
+        margin-top: 7px;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .title-category{
+        font-weight: 800;
+        font-size: 0.5rem;
+        transform: translateX(-20px);
+    
+    }
+    .list li{
+        font-size: 0.6rem;
+        margin-top: 7px;
+    }
 }

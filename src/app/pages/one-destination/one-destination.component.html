@@ -18,12 +18,12 @@
       </div>
       <p class="mt-2" [innerHTML]="des.description"></p>
       <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
-        <a href="" class="call-btn d-flex align-items-center">
+        <a  class="call-btn d-flex align-items-center">
           <span class="phone-icon"
             ><i class="fas fa-phone-alt main-color"></i
           ></span>
           <span class="phone-text text-dark"
-            >Call Us: <strong>+1(888) 513-5971</strong></span
+            >{{"Call Us"|translate}}: <strong>{{phone}}</strong></span
           >
         </a>
       </div>
@@ -33,7 +33,7 @@
 <section>
   <div class="container">
     <div *ngFor="let des of singleDestination" class="page-links py-2">
-     <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+     <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}} / </span>  </a>
       <span class="main-color">{{ des.name }}</span>  
     </div>
   </div>
@@ -198,7 +198,7 @@
 <section class=" py-4 hotOffer">
   <div class="container">
     <div class="head-title mb-4">
-      <h3 class="font-weight-bold">Hot Offers</h3>
+      <h3 class="font-weight-bold">{{"Hot Offers"|translate}}</h3>
     </div>
 
     <owl-carousel-o [options]="customOwl">
@@ -207,14 +207,21 @@
           <div class="blogs overflow-hidden">
             <a routerLink="/{{singleDestination[0].name}}/travel-package/{{pack.slug}}" class="text-dark">
               <div class="card main-card text-center anotherCard offerCard">
-                <div class="img">
-                  <img src="../../../assets/imgs/hot4.png" class="top" alt="" />
+                                 
+                  <p  class="affe">
+                    <span class="offerr">
+                        {{"Hot Offer"|translate}}
+                    </span>
+                </p>
+
+
+
                   <img
                     [src]="pack.thumb"
-                    class="min-top"
+                    class="main-top"
                     alt="{{ pack.thumb_alt }}"
                   />
-                </div>
+               
 
                 <div class="card-body card-details des-antherCard">
                   <h6 class="card-title">{{ pack.name }}</h6>
@@ -229,14 +236,17 @@
           <div class="blogs overflow-hidden">
             <a routerLink="/{{singleDestination[0].name}}/travel-excursions/{{excurs.slug}}" class="text-dark">
               <div class="card main-card text-center anotherCard offerCard">
-                <div class="img">
-                  <img src="../../../assets/imgs/hot4.png" class="top" alt="" />
-                  <img
+               
+                <p  class="affe">
+                  <span class="offerr">
+                      {{"Hot Offer"|translate}}
+                  </span>
+              </p>                  <img
                     [src]="excurs.thumb"
                     class="min-top"
                     alt="{{ excurs.thumb_alt }}"
                   />
-                </div>
+                
 
                 <div class="card-body card-details des-antherCard">
                   <h6 class="card-title">{{ excurs.name }}</h6>
@@ -252,14 +262,15 @@
           <div class="blogs overflow-hidden">
             <a routerLink="/{{singleDestination[0].name}}/travel-cruises/{{curies.slug}}" class="text-dark">
               <div class="card main-card text-center anotherCard offerCard">
-                <div class="img">
-                  <img src="../../../assets/imgs/hot4.png" class="top" alt="" />
-                  <img
+                <p  class="affe">
+                  <span class="offerr">
+                      {{"Hot Offer"|translate}}
+                  </span>
+              </p>                  <img
                     [src]="curies.thumb"
                     class="min-top"
                     alt="{{ curies.thumb_alt }}"
                   />
-                </div>
 
                 <div class="card-body card-details des-antherCard">
                   <h6 class="card-title">{{ curies.name }}</h6>
@@ -276,7 +287,7 @@
 <section class="sec-bg py-4">
   <div class="container">
     <div class="head-title mb-4">
-      <h3 class="font-weight-bold">Related Pages</h3>
+      <h3 class="font-weight-bold">{{"Related Pages"|translate}}</h3>
     </div>
 
     <owl-carousel-o [options]="customOptions">

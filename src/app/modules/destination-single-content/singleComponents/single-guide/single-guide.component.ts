@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Guide } from '../../../../interfaces/guide';
 import { TravelGuide } from '../../../../interfaces/travel-guide';
@@ -26,13 +27,15 @@ export class SingleGuideComponent implements OnInit {
 
   constructor(public _homeService: HomeserviceService,
     private _Meta : Meta ,
-    private _Title : Title) {}
+    private _Title : Title,
+    private _active : ActivatedRoute) {}
 
   ngOnInit(): void {
     // Get Id From Loacal Storage
     this.idGuid = localStorage.getItem("idGuid");
     this.id = localStorage.getItem("id");
-    //  this._ActivatedRoute.snapshot.params.id;
+    this.id =  this._active.snapshot.params.id;
+    this.idGuid =  this._active.snapshot.params.slug;
     this._homeService.getSingleGuide(this.idGuid).subscribe(result => {
       this.singleGuide= result.data;
       this.relatedGuide = result.data[0].related_travel_guides;
@@ -60,13 +63,14 @@ export class SingleGuideComponent implements OnInit {
       this.alldestinationCards = res.data;
       this.desSlug = res.data[0].destination_slug
       this.desName = res.data[0].destination_name
+      let idName = res.data[0].destination__id
+      this._homeService.getOneDestinationDetails(idName).subscribe(res => {
 
+        this.GuideName = res.data[0].categories[0].name  
+        
+    })
     });
-    this._homeService.getOneDestinationDetails(this.id).subscribe(res => {
-
-      this.GuideName = res.data[0].categories[0].name  
-      
-  })
+    
   }
   customOptions: OwlOptions = {
     loop: true,

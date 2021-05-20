@@ -18,8 +18,8 @@ export class SinglePageComponent implements OnInit {
   relatedPages:Pages[]=[]
   id:any;
   img=[];
-
-  constructor(private _page : HomeserviceService , private Meta:Meta , private Title:Title , private _Active:ActivatedRoute)  { }
+  phone:any
+  constructor(private _page : HomeserviceService ,  private _Active:ActivatedRoute)  { }
   ngOnInit(): void {
     this.galleryOptions = [
       {
@@ -45,12 +45,12 @@ export class SinglePageComponent implements OnInit {
     ];
 
     this.id = this._Active.snapshot.params.slug;
-
+    this._page.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
+    });
     this._page.getSinglePage(this.id).subscribe(res => {
       this.singlePageContent = res.data
-      console.log(this.singlePageContent);
       this.relatedPages = res.data[0].related_pages
-      console.log(this.relatedPages);
       this.img=res.data[0].gallery
       this.galleryImages=[]
       this.img.forEach(ele => {
@@ -61,12 +61,8 @@ export class SinglePageComponent implements OnInit {
           big: ele,
         }
         )
-      
-      
     })
-    
   })}
-
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,

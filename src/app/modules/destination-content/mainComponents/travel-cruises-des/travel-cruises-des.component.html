@@ -7,9 +7,9 @@
                 </div>
                 <p class="mt-2"></p>
                 <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
-                    <a href="" class="call-btn d-flex align-items-center">
+                    <a  class="call-btn d-flex align-items-center">
                         <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
-                        <span class="phone-text text-dark">Call Us: <strong>+1(888) 513-5971</strong></span>
+                        <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>{{phone}}</strong></span>
                     </a>
                 </div>
             </div>
@@ -19,7 +19,7 @@
     <section>
         <div class="container">
           <div  class="page-links py-2">
-           <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+           <a class="hover-color" routerLink="/"> <span > {{"Home"|translate}} / </span>  </a>
            <a class="hover-color" routerLink="/{{desSlug}}"> <span >{{desName}} / </span>  </a>
             <span class="main-color">{{cruName}}</span>  
           </div>
@@ -44,8 +44,26 @@
                                         <div class="card border-0">
                                             <div class="row px-0">
                                                 <div class="col-md-5 px-0">
-                                                    <img src="{{cru.cruise_thumb}}" alt="{{cru.cruise_thumb_alt}}"
-                                                        class="img-fluid package-img">
+                                                    <img src="{{cru.cruise_thumb}}" alt="{{cru.cruise_thumb_alt}}" class="img-fluid package-img">
+
+                                                    <p *ngIf="cru.hot_offer" class="affe">
+                                                        <span class="offerr">
+                                                            {{"Hot Offer"|translate}}
+                                                        </span>
+                                                    </p>
+                
+                                                    <p *ngIf="cru.best_sale" class="top-sale">
+                                                        <span class="sale ">
+                                                            {{"Best Sale"|translate}}
+                                                        </span>
+                                                    </p>
+
+                                                    <p *ngIf="cru.discount" class="orang">
+                                                        <span  *ngIf="cru.discount!==null" class="orang-sale ">
+                                                            
+                                                                {{cru.discount + "% off"}}
+                                                        </span>
+                                                    </p>
                                                     <div class="map-details border mt-2">
                                                         <div class="row mx-0 px-0">
                                                             <div class="col-12 px-0">
@@ -55,7 +73,6 @@
                                                                         allowfullscreen=""></iframe>
                                                                 </div>
                                                             </div>
-    
                                                         </div>
                                                     </div>
                                                 </div>
@@ -65,46 +82,63 @@
                                                         <h5 class="card-title font-weight-bold mb-2 mt-3">
                                                             {{cru.cruise_name}}
                                                         </h5>
+                                                        <div>
+                                                            <div>
+                                                                <rating [(ngModel)]="cru.rate" [max]="max" [readonly]="readonly">
+                                                                </rating>
+                                                                <span class="reviews"> of {{cru.reviews}} {{"Reviews"|translate}}</span>
+                
+                                                            </div>
+                
+                                                        </div>
     
-                                                        <p class="package-text  pt-3" [innerHTML]="cru.cruise_description">
-                                                        </p>
+                                                        <p class="package-text  pt-3" [innerHTML]="cru.cruise_description"> </p>
+                                                        <div class="">
+                                                            <div class="  pl-2   tour "> {{"Tour Type   "|translate}}:  <i class="fas fa-ship">  </i>   Nile Cruise </div>
+                                      
+                                                        </div>
                                                         <div class="">
                                                             <div class="row mt-2 px-0 pt-4">
                                                                 <div class="col-6 col-sm-4 px-0">
                                                                     <div class="advatnage">
-                                                                        <i class="fas fa-highlighter main-color"></i>
-                                                                        <span class="text-center ml-1">Highlights</span>
+                                                                        <i class="fas fa-snowboarding main-color"></i>
+                                                                        <span class="text-center ml-1">{{cru.activities_number}} {{"Activities"|translate}}</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6 col-sm-4 px-0">
                                                                     <div class="advatnage">
                                                                         <i class="fas fa-clipboard-list main-color"></i>
-                                                                        <span class="text-center ml-1">Itinerary</span>
+                                                                        <span class="text-center ml-1">{{cru.itinerary}} {{"Days"|translate}}</span>
                                                                     </div>
+                                                      
                                                                 </div>
+
                                                                 <div class="col-6 col-sm-4 px-0">
                                                                     <div class="advatnage">
                                                                         <i class="fas fa-hotel main-color"></i>
-                                                                        <span class="text-center ml-1">Hotels</span>
+                                                                        <span class="text-center ml-1">{{cru.accommodations}} {{"Hotels"|translate}}</span>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6 col-sm-4 px-0">
                                                                     <div class="advatnage">
                                                                         <i class="fas fa-utensils main-color"></i>
-                                                                        <span class="text-center ml-1">Meals</span>
+                                                                        <span class="text-center ml-1">{{cru.meals}} {{"Meals"|translate}}</span>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-6 col-sm-4 px-0">
-                                                                    <div class="advatnage">
-                                                                        <i class="fas fa-video main-color"></i>
-                                                                        <span class="text-center ml-1">Videos</span>
-                                                                    </div>
-                                                                </div>
+
+
     
                                                                 <div class="col-6 col-sm-4 px-0">
                                                                     <div class="advatnage">
-                                                                        <i class="fas fa-question main-color"></i>
-                                                                        <span class="text-center ml-1">Included</span>
+                                                                        <i class="fas fa-wifi main-color"></i>
+                                                                        <span class="text-center ml-1">{{cru.services_number}} {{"Services"|translate}}</span>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-6 col-sm-4 px-0">
+                                                                    <div class="advatnage">
+                                                                        <i class="fab fa-guilded main-color"></i>
+                                                                        <span class="text-center ml-1">{{cru.guide_tour}} {{"Guided Tour"|translate}}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -118,26 +152,25 @@
     
                                     <div class="col-xl-2 px-0">
                                         <div class="pricing text-center pt-4 h-100 sec-bg">
-                                            <span>Pricing</span>
+                                            <span>{{"Pricing"|translate}}</span>
                                             <h4 class="font-weight-bold mb-2">Start From</h4>
-                                            <span class="price main-color font-weight-bold">{{cru.start_price}}USD</span>
+                                            <span class="price main-color font-weight-bold">${{cru.start_price}} USD</span>
     
     
                                             <p class="text-center my-2 mb-3">{{cru.duration_in_days}}
-                                                Days/{{cru.duration_in_days -x}} Nights</p>
+                                                {{"Days"|translate}}/{{cru.duration_in_days -x}} {{"Nights"|translate}}</p>
     
     
                                             <a class="main-btn p-2 d-block mb-2 font-weight-bold py-2"
                                                 (click)="setId(cru.cruise__id)"
-                                                routerLink="/{{cru.destination_slug}}/travel-cruises/{{cru.cruise_slug}}">View
-                                                Tour Details</a>
+                                                routerLink="/{{cru.destination_slug}}/travel-cruises/{{cru.cruise_slug}}">{{"View Tour Details"|translate}}</a>
     
                                             <a class="main-btn book bg-white p-2 d-block font-weight-bold pt-2"
-                                                (click)="openVerticallyCentered(content)">Booking Inquiry</a>
+                                                (click)="openVerticallyCentered(content)">{{"Booking Inquiry"|translate}}</a>
                                             <div class="mb-3 text-center pt-4">
-    
+<!--     
                                                 <rating [(ngModel)]="cru.rate" [max]="max" [readonly]="readonly">
-                                                </rating>
+                                                </rating> -->
                                             </div>
                                         </div>
     
@@ -152,7 +185,7 @@
                                             <div class="modal-body">
                                                 <section class="bg-white mt-3 px-3 py-4 booking">
                                                     <div class="head mb-2">
-                                                        <h3 class="font-weight-bolder">Excursion Booking</h3>
+                                                        <h3 class="font-weight-bolder">{{"Excursion Booking"|translate}}</h3>
                                                     </div>
                                                     <form class="mt-4">
                                                         <div class="starting-date">
@@ -223,8 +256,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <button type="submit" class="main-btn w-100 mt-3">Send Your
-                                                            Enquiry</button>
+                                                        <button type="submit" class="main-btn w-100 mt-3">{{"Send Your Enquiry"|translate}}</button>
                                                     </form>
                                                 </section>
     

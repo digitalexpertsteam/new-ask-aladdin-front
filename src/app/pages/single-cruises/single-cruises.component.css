@@ -21,6 +21,11 @@
     height: 15px;
     margin-right: 5px;
 }
+.tour i{
+
+    padding: 3px;
+    color: #f68800;
+}
 .period-details {
     background-color: #f4f5f9;
     border-radius: 5px;
@@ -401,6 +406,7 @@
 }
 .accomodation .card {
     background-color: #f4f5f9;
+    height: 300px;
 }
 .acco-link a {
     font-size: 0.8rem;

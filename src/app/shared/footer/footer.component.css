@@ -73,7 +73,9 @@ footer .shortcuts li a:hover {
     text-decoration: black;
     font-size: 13.5px;
 }
-
+footer .shortcuts li{
+    box-sizing: content-box;
+}
 .link-social{
     display: flex;
     justify-content: center;
@@ -99,7 +101,58 @@ footer .shortcuts li a:hover {
 {
     color: rgb(238, 6, 6);
 }
+
+@media only screen and (min-width: 1550px){
+    .footer{
+        min-height: 0;
+    }
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+        transform: translateY(35px);
+        
+    }
+    footer .shortcuts h6{
+        font-size: 20px;
+     }
+     footer .shortcuts a{
+        font-size: 1rem;
+     }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
+    }
+
+    
+}
 @media only screen and (max-width: 1550px){
+    .footer{
+        min-height: 0;
+    }
+    footer .shortcuts{
+        width: 100%;
+        margin-left: 9%;
+    }
+    .copyright{
+        transform: translateY(35px);
+        
+    }
+    footer .shortcuts h6{
+        font-size: 12px;
+     }
+     footer .shortcuts a{
+        font-size: .7rem;
+     }
+    .footer-links img {
+        width: 32px;
+        margin-right: 2px;
+    }
+
+    
+}
+@media only screen and (max-width: 1440px){
     .footer{
         min-height: 0;
     }
@@ -179,9 +232,14 @@ footer .shortcuts li a:hover {
         width: 100%;
         margin-left: 9%;
     }
+    footer .shortcuts h6{
+        font-size: 12px;
+     }
+     footer .shortcuts a{
+        font-size: .630rem;
+     }
     .copyright{
-
-        transform: translateY(-15px);
+        font-size: 12px;
         
     }
     .footer-links img {
@@ -196,10 +254,7 @@ footer .shortcuts li a:hover {
         width: 100%;
         margin-left: 9%;
     }
-    .copyright{
-        transform: translateY(15px);
-        
-    }
+
     .footer-links img {
         width: 32px;
         margin-right: 2px;
@@ -247,6 +302,12 @@ footer .shortcuts li a:hover {
    .footer-links i {
     font-size: 20px;
 }
+footer .shortcuts h6{
+    font-size: 12px;
+ }
+ footer .shortcuts a{
+    font-size: 1rem;
+ }
 
 }
 

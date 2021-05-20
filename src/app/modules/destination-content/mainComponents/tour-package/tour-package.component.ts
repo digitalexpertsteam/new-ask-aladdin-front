@@ -13,9 +13,13 @@ export class TourPackageComponent implements OnInit {
   desName:any;
   id:any;
   desSlug:any;
+  phone:any
   constructor(private _pack:HomeserviceService) { }
 
   ngOnInit(): void {
+    this._pack.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
+    });
     this.id = localStorage.getItem('id')
     this._pack.getSingleDestination(this.id).subscribe(res => {
       this.desName = res.data[0].destination_name
@@ -28,5 +32,6 @@ export class TourPackageComponent implements OnInit {
     })
  
   }
+  
 
 }

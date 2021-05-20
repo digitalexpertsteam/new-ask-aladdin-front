@@ -1,17 +1,4 @@
-/* .private{
-    position: relative;
-}
-.video{
-    position: absolute;
-    top: 0;
-    z-index: 1;
-}
-.view{
-    position: absolute;
-    top: 0;
-    z-index: 222222;
-    
-} */
+
 .vid {
     height: 1080px;
 }
@@ -72,22 +59,22 @@
 
 
 }
-
-
+@media only screen  and (max-width:1600px){
+    .vid{
+        height:890px;
+    }    
+}  
 @media only screen  and (max-width:1550px){
     .vid{
-        height:853px;
+        height:865px;
     }    
 }  
 
 @media only screen  and (max-width:1440px){
     .vid{
-        height:800px;
+        height:730px;
     }    
 }  
-
-
-
 @media only screen  and (max-width:1280px){
     .vid{
         height:710px;
@@ -131,8 +118,24 @@
 }
 @media only screen  and (max-width:360px){
     .vid{
-        height:200px;
+        height:190px;
+        
     }    
+    .carousel-caption {
+        top: 50%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .carousel-caption h1 {
+        font-size: 12px;
+        font-weight: 100;
+    }
+    .carousel-caption p {
+        font-size: 8px;
+    }
 }
 
 

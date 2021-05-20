@@ -27,6 +27,8 @@ import { TravExpComponent } from "../../pages/trav-exp/trav-exp.component";
 import { IvyGalleryModule } from "angular-gallery";
 import { NgxGalleryModule } from "@kolkov/ngx-gallery";
 import { DestinationContentRoutingModule } from "../destination-content/destination-content-routing.module";
+import { ReviewsComponent } from "../../pages/reviews/reviews.component";
+import { AccordionModule } from "ngx-bootstrap/accordion";
 
 
 @NgModule({
@@ -46,11 +48,14 @@ import { DestinationContentRoutingModule } from "../destination-content/destinat
     TravExpComponent,
     AccomodationComponent,
     SponsorsLogoComponent,
+    ReviewsComponent,
   ],
   imports: [
     CommonModule,
     CarouselModule,
     IvyCarouselModule,
+    AccordionModule,
+
     FormsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
@@ -87,11 +92,13 @@ import { DestinationContentRoutingModule } from "../destination-content/destinat
     TravExpComponent,
     AccomodationComponent,
     SponsorsLogoComponent,
-
+    ReviewsComponent,
     RatingModule,
     FormsModule,
     IvyGalleryModule,
     NgxGalleryModule,
+    AccordionModule,
+
 
   ],
 })

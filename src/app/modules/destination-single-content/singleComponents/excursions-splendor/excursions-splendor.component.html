@@ -5,7 +5,7 @@
                 <h1 class="h5">{{guide.name}}</h1>
                 <p [innerHTML]="guide.overview"></p>
             </div>
-           <span class="font-weight-bold">  Included  </span>
+           <span class="font-weight-bold"> {{"Included"|translate}}</span>
                 <span *ngFor='let x of guide.included'>
                     <span> {{x.content}} , </span>
                 </span>

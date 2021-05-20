@@ -2,6 +2,7 @@ import { BrowserModule, Meta, Title } from "@angular/platform-browser";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AccomodationComponent } from "./pages/accomodation/accomodation.component";
 import { AllDestinationsComponent } from "./pages/all-destinations/all-destinations.component";
 import { AllFaqDestinationComponent } from "./components/all-faq-destination/all-faq-destination.component";
@@ -99,7 +100,7 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
     // OptionalExpertsComponent,
     // PricesDatesComponent,
     RelatedToursComponent,
-    ReviewsComponent,
+    // ReviewsComponent,
     // StartingFromComponent,
     TestimonialsComponent,
     TopDestinationComponent,
@@ -151,6 +152,7 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
     BsDatepickerModule.forRoot(),
     NgbModule,
     NgxSpinnerModule,
+    AccordionModule,
     IvyGalleryModule,
     NgxGalleryModule,
     CountUpModule,

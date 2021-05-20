@@ -3,6 +3,7 @@ export interface Faqs {
   faq_name: string;
   faq_slug: string;
   faq_description: string;
+  faq_overview:string;
   faq_thumb_alt: string;
   faq_thumb: string;
   faq_created_at: string;
