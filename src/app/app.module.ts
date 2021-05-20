@@ -27,6 +27,9 @@ import { ExpertReviewsComponent } from "./pages/expert-reviews/expert-reviews.co
 import { FooterComponent } from "./shared/footer/footer.component";
 import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from "./shared/header/header.component";
+import { AboutUsComponent } from "./pages/about-us/about-us.component";
+
+
 import { HightlightesComponent } from "./pages/hightlightes/hightlightes.component";
 import { HomeComponent } from "./components/home/home.component";
 import { HomeSliderComponent } from "./pages/home-slider/home-slider.component";
@@ -73,6 +76,8 @@ import { PageComponent } from './pages/page/page.component';
 // Import library module
 import { NgxSpinnerModule } from "ngx-spinner";
 import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-footer.component';
+import { MeetOurTeamComponent } from './pages/meet-our-team/meet-our-team.component';
+import { CookiesComponent } from './pages/cookies/cookies.component';
 
 
 // components & pages
@@ -87,6 +92,7 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
   declarations: [
     AppComponent,
     HomeComponent,
+    AboutUsComponent,
     // TourDetailsComponent,
     NavbarComponent,
     FooterComponent,
@@ -135,7 +141,9 @@ import { CategoreyFooterComponent } from './shared/categorey-footer/categorey-fo
     SingleCruisesComponent,
     SinglePageComponent,
     PageComponent,
-    CategoreyFooterComponent,   
+    CategoreyFooterComponent,
+    MeetOurTeamComponent,
+    CookiesComponent,   
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,9 @@ import { NgxGalleryModule } from "@kolkov/ngx-gallery";
 import { DestinationContentRoutingModule } from "../destination-content/destination-content-routing.module";
 import { ReviewsComponent } from "../../pages/reviews/reviews.component";
 import { AccordionModule } from "ngx-bootstrap/accordion";
+import { NgxSliderModule } from "@angular-slider/ngx-slider";
+
+
 
 
 @NgModule({
@@ -40,6 +43,7 @@ import { AccordionModule } from "ngx-bootstrap/accordion";
     TourBookingComponent,
     StartingFromComponent,
     ExpertReviewsComponent,
+
     EgyptSplendorComponent,
     HightlightesComponent,
     TagsComponent,
@@ -55,6 +59,7 @@ import { AccordionModule } from "ngx-bootstrap/accordion";
     CarouselModule,
     IvyCarouselModule,
     AccordionModule,
+    NgxSliderModule,
 
     FormsModule,
     BsDropdownModule.forRoot(),
@@ -80,6 +85,8 @@ import { AccordionModule } from "ngx-bootstrap/accordion";
     PageLinksComponent,
     SponsorssComponent,
     AsideComponent,
+    NgxSliderModule,
+
     CarouselModule,
     TourBookingComponent,
     StartingFromComponent,

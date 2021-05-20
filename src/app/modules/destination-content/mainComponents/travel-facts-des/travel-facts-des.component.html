@@ -48,12 +48,12 @@
        <div class="accordion-head-line">
           <h1 class="head-accordion">{{"Myths & Facts"|translate}}</h1>
        </div>
-       <div *ngFor="let faqs of faqsContainer; let i = index">
+       <div >
         <accordion >
-          <accordion-group >
+          <accordion-group  *ngFor="let faqs of faqsContainer; let i = index" >
             <a class="w-100 btn-main"   (click)="openPlus(i)"  accordion-heading>
                <div class="name">
-                <h1 >{{faqs.faq_name}}</h1>
+                <h1 >{{faqs.type}}: {{faqs.faq_name}}</h1>
                </div> <div class="icon">
                 <!-- <i class="fa" [ngClass]="!open[i] ? 'fa-plus': 'fa-minus'"></i> -->
                 <i class="fas fa-sort-down"></i>
@@ -62,15 +62,36 @@
               </ng-template>   -->
             </div>
             </a>
-            {{faqs.faq_description}}
-            <p [innerHTML]="faqs.faq_overview"></p>
+            <div class="">
+              <div class=" thumb">
+                <img [src]="faqs.faq_thumb" class="img-fluid" [alt]="faqs.faq_thumb_alt">
+              </div>
+              <div class="type-name">
+                <h1>{{faqs.type}}:</h1> 
+                <h2>{{faqs.faq_name}}</h2>
+              </div>
+              <div class="cate-date  d-flex justify-content-between">
+                <p>{{faqs.category_name}}</p> 
+                <p class="">{{faqs.faq_created_at}}</p>
+              </div>
+              <div class="desc">
+                <p [innerHTML]="faqs.faq_overview"></p>              
+              </div>
+              <div class="dir"></div>
+
+             
+            </div>
+            
+            
           </accordion-group>  
+          
+          
           
         </accordion>
        </div>
      
      </div>
-     <div class="col-lg-3">
+     <div class="col-lg-3 review">
       <app-expert-reviews></app-expert-reviews>     
     </div>
 

@@ -1,5 +1,7 @@
 export interface Faqs {
   faq_id: string;
+  type:string;
+  category_name:string;
   faq_name: string;
   faq_slug: string;
   faq_description: string;

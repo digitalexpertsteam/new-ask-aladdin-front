@@ -88,3 +88,40 @@
  margin-top: 5px;
 
 }
+
+.thumb{
+  width: 400px;
+  margin: 10px;
+  float: right;
+}
+.type-name h1{
+
+  font-size: 25px;
+  font-weight: 700;
+
+}
+.desc{
+  text-align: justify;
+}
+.dir{
+  clear: both;
+}
+.type-name, .cate-date{
+  color: #f68800;
+}
+@media only screen and (max-width: 768px) {
+  .thumb{
+    width: 100%;
+    margin: 0;
+    float: none;
+  }
+  .type-name h1{
+  
+    font-size: 25px;
+    font-weight: 700;
+  
+  }
+  .review{
+    display: none;
+  }
+}

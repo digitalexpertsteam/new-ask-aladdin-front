@@ -255,6 +255,18 @@
 .reviews{
     font-size: .9rem !important;
 }
+.hoot{
+    grid-template: k;
+    inset-block: 2;
+    height: 20;
+}
+.rate{
+    font-size: 1.5rem ;
+}
+
+.reviews{
+    font-size: .9rem !important;
+}
 
 .map-details {
     border-radius: 5px;
@@ -298,9 +310,12 @@ border-radius:16px #f68800 !important;
 
 
 }
-.ngx-slider .ngx-slider-pointer:after{
-    color: rgb(170, 28, 28) !important;
 
 
+.ngx-slider .ngx-slider-pointer:focus-visible
+{
+border: none !important;
 }
+
+
 /*  */

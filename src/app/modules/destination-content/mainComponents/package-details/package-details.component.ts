@@ -27,26 +27,55 @@ import { Options, LabelType } from "@angular-slider/ngx-slider";
       }
     `,
   ],
-
 })
 export class PackageDetailsComponent implements OnInit {
 
-  minValue: number = 100;
-  maxValue: number = 400;
+// filter price
+  minValue: number = 1;
+  maxValue: number = 6000  ;
   options: Options = {
     floor: 0,
-    ceil: 500,
+    ceil: 6000,
+    step: 500,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
+          // console.log(value);
           return "<b>Min :</b> $" + value;
+          
         case LabelType.High:
+          console.log(value);
+
           return "<b>Max :</b> $" + value;
         default:
           return "$" + value;
       }
     }
   };
+  // filter Rate
+  minValueRate: number = 1;
+  maxValueRate: number = 6000  ;
+  optionsRate: Options = {
+    floor: 0,
+    ceil: 6000,
+    step: 500,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          // console.log(value);
+          return "<b>Min :</b> $" + value;
+          
+        case LabelType.High:
+          console.log(value);
+
+          return "<b>Max :</b> $" + value;
+        default:
+          return "$" + value;
+      }
+    }
+  };
+
+
   max = 5;
   rate = 3;
   count: any
@@ -76,10 +105,10 @@ export class PackageDetailsComponent implements OnInit {
     this.overStar = void 0;
   }
   // filter BY
-  isCollapsed = true;
-  isCollapsed2 = true;
-  isCollapsed3 = true;
-  isCollapsed4 = true;
+  isCollapsed = false;
+  isCollapsed2 = false;
+  isCollapsed3 = false;
+  isCollapsed4 = false;
   isCollapsed5 = true;
   isCollapsed6 = true;
 

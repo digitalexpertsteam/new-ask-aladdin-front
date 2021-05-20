@@ -22,8 +22,8 @@ export class TourPackageComponent implements OnInit {
     });
     this.id = localStorage.getItem('id')
     this._pack.getSingleDestination(this.id).subscribe(res => {
-      this.desName = res.data[0].destination_name
-      this.desSlug = res.data[0].destination_slug
+      this.desName = res.data[0]?.destination_name
+      this.desSlug = res.data[0]?.destination_slug
     })
     this._pack.getOneDestinationDetails(1).subscribe(res => {
       this.packageContent = res.data[0].categories

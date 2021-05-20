@@ -10,35 +10,35 @@
     <li>
       <div class=" link-social   " *ngFor="let social of socialsContainer">
 
-       
-  
-  
-  
+
+
+
+
         <a class="fb " href="{{social.facebook}}">
-          <li class="mr-2 social "> <i class="fab fa-facebook-f"></i></li>
-        </a>
-        <a class="twt" href="{{social.twitter}}">
-          <li class="mr-2 social"><i class="fab fa-twitter"></i></li>
-        </a>
-        <a class="pain" href="{{social.pinterest}}">
-          <li class="mr-2 social"><i class="fab fa-pinterest-p"></i></li>
-        </a>
-        <a class="fli" href="{{social.flickr}}">
-          <li class="mr-2 social"><i class="fab fa-flickr"></i></li>
-        </a>
-        <a class="lin" href="{{social.linkedin}}">
-          <li class="mr-2 social"><i class="fab fa-linkedin-in"></i></li>
-        </a>
-        <a class="ins" href="{{social.instagram}}">
-          <li class="mr-2 social"><i class="fab fa-instagram"></i></li>
-        </a>
-        <a class="yout" href="{{social.youtube}}">
-          <li class="mr-2 social"><i class="fab fa-youtube"></i></li>
-        </a>
-  
-  
-  
-      </div>
+    <li class="mr-2 social "> <i class="fab fa-facebook-f"></i></li>
+    </a>
+    <a class="twt" href="{{social.twitter}}">
+      <li class="mr-2 social"><i class="fab fa-twitter"></i></li>
+    </a>
+    <a class="pain" href="{{social.pinterest}}">
+      <li class="mr-2 social"><i class="fab fa-pinterest-p"></i></li>
+    </a>
+    <a class="fli" href="{{social.flickr}}">
+      <li class="mr-2 social"><i class="fab fa-flickr"></i></li>
+    </a>
+    <a class="lin" href="{{social.linkedin}}">
+      <li class="mr-2 social"><i class="fab fa-linkedin-in"></i></li>
+    </a>
+    <a class="ins" href="{{social.instagram}}">
+      <li class="mr-2 social"><i class="fab fa-instagram"></i></li>
+    </a>
+    <a class="yout" href="{{social.youtube}}">
+      <li class="mr-2 social"><i class="fab fa-youtube"></i></li>
+    </a>
+
+
+
+    </div>
     </li>
   </ul>
   <ul class="d-flex align-items-center justify-content-between contacts p-0 m-0">
@@ -51,7 +51,7 @@
 
       </div>
     </li>
-    
+
     <li class=" align-items-center lang-btn">
       <div class="btn-group" dropdown>
         <a id="button-basic" dropdownToggle class="main-btn text-white dropdown-toggle" aria-controls="dropdown-basic">
@@ -128,27 +128,28 @@
         </ul>
       </div>
     </li>
-   
+
   </ul>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <div class="modal-header">
+        <div   class="modal-header">
 
           <!-- <h4 class="modal-title text-center " id="exampleModalLabel">search</h4> -->
           <div class="modal-body ">
-            <label class="labelSearch w-100 d-flex" for="">
+            <label class="labelSearch w-100 d-flex">
 
-              <input type="search mt-5" [(ngModel)]="term" (keyup)="termS(term)" class="form-control  mt-1 "
+              <input  type="search mt-5" #value [(ngModel)]="term" (keyup)="termS(term , value)" class="form-control  mt-1 "
                 placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
             </label>
 
 
 
-            <div class="searchTitle">
-              <h2 *ngIf="destinations.length>0" class="mt-2"> <a href="/all-destinations">Destinations </a> </h2>
+            <div *ngIf="destinations.length>0" class="searchTitle">
+
+              <h2  class="mt-2"> <a href="/all-destinations">Destinations </a> </h2>
               <div class="row">
 
                 <div *ngFor="let destination of destinations" class="d-flex flex-wrap">
@@ -157,7 +158,7 @@
                       <div class="card main-card text-center anotherCard">
                         <img [src]="destination.thumb" class="img-fluid" alt="{{ destination.thumb_alt }}" />
 
-                        <div class="card-body card-details des-antherCard">
+                        <div class="card-body card-details des-antherCard"> 
                           <h6 class="card-title">{{ destination.name }}</h6>
                         </div>
                       </div>
@@ -170,8 +171,8 @@
               </div>
             </div>
 
-            <div class="searchTitle">
-              <h2 *ngIf="blogs.length>0" class="mt-2"> <a href="{{desSlug}}/blogs">Blog </a></h2>
+            <div *ngIf="blogs.length>0"  class="searchTitle">
+              <h2 class="mt-2"> <a href="{{desSlug}}/blogs">Blog </a></h2>
               <div *ngFor="let destination of destinations" class="row">
                 <div *ngFor="let blog of blogs" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
@@ -191,7 +192,7 @@
 
               </div>
             </div>
-            <hr>
+
 
             <!-- <div class="searchTitle ">
               <h2 *ngIf="package.length>0" class="mt-2"> <a href="/all-Packages">Packages </a></h2>
@@ -202,8 +203,8 @@
             </div>
             <hr> -->
 
-            <div class="searchTitle ">
-              <h2 *ngIf="package.length>0" class="mt-2"> <a href="/all-Packages">Packages </a></h2>
+            <div *ngIf="package.length>0" class="searchTitle ">
+              <h2  class="mt-2"> <a href="/all-Packages">Packages </a></h2>
               <div *ngFor="let destination of destinations" class="row">
 
                 <div *ngFor="let packag of package" class="d-flex flex-wrap">
@@ -226,19 +227,23 @@
             </div>
 
 
-              </div>
-            </div>
 
-            <div class="searchTitle">
-              <h2 *ngIf="cruise.length>0" class="mt-2"> <a href="{{desSlug}}/travel-cruises">Travel Cruise </a> </h2>
+
+
+
+
+
+        
+            <div  *ngIf="cruise.length>0" class="searchTitle">
+              <h2 class="mt-2"> <a href="{{desSlug}}/travel-cruises">Travel Cruise </a> </h2>
               <div *ngFor="let destination of destinations" class="row">
-
+    
                 <div *ngFor="let blog of cruise" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
                     <a href="/{{destination.slug}}/single-cruises/{{blog.slug}}" class="text-dark">
                       <div class="card main-card text-center blogCard anotherCard">
                         <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
-
+    
                         <div class="card-body card-details des-antherCard">
                           <h6 class="card-title">{{ blog.name }}</h6>
                         </div>
@@ -246,22 +251,22 @@
                     </a>
                   </div>
                 </div>
-
-
-
+    
+    
+    
               </div>
             </div>
-
-            <div class="searchTitle">
-              <h2 *ngIf="excursion.length>0" class="mt-2"> <a href="{{desSlug}}/travel-excursions">Excursion </a></h2>
+    
+            <div *ngIf="excursion.length>0" class="searchTitle">
+              <h2  class="mt-2"> <a href="{{desSlug}}/travel-excursions">Excursion </a></h2>
               <div *ngFor="let destination of destinations" class="row">
-
+    
                 <div *ngFor="let blog of excursion" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
                     <a href="/{{destination.slug}}/travel-excursions/{{blog.slug}}" class="text-dark">
                       <div class="card main-card text-center blogCard anotherCard">
                         <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
-
+    
                         <div class="card-body card-details des-antherCard">
                           <h6 class="card-title">{{ blog.name }}</h6>
                         </div>
@@ -269,21 +274,23 @@
                     </a>
                   </div>
                 </div>
-
-
-
+    
+    
+    
               </div>
             </div>
-            <div class="searchTitle">
-              <h2 *ngIf="category.length>0" class="mt-2"><a>Category </a></h2>
+    
+    
+            <div *ngIf="category.length>0" class="searchTitle">
+              <h2  class="mt-2"><a>Category </a></h2>
               <div *ngFor="let destination of destinations" class="row">
-
+    
                 <div *ngFor="let blog of category" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
                     <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
                       <div class="card main-card text-center blogCard anotherCard">
                         <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
-
+    
                         <div class="card-body card-details des-antherCard">
                           <h6 class="card-title">{{ blog.name }}</h6>
                         </div>
@@ -291,21 +298,21 @@
                     </a>
                   </div>
                 </div>
-
-
-
+    
+    
+    
               </div>
             </div>
-            <div class="searchTitle">
-              <h2 *ngIf="faq.length>0" class="mt-2"><a href="{{desSlug}}/facts-myths">Facts & Myths </a> </h2>
+            <div *ngIf="faq.length>0" class="searchTitle">
+              <h2  class="mt-2"><a href="{{desSlug}}/facts-myths">Facts & Myths </a> </h2>
               <div *ngFor="let destination of destinations" class="row">
-
+    
                 <div *ngFor="let blog of faq" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
                     <a href="/{{destination.slug}}/facts-myths/{{blog.slug}}" class="text-dark">
                       <div class="card main-card text-center blogCard anotherCard">
                         <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
-
+    
                         <div class="card-body card-details des-antherCard">
                           <h6 class="card-title">{{ blog.name }}</h6>
                         </div>
@@ -313,21 +320,21 @@
                     </a>
                   </div>
                 </div>
-
-
-
+    
+    
+    
               </div>
             </div>
-            <div class="searchTitle">
-              <h2 *ngIf="hotel.length>0" class="mt-2">Hotel</h2>
+            <div  *ngIf="hotel.length>0"  class="searchTitle">
+              <h2 class="mt-2">Hotel</h2>
               <div *ngFor="let destination of destinations" class="row">
-
+    
                 <div *ngFor="let blog of hotel" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
                     <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark">
                       <div class="card main-card text-center blogCard anotherCard">
                         <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
-
+    
                         <div class="card-body card-details des-antherCard">
                           <h6 class="card-title">{{ blog.name }}</h6>
                         </div>
@@ -335,23 +342,41 @@
                     </a>
                   </div>
                 </div>
-
-
-
+    
+    
+    
+              </div>
+            </div>
+    
+            <div *ngIf="travel_guide.length>0"  class="searchTitle">
+              <h2  class="mt-2 "><a href="{{desSlug}}/travel-guides">Travel Guides</a></h2>
+              <div *ngFor="let destination of destinations" class="row">
+                <div *ngFor="let blog of travel_guide" class="d-flex flex-wrap">
+                  <div class="blogs overflow-hidden">
+                    <a href="/{{destination.slug}}/travel-guides/{{blog.slug}}" class="text-dark">
+                      <div class="card main-card text-center blogCard anotherCard">
+                        <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
+    
+                        <div class="card-body card-details des-antherCard">
+                          <h6 class="card-title">{{ blog.name }}</h6>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
-
-            <div class="searchTitle">
-              <h2 *ngIf="page.length>0" class="mt-2"><a href="/page">Pages</a></h2>
+            <div *ngIf="page.length>0" class="searchTitle">
+              <h2  class="mt-2"><a href="/page">Pages</a></h2>
               <div *ngFor="let destination of destinations" class="row">
-
+    
                 <div *ngFor="let blog of page" class="d-flex flex-wrap">
                   <div class="blogs overflow-hidden">
                     <!-- <a href="/{{destination.slug}}/{{blog.slug}}" class="text-dark"> -->
                     <div class="card main-card text-center blogCard anotherCard">
                       <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
-
+    
                       <div class="card-body card-details des-antherCard">
                         <h6 class="card-title">{{ blog.name }}</h6>
                       </div>
@@ -361,28 +386,25 @@
                 </div>
               </div>
             </div>
-            <div>
-              <h2 *ngIf="travel_guide.length>0" class="mt-2"><a href="{{desSlug}}/travel-guides">Travel Guides</a></h2>
-              <div *ngFor="let destination of destinations" class="row">
-                <div *ngFor="let blog of travel_guide" class="d-flex flex-wrap">
-                  <div class="blogs overflow-hidden">
-                    <a href="/{{destination.slug}}/travel-guides/{{blog.slug}}" class="text-dark">
-                      <div class="card main-card text-center blogCard anotherCard">
-                        <img [src]="blog.thumb" class="img-fluid" alt="{{ blog.thumb_alt }}" />
 
-                        <div class="card-body card-details des-antherCard">
-                          <h6 class="card-title">{{ blog.name }}</h6>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
+
+
+
+
+
           </div>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
+
       </div>
+      <ng-template #search >
+
+        <h4 class=" text-center  ">  <img src="assets/imgs/dot.svg" class="img-fluid">{{"Not Search Result "|translate}} </h4>
+      </ng-template>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
 </section>

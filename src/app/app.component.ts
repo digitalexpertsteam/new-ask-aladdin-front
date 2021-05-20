@@ -25,6 +25,7 @@ export class AppComponent {
     this.seo.globalSeo().subscribe(res => {
       this.Title = res.data[0].seo_title;
       this._title.setTitle(`${this.Title}`)
+      
       this._meta.addTags([
         { name: 'keywords', content: `${res.data[0].seo_keywords}` },
         { name: 'robots', content: `${res.data[0].seo_robots}` },
@@ -37,6 +38,16 @@ export class AppComponent {
         { name: 'twitter:image', property:"og:image", content: `${res.data[0].twitter_image}`},
         { name: 'facebook:image', property:"og:image", content: `${res.data[0].facebook_image}`},
       ]); 
+
+      this.seo.getDestinationFact(1).subscribe(res => {
+        if(res.data[0].destination_seo_title == null){
+        
+          this._title.setTitle(`${this.Title}`)
+        }
+      } 
+      
+      )
+      
     })
   }
 }

@@ -20,8 +20,17 @@
     </div>
 
 </section>
-<app-page-links></app-page-links>
-<section class="sec-bg p-3 mb-5">
+<section>
+    <div class="container">
+  
+      <div  class="page-links py-2">
+       <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}}  / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{desName}} / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/travel-cruises"> <span > {{cruName}} / </span>  </a>
+        <span class="main-color">{{cruises?.name}}</span>  
+      </div>
+    </div>
+  </section><section class="sec-bg p-3 mb-5">
     <div class="container">
         <!-- <app-tags></app-tags> -->
         <!-- tag -->

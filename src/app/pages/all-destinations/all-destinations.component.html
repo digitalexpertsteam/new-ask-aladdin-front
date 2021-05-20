@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-12 col-md-4 mb-4" *ngFor="let des of destinationContainer">
                 <div class="destination-details">
-                    <a  routerLink="/{{des.slug}}" (click)="setId(des.id)">
+                    <a  routerLink="/{{des.slug}}/destination" (click)="setId(des.id)">
                         <img src="{{des.thumb}}" class="img-fluid" alt="{{des.thumb_alt}}" />
                         <div class="overlay">
                             <a class="text-white" (click)="setId(des.id)" routerLink="/{{des.id}}">{{des.name}}</a>

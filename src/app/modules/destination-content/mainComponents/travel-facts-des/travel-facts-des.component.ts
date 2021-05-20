@@ -27,7 +27,7 @@ export class TravelFactsDesComponent implements OnInit {
   faName:any;
 
   category: string = "";
-  title!: String;
+  Title!: String;
   id: any;
   allFaqs: destination[] = [];
 
@@ -51,8 +51,8 @@ export class TravelFactsDesComponent implements OnInit {
       this.faqsDes = result.data[0].destination_description;
       this.desName = result.data[0].destination_name;
       this.desSlug = result.data[0].destination_slug;
-      this.title = result.data[0].destination_seo_title;
-      this._Title.setTitle(`${this.title}`);
+      this.Title = result.data[0].destination_seo_title;
+      this._Title.setTitle(`${this.Title}`);
       this._Meta.addTags([
         { name: "keywords", content: `${result.data[0].destination_seo_keywords}`,},
         { name: "robots", content: `${result.data[0].destination_seo_robots}`},
