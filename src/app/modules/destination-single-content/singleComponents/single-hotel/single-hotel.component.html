@@ -106,9 +106,9 @@
                         <div class="head mb-4">
                             <h4 class="pl-2 mt-2 font-weight-bold">{{"Location"|translate}}</h4>
                         </div>
-                        <div class=" pl-2 d-flex justify-content-between " *ngFor="let hot of hotel">
-                            <h5 class="check">{{"Check In"|translate}} <span class="location">: </span>{{ hot?.checkin }}</h5>
-                            <h5 class="check">{{"Check Out"|translate}} <span class="location">: </span> {{ hot?.checkout }}</h5>
+                        <div class=" pl-2  " *ngFor="let hot of hotel">
+                            <h5 class="check"><i class="fas fa-share"></i> <span class="font-weight-bold">{{ " Check In"|translate}} </span> <span class="location">: </span>{{ hot?.checkin }}</h5>
+                            <h5 class="check"><i class="fas fa-reply"></i> <span class="font-weight-bold">{{ " Check Out"|translate}}</span> <span class="location">: </span> {{ hot?.checkout }}</h5>
 
                         </div>
                         <div class="col-sm-12">
