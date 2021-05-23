@@ -59,6 +59,16 @@
 
 
 }
+@media only screen  and (max-width:1900px){
+    .vid{
+        height:945px;
+    }    
+}  
+@media only screen  and (max-width:1650px){
+    .vid{
+        height:890px;
+    }    
+}  
 @media only screen  and (max-width:1600px){
     .vid{
         height:890px;
@@ -81,12 +91,12 @@
 }  
 @media only screen  and (max-width:1480px){
     .vid{
-        height:810px;
+        height:830px;
     }    
 }  
 @media only screen  and (max-width:1440px){
     .vid{
-        height:750px;
+        height:810px;
     }    
 }  
 @media only screen  and (max-width:1400px){

@@ -72,6 +72,7 @@
 .searchTitle h2 a:hover{
 color: #fff;
 }
+
 .modal-dialog{
     width: 100%;
     max-width: 100%;
@@ -180,6 +181,10 @@ hr{
    
    color: #fff;
    
+}
+h4 img {
+    height: 20px;
+    margin-top: 3px;
 }
 
 .card-details{

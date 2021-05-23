@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pages } from '../../interfaces/pages';
+import { HomeserviceService } from '../../services/homeservice.service';
 
 @Component({
   selector: 'app-privacy-policy',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./privacy-policy.component.css']
 })
 export class PrivacyPolicyComponent implements OnInit {
+  singlePageContent:Pages[]=[];
+  phone:any
 
-  constructor() { }
+  constructor(private _page : HomeserviceService ,) { }
 
   ngOnInit(): void {
-  }
-
-}
+    this._page.getSinglePage(`privacy-policy`).subscribe(res => {
+      this.singlePageContent = res.data
+    })
+    this._page.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
+    });
+}}

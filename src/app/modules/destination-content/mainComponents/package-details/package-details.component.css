@@ -310,9 +310,29 @@ border-radius:16px #f68800 !important;
 
 
 }
-.ngx-slider .ngx-slider-pointer:after{
-    color: rgb(170, 28, 28) !important;
 
 
+.ngx-slider .ngx-slider-pointer-active 
+{
+border: none !important;
+color: #000 !important;
+}
+.ngx-slider-pointer-min ngx-slider-active{
+    border: none !important;
+color: #000 !important;
+}
+
+
+.ngx-slider .ngx-slider-pointer.ngx-slider-active:after  
+{
+    color: #fffa66 !important;
+    border: none !important;
+}
+
+
+
+
+.fa, .fas{
+    color: #f68800;
 }
 /*  */

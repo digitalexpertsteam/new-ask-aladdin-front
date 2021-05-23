@@ -12,7 +12,7 @@
                             <img src="{{des.thumb}}" class="img-fluid" alt="{{des.thumb_alt}}" />
                             <div class="overlay">
                                 <a class="text-white" routerLink="/{{des.slug}}/destination"
-                                    (click)="setId(des.id)">{{des.name}}</a>
+                                    >{{des.name}}</a>
                             </div>
                         </a>
                     </div>
@@ -37,7 +37,7 @@
                                 <a routerLink="/{{des.slug}}/destination">
                                     <img src="{{des.thumb}}" class="img-fluid w-100" alt="{{des.thumb_alt}}" />
                                     <div class="overlay">
-                                        <a routerLink="/{{des.slug}}/destination" (click)="setId(des.id)"
+                                        <a routerLink="/{{des.slug}}/destination" 
                                             class="text-white">{{des.name}}</a>
                                     </div>
                                 </a>
@@ -48,7 +48,7 @@
                                 <a routerLink="/{{des.slug}}/destination">
                                     <img src="{{des.thumb}}" class="img-fluid w-100" alt="{{des.thumb_alt}}" />
                                     <div class="overlay">
-                                        <a class="text-white" (click)="setId(des.id)"
+                                        <a class="text-white" 
                                             routerLink="/{{des.slug}}/destination">{{des.name}}</a>
                                     </div>
                                 </a>
@@ -61,8 +61,8 @@
                                 <a routerLink="/{{des.slug}}">
                                     <img src="{{des.thumb}}" class="img-fluid w-100" alt="{{des.thumb_alt}}" />
                                     <div class="overlay">
-                                        <a class="text-white" (click)="setId(des.id)"
-                                            routerLink="/{{des.slug}}">{{des.name}}</a>
+                                        <a class="text-white" 
+                                            routerLink="/{{des.slug}}/destination">{{des.name}}</a>
                                     </div>
                                 </a>
                             </div>
@@ -74,8 +74,8 @@
                         <a routerLink="/{{des.slug}}">
                             <img src="{{des.thumb}}" class="img-fluid w-100 turkey" />
                             <div class="overlay">
-                                <a class="text-white" routerLink="/{{des.slug}}"
-                                    (click)="setId(des.id)">{{des.name}}</a>
+                                <a class="text-white" routerLink="/{{des.slug}}/destination"
+                                    >{{des.name}}</a>
                             </div>
                         </a>
                     </div>

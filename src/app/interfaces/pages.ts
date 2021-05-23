@@ -3,7 +3,7 @@ export interface Pages {
     name: string;
     slug: string;
     page_title: string;
-    description:string;
+    description: string;
     thumb_alt: string;
     category_name: string;
     category_slug: string;
@@ -11,5 +11,12 @@ export interface Pages {
     category_thumb_alt: string;
     category_thumb: string;
     thumb: string;
-    banner:String
+    banner: String;
+    seo_description: string;
+    seo_keywords: string;
+    seo_robots: string;
+    seo_title: string;
+    twitter_description: string;
+    twitter_image: string;
+    twitter_title: string;
 }

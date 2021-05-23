@@ -10,42 +10,16 @@
                 <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
                     (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
                     <div class="">
-                        <i class="far fa-calendar-alt mr-2"></i>{{"Departure Date"|translate}}
+                        <i class="fas far fa-calendar-alt mr-2"></i>{{"Duration"|translate}}
                     </div>
                     <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed, 'fa-angle-up': !isCollapsed}"></i>
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed" [isAnimated]="true">
-                    <div class="form-check mb-2 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Nov 2019
-                        </label>
-                    </div>
-                    <div class="form-check mb-2 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Dec 2019
-                        </label>
-                    </div>
-                    <div class="form-check mb-2 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Jan 2019
-                        </label>
-                    </div>
-                    <div class="form-check mb-2 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Feb 2019
-                        </label>
-                    </div>
-                    <div class="form-check mb-2 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Mar 2019
-                        </label>
-                    </div>
+                    <ngx-slider [(value)]="minValueDays" [(highValue)]="maxValueDays" [options]="optionsDays"></ngx-slider>
+
+
+
                 </div>
             </div>
             <div class="filter-content border-bottom">
@@ -53,14 +27,32 @@
 
                     (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseBasic">
                     <div class="">
-                        <i class="fas fa-map-marker-alt mr-2"></i>{{"Prices"|translate}}
+                        <i class="fas fa-dollar-sign"></i> {{"Prices"|translate}}
                     </div>
         
                     <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed2, 'fa-angle-up': !isCollapsed2}"></i>
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed2" [isAnimated]="true">
                         
-                    <!-- <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider> -->
+                    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+
+                </div>
+            </div>
+            
+           
+            <div class="filter-content border-bottom">
+                <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+                    (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseBasic">
+                    <div class="">
+                        <i class="fas far fa-star"></i> Rating
+                    </div>
+        
+                    <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed4, 'fa-angle-up': !isCollapsed4}"></i>
+
+                </a>
+                <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
+                    <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider>
+
 
                 </div>
             </div>
@@ -102,20 +94,7 @@
             </div>
 
 
-<!--             
-            <div class="filter-content border-bottom">
-                <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
-                    (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseBasic">
-                    <div class="">
-                        <i class="fas fa-skating mr-2"></i>Activities
-                    </div>
-        
-                    <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed4, 'fa-angle-up': !isCollapsed4}"></i>
-
-                </a>
-                <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
-                </div>
-            </div>
+            <!--  
             <div class="filter-content border-bottom">
                 <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
                     (click)="isCollapsed5 = !isCollapsed5" [attr.aria-expanded]="!isCollapsed5" aria-controls="collapseBasic">
@@ -270,7 +249,7 @@
                     <div class="col-xl-2 px-0 ">
                         <div class="pricing text-center h-100 sec-bg">
                             <div class=" ">
-                            <span>{{"Pricing"|translate}}Pricing</span>
+                            <span>{{"Pricing"|translate}}</span>
                             <h4 class="font-weight-bold mb-2">{{"Start From"|translate}}</h4>
                             <span class="price main-color font-weight-bold">${{singleDes.start_price}} USD</span>
                             <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}}

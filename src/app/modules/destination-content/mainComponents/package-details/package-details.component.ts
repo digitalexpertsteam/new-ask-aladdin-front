@@ -30,22 +30,73 @@ import { Options, LabelType } from "@angular-slider/ngx-slider";
 })
 export class PackageDetailsComponent implements OnInit {
 
-  minValue: number = 100;
-  maxValue: number = 400;
+// filter price
+  minValue: number = 1;
+  maxValue: number = 6000  ;
   options: Options = {
     floor: 0,
-    ceil: 500,
+    ceil: 6000,
+    step: 500,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
+          // console.log(value);
           return "<b>Min :</b> $" + value;
+          
         case LabelType.High:
+          console.log(value);
+
           return "<b>Max :</b> $" + value;
         default:
           return "$" + value;
       }
     }
   };
+  // filter Rate
+  minValueRate: number = 1;
+  maxValueRate: number = 5  ;
+  optionsRate: Options = {
+    floor: 1,
+    ceil: 5,
+    step: 1,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          // console.log(value);
+          return "<i class='fas fa-star'></i>" + value;
+          
+        case LabelType.High:
+          console.log(value);
+
+          return "<i class='fas fa-star'></i>" + value;
+        default:
+          return "<i class='fas fa-star'></i>" + value;
+      }
+    }
+  };
+// filter Days
+minValueDays: number = 1;
+maxValueDays: number = 6000  ;
+optionsDays: Options = {
+  floor: 1,
+  ceil: 30,
+  step: 1,
+  translate: (value: number, label: LabelType): string => {
+    switch (label) {
+      case LabelType.Low:
+        // console.log(value);
+        return "Days : " + value;
+        
+      case LabelType.High:
+        console.log(value);
+
+        return "Days : " + value;
+      default:
+        return "Days : " + value;
+    }
+  }
+};
+
   max = 5;
   rate = 3;
   count: any
@@ -75,10 +126,10 @@ export class PackageDetailsComponent implements OnInit {
     this.overStar = void 0;
   }
   // filter BY
-  isCollapsed = true;
-  isCollapsed2 = true;
-  isCollapsed3 = true;
-  isCollapsed4 = true;
+  isCollapsed = false;
+  isCollapsed2 = false;
+  isCollapsed3 = false;
+  isCollapsed4 = false;
   isCollapsed5 = true;
   isCollapsed6 = true;
 

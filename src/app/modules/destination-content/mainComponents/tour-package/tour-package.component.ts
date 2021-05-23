@@ -22,11 +22,10 @@ export class TourPackageComponent implements OnInit {
       this.phone = result.data[0].phone1
     });
     this.id = this.active.snapshot.params.slug
-    console.log(this.id);
     
     this._pack.getSingleDestination(this.id).subscribe(res => {
-      this.desName = res.data[0].destination_name
-      this.desSlug = res.data[0].destination_slug
+      this.desName = res.data[0]?.destination_name
+      this.desSlug = res.data[0]?.destination_slug
     })
     this._pack.getOneDestinationDetails(1).subscribe(res => {
       this.packageContent = res.data[0].categories

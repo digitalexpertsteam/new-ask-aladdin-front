@@ -1,20 +1,20 @@
-<section class="sec-banner text-center">
-    <div class="container">
-        <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
-            <h1><span class="main-color font-weight-bold">Egypt </span> Travel Guide
-            </h1>
+<section *ngFor="let page of singlePageContent" >
+    <section class="banner text-center"
+        [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + page.banner }">
+        <div class="container">
+            <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+                <h1><span class="main-color des-Name font-weight-bold"> {{page.name}}</span>  </h1>
+            </div>
+            <p class="mt-2"></p>
+            <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+                <a class="call-btn d-flex align-items-center">
+                    <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
+                    <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>{{phone}}</strong></span>
+                </a>
+            </div>
         </div>
-        <p class="mt-2">Below you'll find the wide variety of attractions here in Egypt. Keep any of these in mind
-            when planning your trip!</p>
-        <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
-            <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a>
-            <a href="" class="call-btn d-flex align-items-center">
-                <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
-                <span class="phone-text text-dark">Call Us: <strong>+1(888) 513-5971</strong></span>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
+     </section>
 <section>
     <div class="container">
         <div class="page-links py-2">
@@ -23,12 +23,12 @@
         </div>
     </div>
 </section>
-<section class="sec-bg py-4">
+<section  *ngFor="let page of singlePageContent" class="sec-bg py-4">
     <div class="container">
         <div class="head-title mb-4">
-            <h2 class="font-weight-bold">Privacy Policy</h2>
+            <h2 class="font-weight-bold">{{page.page_title}}</h2>
         </div>
-        <div class="privacy-content">
+        <!-- <div class="privacy-content">
             <p>We are not targeting the personal information of a specific person; however, personal information is
                 collected from users who would like to use achilleseg.com Website or relevant internet pages (including,
                 but not limited to, purchasing goods or when you contact our users support center team whether by phone
@@ -41,7 +41,11 @@
                 reflect your commitment to the terms and conditions provided for in the modified agreement, which
                 determines how we process your personal information which you’re presented to us. Please refer to
                 achilleseg.com Management advertisements relevant to this (Privacy Policy) from time to time.</p>
+        </div> -->
+        <div class="single-blog-content w-100 mb-5">
+            <p [innerHtml]="page.description"></p> 
         </div>
+
     </div>
 </section>
 <app-sponsorss></app-sponsorss>

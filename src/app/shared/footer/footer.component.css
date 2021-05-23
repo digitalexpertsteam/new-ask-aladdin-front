@@ -63,7 +63,10 @@ footer .shortcuts li a:hover {
 }
 .links
 {
-    margin-right: 20px;
+    margin-right: 10px;
+}
+.links p {
+    margin-left: 10px   ;
 }
 .copyright
 {

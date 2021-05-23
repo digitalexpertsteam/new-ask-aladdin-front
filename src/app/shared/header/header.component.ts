@@ -26,6 +26,8 @@ export class HeaderComponent implements OnInit {
   package: Blog[] = [];
   cruise: Blog[] = [];
 
+  search:Blog[]=[];
+  
   faq: Blog[] = [];
   excursion: Blog[] = [];
   category: Blog[] = [];
@@ -97,9 +99,11 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  termS(term: any) {
+  termS(term: any , value:any) {
     this.header.search(term).subscribe(result => {
-
+      console.log();
+      
+      this.search = result.data
       this.blogs = result.data.blogs
       this.destinations = result.data.destinations
       this.desSlug = result.data.destinations[0].slug
@@ -113,8 +117,12 @@ export class HeaderComponent implements OnInit {
       this.page = result.data.page
       this.travel_guide = result.data.travel_guide
 
-
-
+      if(value.value = '' ){
+        
+        console.log("no result");
+        
+      }
+      
 
 
     })

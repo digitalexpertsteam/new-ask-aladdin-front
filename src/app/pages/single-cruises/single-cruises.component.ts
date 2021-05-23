@@ -6,6 +6,7 @@ import { Blog } from '../../interfaces/blog';
 import {Gallery} from 'angular-gallery';
 import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
 import { ActivatedRoute } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-single-cruises',
@@ -15,6 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SingleCruisesComponent implements OnInit {
   desName: any;
   cruName: any;
+  Title: any;
   Itinerary(){
     document.getElementById('Itinerary')?.scrollIntoView({behavior:'smooth'})
   }
@@ -38,7 +40,7 @@ export class SingleCruisesComponent implements OnInit {
   contact:any=[];
   idCru:any;
   id:any
-  Deafult = `../../../assets/imgs/the-best-10-river-nile-cruises-in-egypt.jpg`
+  Deafult = `../../../assets/imgs/7.jpg`
   desSlug:any
   related:Blog[]=[];
   selectTrue = true
@@ -56,7 +58,7 @@ export class SingleCruisesComponent implements OnInit {
   cruises:any
   galery:any
   ttt:any
-  constructor(public _cruises:HomeserviceService,  private gallery: Gallery , private active:ActivatedRoute) { }
+  constructor(public _cruises:HomeserviceService,  private gallery: Gallery , private active:ActivatedRoute ,private _meta:Meta , private _title:Title) { }
   ngOnInit(): void {
     
     this.galleryOptions = [
@@ -95,17 +97,9 @@ export class SingleCruisesComponent implements OnInit {
         this.cruName = res.data[0].categories[3].name  
         
     })
-
-    });
+});
     this._cruises.getSingleCruise(this.idCru).subscribe(result => {
       this.cruises = result.data[0]; 
-      if(this.cruises.banner == 1){
-        
-        
-        this.cruises.banner = this.Deafult
-      }
-      console.log(this.cruises.banner);
-
       console.log(this.cruises);
       
       this.ttt = result.data[0].hotels; 
@@ -113,6 +107,22 @@ export class SingleCruisesComponent implements OnInit {
       this.galery = result.data[0].gallery; 
 
       this.related = result.data[0].related_cruises; 
+
+      this.Title = result.data[0].seo_title;
+      console.log(this.Title);
+      this._title.setTitle(`${this.Title}`)
+      this._meta.addTags([
+        { name: 'keywords', content: `${result.data[0].seo_keywords}` },
+        { name: 'robots', content: `${result.data[0].seo_robots}` },
+        { name: 'description', content: `${result.data[0].seo_description}`},
+        { name: 'facebook:description', content: `${result.data[0].facebook_description}`},
+        { name: 'twitter:title', content: `${result.data[0].twitter_title}`},
+        { name: 'twitter:description', content: `${result.data[0].twitter_description}`},
+        { name: "twitter:image", content: `${result.data[0].twitter_description}`},
+        { name: 'twitter:image', property:"og:image", content: `${result.data[0].twitter_image}`},
+        { name: 'facebook:image', property:"og:image", content: `${result.data[0].facebook_image}`},
+        
+      ]);   
       
       this.img=result.data[0].gallery
       this.galleryImages=[]

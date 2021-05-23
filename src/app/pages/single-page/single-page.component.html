@@ -17,16 +17,16 @@
     </section>
 
      </section>
-<!-- <section>
+<section>
     <div class="container">
-      <div *ngFor='let single of singleBlog '  class="page-links py-2">
+      <div *ngFor='let single of singlePageContent '  class="page-links py-2">
        <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}"> <span > {{desName}} / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}/blogs"> <span > {{blogName}} / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{desName}} / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/category/{{single.category_slug}}"> <span > {{single.category_name}} / </span>  </a>
         <span class="main-color">{{single.name}}</span>  
       </div>
     </div>
-  </section> -->
+  </section>
 <section class="sec-bg py-4">
     <div class="container px-5">
         <div *ngFor="let page of singlePageContent"  class="row " >
@@ -44,10 +44,8 @@
                     <p [innerHtml]="page.description"></p> 
                   
                 </div>
-
                 <div class=" text-center sec-bg">
                     <h2 class=" mb-5">{{"Related Pages"|translate}}</h2>
-
                         <owl-carousel-o [options]="customOptions">
                             <ng-template *ngFor="let page of relatedPages"  carouselSlide>
                                 <div class="slide">                                    
@@ -65,29 +63,24 @@
                                     </div>                               
 
                                 </div>
-                            </ng-template>
-                            
-                            
-                             
+                            </ng-template>                  
                         </owl-carousel-o>
-                        
                 </div>
-                <section id="Gallery p-3" class="pt-3">                 
-
-         
+                <section id="Gallery p-3" class="pt-3">
                     <div class="m-auto" >
                         <ngx-gallery  [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
                       </div>
-                      
-
                 </section>
             </div>
+               
+               
+            
             <div class="col-12 col-md-3">
                 <app-expert-reviews></app-expert-reviews>
                 <app-tour-booking></app-tour-booking>
                 <app-optional-experts></app-optional-experts>             
             </div>
-            
         </div>
-    </div>   
+        </div>
+      
 </section>
