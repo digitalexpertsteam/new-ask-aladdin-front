@@ -56,7 +56,7 @@
             <ng-template *ngFor="let faq of alldestinationCards" carouselSlide>
               <div class="slide">
                 <div class="blogs overflow-hidden">
-                  <a href="/{{ desSlug }}/facts-myths/{{ faq.faq_slug }}" (click)="setId(faq.faq_id)">
+                  <a href="/{{ desSlug }}/facts-myths/{{ faq.faq_slug }}">
                     <div class="card main-card text-center">
                       <img [src]="faq.faq_thumb" class="img-slide" alt="{{ faq.faq_thumb_alt }}" />
 

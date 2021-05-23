@@ -27,6 +27,7 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
   allGuides:destination[]=[];
   navigate:any;
   desId: any;
+  name: any;
 
 
   constructor(private _blogs:HomeserviceService , private _active:ActivatedRoute,private locate:Location,private _route:Router ,private _Meta : Meta , private _Title : Title ) {
@@ -42,9 +43,7 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
     
 
     this._blogs.getDestinationGuides(this.id).subscribe(result => {
-      this.guidesContainer = result.data    
-      console.log(this.guidesContainer[0].travel_guide_thumb);
-       
+      this.guidesContainer = result.data           
       this.guide_name = result.data[0].destination_name + " Travel Guides";
       this.blogDes = result.data[0].destination_description;
       this.desName = result.data[0].destination_name;
@@ -52,8 +51,8 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
       this.desId = result.data[0].destination__id;
       this._blogs.getOneDestinationDetails(this.desId).subscribe(res => {
         this.allGuides = res.data[0].categories
-        this.category = res.data[0].categories[0].slug    
-        console.log(this.allGuides[0].thump);
+        this.category = res.data[0].categories[0].slug  
+        this.name  = res.data[0].categories[0].name
         
     })
       // this.locate.go(`${this.desSlug}/travel-guide`)
@@ -72,10 +71,7 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
     }) 
 
     
-    this._blogs.getPage(101).subscribe(res => {
-      console.log(res.data);
-      
-    })
+    
     window.addEventListener('load' ,()=> {
      return this.id = this._active.snapshot.params.id
     })
@@ -87,9 +83,7 @@ export class TravelGuideDesComponent implements OnInit , OnDestroy {
 
       
     }
-    setId(id:any){
-      localStorage.setItem("idGuid", id );
-    } 
+    
     
     
 

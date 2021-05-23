@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { destination } from '../../../../interfaces/destination';
 import { HomeserviceService } from '../../../../services/homeservice.service';
 
@@ -14,13 +15,14 @@ export class TourPackageComponent implements OnInit {
   id:any;
   desSlug:any;
   phone:any
-  constructor(private _pack:HomeserviceService) { }
+  constructor(private _pack:HomeserviceService ,private active:ActivatedRoute) { }
 
   ngOnInit(): void {
     this._pack.getSocials().subscribe(result => {
       this.phone = result.data[0].phone1
     });
-    this.id = localStorage.getItem('id')
+    this.id = this.active.snapshot.params.slug
+    
     this._pack.getSingleDestination(this.id).subscribe(res => {
       this.desName = res.data[0]?.destination_name
       this.desSlug = res.data[0]?.destination_slug

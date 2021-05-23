@@ -28,14 +28,12 @@ export class AccomodationComponent implements OnInit {
   ngOnInit(): void {
 
     this.id = this._active.snapshot.params.id
-    console.log(this.id);
     
     this.slug = this._active.snapshot.params.slug
 
 
     this._accomodation.getSinglepackage(this.slug).subscribe(result => {
       this.accomodation = result.data[0];
-      console.log(this.accomodation)
       
       this.flag = result.data[0].hotels
 

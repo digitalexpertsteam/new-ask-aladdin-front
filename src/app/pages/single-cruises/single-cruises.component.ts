@@ -38,6 +38,7 @@ export class SingleCruisesComponent implements OnInit {
   contact:any=[];
   idCru:any;
   id:any
+  Deafult = `../../../assets/imgs/7.jpg`
   desSlug:any
   related:Blog[]=[];
   selectTrue = true

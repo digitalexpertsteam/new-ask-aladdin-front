@@ -5,9 +5,6 @@ import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from "@angular-slider/ngx-slider";
-
-
-
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -29,51 +26,100 @@ import { Options, LabelType } from "@angular-slider/ngx-slider";
   ],
 })
 export class PackageDetailsComponent implements OnInit {
+  rangePric:any
+  range:any
+  rangePriceMax:any
+  minDay:any
+  maxDay:any
+  minRate:any
+  MaxRate:any
+
+
+
+
 
 // filter price
   minValue: number = 1;
-  maxValue: number = 6000  ;
+  maxValue: number = 10000  ;
   options: Options = {
     floor: 0,
-    ceil: 6000,
+    ceil: 10000,
     step: 500,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          // console.log(value);
-          return "<b>Min :</b> $" + value;
+
+          this.rangePric = value
+          this.rangePriceMax = value
+          console.log(this.rangePric);
+
+          // localStorage.setItem('rangeprice' , price)
+
+          return "<b>Min :</b> $" + this.rangePric;
           
         case LabelType.High:
-          console.log(value);
+          this.rangePriceMax = value
 
-          return "<b>Max :</b> $" + value;
-        default:
+          console.log(this.rangePriceMax);
+
+          return "<b>Max :</b> $" + this.rangePriceMax;
+          
+          
+          default:
           return "$" + value;
+          
+
       }
     }
+    
+    
   };
+
   // filter Rate
   minValueRate: number = 1;
-  maxValueRate: number = 6000  ;
+  maxValueRate: number = 5  ;
   optionsRate: Options = {
-    floor: 0,
-    ceil: 6000,
-    step: 500,
+    floor: 1,
+    ceil: 5,
+    step: 1,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
           // console.log(value);
-          return "<b>Min :</b> $" + value;
+          return "<i class='fas fa-star'></i>" + value;
           
         case LabelType.High:
-          console.log(value);
+          // console.log(value);
 
-          return "<b>Max :</b> $" + value;
+          return "<i class='fas fa-star'></i>" + value;
         default:
-          return "$" + value;
+          return "<i class='fas fa-star'></i>" + value;
       }
     }
   };
+
+
+// filter Days
+minValueDays: number = 1;
+maxValueDays: number = 6000  ;
+optionsDays: Options = {
+  floor: 1,
+  ceil: 30,
+  step: 1,
+  translate: (value: number, label: LabelType): string => {
+    switch (label) {
+      case LabelType.Low:
+        // console.log(value);
+        return "Days : " + value;
+        
+      case LabelType.High:
+        // console.log(MMM);
+        return "Days : " + value;
+      default:
+        return "Days : " + value;
+    }
+  }
+};
 
 
   max = 5;
@@ -92,15 +138,17 @@ export class PackageDetailsComponent implements OnInit {
   idpackage: any
   nameCountry = '';
   destinationContainer: singleDestination[] = []
+  Filter:singleDestination[]=[]
   Title: any;
   category: string = '';
   x: number = 1;
   hot: any[] = []
   descount: any
-
   rangePrice:any
   price$:any;
-
+  price:any
+  tourType:any[]=['Family Friendly','Adventure or Sporting','Sightseeing','Combining','Spiritual'
+  ,'Multi Country','Medical','Meditation','Romantic & Honeymoon','Indulgence & Luxury','Culinary, Food & Wine','Shore Excursion','Extended',]
   resetStar(): void {
     this.overStar = void 0;
   }
@@ -119,32 +167,21 @@ export class PackageDetailsComponent implements OnInit {
     private _Title: Title,
     private _active: ActivatedRoute,
     private ngMod: NgbModal) { }
-    
-
-
   ngOnInit(): void {
     this.id = this._active.snapshot.params.slug
-
     this._singleDes.getSingleDestination(this.id).subscribe(result => {
       this.destinationContainer = result.data
-      this.rangePrice = result.data[0].start_price
-
-
-  //     .filter('rangeFilter', function () {
-  //     return function (items: string | any[], attr: string | number, min:  number, max: number) {
-  //         var range = [],
-  //             minn=parseFloat(minn),
-  //             maxx=parseFloat(max);
-  //         for (var i=0, l=items.length; i<l; ++i){
-  //             var item = items[i];
-  //             if(item[attr]<=maxx && item[attr]>=minn){
-  //                 range.push(item);
-  //             }
-  //         }
-  //         return range;
-  //     };
-  // });
-  
+    })
+    // this.rangePric = localStorage.getItem('rangeprice')
+    
+    this.price = this.options
+    console.log(this.price);
+    
+    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePriceMax,1,30,1,5).subscribe(result => {
+      this.Filter = result.data
+      console.log(this.rangePrice );
+      
+      // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
 
       this.descount = result.data.discount + "%"
       this.hot = result.data.hot_offer
@@ -172,13 +209,25 @@ export class PackageDetailsComponent implements OnInit {
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
-  setId(id: any) {
-    localStorage.setItem('idPack', id)
-  }
+  
   openVerticallyCentered(content: any) {
     this.ngMod.open(content, { centered: true });
-    console.log(content);
 
 
   }
 }
+  //     .filter('rangeFilter', function () {
+  //     return function (items: string | any[], attr: string | number, min:  number, max: number) {
+  //         var range = [],
+  //             minn=parseFloat(minn),
+  //             maxx=parseFloat(max);
+  //         for (var i=0, l=items.length; i<l; ++i){
+  //             var item = items[i];
+  //             if(item[attr]<=maxx && item[attr]>=minn){
+  //                 range.push(item);
+  //             }
+  //         }
+  //         return range;
+  //     };
+  // });
+  

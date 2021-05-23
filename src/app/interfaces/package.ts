@@ -7,6 +7,7 @@ export interface packages {
     thumb:string;
     start_price:string;
     days: number;
+    reviews:number;
     destination__id:string;
     destination_slug:string;
   }

@@ -67,7 +67,7 @@ footer .shortcuts li a:hover {
 }
 .copyright
 {
-    transform: translateY(30px);
+    transform: translateY(10px);
     color: #fff;
     display: flex;
 
@@ -123,10 +123,7 @@ footer .shortcuts li{
         width: 100%;
         margin-left: 9%;
     }
-    .copyright{
-        transform: translateY(35px);
-        
-    }
+    
     footer .shortcuts h6{
         font-size: 20px;
      }

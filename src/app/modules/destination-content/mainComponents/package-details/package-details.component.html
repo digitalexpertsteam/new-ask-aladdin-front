@@ -10,12 +10,15 @@
                 <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
                     (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
                     <div class="">
-                        <i class="far fa-calendar-alt mr-2"></i>{{"Duration "|translate}}
+                        <i class="fas far fa-calendar-alt mr-2"></i>{{"Duration"|translate}}
                     </div>
                     <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed, 'fa-angle-up': !isCollapsed}"></i>
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed" [isAnimated]="true">
-                    <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider>
+
+                    <ngx-slider [(value)]="minValueDays" [(highValue)]="maxValueDays" [options]="optionsDays"></ngx-slider>
+
+
 
                 </div>
             </div>
@@ -24,7 +27,7 @@
 
                     (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseBasic">
                     <div class="">
-                        <i class="fas fa-map-marker-alt mr-2"></i>{{"Prices"|translate}}
+                        <i class="fas fa-dollar-sign"></i> {{"Prices"|translate}}
                     </div>
         
                     <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed2, 'fa-angle-up': !isCollapsed2}"></i>
@@ -32,6 +35,24 @@
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed2" [isAnimated]="true">
                         
                     <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+
+                </div>
+            </div>
+            
+           
+            <div class="filter-content border-bottom">
+                <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+                    (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseBasic">
+                    <div class="">
+                        <i class="fas far fa-star"></i> Rating
+                    </div>
+        
+                    <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed4, 'fa-angle-up': !isCollapsed4}"></i>
+
+                </a>
+                <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
+                    <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider>
+
 
                 </div>
             </div>
@@ -45,13 +66,14 @@
                     <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed3, 'fa-angle-up': !isCollapsed3}"></i>
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed3" [isAnimated]="true">
-                    <div class="form-check mb-2 d-flex align-items-center">
+                    <div *ngFor="let tour of tourType" class="form-check mb-2 d-flex align-items-center">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
+                            {{tour}}
                         </label>
                     </div>
 
-                    <div class="form-check mb-2 d-flex align-items-center">
+                    <!-- <div class="form-check mb-2 d-flex align-items-center">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
                             Group Tours
@@ -68,25 +90,12 @@
                         <label class="form-check-label" for="flexCheckDefault">
                             Self-Guided Tours
                         </label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
 
-<!--             
-            <div class="filter-content border-bottom">
-                <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
-                    (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseBasic">
-                    <div class="">
-                        <i class="fas fa-skating mr-2"></i>Activities
-                    </div>
-        
-                    <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed4, 'fa-angle-up': !isCollapsed4}"></i>
-
-                </a>
-                <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
-                </div>
-            </div>
+            <!--  
             <div class="filter-content border-bottom">
                 <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
                     (click)="isCollapsed5 = !isCollapsed5" [attr.aria-expanded]="!isCollapsed5" aria-controls="collapseBasic">
@@ -123,7 +132,7 @@
 
     <div>
 
-        <ng-container *ngFor="let singleDes of destinationContainer">
+        <ng-container *ngFor="let singleDes of Filter">
             <div class="data-box   bg-white mt-3 p-2">
                 <div class="row mx-0">
                     <div class="col-xl-10 ">
@@ -247,7 +256,7 @@
                             <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}}
                                 {{"Days"|translate}}/{{singleDes.duration_in_days -x}} {{"Nights"|translate}}
                             </p>
-                            <a class="main-btn p-2 view d-block mb-2 font-weight-bold" (click)="setId(singleDes.package__id)"
+                            <a class="main-btn p-2 view d-block mb-2 font-weight-bold" 
                                 routerLink="/{{singleDes.destination_slug}}/travel-package/{{singleDes.package_slug}}">{{"View Tour Details"|translate}}</a>
 
                             <a class="main-btn book bg-white p-2 d-block font-weight-bold pt-2"

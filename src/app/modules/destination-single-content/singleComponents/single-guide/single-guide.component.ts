@@ -35,7 +35,6 @@ export class SingleGuideComponent implements OnInit {
     this.id =  this._active.snapshot.params.id;
     
     this.idGuid =  this._active.snapshot.params.slug;
-    console.log(this.id , this.idGuid);
 
     this._homeService.getSingleGuide(this.idGuid).subscribe(result => {
       this.singleGuide= result.data;
@@ -129,8 +128,6 @@ export class SingleGuideComponent implements OnInit {
     nav: true,
   };
 
-  setId(id: any) {
-    localStorage.setItem("idGuid", id);
-  }
+  
 
 }

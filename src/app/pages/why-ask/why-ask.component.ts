@@ -12,10 +12,8 @@ import {NgxGalleryAnimation} from '@kolkov/ngx-gallery';
   styleUrls: ['./why-ask.component.css']
 })
 export class WhyAskComponent implements OnInit {
-
-  galleryOptions: NgxGalleryOptions[] | any;
-  galleryImages: NgxGalleryImage[] | any;
-  img=[];
+img=[]
+  
 
   aboutContainer:About[] = [];
   @ViewChild('videoPlayer') videoplayer!: ElementRef;
@@ -23,11 +21,20 @@ export class WhyAskComponent implements OnInit {
   constructor(private _about:HomeserviceService ,private gallery: Gallery ) { }
 
   ngOnInit(): void {
-  
+    
     this._about.getAboutAs().subscribe(result => {this.aboutContainer = result.data;
     
       this.img=result.data[0].video
-     } )}
+  
+      
+     
+}) 
+    }
+      
+      
+      
+
+      
   toggleVideo() {
      this.videoplayer.nativeElement.play();
     this.hideIcon = false;

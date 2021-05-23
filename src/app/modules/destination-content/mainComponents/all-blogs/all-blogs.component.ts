@@ -65,15 +65,11 @@ export class AllBlogsComponent implements OnInit {
     this._blogs.getOneDestinationDetails(1).subscribe(res => {
         this.allBlog = res.data[0].categories
         this.category = res.data[0].categories[4].slug 
-        this.blogName = res.data[0].categories[4].name  
-        console.log(this.category);
-        
+        this.blogName = res.data[0].categories[4].name          
     })
     
     }
-    setId(id:any){
-      localStorage.setItem("idBlog", id );
-    } 
+    
   }
 
 

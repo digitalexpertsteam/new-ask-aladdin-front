@@ -51,7 +51,7 @@
             <!-- Travel Guide  -->
             <div *ngFor='let content of singleDestinationContent|slice:0:1' class="col-12 col-md-4 mb-4" >
                 <div class="blogs overflow-hidden">
-                    <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.id)" class="text-dark">
+                    <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}"  class="text-dark">
                         <div class="card main-card text-center">
                             <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                            
@@ -76,7 +76,7 @@
         <div class="blogs overflow-hidden">
           <a
             routerLink="/{{ singleDestination[0].slug }}/travel-excursions"
-            (click)="setSlug(content.slug)"
+            
             class="text-dark"
           >
             <div class="card main-card text-center">
@@ -98,7 +98,7 @@
       <!-- Travel Curs-->
       <div *ngFor='let content of singleDestinationContent|slice:3:4' class="col-12 col-md-4 mb-4" >
         <div class="blogs overflow-hidden">
-            <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}" (click)="setSlug(content.slug)" class="text-dark">
+            <a  routerLink="/{{singleDestination[0].slug}}/{{content.slug}}"  class="text-dark">
                 <div class="card main-card text-center">
                     <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
                    
@@ -117,7 +117,7 @@
         class="col-sm-12 mb-4"
       >
         <div class="blogs overflow-hidden">
-          <a routerLink="/{{ singleDestination[0].slug }}/travel-package" (click)="setSlug(content.slug)"class="text-dark">
+          <a routerLink="/{{ singleDestination[0].slug }}/travel-package" class="text-dark">
             <div class="card main-card text-center">
               <img
                 [src]="content.thumb"
@@ -143,7 +143,7 @@
         <div class="blogs overflow-hidden">
           <a
             routerLink="/{{singleDestination[0].slug}}/{{content.slug}}"
-            (click)="setSlug(content.slug)"
+            
             class="text-dark"
           >
             <div class="card main-card text-center">

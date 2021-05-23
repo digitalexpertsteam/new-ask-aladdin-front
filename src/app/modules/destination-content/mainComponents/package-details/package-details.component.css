@@ -312,10 +312,13 @@ border-radius:16px #f68800 !important;
 }
 
 
-.ngx-slider .ngx-slider-pointer:focus-visible
-{
-border: none !important;
+
+
+.ngx-slider .ngx-slider-pointer.ngx-slider-active:after{
+    background-color: blanchedalmond !important;
+    border: none !important;
 }
-
-
+.fa, .fas{
+    color: #f68800;
+}
 /*  */

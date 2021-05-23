@@ -57,11 +57,9 @@ export class SingleFaqComponent implements OnInit {
     this._homeService.getDestinationFact(this.id).subscribe(res => {
       this.alldestinationCards = res.data;
       this.desName =res.data[0].destination_name;
-      console.log(this.desName)
       this.desSlug =res.data[0].destination_slug;
       
 
-      console.log(this.desName);
     });
     this._homeService.getOneDestinationDetails(1).subscribe(res => {
 
@@ -97,7 +95,5 @@ export class SingleFaqComponent implements OnInit {
     nav: true,
   };
 
-  setId(id: any) {
-    localStorage.setItem("idFaq", id);
-  }
+  
 }

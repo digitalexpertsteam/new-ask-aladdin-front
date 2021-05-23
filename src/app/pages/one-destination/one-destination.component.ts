@@ -89,11 +89,7 @@ export class OneDestinationComponent implements OnInit {
   }
 
 
-  setSlug(slug:any){
-     localStorage.setItem("slug" , slug)  
-    
-    
-  }
+  
 
   customOptions: OwlOptions = {
     loop: true,
