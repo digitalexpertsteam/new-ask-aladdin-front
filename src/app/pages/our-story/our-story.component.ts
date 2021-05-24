@@ -52,7 +52,7 @@ export class OurStoryComponent implements OnInit {
     this._page.getSocials().subscribe(result => {
       this.phone = result.data[0].phone1
     });
-    this._page.getSinglePage(`our-story`).subscribe(res => {
+    this._page.getSinglePage(11).subscribe(res => {
       this.singlePageContent = res.data
       
       this.relatedPages = res.data[0].related_pages

@@ -5,9 +5,6 @@ import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from "@angular-slider/ngx-slider";
-
-
-
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -29,28 +26,51 @@ import { Options, LabelType } from "@angular-slider/ngx-slider";
   ],
 })
 export class PackageDetailsComponent implements OnInit {
+  rangePric:any
+  range:any
+  rangePriceMax:any
+  minDay:any
+  maxDay:any
+  minRate:any
+  MaxRate:any
 
 // filter price
   minValue: number = 1;
-  maxValue: number = 6000  ;
+  maxValue: number = 10000  ;
   options: Options = {
     floor: 0,
-    ceil: 6000,
+    ceil: 10000,
     step: 500,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          // console.log(value);
-          return "<b>Min :</b> $" + value;
+
+          this.rangePric = value
+          this.rangePriceMax = value
+          console.log(this.rangePric);
+
+          // localStorage.setItem('rangeprice' , price)
+
+          return "<b>Min :</b> $" + this.rangePric;
           
         case LabelType.High:
-          console.log(value);
+          this.rangePriceMax = value
 
-          return "<b>Max :</b> $" + value;
-        default:
+          
+
+          console.log(this.rangePriceMax);
+
+          return "<b>Max :</b> $" + this.rangePriceMax;
+          
+          
+          default:
           return "$" + value;
+          
+
       }
     }
+    
+    
   };
   // filter Rate
   minValueRate: number = 1;
@@ -66,7 +86,7 @@ export class PackageDetailsComponent implements OnInit {
           return "<i class='fas fa-star'></i>" + value;
           
         case LabelType.High:
-          console.log(value);
+          // console.log(value);
 
           return "<i class='fas fa-star'></i>" + value;
         default:
@@ -74,6 +94,8 @@ export class PackageDetailsComponent implements OnInit {
       }
     }
   };
+
+
 // filter Days
 minValueDays: number = 1;
 maxValueDays: number = 6000  ;
@@ -88,14 +110,14 @@ optionsDays: Options = {
         return "Days : " + value;
         
       case LabelType.High:
-        console.log(value);
-
+        // console.log(MMM);
         return "Days : " + value;
       default:
         return "Days : " + value;
     }
   }
 };
+
 
   max = 5;
   rate = 3;
@@ -113,15 +135,17 @@ optionsDays: Options = {
   idpackage: any
   nameCountry = '';
   destinationContainer: singleDestination[] = []
+  Filter:singleDestination[]=[]
   Title: any;
   category: string = '';
   x: number = 1;
   hot: any[] = []
   descount: any
-
   rangePrice:any
   price$:any;
-
+  price:any
+  tourType:any[]=['Family Friendly','Adventure or Sporting','Sightseeing','Combining','Spiritual'
+  ,'Multi Country','Medical','Meditation','Romantic & Honeymoon','Indulgence & Luxury','Culinary, Food & Wine','Shore Excursion','Extended',]
   resetStar(): void {
     this.overStar = void 0;
   }
@@ -140,15 +164,75 @@ optionsDays: Options = {
     private _Title: Title,
     private _active: ActivatedRoute,
     private ngMod: NgbModal) { }
+  
+    ngOnInit(): void {
+      this.id = this._active.snapshot.params.slug
+      this._singleDes.getSingleDestination(this.id).subscribe(result => {
+        this.destinationContainer = result.data
+      })
+      // this.rangePric = localStorage.getItem('rangeprice')
+      
+      console.log(this.rangePric);
+  
     
+      this._singleDes.getSingleDestinationFilter(this.id , 0 ,this.rangePrice,1,30,1,5).subscribe(result => {
+        this.Filter = result.data
+        console.log(this.rangePric ,this.rangePrice  );
+        
+        // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
+  
+        this.descount = result.data.discount + "%"
+        this.hot = result.data.hot_offer
+        this.nameCountry = result.data[0].destination_name;
+        this.count = result.data.length
+        this.Title = result.data[0].destination_seo_title;
+        this._Title.setTitle(`${this.Title}`)
+        this._Meta.addTags([
+          { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
+          { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
+          { name: 'description', content: `${result.data[0].destination_seo_description}` },
+          { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
+          { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
+          { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
+          { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
+          { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
+  
+        ]);
+      })
+      this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
+        this.category = res.data[0].categories[1].slug
+  
+      })
+    }
+  transform(url: any) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+
+  
+  
+  openVerticallyCentered(content: any) {
+    this.ngMod.open(content, { centered: true });
 
 
-  ngOnInit(): void {
-    this.id = this._active.snapshot.params.slug
+  }
+  rangePri1(val:any){
+    this.rangePric = val.value
 
-    this._singleDes.getSingleDestination(this.id).subscribe(result => {
-      this.destinationContainer = result.data
-      this.rangePrice = result.data[0].start_price
+    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePrice,1,30,1,5)
+    
+  }
+  rangePri2(val:any){
+    this.rangePrice = val.value
+
+    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePrice,1,30,1,5)
+  }
+
+  allForm(val:any){
+    console.log(val.value);
+    
+  }
+  
+}
 
 
   //     .filter('rangeFilter', function () {
@@ -166,38 +250,3 @@ optionsDays: Options = {
   //     };
   // });
   
-
-      this.descount = result.data.discount + "%"
-      this.hot = result.data.hot_offer
-      this.nameCountry = result.data[0].destination_name;
-      this.count = result.data.length
-      this.Title = result.data[0].destination_seo_title;
-      this._Title.setTitle(`${this.Title}`)
-      this._Meta.addTags([
-        { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
-        { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
-        { name: 'description', content: `${result.data[0].destination_seo_description}` },
-        { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
-        { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
-        { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
-        { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
-        { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
-
-      ]);
-    })
-    this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
-      this.category = res.data[0].categories[1].slug
-
-    })
-  }
-  transform(url: any) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-  
-  openVerticallyCentered(content: any) {
-    this.ngMod.open(content, { centered: true });
-    console.log(content);
-
-
-  }
-}

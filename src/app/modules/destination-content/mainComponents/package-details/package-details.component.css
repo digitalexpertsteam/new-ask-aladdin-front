@@ -312,27 +312,70 @@ border-radius:16px #f68800 !important;
 }
 
 
-.ngx-slider .ngx-slider-pointer-active 
-{
-border: none !important;
-color: #000 !important;
-}
-.ngx-slider-pointer-min ngx-slider-active{
+
+
+.ngx-slider .ngx-slider-pointer.ngx-slider-active:after{
+    background-color: blanchedalmond !important;
     border: none !important;
-color: #000 !important;
+
 }
-
-
-.ngx-slider .ngx-slider-pointer.ngx-slider-active:after  
-{
-    color: #fffa66 !important;
-    border: none !important;
-}
-
-
-
-
-.fa, .fas{
+.fa, .advatnage fas {
     color: #f68800;
 }
+.raat i{
+    color: #f68800;
+
+}
 /*  */
+
+
+.form {
+    position: relative;
+    width: 300px;
+  }
+  .form span {
+    display: inline-block;
+    width: calc(33% - 2px);
+  }
+  .form span label {
+    display: block;
+  }
+  .form span input[type="number"] {
+    width: 80%;
+  }
+  .form .range, .form .average {
+    display: block;
+    padding: 1rem 0;
+    width: 60%;
+  }
+  .form .range input[type="range"], .form .average input[type="range"] {
+    -webkit-appearance: none;
+    background-color: silver;
+    border-radius: 4px;
+    display: block;
+    height: 8px;
+    pointer-events: none;
+    position: absolute;
+    outline: none;
+    width: 63%;
+  }
+  .form .range input[type="range"]::-webkit-slider-thumb, .form .average input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 20px;
+    pointer-events: all;
+    position: relative;
+    width: 20px;
+    z-index: 2;
+  }
+  .form .range input[type="range"]::-webkit-slider-thumb:active, .form .average input[type="range"]::-webkit-slider-thumb:active {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+  }
+  .form .range input[type="range"]#avgRange, .form .average input[type="range"]#avgRange {
+    margin: 1rem 0;
+  }
+

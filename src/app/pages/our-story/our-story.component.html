@@ -34,7 +34,33 @@
                 <div class="single-blog-content w-100 mb-5">
                     <p [innerHtml]="page.description"></p> 
                 </div>
-               
+                <div class=" text-center sec-bg">
+                    <h2 class=" mb-5">{{"Related Pages"|translate}}</h2>
+                        <owl-carousel-o [options]="customOptions">
+                            <ng-template *ngFor="let page of relatedPages"  carouselSlide>
+                                <div class="slide">                                    
+
+                                    <div class="blogs overflow-hidden">
+                                        <a href="/single-pages/{{page.slug}}" >
+                                            <div class="card main-card text-center ">
+                                                <img [src]="page.thumb" class=" img-slide" alt="{{page.thumb_alt}}">
+                                               
+                                                <div class="card-body  card-details des-antherCard">
+                                                    <h3 class="card-title font-weight-bold"> {{page.name}} </h3>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>                               
+
+                                </div>
+                            </ng-template>                  
+                        </owl-carousel-o>
+                </div>
+                <section id="Gallery p-3" class="pt-3">
+                    <div class="m-auto" >
+                        <ngx-gallery  [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+                      </div>
+                </section>
             </div>
             <div class="col-12 col-md-3">
                 <app-expert-reviews></app-expert-reviews>

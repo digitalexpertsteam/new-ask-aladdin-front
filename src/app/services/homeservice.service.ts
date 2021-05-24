@@ -66,6 +66,15 @@ export class HomeserviceService {
       `${environment.ApiUrl}destination/packages/${id}/${this.currentLang}`
     );
   }
+
+  getSingleDestinationFilter(id: any,rangePric:number,rangePriceMax:number,minDay:number,maxDay:number,minRate:number,MaxRate:number): Observable<any> {
+    return this._http.get(
+      `${environment.ApiUrl}filter-package/${id}/${rangePric}/${rangePriceMax}/${minDay}/${maxDay}/${minRate}/${MaxRate}/${this.currentLang}`
+    );
+  }
+
+
+
   getSingleDestinationDetails(id: any): Observable<any> {
     return this._http.get(
       `${environment.ApiUrl}destination/${id}/${this.currentLang}`

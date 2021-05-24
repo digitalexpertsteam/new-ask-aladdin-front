@@ -30,6 +30,8 @@ import { DestinationContentRoutingModule } from "../destination-content/destinat
 import { ReviewsComponent } from "../../pages/reviews/reviews.component";
 import { AccordionModule } from "ngx-bootstrap/accordion";
 import { NgxSliderModule } from "@angular-slider/ngx-slider";
+import { RangeSliderModule } from "ngx-range-slider";
+
 
 
 
@@ -60,7 +62,7 @@ import { NgxSliderModule } from "@angular-slider/ngx-slider";
     IvyCarouselModule,
     AccordionModule,
     NgxSliderModule,
-
+    RangeSliderModule,
     FormsModule,
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot(),
@@ -77,6 +79,7 @@ import { NgxSliderModule } from "@angular-slider/ngx-slider";
     DestinationContentRoutingModule,
     IvyGalleryModule,
     NgxGalleryModule,
+
 
 
   ],
@@ -105,6 +108,7 @@ import { NgxSliderModule } from "@angular-slider/ngx-slider";
     IvyGalleryModule,
     NgxGalleryModule,
     AccordionModule,
+    RangeSliderModule,
 
 
   ],

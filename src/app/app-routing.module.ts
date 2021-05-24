@@ -89,7 +89,7 @@ const routes: Routes = [
   { path: "travelguide", component: TravelGuideComponent },
   { path: ":id/reviews",  component: ReviewsComponent },
 
-  { path: "privacy-policy", component: PrivacyPolicyComponent },
+  { path: "privacypolicy", component: PrivacyPolicyComponent },
   { path: "all-Packages", component: AllPackagesDestinationComponent },
   { path: "single-package", component: TourDetailsComponent },
   { path: "our-story", component: OurStoryComponent },
