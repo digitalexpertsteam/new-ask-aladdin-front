@@ -165,45 +165,7 @@ optionsDays: Options = {
     private _active: ActivatedRoute,
     private ngMod: NgbModal) { }
   
-    ngOnInit(): void {
-      this.id = this._active.snapshot.params.slug
-      this._singleDes.getSingleDestination(this.id).subscribe(result => {
-        this.destinationContainer = result.data
-      })
-      // this.rangePric = localStorage.getItem('rangeprice')
-      
-      console.log(this.rangePric);
-  
-    
-      this._singleDes.getSingleDestinationFilter(this.id , 0 ,this.rangePrice,1,30,1,5).subscribe(result => {
-        this.Filter = result.data
-        console.log(this.rangePric ,this.rangePrice  );
-        
-        // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
-  
-        this.descount = result.data.discount + "%"
-        this.hot = result.data.hot_offer
-        this.nameCountry = result.data[0].destination_name;
-        this.count = result.data.length
-        this.Title = result.data[0].destination_seo_title;
-        this._Title.setTitle(`${this.Title}`)
-        this._Meta.addTags([
-          { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
-          { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
-          { name: 'description', content: `${result.data[0].destination_seo_description}` },
-          { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
-          { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
-          { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
-          { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
-          { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
-  
-        ]);
-      })
-      this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
-        this.category = res.data[0].categories[1].slug
-  
-      })
-    }
+   
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
@@ -217,19 +179,79 @@ optionsDays: Options = {
   }
   rangePri1(val:any){
     this.rangePric = val.value
-
-    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePrice,1,30,1,5)
+    this._singleDes.editTask().min = this.rangePric
     
+    console.log(this._singleDes.Task);
+    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric || 0 ,this.rangePrice || 10000 ,1,30,1,5).subscribe(result => {
+      this.Filter = result.data
+      this.count = result.data.length
+
+
+    }) 
   }
   rangePri2(val:any){
     this.rangePrice = val.value
+    this._singleDes.editTask().max = this.rangePrice
+    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePrice,1,30,1,5).subscribe(result => {
+      this.Filter = result.data
+      this.count = result.data.length
 
-    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePrice,1,30,1,5)
+    })
   }
 
-  allForm(val:any){
+  allForm(val:any){                       
     console.log(val.value);
     
+  }
+  check(type:any){
+    console.log(type.value);
+    
+  }
+
+  ngOnInit(): void {
+    this.id = this._active.snapshot.params.slug
+    console.log(this._singleDes.editTask().days);
+    
+   let min:any =  this._singleDes.editTask().min
+   let max:any =  this._singleDes.editTask().max
+    this._singleDes.getSingleDestination(this.id).subscribe(result => {
+      this.destinationContainer = result.data
+    })
+    // this.rangePric = localStorage.getItem('rangeprice')
+    
+    console.log(this.rangePric);
+
+  console.log(this._singleDes.Task.min);
+  
+    this._singleDes.getSingleDestinationFilter(this.id , min ,max,1,30,1,5).subscribe(result => {
+      this.Filter = result.data
+      this.count = result.data.length
+
+      console.log(min ,max  );
+      
+      // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
+
+      this.descount = result.data.discount + "%"
+      this.hot = result.data.hot_offer
+      this.nameCountry = result.data[0].destination_name;
+      this.Title = result.data[0].destination_seo_title;
+      this._Title.setTitle(`${this.Title}`)
+      this._Meta.addTags([
+        { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
+        { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
+        { name: 'description', content: `${result.data[0].destination_seo_description}` },
+        { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
+        { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
+        { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
+        { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
+        { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
+
+      ]);
+    })
+    this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
+      this.category = res.data[0].categories[1].slug
+
+    })
   }
   
 }

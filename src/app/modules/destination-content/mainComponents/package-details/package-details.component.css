@@ -359,19 +359,61 @@ border-radius:16px #f68800 !important;
     outline: none;
     width: 63%;
   }
-  .form .range input[type="range"]::-webkit-slider-thumb, .form .average input[type="range"]::-webkit-slider-thumb {
+  .form #minRange::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background-color: gray;
-    border-radius: 50%;
+    background: url(../../../../../assets/imgs/Drawback-minus-flaw-trimplement-payment.png);
+    background-size: cover;
+    border-radius: 0%;
     cursor: -webkit-grab;
     cursor: -moz-grab;
-    height: 20px;
+    height: 30px;
     pointer-events: all;
     position: relative;
-    width: 20px;
+    width: 30px;
     z-index: 2;
   }
-  .form .range input[type="range"]::-webkit-slider-thumb:active, .form .average input[type="range"]::-webkit-slider-thumb:active {
+  .form #minRange::-webkit-slider-thumb:active {
+    -webkit-appearance: none;
+    background: url(../../../../../assets/imgs/Advantage-Plus-.png);
+    background-size: cover;
+    border-radius: 0%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 30px;
+    pointer-events: all;
+    position: relative;
+    width: 30px;
+    z-index: 2;
+  }
+  .form #maxRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: url(../../../../../assets/imgs/Advantage-Plus-.png);
+    background-size: cover;
+    border-radius: 0%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 30px;
+    pointer-events: all;
+    position: relative;
+    width: 30px;
+    z-index: 2;
+  }
+  .form #maxRange::-webkit-slider-thumb:active {
+    -webkit-appearance: none;
+
+    background: url(../../../../../assets/imgs/Drawback-minus-flaw-trimplement-payment.png);
+    background-size: cover;
+    border-radius: 0%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 30px;
+    pointer-events: all;
+    position: relative;
+    width: 30px;
+    z-index: 2;
+  }
+  
+  .form .range input[type="range"]::-webkit-slider-thumb:active {
     cursor: -webkit-grabbing;
     cursor: -moz-grabbing;
   }
