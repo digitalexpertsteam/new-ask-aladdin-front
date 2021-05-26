@@ -296,3 +296,19 @@ tbody tr td {
 
 }
 }
+h3 i{
+    color: #f68800;
+}
+.rev{
+    color: #f68800;
+}
+.revimg{
+    height: 50px;
+    /* width:200px; */
+    /* border: solid 1px #f68800; */
+    border-radius:50%;
+}
+h4 img {
+    height: 20px;
+    margin-top: 2px;
+}

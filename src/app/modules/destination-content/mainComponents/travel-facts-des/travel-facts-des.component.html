@@ -53,7 +53,7 @@
           <accordion-group  *ngFor="let faqs of faqsContainer; let i = index" >
             <a class="w-100 btn-main"   (click)="openPlus(i)"  accordion-heading>
                <div class="name">
-                <h1 >{{faqs.type}}: {{faqs.faq_name}}</h1>
+                <h1 > {{faqs.faq_name}}</h1>
                </div> <div class="icon">
                 <!-- <i class="fa" [ngClass]="!open[i] ? 'fa-plus': 'fa-minus'"></i> -->
                 <i class="fas fa-sort-down"></i>

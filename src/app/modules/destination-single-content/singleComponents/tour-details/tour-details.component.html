@@ -49,6 +49,41 @@
     </div>
 </section>
 <app-accomodation></app-accomodation>
+
+
+<section id="reviews" class="sec-bg p-3 mb-5">
+<div   class="container">
+
+<h1 class="h3"> Top <span class="rev">Reviews</span> </h1>
+<div *ngIf="reviews?.length > 0 ;else reev" class="row">
+    <div class="col-md-12 mt-2" *ngFor="let rev of reviews">
+        <div class="card text-left">
+          <div class="card-body">
+              <div class="d-flex  align-items-center">
+            <img class="card-img-top" src="{{rev.image=='1'?image: rev.image}}"  class="revimg img-fluid" alt="">
+             <h4 class="ml-3 card-title">{{rev.name}}</h4>
+           </div>
+           <div class="mb-1">
+                                        
+            <rating [(ngModel)]="rev.rate"  [max]="max" [readonly]="isReadonly">
+            </rating>
+         </div>
+         <h6 class="text-muted">Reviewed in {{ rev.date|date}}</h6>
+        
+            <p class="mt-2 card-text"[innerHTML]="rev.review"></p>
+          </div>
+        </div>
+
+
+    </div>
+
+</div>
+</div>
+</section >
+<ng-template #reev >
+
+    <h4 class=" text-center  ">  <img src="assets/imgs/dot.svg" class="img-fluid m-2">{{"No Reviews For This Item"|translate}} </h4>
+  </ng-template>
 <section class=".sec-bg">
     <app-reviews></app-reviews>
 </section>

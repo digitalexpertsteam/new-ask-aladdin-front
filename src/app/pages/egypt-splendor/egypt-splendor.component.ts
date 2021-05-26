@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { HomeserviceService } from '../../services/homeservice.service';
 @Component({
@@ -15,7 +16,7 @@ export class EgyptSplendorComponent implements OnInit {
   num : any;
   tour:any
 
-  constructor(private _splendor:HomeserviceService) { }
+  constructor(private _splendor:HomeserviceService, private _active: ActivatedRoute,) { }
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
@@ -43,10 +44,12 @@ export class EgyptSplendorComponent implements OnInit {
     nav: false
   }
   ngOnInit(): void {
-    this.id = localStorage.getItem("idPack");
+    this.id = this._active.snapshot.params.slug;
     this._splendor.getSinglepackage(this.id).subscribe(result => {
       this.guide = result.data[0];
       this.tour = result.data[0].tour_type;
+      console.log(this.tour);
+      
       let x = 1
       this.num = result.data[0].days - x
   })}

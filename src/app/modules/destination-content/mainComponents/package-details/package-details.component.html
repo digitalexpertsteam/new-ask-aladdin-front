@@ -44,13 +44,13 @@
                 <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
                     (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4" aria-controls="collapseBasic">
                     <div class="">
-                        <i class="fas far fa-star"></i> Rating
+                        <i class=" fas far fa-star"></i> Rating
                     </div>
         
                     <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed4, 'fa-angle-up': !isCollapsed4}"></i>
 
                 </a>
-                <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
+                <div id="collapseBasic" class="raat sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
                     <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider>
 
 
@@ -132,7 +132,7 @@
 
     <div>
 
-        <ng-container *ngFor="let singleDes of Filter">
+        <ng-container *ngFor="let singleDes of destinationContainer">
             <div class="data-box   bg-white mt-3 p-2">
                 <div class="row mx-0">
                     <div class="col-xl-10 ">
@@ -183,7 +183,7 @@
                                                     [readonly]="isReadonly">
 
                                                 </rating>
-                                                <span class="reviews"> of {{singleDes.reviews}} {{"Reviews"|translate}}</span>
+                                                <span  class="reviews">  {{"Reviews"|translate}}</span>
 
                                             </div>
 

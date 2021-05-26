@@ -19,7 +19,15 @@ export class TourDetailsComponent implements OnInit {
   desSlug: any;
   idPack: any;
   overBanner: any;
+  reviews:any;
   video: any = []
+  isReadonly = true;
+  max = 5;
+ 
+
+  image = "../../../../../assets/imgs/default-reviews.png"
+
+
   player: YT.Player | undefined;
   public iid: any[] = [];
   savePlayer(player: YT.Player) {
@@ -33,6 +41,8 @@ export class TourDetailsComponent implements OnInit {
       this.lights = result.data[0]
       this.banener = result.data[0]
       this.video = result.data[0].videos
+      this.reviews = result.data[0].reviews
+
       this.contact = result.data[0]
       this.Title = result.data[0].seo_title;
       this._Title.setTitle(`${this.Title}`)

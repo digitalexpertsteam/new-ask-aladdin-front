@@ -34,10 +34,6 @@ export class PackageDetailsComponent implements OnInit {
   minRate:any
   MaxRate:any
 
-
-
-
-
 // filter price
   minValue: number = 1;
   maxValue: number = 10000  ;
@@ -60,6 +56,8 @@ export class PackageDetailsComponent implements OnInit {
         case LabelType.High:
           this.rangePriceMax = value
 
+          
+
           console.log(this.rangePriceMax);
 
           return "<b>Max :</b> $" + this.rangePriceMax;
@@ -74,7 +72,6 @@ export class PackageDetailsComponent implements OnInit {
     
     
   };
-
   // filter Rate
   minValueRate: number = 1;
   maxValueRate: number = 5  ;
@@ -147,6 +144,8 @@ optionsDays: Options = {
   rangePrice:any
   price$:any;
   price:any
+  reviews:singleDestination[]=[]
+  review:any
   tourType:any[]=['Family Friendly','Adventure or Sporting','Sightseeing','Combining','Spiritual'
   ,'Multi Country','Medical','Meditation','Romantic & Honeymoon','Indulgence & Luxury','Culinary, Food & Wine','Shore Excursion','Extended',]
   resetStar(): void {
@@ -172,14 +171,27 @@ optionsDays: Options = {
     this._singleDes.getSingleDestination(this.id).subscribe(result => {
       this.destinationContainer = result.data
     })
+    this._singleDes.getSinglepackage(this.id).subscribe(result => {
+
+      this.reviews = result.data
+      
+      this.review=[]
+      this.reviews
+      this.reviews.forEach( ele => {
+        this.review.push({
+          rev:`${ele.reviews.length}`
+        })
+        console.log(this.review)
+
+}) 
+      
+    })
     // this.rangePric = localStorage.getItem('rangeprice')
     
     this.price = this.options
-    console.log(this.price);
     
-    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePriceMax,1,30,1,5).subscribe(result => {
+    this._singleDes.getSingleDestinationFilter(this.id , 0 ,10000,1,30,1,5).subscribe(result => {
       this.Filter = result.data
-      console.log(this.rangePrice );
       
       // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
 
@@ -216,18 +228,3 @@ optionsDays: Options = {
 
   }
 }
-  //     .filter('rangeFilter', function () {
-  //     return function (items: string | any[], attr: string | number, min:  number, max: number) {
-  //         var range = [],
-  //             minn=parseFloat(minn),
-  //             maxx=parseFloat(max);
-  //         for (var i=0, l=items.length; i<l; ++i){
-  //             var item = items[i];
-  //             if(item[attr]<=maxx && item[attr]>=minn){
-  //                 range.push(item);
-  //             }
-  //         }
-  //         return range;
-  //     };
-  // });
-  

@@ -6,18 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tags-excursions.component.css']
 })
 export class TagsExcursionsComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit(): void {
   }
-
   Itinerary(){
     document.getElementById('Itinerary')?.scrollIntoView({behavior:'smooth'})
   }
-
-
-
   Included(){
     document.getElementById('included')?.scrollIntoView({behavior:'smooth'})
   }
@@ -28,18 +22,15 @@ export class TagsExcursionsComponent implements OnInit {
   gallery(){
     document.getElementById('gallery')?.scrollIntoView({behavior:'smooth'})
   }
-  
-  // accomodation(){
-  //   document.getElementById('accomodation')?.scrollIntoView({behavior:'smooth'})
-  // }
+
   highlights(){
     document.getElementById('highlights')?.scrollIntoView({behavior:'smooth'})
   }
 
+  reviews(){
+    document.getElementById('reviews')?.scrollIntoView({behavior:'smooth'})
+  }
 
-  // videos(){
-  //   document.getElementById('videos')?.scrollIntoView({behavior:'smooth'})
-  // }
   
 
 }

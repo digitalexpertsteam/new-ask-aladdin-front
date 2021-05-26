@@ -114,7 +114,10 @@ footer .shortcuts li{
 {
     color: rgb(238, 6, 6);
 }
-
+.store img{
+    /* height: 150px; */
+    width: 900px;
+}
 @media only screen and (min-width: 1550px){
     .footer{
         min-height: 0;

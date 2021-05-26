@@ -25,7 +25,7 @@ export interface singleDestination {
   guid_tour: number;
   hot_offer: boolean;
   top_sale: boolean;
-  reviews:number;
+  reviews:any;
   rate:any;
 
 }

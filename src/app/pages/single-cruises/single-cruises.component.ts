@@ -31,6 +31,9 @@ export class SingleCruisesComponent implements OnInit {
   Gallery(){
     document.getElementById('Gallery')?.scrollIntoView({behavior:'smooth'})
   } 
+  reviews(){
+    document.getElementById('reviews')?.scrollIntoView({behavior:'smooth'})
+  }
   galleryOptions: NgxGalleryOptions[] | any;
   galleryImages: NgxGalleryImage[] | any;
   lights:any = [];
@@ -56,6 +59,8 @@ export class SingleCruisesComponent implements OnInit {
   cruises:any
   galery:any
   ttt:any
+  image = "../../../../../assets/imgs/default-reviews.png"
+
   constructor(public _cruises:HomeserviceService,  private gallery: Gallery , private active:ActivatedRoute) { }
   ngOnInit(): void {
     

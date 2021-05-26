@@ -5,7 +5,7 @@
         <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
             <h1><span class="main-color font-weight-bold">{{banener?.name}} </span>
             </h1>
-            
+
         </div>
         <p class="mt-2">{{banener?.description}}</p>
         <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
@@ -23,15 +23,16 @@
 </section>
 <section>
     <div class="container">
-  
-      <div  class="page-links py-2">
-       <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}}  / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{desName}} / </span>  </a>
-       <a class="hover-color" routerLink="/{{desSlug}}/travel-cruises"> <span > {{cruName}} / </span>  </a>
-        <span class="main-color">{{cruises?.name}}</span>  
-      </div>
+
+        <div class="page-links py-2">
+            <a class="hover-color" routerLink="/"> <span>{{"Home"|translate}} / </span> </a>
+            <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span> {{desName}} / </span> </a>
+            <a class="hover-color" routerLink="/{{desSlug}}/travel-cruises"> <span> {{cruName}} / </span> </a>
+            <span class="main-color">{{cruises?.name}}</span>
+        </div>
     </div>
-  </section><section class="sec-bg p-3 mb-5">
+</section>
+<section class="sec-bg p-3 mb-5">
     <div class="container">
         <!-- <app-tags></app-tags> -->
         <!-- tag -->
@@ -66,6 +67,12 @@
                     <p class="d-none d-sm-block mb-0">accomodation</p>
                 </a>
             </div>
+            <div class="services-content">
+
+                <a (click)="reviews()"> <i class="fas fa-star-half-alt"></i>
+                 <p class="d-none d-sm-block mb-0">{{"Reviews"|translate}}</p></a>
+             </div>
+        
         </div>
         <!-- End tags -->
         <div class="row mt-4">
@@ -88,9 +95,9 @@
                         </div>
                         <div class="d-flex flex-wrap m-2 text-muted">
                             <span class="mt-2 font-weight-bold">{{"Tour Type"|translate}} : </span>
-                            <span class="tour ml-2 mt-2" > <i class="fas fa-ship">  </i>Nile Cruise </span>
-                          
-                
+                            <span class="tour ml-2 mt-2"> <i class="fas fa-ship"> </i>Nile Cruise </span>
+
+
                         </div>
                         <div class="package-itinerary">
                             <div class="head mb-4">
@@ -109,7 +116,8 @@
                                             <p
                                                 class="main-bg text-center d-flex align-items-center justify-content-center">
 
-                                                <span class="d-flex align-items-center justify-content-center text-white m-auto pl-2">{{day?.day_number}}</span>
+                                                <span
+                                                    class="d-flex align-items-center justify-content-center text-white m-auto pl-2">{{day?.day_number}}</span>
                                             </p>
                                         </div>
                                     </h3>
@@ -214,7 +222,7 @@
                                             <div class="row ">
                                                 <div class="col-sm-12 ">
                                                     <div class="acco-image m-auto">
-                                                        <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}"        
+                                                        <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}"
                                                             class="img-fluid  " />
                                                     </div>
                                                 </div>
@@ -230,7 +238,8 @@
                                                             </rating>
                                                         </div>
                                                         <div class="acco-link mb-2">
-                                                            <a href="{{desSlug }}/hotel/{{acc.slug}}" class="main-btn">View
+                                                            <a href="{{desSlug }}/hotel/{{acc.slug}}"
+                                                                class="main-btn">View
                                                                 Details</a>
 
                                                         </div>
@@ -245,17 +254,28 @@
                         </div>
                         <ng-template #accommodation>
 
-                            <h1 class="text-center  "> No Accommodations Yet</h1>
+                            <h4 class=" text-center  ">  <img src="assets/imgs/dot.svg" class="img-fluid m-2">{{"No Accommodations Yet"|translate}} </h4>
+
                         </ng-template>
 
+                        <ng-template #reev >
 
+                            <h4 class=" text-center  ">  <img src="assets/imgs/dot.svg" class="img-fluid m-2">{{"No Reviews For This Item"|translate}} </h4>
+                          </ng-template>
                     </div>
                 </section>
+
+
+
+
                 <ng-template #img>
 
                     <h1 class=" bg-white mt-3 px-3 py-4 text-center  "> No Gallery Yet</h1>
                 </ng-template>
             </div>
+
+
+
             <div class="col-12 col-md-3">
                 <section class="bg-white mt-3 px-3 py-4">
                     <div class="head mb-2">
@@ -313,8 +333,43 @@
             </div>
 
         </div>
+        
     </div>
+    
+    <section id="reviews" class="sec-bg p-3 mb-5">
+        <div class="container">
+
+            <h1 class="h3"> Top <span class="rev">Reviews</span> </h1>
+            <div *ngIf="cruises.reviews?.length > 0 ;else reev" class="row">
+                <div class="col-md-12 mt-2" *ngFor="let rev of cruises.reviews">
+                    <div class="card text-left">
+                        <div class="card-body">
+                            <div class="d-flex  align-items-center">
+                                <img class="card-img-top" src="{{rev.image=='1'?image: rev.image}}"
+                                    class="revimg img-fluid" alt="">
+                                <h4 class="ml-3 card-title">{{rev.name}}</h4>
+                            </div>
+                            <div class="mb-1">
+
+                                <rating [(ngModel)]="rev.rate" [max]="max" [readonly]="isReadonly">
+                                </rating>
+                            </div>
+                            <h6 class="text-muted">Reviewed in {{ rev.date|date}}</h6>
+
+                            <p class="mt-2 card-text" [innerHTML]="rev.review"></p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
 </section>
+
 <!-- <app-accomodation></app-accomodation> -->
 
 

@@ -29,19 +29,21 @@ export class SingleExcursionsComponent implements OnInit {
   nameEx:any;
   imageEx:any;
   exName:any;
- 
+  phone:any
   selectTrue = true
   imageFalse= '';
   imageTrue='assets/imgs/right.svg';
   num : any;
-
+  image = "../../../../../assets/imgs/default-reviews.png"
+  isReadonly = true;
+  max = 5;
   img=[];
   desSlug:any
   included:any=[]
   prices:any
   startPrices:any;
   desName:any;
-  constructor(public _excursion:HomeserviceService,private _Active:ActivatedRoute, private gallery: Gallery, ) { }
+  constructor(public _excursion:HomeserviceService,private _Active:ActivatedRoute ) { }
 
   
   ngOnInit(): void {
@@ -84,7 +86,6 @@ export class SingleExcursionsComponent implements OnInit {
 
       
       this.prices=result.data[0]
-      console.log(this.prices);
       
       this.img=result.data[0].gallery
       this.galleryImages=[]
@@ -99,6 +100,9 @@ export class SingleExcursionsComponent implements OnInit {
 })     
   })
 
+  this._excursion.getSocials().subscribe(result => {
+    this.phone = result.data[0].phone1
+  });
   this._excursion.getDestinationExcursions(this.id).subscribe(result => {
     this.desSlug = result.data[0].destination_slug;
     this.desName =result.data[0].destination_name;

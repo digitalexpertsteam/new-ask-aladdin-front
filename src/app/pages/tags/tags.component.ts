@@ -34,4 +34,7 @@ export class TagsComponent implements OnInit {
   videos(){
     document.getElementById('videos')?.scrollIntoView({behavior:'smooth'})
   } 
+  reviews(){
+    document.getElementById('reviews')?.scrollIntoView({behavior:'smooth'})
+  }
 }
