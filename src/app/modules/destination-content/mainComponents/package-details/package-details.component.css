@@ -103,7 +103,8 @@
     height: 290px;
     object-fit: cover;
     position: relative;
-}
+    filter: grayscale(30%), saturate(30%);
+}   
 .hot{
     position: absolute;
 
@@ -421,3 +422,9 @@ border-radius:16px #f68800 !important;
     margin: 1rem 0;
   }
 
+  .radio{
+      margin-top: 18px;
+  }
+
+  
+  

@@ -25,7 +25,7 @@ import { EgyptSplendorComponent } from "./pages/egypt-splendor/egypt-splendor.co
 import { EgyptTourComponent } from "./pages/egypt-tour/egypt-tour.component";
 import { ExpertReviewsComponent } from "./pages/expert-reviews/expert-reviews.component";
 import { FooterComponent } from "./shared/footer/footer.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HeaderComponent } from "./shared/header/header.component";
 import { AboutUsComponent } from "./pages/about-us/about-us.component";
 
@@ -164,6 +164,7 @@ import { CookiesComponent } from './pages/cookies/cookies.component';
     IvyGalleryModule,
     NgxGalleryModule,
     CountUpModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       defaultLanguage: "en",
       loader: {

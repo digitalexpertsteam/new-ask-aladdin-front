@@ -5,6 +5,8 @@ import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from "@angular-slider/ngx-slider";
+import { filter } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -33,94 +35,16 @@ export class PackageDetailsComponent implements OnInit {
   maxDay:any
   minRate:any
   MaxRate:any
-
-// filter price
-  minValue: number = 1;
-  maxValue: number = 10000  ;
-  options: Options = {
-    floor: 0,
-    ceil: 10000,
-    step: 500,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-
-          this.rangePric = value
-          this.rangePriceMax = value
-          console.log(this.rangePric);
-
-          // localStorage.setItem('rangeprice' , price)
-
-          return "<b>Min :</b> $" + this.rangePric;
-          
-        case LabelType.High:
-          this.rangePriceMax = value
-
-          
-
-          console.log(this.rangePriceMax);
-
-          return "<b>Max :</b> $" + this.rangePriceMax;
-          
-          
-          default:
-          return "$" + value;
-          
-
-      }
-    }
-    
-    
-  };
-  // filter Rate
-  minValueRate: number = 1;
-  maxValueRate: number = 5  ;
-  optionsRate: Options = {
-    floor: 1,
-    ceil: 5,
-    step: 1,
-    translate: (value: number, label: LabelType): string => {
-      switch (label) {
-        case LabelType.Low:
-          // console.log(value);
-          return "<i class='fas fa-star'></i>" + value;
-          
-        case LabelType.High:
-          // console.log(value);
-
-          return "<i class='fas fa-star'></i>" + value;
-        default:
-          return "<i class='fas fa-star'></i>" + value;
-      }
-    }
-  };
+  max:number=5;
+  rate = 1;
+  lolo=2;
 
 
-// filter Days
-minValueDays: number = 1;
-maxValueDays: number = 6000  ;
-optionsDays: Options = {
-  floor: 1,
-  ceil: 30,
-  step: 1,
-  translate: (value: number, label: LabelType): string => {
-    switch (label) {
-      case LabelType.Low:
-        // console.log(value);
-        return "Days : " + value;
-        
-      case LabelType.High:
-        // console.log(MMM);
-        return "Days : " + value;
-      default:
-        return "Days : " + value;
-    }
-  }
-};
 
+  
+   
+  
 
-  max = 5;
-  rate = 3;
   count: any
   isReadonly = true;
   overStar: number | undefined;
@@ -158,12 +82,63 @@ optionsDays: Options = {
   isCollapsed6 = true;
 
   tourtype:any="";
-  
+  rating :any
+  public form : FormGroup 
+
   constructor(private _singleDes: HomeserviceService, private sanitizer: DomSanitizer,
     private _Meta: Meta,
     private _Title: Title,
     private _active: ActivatedRoute,
-    private ngMod: NgbModal) { }
+    private fb: FormBuilder,
+    private ngMod: NgbModal) { 
+      this.form = this.fb.group({
+        rating:['',Validators.required]
+
+      })
+      this.id = this._active.snapshot.params.slug
+
+      this._singleDes.getSingleDestinationFilter(this.id , 0 ,10000,1,30,1,5).subscribe(result => {
+        this.Filter = result.data
+        this.count = result.data.length
+  
+        console.log(this.Filter  );
+        
+        // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
+  
+        this.descount = result.data.discount + "%"
+        this.hot = result.data.hot_offer
+        this.nameCountry = result.data[0].destination_name;
+        this.Title = result.data[0].destination_seo_title;
+        this._Title.setTitle(`${this.Title}`)
+        this._Meta.addTags([
+          { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
+          { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
+          { name: 'description', content: `${result.data[0].destination_seo_description}` },
+          { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
+          { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
+          { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
+          { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
+          { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
+  
+        ]);
+      })
+    }
+    star(val:any){
+      console.log(val);
+      
+    }
+
+    ngOnInit(): void {
+     
+    
+      this._singleDes.getSingleDestination(this.id).subscribe(result => {
+        this.destinationContainer = result.data
+      })
+      this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
+        this.category = res.data[0].categories[1].slug
+  
+      })
+    }
   
    
   transform(url: any) {
@@ -179,9 +154,6 @@ optionsDays: Options = {
   }
   rangePri1(val:any){
     this.rangePric = val.value
-    this._singleDes.editTask().min = this.rangePric
-    
-    console.log(this._singleDes.Task);
     this._singleDes.getSingleDestinationFilter(this.id , this.rangePric || 0 ,this.rangePrice || 10000 ,1,30,1,5).subscribe(result => {
       this.Filter = result.data
       this.count = result.data.length
@@ -191,7 +163,6 @@ optionsDays: Options = {
   }
   rangePri2(val:any){
     this.rangePrice = val.value
-    this._singleDes.editTask().max = this.rangePrice
     this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePrice,1,30,1,5).subscribe(result => {
       this.Filter = result.data
       this.count = result.data.length
@@ -199,76 +170,18 @@ optionsDays: Options = {
     })
   }
 
-  allForm(val:any){                       
+  ratingMax(val:any){
     console.log(val.value);
     
   }
+
+  
   check(type:any){
     console.log(type.value);
     
   }
 
-  ngOnInit(): void {
-    this.id = this._active.snapshot.params.slug
-    console.log(this._singleDes.editTask().days);
-    
-   let min:any =  this._singleDes.editTask().min
-   let max:any =  this._singleDes.editTask().max
-    this._singleDes.getSingleDestination(this.id).subscribe(result => {
-      this.destinationContainer = result.data
-    })
-    // this.rangePric = localStorage.getItem('rangeprice')
-    
-    console.log(this.rangePric);
-
-  console.log(this._singleDes.Task.min);
   
-    this._singleDes.getSingleDestinationFilter(this.id , min ,max,1,30,1,5).subscribe(result => {
-      this.Filter = result.data
-      this.count = result.data.length
-
-      console.log(min ,max  );
-      
-      // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
-
-      this.descount = result.data.discount + "%"
-      this.hot = result.data.hot_offer
-      this.nameCountry = result.data[0].destination_name;
-      this.Title = result.data[0].destination_seo_title;
-      this._Title.setTitle(`${this.Title}`)
-      this._Meta.addTags([
-        { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
-        { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
-        { name: 'description', content: `${result.data[0].destination_seo_description}` },
-        { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
-        { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
-        { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
-        { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
-        { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
-
-      ]);
-    })
-    this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
-      this.category = res.data[0].categories[1].slug
-
-    })
-  }
   
 }
-
-
-  //     .filter('rangeFilter', function () {
-  //     return function (items: string | any[], attr: string | number, min:  number, max: number) {
-  //         var range = [],
-  //             minn=parseFloat(minn),
-  //             maxx=parseFloat(max);
-  //         for (var i=0, l=items.length; i<l; ++i){
-  //             var item = items[i];
-  //             if(item[attr]<=maxx && item[attr]>=minn){
-  //                 range.push(item);
-  //             }
-  //         }
-  //         return range;
-  //     };
-  // });
   

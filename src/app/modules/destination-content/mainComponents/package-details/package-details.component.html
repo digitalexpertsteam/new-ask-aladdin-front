@@ -6,7 +6,7 @@
             <div class="head mb-2">
                 <h3 class="font-weight-bolder">{{"Filter By"|translate}}</h3>
             </div>
-            <form #form="ngForm"  action="" (ngSubmit)="allForm(form)">
+            <form  [formGroup]="form">
             <div class="filter-content border-bottom">
                 <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
                     (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
@@ -17,7 +17,6 @@
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed" [isAnimated]="true">
 
-                    <ngx-slider [(value)]="minValueDays" [(highValue)]="maxValueDays" [options]="optionsDays"></ngx-slider>
 
 
 
@@ -39,14 +38,14 @@
                     <div class="form">
                         <span>
                           <label for="minText">Min value</label>
-                          <input type="number"  ngModel #min="ngModel"  id="minText" name="min" [(ngModel)]="val.value" #val3      min="0" />
+                          <input type="number"  ngModel #min="ngModel"  id="minText" name="min" [(ngModel)]="rangePric" placeholder="0"   #val3/>
                         </span>
                         <span>
                           <label for="maxText">Max value</label>
-                          <input type="number" ngModel #max="ngModel"  id="maxText" name="max" [(ngModel)]="val2.value"  min="10000" />
+                          <input type="number" ngModel #max="ngModel"  #val4 id="maxText" name="max" [(ngModel)]="rangePrice" placeholder="10000"/>
                         </span>
                         <div class="range">
-                          <input type="range" #val min="0" max="10000" value="0" step="500"  id="minRange" (change)="rangePri1(val)"  >
+                          <input type="range" #val min="0" max="10000" value="300" step="400"  id="minRange" (change)="rangePri1(val)"  >
                           <input type="range"   #val2  min="0" max="10000" value="10000" id="maxRange" (change)="rangePri2(val2)">
                          </div>
                         </div>
@@ -67,12 +66,33 @@
                 </a>
                 <div id="collapseBasic" class="raat sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
                     <!-- <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider> -->
-                    <input type="radio" name="" id="" value="checkedValue" class="custom-control-input">
-
-                    <label class="form-check-label" for="exampleRadios1">
-                        Default radio
-                      </label>
-                   
+                    <div class="form-check">
+                            <ngx-star-rating  formControlName="rating" [id]="'rating'" [disabled] ="true" (click)="star(form.value.rating)"></ngx-star-rating>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <rating class="rate1"   [ngModel]="rate+1"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                        <label class="form-check-label" for="exampleRadios3">
+                            <rating class="rate2"   [ngModel]="rate+2"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                        <label class="form-check-label" for="exampleRadios3">
+                            <rating class="rate3"   [ngModel]="rate+3"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                        <label class="form-check-label" for="exampleRadios3">
+                            <rating class="rate4"   [ngModel]=""  [readonly]="true" ></rating>
+                        </label>
+                      </div>
 
 
                 </div>

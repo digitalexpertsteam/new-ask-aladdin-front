@@ -8,7 +8,7 @@ import { CarouselModule } from "ngx-owl-carousel-o";
 import { CommonModule } from "@angular/common";
 import { EgyptSplendorComponent } from "../../pages/egypt-splendor/egypt-splendor.component";
 import { ExpertReviewsComponent } from "../../pages/expert-reviews/expert-reviews.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HightlightesComponent } from "../../pages/hightlightes/hightlightes.component";
 import { HttpClient } from "@angular/common/http";
 import { IvyCarouselModule } from "angular-responsive-carousel";
@@ -31,6 +31,7 @@ import { ReviewsComponent } from "../../pages/reviews/reviews.component";
 import { AccordionModule } from "ngx-bootstrap/accordion";
 import { NgxSliderModule } from "@angular-slider/ngx-slider";
 import { RangeSliderModule } from "ngx-range-slider";
+import { NgxStarRatingModule } from "ngx-star-rating";
 
 
 
@@ -79,6 +80,10 @@ import { RangeSliderModule } from "ngx-range-slider";
     DestinationContentRoutingModule,
     IvyGalleryModule,
     NgxGalleryModule,
+     NgxStarRatingModule,
+     ReactiveFormsModule,
+
+
 
 
 
@@ -109,6 +114,10 @@ import { RangeSliderModule } from "ngx-range-slider";
     NgxGalleryModule,
     AccordionModule,
     RangeSliderModule,
+    NgxStarRatingModule,
+    ReactiveFormsModule,
+
+
 
 
   ],
