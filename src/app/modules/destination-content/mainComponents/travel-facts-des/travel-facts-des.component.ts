@@ -25,7 +25,7 @@ export class TravelFactsDesComponent implements OnInit {
   desSlug: string = "";
 
   faName:any;
-
+  phone:any
   category: string = "";
   Title!: String;
   id: any;
@@ -57,7 +57,9 @@ export class TravelFactsDesComponent implements OnInit {
         this.faName = res.data[0].categories[5].name
         this.category = res.data[0].categories[5].slug;
       });
-    
+      this._faqs.getSocials().subscribe(result => {
+        this.phone = result.data[0].phone1
+      });
       this.Title = result.data[0].destination_seo_title;
       this._Title.setTitle(`${this.Title}`);
       this._Meta.addTags([

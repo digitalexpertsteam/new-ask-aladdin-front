@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
   oneLang: any[] = []
   langArr:any[]=[]
   currentLang: string = '';
-
+  empty: boolean = false;
   Languages = [
     { lnaguage: "English", image: "assets/imgs/en.png" },
     { lnaguage: "French", image: "assets/imgs/fr.png" },
@@ -61,6 +61,7 @@ export class HeaderComponent implements OnInit {
     this.currentLang = localStorage.getItem('currentLang') || 'en';
     this.translate.use(this.currentLang);
     this.header.getSocials().subscribe(result => {
+      
       this.socialsContainer = result.data
     });
   }
@@ -100,34 +101,29 @@ export class HeaderComponent implements OnInit {
 
 
   termS(term: any , value:any) {
-    this.header.search(term).subscribe(result => {
-      console.log();
-      
-      this.search = result.data
-      this.blogs = result.data.blogs
-      this.destinations = result.data.destinations
-      this.desSlug = result.data.destinations[0].slug
 
-      this.package = result.data.package
-      this.cruise = result.data.cruise
-      this.excursion = result.data.excursion
-      this.category = result.data.category
-      this.faq = result.data.faq
-      this.hotel = result.data.hotel
-      this.page = result.data.page
-      this.travel_guide = result.data.travel_guide
 
-      if(value.value = '' ){
+      this.header.search(term).subscribe(result => {
+
+  
+           this.empty = false;
+  
+           this.blogs = result.data.blogs
+           this.destinations = result.data.destinations
+           this.desSlug = result.data.destinations[0].slug
+           this.package = result.data.package
+           this.cruise = result.data.cruise
+           this.excursion = result.data.excursion
+           this.category = result.data.category
+           this.hotel = result.data.hotel
+           this.page = result.data.page
+           this.travel_guide = result.data.travel_guide
+         
         
-        console.log("no result");
-        
-      }
-      
-
-
-    })
-  }
-
-
+  
+  
+  
+      })
+    }
 }
 

@@ -9,12 +9,15 @@ import { HomeserviceService } from '../../services/homeservice.service';
 })
 export class AllDestinationsComponent implements OnInit {
  
-  
+  phone:any
   destinationContainer:destination[] = []
   constructor(private _destination:HomeserviceService) { }
 
   ngOnInit(): void {
     this._destination.getAlldestination().subscribe(result => this.destinationContainer = result.data)
+    this._destination.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
+    });
   }
   setId(id:any){
     localStorage.setItem("id", id);

@@ -5,6 +5,7 @@ import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ActivatedRoute } from '@angular/router';
 import { Options, LabelType } from "@angular-slider/ngx-slider";
+import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -119,8 +120,13 @@ optionsDays: Options = {
 };
 
 
-  max = 5;
-  rate = 3;
+  max:number=5;
+  rate = 1;
+  rate2 = 2;
+  rate3 = 3;
+  rate4 = 4;
+  rate5 = 5;
+
   count: any
   isReadonly = true;
   overStar: number | undefined;
@@ -144,8 +150,6 @@ optionsDays: Options = {
   rangePrice:any
   price$:any;
   price:any
-  reviews:singleDestination[]=[]
-  review:any
   tourType:any[]=['Family Friendly','Adventure or Sporting','Sightseeing','Combining','Spiritual'
   ,'Multi Country','Medical','Meditation','Romantic & Honeymoon','Indulgence & Luxury','Culinary, Food & Wine','Shore Excursion','Extended',]
   resetStar(): void {
@@ -165,66 +169,88 @@ optionsDays: Options = {
     private _Meta: Meta,
     private _Title: Title,
     private _active: ActivatedRoute,
-    private ngMod: NgbModal) { }
-  ngOnInit(): void {
-    this.id = this._active.snapshot.params.slug
-    this._singleDes.getSingleDestination(this.id).subscribe(result => {
-      this.destinationContainer = result.data
-    })
-    this._singleDes.getSinglepackage(this.id).subscribe(result => {
+    private ngMod: NgbModal) { 
+      this.id = this._active.snapshot.params.slug
 
-      this.reviews = result.data
-      
-      this.review=[]
-      this.reviews
-      this.reviews.forEach( ele => {
-        this.review.push({
-          rev:`${ele.reviews.length}`
-        })
-        console.log(this.review)
+      this._singleDes.getSingleDestinationFilter(this.id , 0 ,10000,1,30,1,5).subscribe(result => {
+        this.Filter = result.data
+        this.count = result.data.length
+  
+        console.log(this.Filter  );
+        
+        // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
+  
+        this.descount = result.data.discount + "%"
+        this.hot = result.data.hot_offer
+        this.nameCountry = result.data[0].destination_name;
+        this.Title = result.data[0].destination_seo_title;
+        this._Title.setTitle(`${this.Title}`)
+        this._Meta.addTags([
+          { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
+          { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
+          { name: 'description', content: `${result.data[0].destination_seo_description}` },
+          { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
+          { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
+          { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
+          { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
+          { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
+  
+        ]);
+      })
+    }
 
-}) 
-      
-    })
-    // this.rangePric = localStorage.getItem('rangeprice')
+    ngOnInit(): void {
     
-    this.price = this.options
-    
-    this._singleDes.getSingleDestinationFilter(this.id , 0 ,10000,1,30,1,5).subscribe(result => {
-      this.Filter = result.data
-      
-      // this.id , 0 ,10000,this.minDay,this.maxDay,this.minRate,this.MaxRate
-
-      this.descount = result.data.discount + "%"
-      this.hot = result.data.hot_offer
-      this.nameCountry = result.data[0].destination_name;
-      this.count = result.data.length
-      this.Title = result.data[0].destination_seo_title;
-      this._Title.setTitle(`${this.Title}`)
-      this._Meta.addTags([
-        { name: 'keywords', content: `${result.data[0].destination_seo_keywords}` },
-        { name: 'robots', content: `${result.data[0].destination_seo_robots}` },
-        { name: 'description', content: `${result.data[0].destination_seo_description}` },
-        { name: 'facebook:description', content: `${result.data[0].destination_facebook_description}` },
-        { name: 'twitter:title', content: `${result.data[0].destination_twitter_title}` },
-        { name: 'twitter:description', content: `${result.data[0].destination_twitter_description}` },
-        { name: 'twitter:image', property: "og:image", content: `${result.data[0].destination_twitter_image}` },
-        { name: 'facebook:image', property: "og:image", content: `${result.data[0].destination_facebook_image}` },
-
-      ]);
-    })
-    this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
-      this.category = res.data[0].categories[1].slug
-
-    })
-  }
+      this._singleDes.getSingleDestination(this.id).subscribe(result => {
+        this.destinationContainer = result.data
+      })
+      this._singleDes.getOneDestinationDetails(this.id).subscribe(res => {
+        this.category = res.data[0].categories[1].slug
+  
+      })
+    }
+  
+   
   transform(url: any) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
+
+  
   
   openVerticallyCentered(content: any) {
     this.ngMod.open(content, { centered: true });
 
 
   }
+  rangePri1(val:any){
+    this.rangePric = val.value
+    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric || 0 ,this.rangePrice || 10000 ,1,30,1,5).subscribe(result => {
+      this.Filter = result.data
+      this.count = result.data.length
+
+
+    }) 
+  }
+  rangePri2(val:any){
+    this.rangePrice = val.value
+    this._singleDes.getSingleDestinationFilter(this.id , this.rangePric ,this.rangePrice,1,30,1,5).subscribe(result => {
+      this.Filter = result.data
+      this.count = result.data.length
+
+    })
+  }
+
+  ratingMax(val:any){
+    console.log(val.value);
+    
+  }
+
+  
+  check(type:any){
+    console.log(type.value);
+    
+  }
+
+  
+  
 }

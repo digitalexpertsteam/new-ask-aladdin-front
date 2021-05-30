@@ -6,6 +6,7 @@
             <div class="head mb-2">
                 <h3 class="font-weight-bolder">{{"Filter By"|translate}}</h3>
             </div>
+            <form #form="ngForm"  action="" >
             <div class="filter-content border-bottom">
                 <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
                     (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
@@ -34,7 +35,21 @@
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed2" [isAnimated]="true">
                         
-                    <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+                    <!-- <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider> -->
+                    <div class="form">
+                        <span>
+                          <label for="minText">Min value</label>
+                          <input type="number"  ngModel #min="ngModel"  id="minText" name="min" [(ngModel)]="rangePric" placeholder="0"   #val3/>
+                        </span>
+                        <span>
+                          <label for="maxText">Max value</label>
+                          <input type="number" ngModel #max="ngModel"  #val4 id="maxText" name="max" [(ngModel)]="rangePrice" placeholder="10000"/>
+                        </span>
+                        <div class="range">
+                          <input type="range" #val min="0" max="10000" value="300" step="400"  id="minRange" (change)="rangePri1(val)"  >
+                          <input type="range"   #val2  min="0" max="10000" value="10000" id="maxRange" (change)="rangePri2(val2)">
+                         </div>
+                        </div>
 
                 </div>
             </div>
@@ -51,7 +66,37 @@
 
                 </a>
                 <div id="collapseBasic" class="raat sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
-                    <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider>
+                    <!-- <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider> -->
+                    <div class="form-check">
+                        <input class="form-check-input radio"  type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                            <rating class="rate"   [ngModel]="rate"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                            <rating class="rate"   [ngModel]="rate2"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                        <label class="form-check-label" for="exampleRadios3">
+                            <rating class="rate"   [ngModel]="rate3"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                        <label class="form-check-label" for="exampleRadios3">
+                            <rating class="rate"   [ngModel]="rate4"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input radio" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                        <label class="form-check-label" for="exampleRadios3">
+                            <rating class="rate"   [ngModel]="rate5"  [readonly]="true" ></rating>
+                        </label>
+                      </div>
 
 
                 </div>
@@ -66,13 +111,13 @@
                     <i class="fas" [ngClass]="{'fa-angle-down': isCollapsed3, 'fa-angle-up': !isCollapsed3}"></i>
                 </a>
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed3" [isAnimated]="true">
-                    <div *ngFor="let tour of tourType" class="form-check mb-2 d-flex align-items-center">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <div *ngFor="let tour of tourType ; let i = index" class="form-check mb-2 d-flex align-items-center">
+                        <input class="form-check-input"  #type  [value]="i+1" (change)="check(type)"  name="type" type="checkbox" value="" >
                         <label class="form-check-label" for="flexCheckDefault">
                             {{tour}}
                         </label>
-                    </div>
 
+                    </div>
                     <!-- <div class="form-check mb-2 d-flex align-items-center">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault">
@@ -92,6 +137,7 @@
                         </label>
                     </div> -->
                 </div>
+                <button>add</button>
             </div>
 
 
@@ -120,6 +166,8 @@
                 <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed6" [isAnimated]="true">
                 </div>
             </div> -->
+        </form>
+
         </section>
     </div> 
 
@@ -132,9 +180,9 @@
 
     <div>
 
-        <ng-container *ngFor="let singleDes of destinationContainer">
+        <ng-container *ngFor="let singleDes of Filter">
             <div class="data-box   bg-white mt-3 p-2">
-                <div class="row mx-0">
+                <div id="pack" class="row mx-0 ">
                     <div class="col-xl-10 ">
                         <div class="card border-0">
                             <div class="row px-0 ">
@@ -179,11 +227,11 @@
                                         <div>
                                             <div>
 
-                                                <rating class="rate" [(ngModel)]="singleDes.rate" [max]="max"
+                                                <rating class="rate" [(ngModel)]="singleDes.rate" 
                                                     [readonly]="isReadonly">
 
                                                 </rating>
-                                                <span  class="reviews">  {{"Reviews"|translate}}</span>
+                                                <span class="reviews"> of  {{"Reviews"|translate}}</span>
 
                                             </div>
 
@@ -192,9 +240,9 @@
                                         <p class="package-text" [innerHTML]="singleDes.package_description"></p>
 
                                         <div class="tour">
-                                            <div class="  font-weight-bold pl-2  d-flex justify-content-between ">{{"Tour Type"|translate}}: </div>
-                                            <div class="pl-2 " *ngFor="let x of singleDes.tour_type"> <img
-                                                    src="../../../../../assets/imgs/dot.svg" class="dot"> {{ x}}
+                                            <div class="  font-weight-bold pl-2    ">{{"Tour Type"|translate}}: </div>
+                                            <div class="pl-2 " *ngFor="let x of singleDes.tour_type">
+                                                 <img src="../../../../../assets/imgs/dot.svg" class="dot"> {{ x}}
                                             </div>
                                         </div>
 
@@ -247,22 +295,22 @@
                     </div>
 
 
-                    <div class="col-xl-2 px-0 ">
-                        <div class="pricing text-center h-100 sec-bg">
-                            <div class=" ">
+                    <div class="col-xl-2 px-0  ">
+                        <div class="pricing text-center h-100 sec-bg  ">
+                            <div class="mt-2 ">
                             <span>{{"Pricing"|translate}}</span>
-                            <h4 class="font-weight-bold mb-2">{{"Start From"|translate}}</h4>
+                            <h4 class="font-weight-bold mb-2 mt-2">{{"Start From"|translate}}</h4>
                             <span class="price main-color font-weight-bold">${{singleDes.start_price}} USD</span>
-                            <p class="text-left my-2 mb-3">{{singleDes.duration_in_days}}
-                                {{"Days"|translate}}/{{singleDes.duration_in_days -x}} {{"Nights"|translate}}
-                            </p>
-                            <a class="main-btn p-2 view d-block mb-2 font-weight-bold" 
+                            <h6 class="text-center my-2 mb-3">{{singleDes.duration_in_days}}
+                                {{" Days"|translate}} / {{singleDes.duration_in_days -x}} {{"Nights"|translate}}
+                            </h6>
+                            <a class="main-btn p-2 view d-block mb-2 font-weight-bold mt-3" 
                                 routerLink="/{{singleDes.destination_slug}}/travel-package/{{singleDes.package_slug}}">{{"View Tour Details"|translate}}</a>
 
-                            <a class="main-btn book bg-white p-2 d-block font-weight-bold pt-2"
+                            <a class="main-btn book bg-white p-2 d-block font-weight-bold pt-2 mt-3"
                                 (click)="openVerticallyCentered(content)">{{"Booking Inquiry"|translate}}</a>
                         </div>
-                    </div>
+                      </div>
                         <ng-template #content let-modal>
                             <div class="modal-body">
 

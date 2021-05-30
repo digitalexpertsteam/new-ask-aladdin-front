@@ -22,7 +22,12 @@ export class HomeserviceService {
     localStorage.setItem("currentLang", lang);
   }
   //End ngx translate
-
+  Task = {
+    min: Number , max: Number , days:Number , rate: Number 
+  }
+  editTask(){
+    return this.Task
+  }
   getSlider(): Observable<any> {
     return this._http.get(`${environment.ApiUrl}sliders/${this.currentLang}`);
   }

@@ -6,9 +6,9 @@
         </div>
         <p class="mt-2">{{"Below you'll find the wide variety of attractions here in Egypt. Keep any of these in mind when planning your trip"|translate}}!</p>
         <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
-            <a href="" class="call-btn d-flex align-items-center">
+            <a class="call-btn d-flex align-items-center">
                 <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
-                <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>+1(888) 513-5971</strong></span>
+                <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>{{phone}}</strong></span>
             </a>
         </div>
     </div>
@@ -33,7 +33,7 @@
                     <a  routerLink="/{{des.slug}}/destination" >
                         <img src="{{des.thumb}}" class="img-fluid" alt="{{des.thumb_alt}}" />
                         <div class="overlay">
-                            <a class="text-white"  routerLink="/{{des.id}}">{{des.name}}</a>
+                            <a class="text-white"  routerLink="/{{des.slug}}/destination">{{des.name}}</a>
                         </div>
                     </a>
                 </div>

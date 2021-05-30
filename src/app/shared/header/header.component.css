@@ -202,7 +202,9 @@ h4 img {
     justify-content: center;
 }
 
-
+.empty-result{
+    color: #f68800;
+}
 
 .anotherCard{
 

@@ -13,6 +13,7 @@ export class AllFaqDestinationComponent implements OnInit {
   faqNames: destination[] = [];
   faqContent: any = [];
   id: any;
+  phone:any
   constructor(private _destinationPack: HomeserviceService ,private active:ActivatedRoute) {}
   ngOnInit(): void {
     this.id = this.active.snapshot.params.id
@@ -21,6 +22,10 @@ export class AllFaqDestinationComponent implements OnInit {
       .subscribe((result) => (this.faqNames = result.data));
     this._destinationPack.getOneDestinationDetails(5).subscribe((res) => {
       this.faqContent = res.data[0].categories[5];
+    });
+
+    this._destinationPack.getSocials().subscribe(result => {
+      this.phone = result.data[0].phone1
     });
   }
 

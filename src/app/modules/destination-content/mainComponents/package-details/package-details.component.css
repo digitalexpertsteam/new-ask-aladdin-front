@@ -1,4 +1,3 @@
-
 .tags {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +52,7 @@
     font-size: .7rem;
 }
 .book {
-    color: #f68800;
+    color: #f68800 !important;
     cursor: pointer;
     border-radius: 30px !important;
 }
@@ -280,7 +279,7 @@
     color: #9c9c9c;
 }
 .package-text{
-    height: 70%;
+    height: 50%;
 }
 @media only  screen and (max-width:480px) {
     .pack-icons{
@@ -327,3 +326,100 @@ border-radius:16px #f68800 !important;
 
 }
 /*  */
+
+
+.form {
+    position: relative;
+    width: 300px;
+  }
+  .form span {
+    display: inline-block;
+    width: calc(33% - 2px);
+  }
+  .form span label {
+    display: block;
+  }
+  .form span input[type="number"] {
+    width: 80%;
+  }
+  .form .range, .form .average {
+    display: block;
+    padding: 1rem 0;
+    width: 60%;
+  }
+  .form .range input[type="range"], .form .average input[type="range"] {
+    -webkit-appearance: none;
+    background-color: silver;
+    border-radius: 4px;
+    display: block;
+    height: 8px;
+    pointer-events: none;
+    position: absolute;
+    outline: none;
+    width: 63%;
+  }
+  .form #minRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: url(../../../../../assets/imgs/Drawback-minus-flaw-trimplement-payment.png);
+    background-size: cover;
+    border-radius: 0%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 30px;
+    pointer-events: all;
+    position: relative;
+    width: 30px;
+    z-index: 2;
+  }
+  .form #minRange::-webkit-slider-thumb:active {
+    -webkit-appearance: none;
+    background: url(../../../../../assets/imgs/Advantage-Plus-.png);
+    background-size: cover;
+    border-radius: 0%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 30px;
+    pointer-events: all;
+    position: relative;
+    width: 30px;
+    z-index: 2;
+  }
+  .form #maxRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: url(../../../../../assets/imgs/Advantage-Plus-.png);
+    background-size: cover;
+    border-radius: 0%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 30px;
+    pointer-events: all;
+    position: relative;
+    width: 30px;
+    z-index: 2;
+  }
+  .form #maxRange::-webkit-slider-thumb:active {
+    -webkit-appearance: none;
+
+    background: url(../../../../../assets/imgs/Drawback-minus-flaw-trimplement-payment.png);
+    background-size: cover;
+    border-radius: 0%;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    height: 30px;
+    pointer-events: all;
+    position: relative;
+    width: 30px;
+    z-index: 2;
+  }
+  
+  .form .range input[type="range"]::-webkit-slider-thumb:active {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+  }
+  .form .range input[type="range"]#avgRange, .form .average input[type="range"]#avgRange {
+    margin: 1rem 0;
+  }
+
+  .radio{
+      margin-top: 18px;
+  }
