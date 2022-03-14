@@ -1,0 +1,126 @@
+<section *ngFor='let guide of singleGuide'>
+  <section class="banner text-center"
+    [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + guide.banner + ')' }">
+    <div class="container">
+      <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+
+        <h1><span class="main-color des-Name font-weight-bold"> {{guide.name}}</span> </h1>
+      </div>
+      <p class="mt-2"></p>
+      <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+        <a href="tel:{{phone}}
+        563148" class="call-btn d-flex text-decoration-none align-items-center">
+          <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
+          <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>{{phone}}</strong></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<section>
+  <div class="container">
+
+    <div *ngFor='let single of singleGuide' class="page-links py-2">
+      <a class="hover-color" routerLink="/"> <span>{{"Home"|translate}} / </span> </a>
+      <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span> {{desName}} / </span> </a>
+      <a class="hover-color" routerLink="/{{desSlug}}/travel-guides"> <span> {{GuideName}} / </span> </a>
+      <span class="main-color">{{single.name}}</span>
+    </div>
+  </div>
+</section>
+<section class="sec-bg py-4">
+  <div class="container ">
+    <div *ngFor="let faq of singleGuide" class="row">
+
+      <div class="col-lg-9  col-sm-12 bg-white mt-3">
+        <!-- <div class="mb-3">
+                    <img [src]="blog.thumb" class="img-fluid" alt="{{blog.thumb_alt}}" />
+                </div> -->
+        <div class="head-title w-100 mb-2 d-flex justify-content-between mt-2">
+          <h3 class="font-weight-bold">
+            {{ faq.name }}
+          </h3>
+          <p class="font-weight-bold">{{ faq.created_at }}</p>
+        </div>
+        <div class="single-blog-content w-100 mb-5">
+          <p [innerHTML]="faq.overview| codeHtml:'html'"></p>
+        </div>
+
+        <div class="text-center ">
+<!--
+          <owl-carousel-o [options]="customOptions">
+              <ng-template *ngFor="let guide of relatedGuide" carouselSlide>
+                <div class="slide">
+                  <div class="blogs overflow-hidden">
+                    <a routerLink="/" class="text-dark">
+                      <div class="card main-card text-center anotherCard">
+                        <img
+                          [src]="guide.thumb"
+                          class="img-fluid"
+                          alt="{{ guide.thumb_alt }}"
+                        />
+
+                        <div class="card-body card-details des-antherCard">
+                          <h6 class="card-title">{{ guide.name }}</h6>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </ng-template>
+            </owl-carousel-o> -->
+            <h2 class="mb-3">{{"Related Travel Guides"|translate}}</h2>
+
+          <div class="row">
+            <div *ngFor="let guide of relatedGuide" class="col-md-3  ">
+                <div class="slide">
+                  <div class="blogs overflow-hidden">
+                    <a routerLink="/" class="text-dark">
+                      <div class="card main-card text-center anotherCard">
+                        <img
+                          [src]="guide.thumb"
+                          class="img-fluid"
+                          alt="{{ guide.thumb_alt }}"
+                        />
+
+                        <div class="card-body card-details des-antherCard">
+                          <h6 class="card-title">{{ guide.name }}</h6>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <h2 class="mb-5">{{"Related Pages"|translate}}</h2>
+          <owl-carousel-o [options]="owlOptions">
+            <ng-template *ngFor="let guide of relatedPages" carouselSlide>
+              <div class="slide">
+                <div class="blogs overflow-hidden">
+                  <a routerLink="/" class="text-dark">
+                    <div class="card main-card text-center anotherCard " style="width: 190px;">
+                      <img [src]="guide?.thumb" class="img-fluid" alt="{{ guide?.thumb_alt }}" />
+
+                      <div class="card-body card-details des-antherCard">
+                        <h6 class="card-title">{{ guide?.name }}</h6>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </ng-template>
+          </owl-carousel-o>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-3 col-md-3">
+        <app-expert-reviews></app-expert-reviews>
+      </div>
+    </div>
+  </div>
+</section>

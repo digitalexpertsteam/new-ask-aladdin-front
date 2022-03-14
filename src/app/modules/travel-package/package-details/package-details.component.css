@@ -1,0 +1,15 @@
+.cat-pack{
+  color: black;
+}
+.cat-pack:hover{
+  color: #f68800;
+  text-decoration: none;
+}
+
+
+ input[type="checkbox"]:checked {
+   content:"";
+  box-shadow: 0 0 0 3px #f68800;
+  background-color: blueviolet !important;
+  color: #f68800;
+}

@@ -1,0 +1,73 @@
+<div class="submit">
+  <div class="position-relative ">
+<button (click)="openVerticallyCentered(content)" data-toggle="modal" data-target="#exampleModalLong"
+  class="main-btn w-100 mt-3  "> Send Your Enquiry</button>
+  <div class="send"><i class="fab fa-telegram-plane fa-2x mt-2"></i></div>
+</div>
+<div class="position-relative ">
+  <button (click)="openVertically(Trip)" data-toggle="modal" data-target="#exampleModalLong"
+      class="main-btn w-100 mt-3 trip  ">TRIP DOSSIER</button>
+      <div class="send"> <i class="fas fa-download fa-2x mt-1"></i> </div>
+  </div>
+</div>
+
+
+
+
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+      <section class="bg-white mt-3 px-3 py-4 booking">
+          <div class="head mb-2">
+              <h3 class="font-weight-bolder">Booking</h3>
+          </div>
+          <iframe onload="javascript:parent.scrollTo(0,0);" height="1300" allowTransparency="true" scrolling="no" frameborder="0" style="width:100%;border:none" src="https://ask-aladdin.com/machform/embed.php?id=4" title="AskAladdin Tour Booking Center:"><a href="https://ask-aladdin.com/machform/view.php?id=4" title="AskAladdin Tour Booking Center:">AskAladdin Tour Booking Center:</a></iframe>
+      </section>
+
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+  </div> -->
+</ng-template>
+
+<ng-template #Trip let-modal>
+  <div class="modal-body">
+      <section class="bg-white mt-3 px-3 py-4 booking">
+          <div class="head mb-2">
+              <h3 class="font-weight-bolder head ">Please fill in the blew fields to get a download link!</h3>
+              <hr>
+          </div>
+
+
+          <form class="mt-4" [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+              <div class="informations mt-3">
+
+                  <input [class.is-valid]="profileForm.controls['name'].errors==null" id="name" name="name" class="form-control" type="text" placeholder="Enter Your Name" formControlName="name" >
+                  <div *ngIf="profileForm.controls['name'].invalid && (profileForm.controls['name'].dirty || profileForm.controls['name'].touched)" class="alert alert-danger mt-2">
+                      Enter Valid Name
+                  </div>
+
+                  <input [class.is-valid]="profileForm.controls['email'].errors==null" class="form-control mt-3" type="text" placeholder="Enter Your Email ID" formControlName="email">
+                  <div *ngIf="profileForm.controls['email'].invalid && (profileForm.controls['email'].dirty || profileForm.controls['email'].touched)" class="alert alert-danger mt-2">
+                      Enter Valid Email
+                  </div>
+
+                  <input  [class.is-valid]="profileForm.controls['phone'].errors==null" class="form-control mt-3" type="tel" placeholder="Enter Your Phone Number" formControlName="phone" >
+                  <div *ngIf="profileForm.controls['phone'].invalid&&profileForm.controls['phone'].errors && (profileForm.controls['phone'].dirty || profileForm.controls['phone'].touched)" class="alert alert-danger mt-2">
+                      Enter Valid phone
+                  </div>
+
+                  <textarea [class.is-valid]="profileForm.controls['comment'].errors==null" class="form-control mt-3" rows="5" placeholder="Enter Your Comments" formControlName="comment"></textarea>
+                  <div *ngIf="profileForm.controls['comment'].invalid && (profileForm.controls['comment'].dirty || profileForm.controls['comment'].touched)" class="alert alert-danger mt-2">
+                     Please Enter Your Comments
+                  </div>
+              </div>
+              <button type="submit" class="main-btn w-100 mt-3" [disabled]="!profileForm.valid">Submit</button>
+              <div *ngIf="alert" class="text-center mt-2 alert alert-primary"><p>Thank you for your interest in AskAladdin, the Egypt travel expert. We have emailed you a download link with the Trip Factsheet. Please check your email</p></div>
+          </form>
+      </section>
+
+  </div>
+
+
+</ng-template>

@@ -1,0 +1,117 @@
+<section *ngIf="package"  class="bg-white mt-3  py-4">
+  <div class="head mb-2">
+    <h3 class="font-weight-bolder pl-2">{{ "Related Package" | translate }}</h3>
+  </div>
+
+
+
+      <div class="isotope column-4 mb-3 mt-2">
+        <div class="grid-item mercedes audi">
+
+          <div *ngFor="let ex of optional" class="car-item text-center">
+            <div class="car-image">
+              <img class="img-fluid image-sizee"
+              src="{{ ex.thumb }}" alt="{{ ex.thumb_alt }}">
+              <div class="car-overlay-banner">
+                <ul>
+                  <li><a href="/{{ des }}/travel-package/{{ ex.slug }}" (click)="setid(ex.id)"><i class="fa fa-link"></i></a></li>
+
+                </ul>
+              </div>
+            </div>
+            <div class="car-list">
+              <ul class="list-inline">
+                <li><i class="fa fa-calendar"></i> {{ex.days}} Dayes </li>
+                <li><i class="fa fa-money"></i> Price {{ex.start_price}} $ </li>
+              </ul>
+            </div>
+            <div class="car-content">
+              <rating [(ngModel)]="ex.rate" [max]="max" [readonly]="isReadonly"> </rating>
+
+              <a href="/{{ des }}/travel-package/{{ ex.slug }}" (click)="setid(ex.id)">{{ ex.name }}</a>
+              <div class="separator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- end  -->
+
+</section>
+
+
+
+<section *ngIf="cruise" class="bg-white mt-3 px-3 py-4">
+  <div class="head mb-2">
+    <h3 class="font-weight-bolder">{{ "Related Cruises" | translate }}</h3>
+  </div>
+
+  <div class="isotope column-4 mb-3 mt-2">
+    <div class="grid-item mercedes audi">
+
+      <div *ngFor="let relate of related" class="car-item text-center">
+        <div class="car-image">
+          <img class="img-fluid image-sizee"
+          src="{{ relate.thumb }}" alt="{{ relate.thumb_alt }}">
+          <div class="car-overlay-banner">
+            <ul>
+              <li><a href="/{{ des }}/travel-cruises/{{ relate.slug }}"  ><i class="fa fa-link"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="car-list">
+          <ul class="list-inline">
+            <li><i class="fa fa-calendar"></i> {{relate.days}} Dayes </li>
+            <li><i class="fas fa-money-bill-wave"></i> Price {{relate.start_price}} $ </li>
+          </ul>
+        </div>
+        <div class="car-content">
+          <rating [(ngModel)]="relate.rate" [max]="max" [readonly]="isReadonly"> </rating>
+
+          <a  href="/{{ des }}/travel-cruises/{{ relate.slug }}"  >{{ relate.name }}</a>
+          <div class="separator"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section *ngIf="excure" class="bg-white mt-3 px-3 py-4">
+  <div class="head mb-2">
+    <h3 class="font-weight-bolder">{{ "Related Excursions" | translate }}</h3>
+  </div>
+
+  <div class="isotope column-4 mb-3 mt-2">
+    <div class="grid-item mercedes audi">
+
+      <div *ngFor="let ex of related" class="car-item text-center">
+        <div class="car-image">
+          <img class="img-fluid image-sizee"
+          src="{{ ex.thumb }}" alt="{{ ex.thumb_alt }}">
+          <div class="car-overlay-banner">
+            <ul>
+              <li><a href="/{{ des }}/travel-excursions/{{ ex.slug }}" (click)="setid(ex.id)"><i class="fa fa-link"></i></a></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="car-list">
+          <ul class="list-inline">
+            <li><i class="fa fa-calendar"></i> {{ex.days}} Dayes </li>
+            <li><i class="fa fa-money"></i> Price {{ex.start_price}} $ </li>
+          </ul>
+        </div>
+        <div class="car-content">
+          <rating [(ngModel)]="ex.rate" [max]="max" [readonly]="isReadonly"> </rating>
+
+          <a href="/{{ des }}/travel-excursions/{{ ex.slug }}" (click)="setid(ex.id)">{{ ex.name }}</a>
+          <div class="separator"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

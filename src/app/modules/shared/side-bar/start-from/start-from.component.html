@@ -1,0 +1,69 @@
+<section *ngIf="package" class="bg-white mt-3 px-3 py-4">
+    <div class="head mb-2">
+        <h3 class="font-weight-bolder">Starting from <span class="main-color">{{start?.start_price}} USD</span></h3>
+        <!-- <p class="mb-1">per person in a double room</p> -->
+    </div>
+    <div class="">
+        <ul class="p-0">
+
+             <!-- <li  class="list-group-item d-flex px-0 py-2">
+
+                <span >  tour type  {{tour}}</span>
+
+
+            </li>  -->
+            <li class="list-group-item d-flex px-0 py-2">
+                <img src="assets/imgs/right.svg" class="img-fluid">
+                <span>{{num}} nights / {{start?.days}} days</span>
+            </li>
+
+
+            <li *ngFor='let x of includeds|slice:0:4' class="list-group-item d-flex px-0 py-2">
+                <img src="assets/imgs/right.svg" class="img-fluid">
+                <span>{{x?.content}}</span>
+            </li>
+
+
+        </ul>
+    </div>
+</section>
+
+<section *ngIf="cruise" class="bg-white mt-3 px-3 py-4">
+  <div class="head mb-2">
+      <h4 class="h6 font-weight-bolder"> I Room : {{cruises?.single_room_price}}<span
+              class="main-color">
+              USD</span></h4>
+      <h4 class="h6 font-weight-bolder"> II Room : {{cruises?.double_room_price}} <span
+              class="main-color"> USD</span></h4>
+      <h4 class="h6"> <span> <i class="fas fa-route"></i> check in</span> {{cruises?.checkin}} </h4>
+      <h4 class="h6"> <span> <i class="fas fa-route"></i> check out</span> {{cruises?.checkout}} </h4>
+      <rating [(ngModel)]="rates" [max]="max" [readonly]="isReadonly"></rating>
+
+  </div>
+  <div class="">
+      <ul class="p-0">
+
+          <li *ngFor='let x of cruises?.services' class="list-group-item d-flex px-0 py-2">
+              <img src="assets/imgs/right.svg" class="img-fluid">
+              <span>{{x?.content}}</span>
+          </li>
+
+
+      </ul>
+  </div>
+</section>
+
+<section *ngIf="excure" class="bg-white mt-3 px-3 py-4">
+  <div class="head mb-2">
+       <h3 class="font-weight-bolder">{{"Starting from"|translate}} <span class="main-color">{{startPrices}} USD</span></h3>
+      <!-- <p class="mb-1">per person in a double room</p> -->
+  </div>
+  <div class="">
+      <ul class="p-0">
+          <li *ngFor='let includ of includeds' class="list-group-item d-flex px-0 py-2">
+              <img src="assets/imgs/right.svg" class="img-fluid">
+              <span>{{includ.content}}</span>
+          </li>
+      </ul>
+  </div>
+</section>

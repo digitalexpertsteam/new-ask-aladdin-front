@@ -1,0 +1,133 @@
+<section class=" py-4 hotOffer">
+    <div class="container">
+      <div class="head-title mb-4">
+        <h3 class="font-weight-bold">{{"Hot Offers"|translate}}</h3>
+      </div>
+
+      <owl-carousel-o [options]="customOwl">
+        <ng-template *ngFor="let pack of packageOffer" carouselSlide>
+          <div class="slide">
+            <div class="blogs overflow-hidden">
+              <a routerLink="/{{singleDestination[0].name}}/travel-package/{{pack.slug}}" class="text-dark">
+                <div class="card main-card text-center anotherCard offerCard">
+
+                    <p  class="affe">
+                      <span class="offerr">
+                          {{"Hot Offer"|translate}}
+                      </span>
+                  </p>
+
+
+
+                    <img
+                      [src]="pack.thumb"
+                      class="main-top"
+                      alt="{{ pack.thumb_alt }}"
+                    />
+
+
+                  <div class="card-body card-details des-antherCard">
+                    <h6 class="card-title">{{ pack.name }}</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template *ngFor="let excurs of excursionsOffer" carouselSlide>
+          <div class="slide">
+            <div class="blogs overflow-hidden">
+              <a routerLink="/{{singleDestination[0].name}}/travel-excursions/{{excurs.slug}}" class="text-dark">
+                <div class="card main-card text-center anotherCard offerCard">
+
+                  <p  class="affe">
+                    <span class="offerr">
+                        {{"Hot Offer"|translate}}
+                    </span>
+                </p>                  <img
+                      [src]="excurs.thumb"
+                      class="min-top"
+                      alt="{{ excurs.thumb_alt }}"
+                    />
+
+
+                  <div class="card-body card-details des-antherCard">
+                    <h6 class="card-title">{{ excurs.name }}</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template *ngFor="let curies of cruisesOffer" carouselSlide>
+          <div class="slide">
+
+            <div class="blogs overflow-hidden">
+              <a routerLink="/{{singleDestination[0].slug}}/travel-cruises/{{curies.slug}}" class="text-dark">
+                <div class="card main-card text-center anotherCard offerCard">
+                  <p  class="affe">
+                    <span class="offerr">
+                        {{"Hot Offer"|translate}}
+                    </span>
+                </p>                  <img
+                      [src]="curies.thumb"
+                      class="min-top"
+                      alt="{{ curies.thumb_alt }}"
+                    />
+
+                  <div class="card-body card-details des-antherCard">
+                    <h6 class="card-title">{{ curies.name }}</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </section>
+
+  <section class="sec-bg py-4">
+    <div class="container">
+      <div class="head-title mb-4">
+        <h3 class="font-weight-bold">{{"Related Pages"|translate}}</h3>
+      </div>
+
+      <owl-carousel-o [options]="customOptions">
+        <ng-template *ngFor="let page of relatedPages" carouselSlide>
+          <div class="slide">
+            <div class="blogs overflow-hidden">
+              <a routerLink="/{{singleDestination[0].slug}}/page/{{page.slug}}" class="text-dark">
+                <div class="card main-card text-center anotherCard">
+                  <img
+                    [src]="page.thumb"
+                    class="img-fluid"
+                    alt="{{ page.thumb_alt }}"
+                  />
+
+                  <div class="card-body card-details des-antherCard">
+                    <h6 class="card-title">{{ page.name }}</h6>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </section>
+  <section class="container-fluid mt-2 main">
+    <div class="category  ">
+    <div  class="row">
+        <div *ngFor="let category of categoryFooter|slice :0:5" class="col-12 col-lg-2 col-md-6">
+            <ul  class="list">
+                <h1 class="title-category">{{category.title}}</h1>
+                <div *ngFor="let cate of category.categories ">
+                    <a href="/{{category.destination_slug}}/category/{{cate.slug}}" class="hover-color"><li>{{cate.name}}</li></a>
+                </div>
+            </ul>
+        </div>
+
+    </div>
+  </div>
+  </section>

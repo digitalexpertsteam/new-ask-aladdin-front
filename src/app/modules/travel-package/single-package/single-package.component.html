@@ -1,0 +1,116 @@
+<section
+  class="sec-banne text-center"
+  [ngStyle]="{
+    'background-image': 'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + banener?.banner + ')'
+  }"
+>
+  <div class="container mt-5">
+    <div class="head text-uppercase d-inline-block font-weight-bold pb-1 mt-4">
+      <h1>
+        <span class="main-color font-weight-bold">{{ banener?.name }} </span>
+      </h1>
+    </div>
+  </div>
+  <div class="over_banner"><img src="{{ overBanner }}" alt="" srcset="" /></div>
+  <p class=" mx-auto mt-3 w-50 ">{{ banener.description }}</p>
+</section>
+<section>
+  <div class="container">
+    <div class="page-links py-2">
+      <a class="hover-color" routerLink="/">
+        <span>{{ "Home" | translate }} / </span>
+      </a>
+      <a class="hover-color" routerLink="/{{ desSlug }}/destination">
+        <span> {{ desName }} / </span>
+      </a>
+      <a class="hover-color" routerLink="/{{ desSlug }}/travel-packages">
+        <span> {{ packName }} / </span>
+      </a>
+      <span class="main-color">{{ banener?.name }}</span>
+    </div>
+  </div>
+</section>
+<section class="sec-bg p-3 mb-5">
+  <div class="container">
+    <app-tags [cruise]=false></app-tags>
+    <div class="row mt-4">
+      <div class="col-12 col-md-9">
+        <app-splander [package]="type"></app-splander>
+         <app-hightlightes></app-hightlightes>
+        <app-package-included [package]="type"></app-package-included>
+
+        <app-price-data [package]="type"></app-price-data>
+        <app-experiences [package]="type"></app-experiences>
+        <section id="optional" class="bg-white mt-3 p-3 mb-5">
+          <div *ngFor="let tours of ptional" class="">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="h3 font-weight-bold">{{ tours?.title }}</h1>
+
+                <h5 class="">
+                  <span class="font-weight-bold">Price:</span> {{ tours?.price }}<span class="main-color"> $ USD</span>
+                </h5>
+              </div>
+
+              <div class="col-md-7 mt-2"><p [innerHtml]="tours?.overview"></p></div>
+              <div class="col-md-5 mt-2"><img [src]="tours?.image" class="img-fluid" /></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="videos" class="bg-white mt-3 pl-2 ">
+          <div *ngIf="video.length > 0; else noData" class="row">
+            <div *ngFor="let vid of video; let i = index" class="col-lg-6  col-md-6 col-sm-12   mt-3">
+              <!-- <youtube-player class="you" [videoId]="vid" [width]="300" [height]="250" (ready)="savePlayer($event)">
+              </youtube-player> -->
+              <a class="main-youtupe" data-toggle="modal"   href="#youtupeModal{{i}}">
+                  <div class="frame-youtupe">
+                    <iframe [src]="vid |safe" width="100%" class="p-2" height="100%"  title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  frameborder="0"></iframe>
+                  </div>
+                <div class="layer-youtupe">
+                    <a href="">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </a>
+              <div (click)="!ifTrue = ifTrue" class="modal fade" id="youtupeModal{{i}}" tabindex="-1" aria-labelledby="youtupeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+
+                    <div  class="modal-body">
+                        <iframe *ngIf="!ifTrue" [src]="vid |safe"  width="100%"  height="100%" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen  frameborder="0"></iframe>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <ng-template #noData>
+            <h1 class="h3 text-center  ">
+              <img src="assets/imgs/dot.svg" class="img-fluid" /> {{ "No Videos Yet" | translate }}
+            </h1>
+          </ng-template>
+        </section>
+        <app-accomodation [package]="type"></app-accomodation>
+        <app-reviews [package]="type"></app-reviews>
+
+      </div>
+      <div class="col-12 col-md-3">
+        <app-side-bar></app-side-bar>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class=".sec-bg">
+    <!-- <app-reviews></app-reviews> -->
+</section>
+<!-- videos -->
+<app-we-are></app-we-are>
+
+<app-sponsors></app-sponsors>

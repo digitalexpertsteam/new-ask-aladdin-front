@@ -1,0 +1,98 @@
+<section >
+<section
+  class="sec-banner text-center"
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + cruises?.banner + ')'
+  }"
+>
+  <div class="container">
+    <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+      <h1>
+        <span class="main-color font-weight-bold">{{ cruises?.name }} </span>
+      </h1>
+    </div>
+    <p class="mt-2" [innerHtml]="cruises?.description"></p>
+    <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+      <!-- <a href="" class="main-btn mr-3">Read More <i class="fas fa-arrow-right"></i></a> -->
+
+      <a class="call-btn d-flex align-items-center">
+        <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
+        <span class="phone-text text-dark"> Call Us: <strong>{{ phone }}</strong> </span>
+      </a>
+    </div>
+  </div>
+</section>
+</section>
+<section >
+  <div class="container">
+    <div class="page-links py-2" >
+      <a class="hover-color" routerLink="/">
+        <span>{{ "Home" | translate }} / </span>
+      </a>
+      <a class="hover-color" routerLink="/{{ desSlug }}/destination">
+        <span> {{ desName }} / </span>
+      </a>
+      <a class="hover-color" routerLink="/{{ desSlug }}/travel-cruises">
+        <span> {{ cruName }} / </span>
+      </a>
+      <span class="main-color">{{ cruises?.name }}</span>
+    </div>
+  </div>
+</section>
+<section class="sec-bg">
+  <div class="container">
+    <app-tags [cruise]="type"></app-tags>
+
+    <div class="row">
+      <div class="col-lg-9">
+        <app-gallery [cruise]="type"></app-gallery>
+        <app-splander [cruise]="cruis1"></app-splander>
+        <section id="Services" class="bg-white mt-3 px-2 py-4">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12 col-md-7">
+                      <div class="head mb-4">
+                          <h3 class="font-weight-bold px-3">services</h3>
+                      </div>
+                      <div class="">
+                          <ul class="list-group p-0">
+                              <li *ngFor='let cruis of cruises?.services'
+                                  class="list-group-item d-flex px-0 py-2">
+                                  <img src="assets/imgs/right.svg" class="img-fluid">
+                                  <span>{{cruis?.content}}</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-12 col-md-5">
+                      <div class="head mb-4">
+                          <h3 class="font-weight-bold">activities</h3>
+                      </div>
+                      <div class="">
+                          <ul class="p-0">
+                              <li *ngFor='let cruis of cruises?.activities'
+                                  class="list-group-item d-flex px-0 py-2">
+                                  <img src="assets/imgs/right.svg" class="img-fluid">
+                                  <span>{{cruis?.content}}</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+        <app-experiences [cruise]="type"></app-experiences>
+        <app-accomodation [cruise]="cruis2"></app-accomodation>
+
+        <app-reviews></app-reviews>
+      </div>
+      <div class="col-lg-3">
+        <app-start-from [cruise]="type"></app-start-from>
+        <app-expert-reviews> </app-expert-reviews>
+        <app-optional-experts [cruise]="type"></app-optional-experts>
+        <app-tour-booking [cruise]="type"></app-tour-booking>
+      </div>
+    </div>
+  </div>
+</section>

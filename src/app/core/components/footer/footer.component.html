@@ -1,0 +1,140 @@
+<footer class="footer bg-3 bg-overlay-black-90 pt-5 ">
+  <div class="container">
+    <div class="row">
+
+    </div>
+    <div class="row">
+
+      <div class="col-lg-2 col-md-6">
+        <div class="usefull-link">
+          <h6 class="text-white">{{"PROFILE"|translate}}</h6>
+          <ul>
+            <li><a routerLink="/about-us"><i class="fa fa-angle-double-right"></i>{{"About Ask"|translate}} </a></li>
+            <li><a routerLink="/contact-us"><i class="fa fa-angle-double-right"></i>{{"Contact Us"|translate}}</a></li>
+
+            <li><a routerLink="/our-story"><i class="fa fa-angle-double-right"></i>{{"Our Story"|translate}}</a></li>
+
+
+            <li><a routerLink="/meet-the-team"><i class="fa fa-angle-double-right"></i> {{"Meet The Team"|translate}}</a></li>
+            <li class="mt-0">
+              <a ><img src="../../../../assets/imgs/app-store.png" alt="" width="110px" class="mb-2">
+              </a>
+              <a ><img src="../../../../assets/imgs/footer-img2.png" alt="" width="110px" class="mb-2">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="usefull-link">
+          <h6 class="text-white">{{"TRAVEL GUIDES"|translate}} </h6>
+          <ul *ngFor="let guideName of destinationContainer">
+            <li *ngFor="let guide of guidesSlug |slice:0:1">
+              <a href="/{{guideName.slug}}/travel-guides"> <i class="fa fa-angle-double-right"></i> {{guideName.name}} {{guide.name}}</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="usefull-link">
+          <h6 class="text-white">{{"Travel Package"|translate}} </h6>
+          <ul *ngFor="let packName of destinationContainer">
+            <li *ngFor="let pack of packagesName |slice:1:2"><a href="/{{packName.slug}}/travel-packages" > <i class="fa fa-angle-double-right"></i> {{packName.name}} {{pack.name}}</a></li>
+          </ul>
+        </div>
+
+
+
+
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="usefull-link">
+          <h6 class="text-white">{{"Contacts"|translate}}
+          </h6>
+          <ul>
+
+            <div *ngFor="let social of socialsContainer" >
+            <li><a  class="line-height-n"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                <strong>Location : </strong>
+                <br>
+                {{social.address2}}</a>
+
+              </li>
+            <li>
+              <a href="mailto: {{social.mail}}"> <i class="fa fa-envelope" aria-hidden="true"></i>
+                {{social.mail}}</a>
+
+            </li>
+            <li>
+              <a href="tel: {{social.phone1}}"> <i class="fa fa-phone" aria-hidden="true"></i>
+                {{social.phone1}}</a>
+
+            </li>
+          </div>
+
+
+            <li class="social-icons">
+              <div *ngFor="let social of socialsContainer" class="social">
+                <a class="fb" href="{{social.facebook}}"><i class="fab fa-facebook-square"></i></a>
+                <a class="twt" href="{{social.twitter}}"><i class="fab fa-twitter-square"></i></a>
+                <a class="pain" href="{{social.pinterest}}"><i class="fab fa-pinterest"></i></a>
+                <a class="fli" href="{{social.flickr}}"><i class="fab fa-flickr"></i></a>
+                <a class="lin" href="{{social.linkedin}}"><i class="fab fa-linkedin"></i></a>
+                <a class="ins" href="{{social.instagram}}"><i class="fab fa-instagram"></i></a>
+                <a class="yout" href="{{social.youtube}}"><i class="fab fa-youtube"></i></a>
+            </div>
+
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="row coppy-right usefull-link mt-3 ">
+      <div class="col-md-3">
+        <ul>
+          <li>
+            <a routerLink="/privacy-policy"  target="_blank">
+              {{"Privacy Policy | Disclaimer"|translate}}</a>
+
+          </li>
+        </ul>
+      </div>
+      <div  class="col-md-6 text-center">
+        <ul  class="social-icons new-travell">
+          <li *ngFor="let desName of destinationContainer">
+            <a href="/{{desName.slug}}/destination"> {{desName.name}} </a>
+          </li>
+
+        </ul>
+
+
+
+
+      </div>
+      <div class="col-md-3">
+        <ul class="list-inline text-lg-right text-center">
+          <li><a>{{"We Accept"|translate}} : </a> <a  class="pt-1">
+              <img src="../../../../assets/imgs/we_accept_logo.png" style="width:99px" alt=""></a></li>
+
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="copyright text-center">
+      <div class="row text-center">
+        <div class="col-lg-12 col-md-12 text-center">
+          <div class=" text-center pt-2 copyright-p">
+            <p>
+              <a target="_blank">{{"Copyright"|translate}}  © 1999 - {{date | date:'yyyy'}}{{"Ask-Aladdin"|translate}}  ( {{"DMCA Protected"|translate}} )</a>
+
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,200 @@
+<section *ngFor="let des of singleDestination">
+    <section
+      class="banner text-center"
+      [ngStyle]="{
+        'background-image':
+          'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' +
+          des.banner +
+          ')'
+      }"
+    >
+      <div class="container">
+        <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+          <h1>
+            <span class="main-color des-Name font-weight-bold"
+              >{{ des.name }}
+            </span>
+          </h1>
+        </div>
+        <p class="mt-2" [innerHTML]="des.description"></p>
+        <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+          <a  class="call-btn d-flex align-items-center">
+            <span class="phone-icon"
+              ><i class="fas fa-phone-alt main-color"></i
+            ></span>
+            <span class="phone-text text-dark"
+              >{{"Call Us"| translate}}: <strong>{{phone}}</strong></span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section>
+    <div class="container">
+      <div *ngFor="let des of singleDestination" class="page-links py-2">
+       <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}} / </span>  </a>
+        <span class="main-color">{{ des.name }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- End  descriptipon  for destination -->
+  <section class="sec-bg py-4">
+    <div class="container">
+      <div class="head-title text-center mb-4">
+        <h2 class="font-weight-bold"></h2>
+      </div>
+
+
+          <div  class="row">
+              <!-- Travel Guide  -->
+              <div *ngFor='let content of singleDestinationContent|slice:0:1' class="col-12 col-md-4 mb-4" >
+                  <div class="blogs overflow-hidden">
+                      <a  routerLink="/{{singleDestination[0].slug}}/travel-guides"  class="text-dark">
+                          <div class="card main-card text-center">
+                              <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+
+                              <div class="card-body card-details">
+                                  <h5 class="card-title ">{{singleDestination[0].name}} {{content.name}}  </h5>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+
+
+
+
+
+
+        <!-- Travel Excursions  -->
+        <div
+          *ngFor="let content of singleDestinationContent | slice: 2:3"
+          class="col-12 col-md-4 mb-4"
+        >
+          <div class="blogs overflow-hidden">
+            <a
+              routerLink="/{{ singleDestination[0].slug }}/travel-excursions"
+
+              class="text-dark"
+            >
+              <div class="card main-card text-center">
+                <img
+                  [src]="content.thumb || image"
+                  class="img-fluid"
+                  alt=" {{ content.thumb_alt }}"
+                />
+
+                <div class="card-body card-details">
+                  <h5 class="card-title">
+                    {{ singleDestination[0].name }} {{ content.name }}
+                  </h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Travel Curs-->
+        <div *ngFor='let content of singleDestinationContent|slice:3:4' class="col-12 col-md-4 mb-4" >
+          <div class="blogs overflow-hidden">
+              <a  routerLink="/{{singleDestination[0].slug}}/travel-cruises"  class="text-dark">
+                  <div class="card main-card text-center">
+                      <img [src]="content.thumb || image" class="img-fluid" alt=" {{content.thumb_alt}}">
+
+                      <div class="card-body card-details">
+                          <h5 class="card-title ">{{singleDestination[0].name}} {{content.name}}  </h5>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      </div>
+
+
+        <!-- Travel Packages -->
+        <div
+          *ngFor="let content of singleDestinationContent | slice: 1:2"
+          class="col-sm-12 mb-4"
+        >
+          <div class="blogs overflow-hidden">
+            <a routerLink="/{{ singleDestination[0].slug }}/travel-packages" class="text-dark">
+              <div class="card main-card text-center">
+                <img
+                  [src]="content.thumb"
+                  class="img-fluid"
+                  alt="{{ content.thumb_alt }}"
+                />
+
+                <div class="card-body card-details">
+                  <h5 class="card-title">
+                    {{ singleDestination[0].name }} {{ content.name }}
+                  </h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Travel Packages -->
+        <div
+          *ngFor="let content of singleDestinationContent | slice: 4:5"
+          class="col-md-6 mb-4"
+        >
+          <div class="blogs overflow-hidden">
+            <a routerLink="/{{singleDestination[0].slug}}/{{content.slug}}"
+
+              class="text-dark"
+            >
+              <div class="card main-card text-center">
+                <img
+                  [src]="content.thumb"
+                  class="img-fluid"
+                  alt=" {{ content.thumb_alt }}"
+                />
+
+                <div class="card-body card-details">
+                  <h5 class="card-title">
+                    {{ singleDestination[0].name }} {{ content.name }}
+                  </h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Travel blogs  -->
+        <div
+          *ngFor="let content of singleDestinationContent | slice: 5:6"
+          class="col-md-6 mb-4"
+        >
+          <div class="blogs overflow-hidden">
+            <a routerLink="/{{singleDestination[0].slug}}/facts-myths"
+
+              class="text-dark"
+            >
+              <div class="card main-card text-center">
+                <img
+                  [src]="content.thumb"
+                  class="img-fluid"
+                  alt=" {{ content.thumb_alt }}"
+                />
+
+                <div class="card-body card-details">
+                  <h5 class="card-title">
+                    {{ singleDestination[0].name }} {{ content.name }}
+                  </h5>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+
+
+    </div>
+    </div>
+  </section>
+
+  <app-hot-related></app-hot-related>
+
+  <app-sponsors></app-sponsors>

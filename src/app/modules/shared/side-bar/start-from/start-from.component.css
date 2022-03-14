@@ -1,0 +1,11 @@
+section {
+    border-radius: 8px;
+}
+.head h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+}
+.head p {
+    font-size: 0.8rem;
+    color: #ababab;
+}

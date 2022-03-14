@@ -1,0 +1,14 @@
+
+<section  id="Gallery" class="pt-3">
+  <div *ngIf="gallery > 0 ; else img" class="m-auto">
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
+  </div>
+</section>
+<ng-template #img>
+
+  <h1 class=" bg-white mt-3 px-3 py-4 text-center  "> No Gallery Yet</h1>
+</ng-template>
+
+
+
+

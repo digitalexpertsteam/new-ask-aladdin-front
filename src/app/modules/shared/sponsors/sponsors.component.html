@@ -1,0 +1,20 @@
+<section class=" sponsors py-4">
+    <div  class="container" >
+
+         <div  class="card-main">
+           <div *ngFor="let log of logo" class=" ">
+             <div class="blogs d-flex flex-wrap  overflow-hidden">
+               <a href="{{log.link}}" class="text-dark">
+                 <div class="card ">
+                   <img
+                     [src]="log.small_image_on_slider"
+                     class="image">
+                 </div>
+               </a>
+             </div>
+           </div>
+         </div>
+   </div>
+
+
+</section>

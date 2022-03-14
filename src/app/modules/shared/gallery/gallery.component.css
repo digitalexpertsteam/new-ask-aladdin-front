@@ -1,0 +1,11 @@
+.ngx-gallery{
+  width: 790px !important;
+  height: 500px;
+}
+
+@media only screen and (max-width:480px){
+  .ngx-gallery{
+    width: 320px !important;
+    height: 200px;
+  }
+}

@@ -1,0 +1,41 @@
+.card{
+  width: 250px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0px rgba(0,0,0,0.4);
+}
+.card-img-top{
+  height:200px;
+}
+.card-body{
+  height:60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(2, 0, 0);
+  font-size: 14px;
+  background-color: rgb(255, 141, 10);
+
+}
+
+.card-layout{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  color: rgb(252, 154, 7);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(.5);
+  cursor: pointer ;
+  transition: all ease .3s;
+
+}
+.card:hover .card-layout{
+  opacity: 1;
+  transform: scale(1);
+}

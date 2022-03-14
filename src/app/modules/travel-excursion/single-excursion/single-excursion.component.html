@@ -1,0 +1,107 @@
+<section>
+    <section
+      class="banner text-center"
+      [ngStyle]="{
+        'background-image':
+          'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + imageEx
+           +
+          ')'
+      }"
+    >
+      <div class="container">
+        <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+          <h1>
+            <span class="main-color des-Name font-weight-bold">
+              {{nameEx}}</span
+            >
+          </h1>
+        </div>
+        <p class="mt-2"></p>
+        <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+          <a href="" class="call-btn d-flex align-items-center">
+            <span class="phone-icon"
+              ><i class="fas fa-phone-alt main-color"></i
+            ></span>
+            <span class="phone-text text-dark"
+              >{{"Call Us"|translate}}: <strong>+1(888) 513-5971</strong></span
+            >
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
+  <section >
+    <div class="container">
+      <div class="page-links py-2">
+       <a class="hover-color" routerLink="/"> <span >{{"Home"|translate}} / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/destination"> <span > {{ desName }} / </span>  </a>
+       <a class="hover-color" routerLink="/{{desSlug}}/travel-excursions"> <span > {{exName}} / </span>  </a>
+        <span class="main-color">{{nameEx}}</span>
+      </div>
+    </div>
+  </section>
+
+<section class="sec-bg ">
+
+<section class="container ">
+    <div class="row ">
+      <div class="col-lg-9 my-3 col-sm-12 ">
+
+        <section class="bg-white mt-3 px-3">
+          <app-gallery [excur]="type"></app-gallery>
+        </section>
+       <section class="bg-white mt-3 p-3">
+        <app-splander [excur]="type"></app-splander>
+       </section>
+       <section class="bg-white mt-3 p-3">
+        <div class="map-details border mt-2">
+          <div class="embed-responsive">
+            <iframe
+              class="embed-responsive-item"
+              [src]="included?.map_url | safe"
+              allowfullscreen=""
+            >
+            </iframe>
+          </div>
+         </div>
+       </section>
+
+       <app-package-included [excur]="type"></app-package-included>
+       <section class="bg-white mt-3 px-3 pb-3">
+         <app-price-data [excur]="type"></app-price-data>
+       </section>
+       <app-reviews></app-reviews>
+
+      </div>
+      <div class="col-lg-3 my-3 col-sm-12">
+        <!-- <app-start-from [excure]="type"></app-start-from> -->
+        <!-- <app-expert-reviews></app-expert-reviews> -->
+        <!-- <app-optional-experts [excure]="type"></app-optional-experts> -->
+        <div class="submit">
+          <!-- <div class="position-relative ">
+        <button  data-toggle="modal" data-target="#exampleModalLong"
+          class="main-btn w-100 mt-3  "> Send Your Enquiry</button>
+          <div class="send"><i class="fab fa-telegram-plane fa-2x mt-2"></i></div>
+        </div> -->
+        <div class="mt-2">
+          <iframe allowpaymentrequest="" allow="payment" frameborder="0"
+            style="border: none; border-collapse: collapse; background: transparent; overflow: hidden; width: 320px; height: 901px; min-height: 200px;"
+            src="https://assets.ticketinghub.com/checkout/index-b003dd64c3ea77caf1fcb06124e768751b4b969c.html#options=%7B%22context%22%3A%22customer%22%2C%22layout%22%3A%22embed%22%2C%22landing%22%3A%22tickets%22%2C%22color%22%3A%22%23f7a71d%22%2C%22footer%22%3Atrue%2C%22discounts%22%3Atrue%2C%22subscribe%22%3Atrue%2C%22avs%22%3Afalse%2C%22free%22%3Afalse%2C%22referral-code-param-name%22%3A%22th-reseller-ref%22%2C%22coupon-param-name%22%3A%22th-coupon%22%2C%22fields%22%3A%22name%2Cemail%2Ctelephone%22%2C%22event-period%22%3A%227%22%2C%22events-view-mode%22%3A%22multi-day%22%2C%22collect-voucher-recipient-info%22%3Atrue%2C%22button-label%22%3A%22BOOK%20NOW%22%2C%22social-sharing%22%3Afalse%2C%22book-more%22%3Afalse%2C%22book-more-if-tickets-limit-reached%22%3Afalse%2C%22show-product-logo%22%3Afalse%2C%22combination-discounts%22%3Atrue%2C%22show-product-description%22%3Afalse%2C%22gift-cards%22%3Atrue%2C%22ga-track-pageviews%22%3Atrue%2C%22ga-track-purchases%22%3Atrue%2C%22extras-right-after-tickets%22%3Afalse%2C%22events-show-product-description%22%3Afalse%2C%22display-currency-as-symbol%22%3Afalse%2C%22extra-tickets%22%3Afalse%2C%22queueit%22%3Afalse%2C%22read-only-api%22%3Afalse%2C%22hide-option-prices%22%3Afalse%2C%22channel%22%3A%22f74cf4f8-e986-4660-ac2c-3f7e94caff01%22%2C%22products_enabled%22%3Atrue%2C%22products%22%3A%2271313d5e-d0f4-42ad-b8f0-65fce1a5edd3%22%2C%22referrer%22%3A%22https%3A%2F%2Fback.sunmarinetickets.com%2Fen%2Fhurgada%2Fpirates%22%2C%22widget%22%3A%226822b034-1ceb-45be-a422-fa72f26906fb%22%2C%22referral-code%22%3Anull%2C%22origin%22%3A%22https%3A%2F%2Fback.sunmarinetickets.com%22%2C%22parentWidth%22%3A1263%7D"></iframe><a
+            href="https://www.ticketinghub.com" style="display:none !important;">
+          </a>
+        </div>
+        </div>
+        <!-- <app-tour-booking ></app-tour-booking> -->
+
+
+
+
+      </div>
+
+
+    </div>
+
+</section>
+</section>
+
+<app-sponsors></app-sponsors>

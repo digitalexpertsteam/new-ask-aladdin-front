@@ -1,0 +1,107 @@
+.overlay {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8)
+}
+
+.contact-us {
+  margin-top: 50px;
+  margin-bottom: 50px
+}
+
+.contact-us h3,
+p {
+  color: rgb(3, 3, 3)
+}
+
+.address {
+  margin-top: 14px !important;
+  margin-left: 10px
+}
+
+.address span {
+  color: #f68800
+}
+
+.icons {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.icons i {
+  font-size: 50px;
+  color: #f68800;
+}
+
+.forms {
+  padding: 20px;
+
+}
+
+.inputs input {
+  margin-bottom: 13px;
+  border: none;
+  border-bottom: 2px solid #eee
+}
+
+.inputs input:focus {
+  margin-bottom: 13px;
+  border: none;
+  border-bottom: 2px solid #f68800;
+  box-shadow: none
+}
+
+.inputs textarea {
+  margin-bottom: 13px;
+  border: none;
+  border-bottom: 2px solid #eee;
+  width: 100%;
+  resize: none
+}
+
+.inputs textarea:focus {
+  margin-bottom: 13px;
+  border: none;
+  border-bottom: 2px solid #f68800;
+  box-shadow: none;
+  resize: none
+}
+
+.form-control {
+  padding: .375rem .25rem
+}
+.us{
+  text-decoration: underline;
+color: #f68800;
+}
+
+.map-details {
+  /* border:  solid 1px #070606; */
+  border-radius: 5px;
+  width: 76%;
+  margin: auto;
+  height: 400px;
+
+}
+.embed-responsive{
+  height: 400px;
+}
+.embed-responsive-item{
+  height: 100%;
+}
+.btn{
+  background-color: #f68800;
+  width: 200px;
+  color: #fff;
+}
+.alll{
+  border: solid 2px #080807;
+  border-radius: 10px;
+  box-shadow: 10px 10px  #dfdede;
+
+}

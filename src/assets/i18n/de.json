@@ -1,8 +1,8 @@
 {
     "Home":"Zuhause",
-    "Destination":"Ziel",
-    "Travel Guide":"Reiseführer",
-    "Tour Package":"Tour-Paket",
+    "Destinations":" Reisezielel",
+    "Travel Guides":"Reiseführer",
+    "Tour Packages":"Tour-Paket",
     "Blogs":"Blogs",
     "Why Ask Aladdin":"Warum fragst du Aladdin",
     "English":"Germany",
@@ -18,3 +18,4 @@
     "Office":"Office",
     "Egypt Tour":"Egypt Tour"
 }
+

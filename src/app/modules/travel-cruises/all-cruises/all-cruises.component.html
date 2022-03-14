@@ -1,0 +1,290 @@
+<section *ngFor='let cru of cruContent |slice:3:4'>
+  <section class="banner text-center"
+      [ngStyle]="{'background-image':'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + cru?.thumb }">
+      <div class="container">
+          <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+              <h1><span class="main-color des-Name font-weight-bold"> {{cru?.name}} </span> </h1>
+          </div>
+          <p class="mt-2"></p>
+          <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+              <a  class="call-btn d-flex align-items-center">
+                  <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
+                  <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>{{phone}}</strong></span>
+              </a>
+          </div>
+      </div>
+  </section>
+
+</section>
+<section>
+  <div class="container">
+    <div  class="page-links py-2">
+     <a class="hover-color" routerLink="/"> <span > {{"Home"|translate}} / </span>  </a>
+     <a class="hover-color" routerLink="/{{desSlug}}"> <span >{{desName}} / </span>  </a>
+      <span class="main-color">{{cruName}}</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec-bg p-3 mb-5">
+  <div class="container">
+      <div class="row mt-4">
+          <div class="col-12 col-md-3">
+              <!-- <app-filter-by></app-filter-by> -->
+              <section class="bg-white px-2 py-2">
+                <div class="head mb-2">
+                    <h3 class="font-weight-bolder">{{ "Filter By" | translate }}</h3>
+                  </div>
+                  <form >
+
+                    <div class="filter-content border-bottom">
+                      <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+                        (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+                        <div class=""><i class="fas far fa-calendar-alt mr-2"></i>{{ "Duration" | translate }}</div>
+                        <i class="fas" [ngClass]="{ 'fa-angle-down': isCollapsed, 'fa-angle-up': !isCollapsed }"></i>
+                      </a>
+
+                      <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed" [isAnimated]="true">
+
+
+
+                        <div class="form">
+                          <span>
+                            <label for="minText"><span class="main-color line">Min </span> Days </label>
+                            <input class="input-filter" type="number" ngModel disabled id="minTextDays" #minday="ngModel" name="minday" [value]="rangeSDay"
+                              [(ngModel)]="rangeSDay" placeholder="1" />
+                          </span>
+
+                          <span>
+                            <label for="maxText"><span class="main-color line">Max </span> Days </label>
+                            <input class="input-filter" type="number" #maxday="ngModel" ngModel disabled id="maxText" name="maxday" [value]="rangeMDay"
+                              [(ngModel)]="rangeMDay" placeholder="30" />
+                          </span>
+
+                          <div class="range">
+                            <input type="range" #minDay min="1" max="30" value="1" step="2" id="minRange" (change)="rangeStartDay(minDay)" />
+
+                            <input type="range" #maxD min="1" max="30" value="30" id="maxRange" (change)="rangeEndDay(maxD)" />
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                    <!-- --------------------- -->
+                    <div class="filter-content border-bottom">
+                      <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+                        (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2"
+                        aria-controls="collapseBasic">
+                        <div class=""><i class="fas fa-dollar-sign"></i> {{ "Prices" | translate }}</div>
+
+                        <i class="fas" [ngClass]="{ 'fa-angle-down': isCollapsed2, 'fa-angle-up': !isCollapsed2 }"></i>
+                      </a>
+
+                      <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed2" [isAnimated]="true">
+
+                        <div class="form">
+                          <span>
+                            <label for="minText"><span class="main-color line">Min </span> value</label>
+                            <input class="input-filter" type="number" ngModel #min="ngModel" disabled id="minText" name="min" [value]="rangePric"
+                              [(ngModel)]="rangePric" placeholder="0" #val3 />
+                          </span>
+                          <span>
+                            <label for="maxText"> <span class="main-color line">Max </span> value</label>
+                            <input class="input-filter" type="number" ngModel #max="ngModel" disabled id="maxText" name="max" [value]="rangePrice"
+                              [(ngModel)]="rangePrice" placeholder="10000" />
+                          </span>
+                          <div class="range">
+                            <input type="range" #val min="0" max="10000" value="0" step="400" id="minRange"
+                              (change)="rangePri1(val)" />
+                            <input type="range" #val2 min="0" max="10000" value="10000" id="maxRange"
+                              (change)="rangePri2(val2)" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                  </form>
+
+
+              </section>
+          </div>
+          <!-- travel-excursions -->
+          <div class="col-12 col-md-9">
+              <section>
+
+                  <h2 class="info main-bg text-white font-weight-bold">{{count}}  {{desName}} {{cruContent[3]?.name}}</h2>
+                  <ng-container *ngFor="let cru of Filter ">
+                      <div class="data-box bg-white mt-3 p-2">
+                          <div class="row mx-0">
+                              <div class="col-xl-10">
+                                  <div class="card border-0">
+                                      <div class="row px-0">
+                                          <div class="col-md-5 px-0">
+                                              <img src="{{cru.cruise_thumb}}" alt="{{cru?.cruise_thumb_alt}}" class="img-fluid package-img">
+
+                                              <p *ngIf="cru?.hot_offer" class="affe">
+                                                  <span class="offerr">
+                                                      {{"Hot Offer"|translate}}
+                                                  </span>
+                                              </p>
+
+                                              <p *ngIf="cru?.best_sale" class="top-sale">
+                                                  <span class="sale ">
+                                                      {{"Best Sale"|translate}}
+                                                  </span>
+                                              </p>
+
+                                              <p *ngIf="cru.discount" class="orang">
+                                                  <span  *ngIf="cru.discount!==null" class="orang-sale ">
+
+                                                          {{cru?.discount + "% off"}}
+                                                  </span>
+                                              </p>
+                                              <div class="map-details border mt-2">
+                                                  <div class="row mx-0 px-0">
+                                                      <div class="col-12 px-0">
+                                                          <div *ngIf="cru?.location !== null " class="embed-responsive">
+                                                              <iframe class="embed-responsive-item"
+                                                                  [src]="cru?.location|safe"
+                                                                  allowfullscreen=""></iframe>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-7 px-0">
+                                              <div
+                                                  class="card-body package-content pt-0 pb-1 h-100  d-flex flex-column justify-content-between">
+                                                  <h5 class="card-title font-weight-bold mb-2 mt-3">
+                                                      {{cru?.cruise_name}}
+                                                  </h5>
+                                                  <div>
+                                                      <div>
+                                                          <rating [(ngModel)]="cru.rate" [max]="maxx" [readonly]="readonly">
+                                                          </rating>
+                                                          <!-- <span class="reviews"> of {{cru?.reviews}} {{"Reviews"|translate}}</span> -->
+
+                                                      </div>
+
+                                                  </div>
+
+                                                  <p class="package-text  pt-3" [innerHTML]="cru?.cruise_description"> </p>
+                                                  <div class="">
+                                                      <div class="  pl-2   tour "> {{"Tour Type   "|translate}}:  <i class="fas fa-ship">  </i>   Nile Cruise </div>
+
+                                                  </div>
+                                                  <div class="">
+                                                      <div class="row mt-2 px-0 pt-4">
+                                                          <div class="col-6 col-sm-4 px-0">
+                                                              <div class="advatnage">
+                                                                  <i class="fas fa-snowboarding main-color"></i>
+                                                                  <span class="text-center ml-1">{{cru?.activities_number}} {{"Activities"|translate}}</span>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-6 col-sm-4 px-0">
+                                                              <div class="advatnage">
+                                                                  <i class="fas fa-clipboard-list main-color"></i>
+                                                                  <span class="text-center ml-1">{{cru?.itinerary}} {{"Days"|translate}}</span>
+                                                              </div>
+
+                                                          </div>
+
+                                                          <div class="col-6 col-sm-4 px-0">
+                                                              <div class="advatnage">
+                                                                  <i class="fas fa-hotel main-color"></i>
+                                                                  <span class="text-center ml-1">{{cru?.accommodations}} {{"Hotels"|translate}}</span>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-6 col-sm-4 px-0">
+                                                              <div class="advatnage">
+                                                                  <i class="fas fa-utensils main-color"></i>
+                                                                  <span class="text-center ml-1">{{cru?.meals}} {{"Meals"|translate}}</span>
+                                                              </div>
+                                                          </div>
+
+
+
+                                                          <div class="col-6 col-sm-4 px-0">
+                                                              <div class="advatnage">
+                                                                  <i class="fas fa-wifi main-color"></i>
+                                                                  <span class="text-center ml-1">{{cru?.services_number}} {{"Services"|translate}}</span>
+                                                              </div>
+                                                          </div>
+
+                                                          <div class="col-6 col-sm-4 px-0">
+                                                              <div class="advatnage">
+                                                                  <i class="fab fa-guilded main-color"></i>
+                                                                  <span class="text-center ml-1">{{cru?.guide_tour}} {{"Guided Tour"|translate}}</span>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+
+                              <div class="col-xl-2 px-0">
+                                  <div class="pricing text-center pt-4 h-100 sec-bg">
+                                      <span>{{"Pricing"|translate}}</span>
+                                      <h4 class="font-weight-bold mb-2">Start From</h4>
+                                      <span class="price main-color font-weight-bold">${{cru?.start_price}} USD</span>
+
+
+                                      <p class="text-center my-2 mb-3">{{cru?.duration_in_days}}
+                                          {{"Days"|translate}}/{{cru?.duration_in_days -x}} {{"Nights"|translate}}</p>
+
+
+                                      <a class="main-btn p-2 d-block mb-2 font-weight-bold py-2"
+
+                                          routerLink="/{{cru.destination_slug}}/travel-cruises/{{cru.cruise_slug}}">{{"View Tour Details"|translate}}</a>
+
+                                      <a class="main-btn book bg-white p-2 d-block font-weight-bold pt-2"
+                                          (click)="openVerticallyCentered(content)">{{"Booking Inquiry"|translate}}</a>
+                                      <div class="mb-3 text-center pt-4">
+
+                                      </div>
+                                  </div>
+
+                                  <ng-template #content let-modal>
+
+                                      <div class="modal-body">
+                                          <section class="bg-white mt-3 px-3 py-4 booking">
+                                              <div class="head mb-2">
+                                                  <h3 class="font-weight-bolder">{{"Cruises Booking"|translate}}</h3>
+                                              </div>
+                                              <iframe onload="javascript:parent.scrollTo(0,0);" height="1300" allowTransparency="true"
+                                              scrolling="no" frameborder="0" style="width:100%;border:none"
+                                              src="https://ask-aladdin.com/machform/embed.php?id=4"
+                                              title="AskAladdin Tour Booking Center:"><a
+                                                href="https://ask-aladdin.com/machform/view.php?id=4"
+                                                title="AskAladdin Tour Booking Center:">AskAladdin Tour Booking Center:</a></iframe>
+                                          </section>
+
+                                      </div>
+
+                                  </ng-template>
+
+
+
+
+
+
+                              </div>
+                          </div>
+                      </div>
+                  </ng-container>
+              </section>
+          </div>
+          <!-- End travel-excursions -->
+      </div>
+  </div>
+</section>
+
+<app-sponsors></app-sponsors>

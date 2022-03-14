@@ -1,0 +1,193 @@
+/* city-style  */
+.recent-tours-section .item-single {
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+.recent-tours-section .item-single:hover .flip-content {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  opacity: 1;
+}
+.recent-tours-section .item-single:hover .content {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+.recent-tours-section .item-single:hover .image {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.recent-tours-section .item-single .image img {
+  width: 100%;
+}
+.recent-tours-section .item-single .image {
+  -webkit-transition: all 1s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  transition: all 1s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.recent-tours-section .item-single .image::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #090031;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#090031),
+    to(rgba(9, 0, 49, 0.0508578))
+  );
+  background: linear-gradient(0deg, #090031 0%, rgba(9, 0, 49, 0.0508578) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#090031",endColorstr="#090031",GradientType=1);
+}
+@media only screen and (max-width: 767px) {
+  .recent-tours-section .item-single .image img {
+    width: 100% !important;
+  }
+}
+.recent-tours-section .item-single i {
+  color: #d6d6d6;
+  margin-right: 4px;
+  vertical-align: -2px;
+}
+.recent-tours-section .item-single span {
+  color: #d6d6d6;
+}
+.recent-tours-section .item-single .review i {
+  margin-right: 0;
+  color: #f4b316;
+  vertical-align: -1px;
+}
+.recent-tours-section .item-single .review span {
+  margin-left: 8px;
+}
+.recent-tours-section .item-single .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+.recent-tours-section .item-single .title h3 {
+  margin-bottom: 0;
+}
+.recent-tours-section .item-single .title span {
+  color: #fd5056;
+  text-decoration: line-through;
+}
+.recent-tours-section .item-single a {
+  color: #fff;
+  /* font-size: 15px; */
+  /* font-weight: 700; */
+}
+.recent-tours-section .item-single a:hover {
+  color: #fd5056;
+  /* font-size: 15px; */
+  /* font-weight: 700; */
+}
+.recent-tours-section .item-single .list {
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.recent-tours-section .item-single .list li {
+  display: inline-block;
+  margin-right: 12px;
+  color: #d6d6d6;
+}
+.recent-tours-section .item-single .list li:last-child {
+  color: #fff;
+  margin-right: 0;
+  font-size: 20px;
+  margin-left: auto;
+}
+.recent-tours-section .item-single .content,
+.recent-tours-section .item-single .flip-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 25px;
+  width: 100%;
+  z-index: 1;
+  -webkit-transition: all 1s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  transition: all 1s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.recent-tours-section .item-single .content {
+  opacity: 1;
+}
+.recent-tours-section .item-single .flip-content {
+  opacity: 0;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.recent-tours-section .item-single .flip-content h3 {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+.recent-tours-section .item-single .flip-content p {
+  color: #d6d6d6;
+  font-size: 15px;
+}
+.recent-tours-section .item-single .flip-content hr {
+  margin: 10px 0px;
+  border-top: 1px solid #39325a;
+}
+.recent-tours-section .item-single .flip-content .list {
+  margin-top: 15px;
+}
+.backkk {
+  background: url(../../../../assets/imgs/bg.jpg);;
+  background-clip: initial;
+  background-color: rgba(0, 0, 0, 0);
+  background-origin: initial;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  position: relative;
+  z-index: 0;
+  background-attachment: initial;
+}
+/* .backkk:before {
+    background: rgba(0, 0, 0, 0.9);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+} */
+.fooonnt {
+  font-size: 13px !important;
+  padding: 0px 0px;
+}
+.image-heighh {
+  height: 350px;
+}
+.title-poi {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.title-poi h2 {
+  color: #000;
+}

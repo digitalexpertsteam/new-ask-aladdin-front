@@ -1,0 +1,309 @@
+<section *ngIf="package" id="accomodation" class="accomodation my-3 bg-white mt-3  ">
+    <!-- *ngIf="flag1?.length > 0 && flag2?.length > 0 && flag3?.length > 0 && flag4?.length > 0;else accommodation" -->
+
+        <div *ngIf="flag1?.length > 0 || flag2?.length > 0 || flag3?.length > 0 || flag4?.length > 0;else accommodation"  >
+            <div *ngIf="flag1?.length > 0 " class="container">
+                <div class="head mb-3 ">
+                    <h1 class=" h4 font-weight-bold pt-3 pl-2"><span> {{"Standard"|translate}}</span>{{" Hotels"|translate}}
+                    </h1>
+                </div>
+                <div *ngIf="flag1?.length > 4; else standard">
+
+                    <owl-carousel-o [options]="customOptions">
+
+                        <ng-template carouselSlide *ngFor="let acc of accomodation.standard_hotels">
+
+                            <div class="slide ">
+
+                                <div class="blogs overflow-hidden">
+                                    <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                                        <div class="card main-card text-center anotherCard">
+                                            <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                            <div class="card-body card-details des-antherCard">
+                                                <h6 class="card-title">{{ acc.name }}</h6>
+                                                <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max"
+                                                    [readonly]="isReadonly">
+                                                </rating>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+
+            </div>
+            <ng-template #standard>
+                <div class="" >
+                    <div class="row p-0">
+                    <div class="grid col-md-3" *ngFor="let acc of accomodation.standard_hotels">
+                        <div class="slide  ">
+
+                            <div class="blogs overflow-hidden ">
+                                <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                                    <div class="  card main-card text-center anotherCard" style="width: 100%;">
+                                        <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                        <div class="card-body card-details des-antherCard">
+                                            <h6 class="card-title">{{ acc.name }}</h6>
+                                            <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max" [readonly]="isReadonly">
+                                            </rating>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </ng-template>
+
+            <div *ngIf="flag2?.length > 0 " class="container">
+                <div class="head mb-3 ">
+                    <h1 class=" h4 font-weight-bold pt-3 pl-2"><span> {{"Comfort"|translate}}</span>{{" Hotels"|translate}}
+                    </h1>
+                </div>
+                <div *ngIf="flag2?.length > 4; else comfort">
+
+                    <owl-carousel-o [options]="customOptions">
+
+                        <ng-template carouselSlide *ngFor="let acc of accomodation.comfort_hotels">
+
+                            <div class="slide ">
+
+                                <div class="blogs overflow-hidden">
+                                    <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                                        <div class="card main-card text-center anotherCard">
+                                            <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                            <div class="card-body card-details des-antherCard">
+                                                <h6 class="card-title">{{ acc.name }}</h6>
+                                                <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max"
+                                                    [readonly]="isReadonly">
+                                                </rating>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+
+            </div>
+            <ng-template #comfort>
+                <div class="" >
+                    <div class="row p-0">
+                    <div class="grid col-md-3" *ngFor="let acc of accomodation.comfort_hotels">
+                        <div class="slide  ">
+
+                            <div class="blogs overflow-hidden ">
+                                <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                                    <div class="  card main-card text-center anotherCard" style="width: 100%;">
+                                        <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                        <div class="card-body card-details des-antherCard">
+                                            <h6 class="card-title">{{ acc.name }}</h6>
+                                            <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max" [readonly]="isReadonly">
+                                            </rating>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </ng-template>
+
+
+
+            <div *ngIf="flag3?.length > 0 " class="container">
+                <div class="head mb-3 ">
+                    <h1 class=" h4 font-weight-bold pt-3 pl-2"><span> {{"Deluxe"|translate}}</span>{{" Hotels"|translate}}
+                    </h1>
+                </div>
+                <div *ngIf="flag3?.length > 4; else deluxe">
+
+                    <owl-carousel-o [options]="customOptions">
+
+                        <ng-template carouselSlide *ngFor="let acc of accomodation.deluxe_hotels">
+
+                            <div class="slide ">
+
+                                <div class="blogs overflow-hidden">
+                                    <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                                        <div class="card main-card text-center anotherCard">
+                                            <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                            <div class="card-body card-details des-antherCard">
+                                                <h6 class="card-title">{{ acc.name }}</h6>
+                                                <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max"
+                                                    [readonly]="isReadonly">
+                                                </rating>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </ng-template>
+                    </owl-carousel-o>
+                </div>
+
+            </div>
+            <ng-template #deluxe>
+                <div class="" >
+                    <div class="row p-0">
+                    <div class="grid col-md-3" *ngFor="let acc of accomodation.deluxe_hotels">
+                        <div class="slide  ">
+
+                            <div class="blogs overflow-hidden ">
+                                <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                                    <div class="  card main-card text-center anotherCard" style="width: 100%;">
+                                        <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                        <div class="card-body card-details des-antherCard">
+                                            <h6 class="card-title">{{ acc.name }}</h6>
+                                            <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max" [readonly]="isReadonly">
+                                            </rating>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </ng-template>
+    <!-- cruise -->
+    <div *ngIf="flag4?.length > 0 " class="container">
+        <div class="head mb-3 ">
+            <h1 class=" h4 font-weight-bold pt-3 pl-2"><span> {{"Cruise"|translate}}</span>{{" Hotels"|translate}}
+            </h1>
+        </div>
+        <div *ngIf="flag4?.length > 4; else cruise">
+
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-template carouselSlide *ngFor="let acc of accomodation.cruise_hotels">
+
+                    <div class="slide ">
+
+                        <div class="blogs overflow-hidden">
+                            <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                                <div class="card main-card text-center anotherCard">
+                                    <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                    <div class="card-body card-details des-antherCard">
+                                        <h6 class="card-title">{{ acc.name }}</h6>
+                                        <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max"
+                                            [readonly]="isReadonly">
+                                        </rating>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+
+    </div>
+    <ng-template #cruise>
+        <div class="" >
+            <div class="row p-0">
+            <div class="grid col-md-3" *ngFor="let acc of accomodation.cruise_hotels">
+                <div class="slide  ">
+
+                    <div class="blogs overflow-hidden ">
+                        <a href="{{desSlug}}/hotel/{{acc.slug}}" class="text-dark">
+                            <div class="  card main-card text-center anotherCard" style="width: 100%;">
+                                <img [src]="acc.thumb" class="img-fluid" alt="{{ acc.thumb_alt }}" />
+
+                                <div class="card-body card-details des-antherCard">
+                                    <h6 class="card-title">{{ acc.name }}</h6>
+                                    <rating [(ngModel)]="acc.rate" class="mt-1" [max]="max" [readonly]="isReadonly">
+                                    </rating>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </ng-template>
+
+    <h1 class="h2 text-center mt-3 pb-4 sim"> <i class="fas fa-star"></i> Or <span>Similar</span> </h1>
+        </div>
+    </section>
+    <ng-template #accommodation>
+
+        <h4 class=" text-center h3  "> <img src="assets/imgs/dot.svg" class="img-fluid">{{" No Accommodations Yet"|translate}} </h4>
+    </ng-template>
+
+
+<!-- Accomodation For Cruises -->
+    <section *ngIf="cruise" id="accomodation" class="accomodation my-3 bg-white mt-3 px-2 py-4">
+        <div class="container">
+            <div class="head mb-4">
+                <h3 class=" font-weight-bold">Accommodations For This Cruises</h3>
+
+            </div>
+            <div>
+                <div class="row">
+                    <div *ngFor="let acc of cruises" class="col-12 col-md-3 pt-2">
+                        <div class="card overflow-hidden" >
+                            <a href="{{desSlug}}/hotel/{{acc.slug}}">
+
+                                <div class="row ">
+                                    <div class="col-sm-12 ">
+                                        <div class="acco-image m-auto">
+                                            <img src="{{acc.thumb}}" alt="{{acc.thumb_alt}}"
+                                                class="img-fluid  " />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text-center p-0">
+                                        <div class="card-body">
+                                            <h6 class="text-dark  px-2 font-weight-bold">
+                                                {{acc.name}}
+                                            </h6>
+                                            <div class="mb-1">
+
+                                                <rating [(ngModel)]="acc.rate" [max]="max"
+                                                    [readonly]="isReadonly">
+                                                </rating>
+                                            </div>
+                                            <div class="acco-link mb-2">
+                                                <a href="{{desSlug}}/hotel/{{acc.slug}}" class="main-btn">View
+                                                    Details</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <ng-template>
+
+                <h1 class="text-center  "> No Accommodations Yet</h1>
+            </ng-template>
+
+
+        </div>
+    </section>
+

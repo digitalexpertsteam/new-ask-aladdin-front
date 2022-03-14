@@ -1,0 +1,118 @@
+<section class="bg-white px-3 py-4">
+  <div class="head mb-2">
+    <h3 class="font-weight-bolder">{{ "Filter By" | translate }}</h3>
+  </div>
+  <form [formGroup]="form">
+
+    <div class="filter-content border-bottom">
+      <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+        (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+        aria-controls="collapseBasic">
+        <div class=""><i class="fas far fa-calendar-alt mr-2"></i>{{ "Duration" | translate }}</div>
+        <i class="fas" [ngClass]="{ 'fa-angle-down': isCollapsed, 'fa-angle-up': !isCollapsed }"></i>
+      </a>
+
+      <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed" [isAnimated]="true"> 
+
+
+
+
+      <div class="form">
+        <span>
+          <label for="minText">Min Days</label>
+          <input type="number" ngModel  disabled id="minTextDays" name="" [value]="rangeSDay"
+            [(ngModel)]="minD.value" placeholder="1"/>
+        </span>
+
+        <span>
+          <label for="maxText">Max Days</label>
+          <input type="number" ngModel disabled id="maxText" name="" [value]="rangeMDay"
+            [(ngModel)]="maxD.value" placeholder="30" />
+        </span>
+
+        <div class="range">
+          <input type="range" #minD min="1" max="30" value="1" step="2" id="minRange"
+            (change)="rangeStartDay(minD)" />
+
+          <input type="range" #maxD min="1" max="30" value="30" id="maxRange"
+            (change)="rangeEndDay(maxD)" />
+        </div>
+      </div>
+      </div>
+
+
+    </div>
+    <!-- --------------------- -->
+    <div class="filter-content border-bottom">
+      <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+        (click)="isCollapsed2 = !isCollapsed2" [attr.aria-expanded]="!isCollapsed2"
+        aria-controls="collapseBasic">
+        <div class=""><i class="fas fa-dollar-sign"></i> {{ "Prices" | translate }}</div>
+
+        <i class="fas" [ngClass]="{ 'fa-angle-down': isCollapsed2, 'fa-angle-up': !isCollapsed2 }"></i>
+      </a>
+
+      <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed2" [isAnimated]="true">
+
+        <div class="form">
+          <span>
+            <label for="minText">Min value</label>
+            <input type="number" ngModel #min="ngModel" disabled id="minText" name="min" [value]="rangePric"
+              [(ngModel)]="rangePric" placeholder="0" #val3 />
+          </span>
+          <span>
+            <label for="maxText">Max value</label>
+            <input type="number" ngModel #max="ngModel" disabled id="maxText" name="max" [value]="rangePrice"
+              [(ngModel)]="rangePrice" placeholder="10000" />
+          </span>
+          <div class="range">
+            <input type="range" #val min="0" max="10000" value="300" step="400" id="minRange"
+              (change)="rangePri1(val)" />
+            <input type="range" #val2 min="0" max="10000" value="10000" id="maxRange"
+              (change)="rangePri2(val2)" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- --------------------- -->
+    <div class="filter-content border-bottom">
+      <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+        (click)="isCollapsed4 = !isCollapsed4" [attr.aria-expanded]="!isCollapsed4"
+        aria-controls="collapseBasic">
+        <div class=""><i class=" fas far fa-star"></i> Rating</div>
+
+        <i class="fas" [ngClass]="{ 'fa-angle-down': isCollapsed4, 'fa-angle-up': !isCollapsed4 }"></i>
+      </a>
+      <div id="collapseBasic" class="raat sec-bg p-3 pt-2" [collapse]="isCollapsed4" [isAnimated]="true">
+        <!-- <ngx-slider [(value)]="minValueRate" [(highValue)]="maxValueRate" [options]="optionsRate"></ngx-slider> -->
+        <div class="cont">
+          <div class="stars">
+            <ngx-star-rating formControlName="rating" #valRate [id]="'rating'" (click)="ratingMax(form.value.rating)">
+            </ngx-star-rating>
+            <div class="clr"></div>
+            <div>Rating: {{ form.value.rating }}</div>
+
+            <!-- <rating class="rateFilter" [(ngModel)]="FilterRate"  [readonly]="isReadonlyFilter" #valRate (click)="ratingMax(valRate)"> </rating> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="filter-content border-bottom">
+      <a class="filter d-flex justify-content-between align-items-center sec-bg p-3 text-dark font-weight-bold text-uppercase"
+        (click)="isCollapsed3 = !isCollapsed3" [attr.aria-expanded]="!isCollapsed3"
+        aria-controls="collapseBasic">
+        <div class=""><i class="fas fa-plane-departure mr-2"></i>{{ "Tour Type" | translate }}</div>
+
+        <i class="fas" [ngClass]="{ 'fa-angle-down': isCollapsed3, 'fa-angle-up': !isCollapsed3 }"></i>
+      </a>
+      <div id="collapseBasic" class="sec-bg p-3 pt-2" [collapse]="isCollapsed3" [isAnimated]="true">
+        <div *ngFor="let tour of tourType; let i = index" class="form-check mb-2 d-flex align-items-center">
+          <input class="form-check-input" #type [value]="tour" (change)="check(type)" name="type"
+            type="checkbox" value="" />
+          <label class="form-check-label" for="flexCheckDefault"> {{ tour }} </label>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

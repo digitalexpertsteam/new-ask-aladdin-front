@@ -1,0 +1,12 @@
+.list-group-item {
+    border: 0px;
+}
+.head h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+}
+.img-rev{
+    width: 200px ;
+    height: 100%;
+    margin: auto;
+}

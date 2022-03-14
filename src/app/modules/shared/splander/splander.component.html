@@ -1,0 +1,158 @@
+<section *ngIf="package" id="Itinerary" class="bg-white mt-3 px-2 py-4">
+    <div class="container">
+        <div class="splendor mb-4">
+            <div class="head mb-2">
+                <h1 class=" h3 font-weight-bold">{{guide.name}}</h1>
+            </div>
+            <p>{{num}} {{"nights" |translate}} / {{guide.days }}{{" days" |translate}}</p>
+            <p [innerHTML]="guide.overview"></p>
+        </div>
+
+        <div class="d-flex flex-wrap m-2 text-muted">
+            <span class="mt-2 font-weight-bold">{{"Tour Type"|translate}} : </span>
+
+
+            <span class="tour ml-2 mt-2" *ngFor='let ggu of tour'>
+            <img src="../../../../../assets/imgs/dot.svg" class="dot">
+             {{ ggu}}
+
+             </span>
+
+
+        </div>
+
+        <div class="package-itinerary">
+            <div class="head mb-4 mt-2">
+                <h2 class=" h3 font-weight-bold">{{"Itinerary" |translate}} </h2>
+            </div>
+            <div class="package-details" class="package">
+                <div *ngFor='let day of guide.day_data' class="package-details">
+                    <h3 class="position-relative">
+                        <div class="py-2">
+                            <span class="font-weight-bold py-2">{{"Day" |translate}} {{day.day_number}} :- {{day.day_title}}</span>
+                        </div>
+                        <div class="number d-none d-xl-block">
+                            <p class="main-bg text-center d-flex align-items-center justify-content-center">
+                                <span
+                                    class="d-flex align-items-center justify-content-center text-white m-auto">{{day.day_number}}</span>
+                            </p>
+                        </div>
+                    </h3>
+                    <p [innerHTML]="day.day_summary"></p>
+                    <div class="offers d-flex">
+                        <div class="meal mr-2 ml-2 py-2">
+                            <img src="assets/imgs/meal.svg" />
+                            <span>{{"Meals" |translate}} </span>
+                        </div>
+                        <div class="meal-details d-flex">
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day.breakfast ?  imageTrue  : imageFalse " />
+                                <span>{{"breakfast"|translate}}</span>
+                            </div>
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day.lunch ? imageTrue : imageFalse" />
+                                <span>{{"Lunch" |translate}}</span>
+                            </div>
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day.dinner ? imageTrue  : imageFalse" />
+                                <span>{{"dinner" |translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cruises Splander -->
+
+<section *ngIf="cruise" id="Itinerary" class="bg-white mt-3 px-2 py-4">
+    <div class="container">
+        <div class="splendor mb-4">
+            <div class="head mb-2">
+                <h3 class="h4 font-weight-bold">{{SplanderCruises?.name}}</h3>
+            </div>
+            <p [innerHTML]="SplanderCruises?.description"></p>
+        </div>
+        <div class="d-flex flex-wrap m-2 text-muted">
+            <span class="mt-2 font-weight-bold">{{"Tour Type"|translate}} : </span>
+            <span class="tour ml-2 mt-2" > <i class="fas fa-ship">  </i>Nile Cruise </span>
+
+
+        </div>
+        <div class="package-itinerary">
+            <div class="head mb-4">
+                <h3 class="h4 font-weight-bold"> Itinerary</h3>
+            </div>
+            <div class="package-details" class="package">
+
+                <div *ngFor='let day of SplanderCruises?.day_data' class="package-details">
+                    <h3 class="position-relative">
+
+                        <div class="py-2">
+                            <span class="font-weight-bold py-2">Day {{day?.day_number}} :-
+                                {{day?.day_title}}</span>
+                        </div>
+                        <div class="number d-none d-xl-block">
+                            <p
+                                class="main-bg text-center d-flex align-items-center justify-content-center">
+
+                                <span class="d-flex align-items-center justify-content-center text-white m-auto pl-2">{{day?.day_number}}</span>
+                            </p>
+                        </div>
+                    </h3>
+                    <p class="pl-2" [innerHTML]="day?.day_summary"></p>
+
+
+                    <div class="offers d-flex">
+                        <div class="meal mr-2 ml-2 py-2">
+                            <img src="assets/imgs/meal.svg" />
+                            <span>Meals : </span>
+                        </div>
+                        <div class="meal-details d-flex">
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day?.breakfast ?  imageTrue  :  imageFalse" />
+                                <span>breakfast</span>
+                            </div>
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day?.lunch ? imageTrue : imageFalse" />
+                                <span>Lunch</span>
+                            </div>
+                            <div class="detail ml-2 py-2">
+                                <img [src]="day?.dinner ? imageTrue  : imageFalse" />
+                                <span>dinner</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Cruises splander -->
+
+
+<!-- Excursion splander-->
+
+<section *ngIf="excur" id="Itinerary" class="bg-white mt-3 px-2 py-4">
+    <div class="container">
+        <div class=" head-title  mb-4">
+            <div class="head mb-2">
+                <h1 class="h5">{{guide.name}}</h1>
+                <p [innerHTML]="guide.overview"></p>
+            </div>
+           <span class="font-weight-bold"> {{"Included"|translate}}</span>
+                <span *ngFor='let x of guide.included'>
+                    <span> {{x.content}} , </span>
+                </span>
+         
+            </div>
+
+    </div>
+</section>

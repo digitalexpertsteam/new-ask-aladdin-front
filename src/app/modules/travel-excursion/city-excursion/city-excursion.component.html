@@ -1,0 +1,97 @@
+<section class="sec-banner text-center">
+  <div class="container">
+      <div class="head text-uppercase d-inline-block font-weight-bold pb-1">
+          <h1><span class="main-color font-weight-bold">{{"All Destinations"|translate}}</span> {{"Travel Guide"|translate}}
+          </h1>
+      </div>
+      <p class="mt-2">{{"Below you'll find the wide variety of attractions here in Egypt. Keep any of these in mind when planning your trip"|translate}}!</p>
+      <div class="contact-btns d-none d-sm-flex justify-content-center mt-3">
+          <a class="call-btn d-flex align-items-center">
+              <span class="phone-icon"><i class="fas fa-phone-alt main-color"></i></span>
+              <span class="phone-text text-dark">{{"Call Us"|translate}}: <strong>{{phone}}</strong></span>
+          </a>
+      </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div  class="page-links py-2">
+     <a class="hover-color" routerLink="/"> <span > {{"Home"|translate}} / </span>  </a>
+      <span class="main-color">{{"citys"|translate}}</span>
+    </div>
+  </div>
+</section>
+<section class="recent-tours-section pt-5 pb-5 backkk">
+  <div class="container ">
+    <div class="section-title title-poi">
+      <h2>All Cities  </h2>
+    <img src="../../../../assets/imgs/bg-title-bar.png" alt="">
+    </div>
+      <div class="row">
+          <!-- <div class="col-12 col-md-4 mb-4" *ngFor="let city of citys">
+              <div class="destination-details">
+                  <a  routerLink="/{{city.destination_slug}}/{{city.slug}}/travel-excursions"  >
+                      <img src="{{city.thumb}}" class="img-fluid" alt="{{city.thumb_alt}}" />
+                      <div class="overlay">
+                          <a class="text-white"  routerLink="/{{city.destination_slug}}/{{city.slug}}/travel-excursions">{{city.name}}</a>
+                      </div>
+                  </a>
+              </div>
+          </div> -->
+
+          <div class="col-lg-4 col-md-6 mb-3 " *ngFor="let city of citys">
+            <div class="item-single mb-30">
+              <div class="image">
+                <img src="{{city.thumb}}" alt="{{city.thumb_alt}}"   class="image-heighh"/>
+              </div>
+              <div class="content">
+                <div class="content">
+                  <!-- <div class="review">
+                    <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star-o orange-color'></i>
+
+                    <span>of Reviews</span>
+                  </div> -->
+                  <div class="title">
+                    <h3>
+                      <a  routerLink="/{{city.destination_slug}}/{{city.slug}}/travel-excursions">{{city.name}}</a>
+                    </h3>
+                  </div>
+
+                </div>
+              </div>
+              <div class="flip-content">
+
+                <h3 class="mb-2">
+                  <a  routerLink="/{{city.destination_slug}}/{{city.slug}}/travel-excursions">{{city.name}}</a>
+                </h3>
+                <!-- <div class="review mb-15">
+                  <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star orange-color'></i>
+                    <i class='fa fa-star-o orange-color'></i>
+                  <span>of Reviews</span>
+                </div> -->
+                <p class="fooonnt" [innerHTML]="city.description">
+
+
+                </p>
+
+                <hr>
+                <a class="read-more"  routerLink="/{{city.destination_slug}}/{{city.slug}}/travel-excursions">
+                  View All
+                  <i class="fa fa-angle-double-right"></i>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+
+      </div>
+
+  </div>
+</section>

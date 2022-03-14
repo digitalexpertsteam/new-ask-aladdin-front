@@ -1,0 +1,65 @@
+<section id="reviews" class="bg-white pb-2 ">
+    <div class="container">
+      <h1 class="h2 pt-2">Top <span class="rev">Reviews</span></h1>
+      <!-- <div *ngIf="reviews?.length > 0; else reev" class="row">
+        <div  class="col-md-12 mt-2" *ngFor="let rev of reviews;let i=index;">
+          <div class="card text-left">
+            <div  class="card-body">
+              <div class="layer">
+              <div class="d-flex  align-items-center">
+                <img class="card-img-top" src="{{ rev.image == '1' ? image : rev.image }}" class="revimg img-fluid" alt="" />
+                <h4 class="ml-3 card-title font-weight-bold">{{ rev.name }}</h4>
+              </div>
+              <div class="mb-1">
+                <rating class="rate" [(ngModel)]="rev.rate" [max]="max" [readonly]="isReadonly"> </rating>
+              </div>
+              <h6 class="text-muted">Reviewed in {{ rev.date | date }}</h6>
+z
+              <p [ngClass]="{'limitTextHeight': isReadMore}"  class="mt-2 card-text font-weight-bold " [innerHTML]="rev.review"></p>
+              <button class="btn btn-warning" type="button" (click)="showText()">
+                {{ isReadMore ? 'Read More': 'Read Less' }}
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="elfsight-app-088fd11a-c215-49a4-b886-4ccbe3bcc07b"></div>
+    </div>
+
+  </section>
+
+
+  <!-- <section *ngIf="cruise" id="reviews" class="bg-white pb-2 ">
+    <div class="container">
+      <h1 class="h2 pt-2">Top <span class="rev">Reviews</span></h1>
+      <div *ngIf="reviewsCruise?.length > 0; else reev" class="row">
+        <div  class="col-md-12 mt-2" *ngFor="let rev of reviewsCruise; let i=index;">
+          <div class="card text-left">
+            <div  class="card-body">
+              <div class="layer">
+              <div class="d-flex  align-items-center">
+                <img class="card-img-top" src="{{ rev.image == '1' ? image : rev.image }}" class="revimg img-fluid" alt="" />
+                <h4 class="ml-3 card-title font-weight-bold">{{ rev.name }}</h4>
+              </div>
+              <div class="mb-1">
+                <rating class="rate" [(ngModel)]="rev.rate" [max]="max" [readonly]="isReadonly"> </rating>
+              </div>
+              <h6 class="text-muted">Reviewed in {{ rev.date | date }}</h6>
+
+              <p [ngClass]="{'limitTextHeight': isReadMore}"  class="mt-2 card-text font-weight-bold " [innerHTML]="rev.review"></p>
+              <button class="btn btn-warning" type="button" (click)="showText()">
+                {{ isReadMore ? 'Read More': 'Read Less' }}
+              </button>
+
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section> -->
+
+

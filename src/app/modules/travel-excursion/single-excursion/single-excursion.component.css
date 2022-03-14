@@ -1,0 +1,23 @@
+.map-details {
+  border-radius: 5px;
+  width: 100%;
+}
+.embed-responsive{
+  height: 300px;
+}
+.embed-responsive-item{
+  height: 100%;
+}
+
+
+.submit{
+    position: sticky;
+    top:1%;
+    z-index: 99;
+}
+
+
+.trip{
+    background-color: #00759a;
+
+}

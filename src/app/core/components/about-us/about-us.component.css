@@ -1,0 +1,47 @@
+.sec-banner
+{
+    background-image: linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) ,url('../../../../assets/imgs/7.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.sec-banner h3 {
+    font-weight: 600;
+
+}
+.about-us h1
+{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    margin: 50px 0;
+}
+.about-us p
+{
+    font-size: 1rem;
+    text-align: justify;
+    font-weight: 300;
+}
+.about-us .descrip
+{
+    margin: 50px 0;
+
+}
+.about-us h3
+{
+    font-size: 1.5rem;
+    text-align: justify;
+    font-weight: 500;
+    margin: 35px 0;
+}
+.list li::before
+{
+    font-weight: 900;
+    content: "\f138";
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    margin-left: -1.3em;
+    width: 1.3em;
+    color: #e57a1f;
+}
