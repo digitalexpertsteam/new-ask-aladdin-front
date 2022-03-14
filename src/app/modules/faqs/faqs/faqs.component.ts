@@ -28,6 +28,7 @@ export class FaqsComponent implements OnInit {
   Title!: String;
   id: any;
   allFaqs: destination[] = [];
+  phone: any;
 
   constructor(
     private _faqs: HomeserviceService,
@@ -41,7 +42,9 @@ export class FaqsComponent implements OnInit {
   ngOnInit(): void {
 
     this.id = this._Active.snapshot.params.slug
-
+    this._faqs.getSocials().subscribe((result) => {
+      this.phone = result.data[0].phone1
+    });
 
     this._faqs.getDestinationFact(this.id).subscribe((result) => {
       this.faqsContainer = result.data;

@@ -23,6 +23,7 @@ export class BlogComponent implements OnInit {
   ides :any;
   blogName:any;
   Title: any;
+  phone: any;
 
   constructor(
     private _ActivatedRoute: ActivatedRoute,
@@ -34,6 +35,10 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     // Get Id From Loacal Storage
     // this.idBlogs = localStorage.getItem("idBlog");
+    this._homeService.getSocials().subscribe((result) => {
+      this.phone = result.data[0].phone1
+    });
+
     this.idBlogs = this._ActivatedRoute.snapshot.params.blog
 
      this.ides = localStorage.getItem("id");
@@ -80,7 +85,7 @@ export class BlogComponent implements OnInit {
     loop: true,
     mouseDrag: false,
     touchDrag: false,
-    autoplay: true,
+    autoplay: false,
     autoplayTimeout: 5000,
     pullDrag: true,
     margin: 8,

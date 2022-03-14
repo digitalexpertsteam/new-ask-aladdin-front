@@ -86,13 +86,13 @@ img {
 
 .card-details{
   width: 100%;
-  height: 175px;
+  height: 205px;
   color: #fff;
   background: #f68800;
 
   transition: ease .5s;
 
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;

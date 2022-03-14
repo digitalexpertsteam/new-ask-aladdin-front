@@ -22,6 +22,7 @@ export class AllBlogComponent implements OnInit {
   title!: String;
   id:any;
   allBlog:destination[]=[];
+  phone: any;
 
 
 
@@ -34,7 +35,9 @@ export class AllBlogComponent implements OnInit {
     // this.id = this._active.snapshot.params.slug
     // console.log(this._active.snapshot.params.slug);
 
-
+    this._blogs.getSocials().subscribe((result) => {
+      this.phone = result.data[0].phone1
+    });
 
     this.id = this._active.snapshot.params.slug
 
