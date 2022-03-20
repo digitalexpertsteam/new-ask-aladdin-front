@@ -23,33 +23,33 @@ export class AppComponent {
       this.spinner.hide();
 
     }, 1000);
-    this.seo.globalSeo().subscribe(res => {
-      this.Title = res.data[0].seo_title;
-      this._title.setTitle(`${this.Title}`)
+    // this.seo.globalSeo().subscribe(res => {
+    //   this.Title = res.data[0].seo_title;
+    //   this._title.setTitle(`${this.Title}`)
 
-      this._meta.addTags([
-        { name: 'keywords', content: `${res.data[0].seo_keywords}` },
-        { name: 'robots', content: `${res.data[0].seo_robots}` },
-        { name: 'description', content: `${res.data[0].seo_description}`},
-        { name: 'description', content: `${res.data[0].seo_description}`},
-        { name: 'facebook:description', content: `${res.data[0].facebook_description}`},
-        { name: 'twitter:title', content: `${res.data[0].twitter_title}`},
-        { name: 'twitter:description', content: `${res.data[0].twitter_description}`},
-        { name: "twitter:image", content: `${res.data[0].twitter_description}`},
-        { property:"og:image", content: `${res.data[0].twitter_image}`},
-        { property:"og:image", content: `${res.data[0].facebook_image}`},
-      ]);
+    //   this._meta.addTags([
+    //     { name: 'keywords', content: `${res.data[0].seo_keywords}` },
+    //     { name: 'robots', content: `${res.data[0].seo_robots}` },
+    //     { name: 'description', content: `${res.data[0].seo_description}`},
+    //     { name: 'description', content: `${res.data[0].seo_description}`},
+    //     { name: 'facebook:description', content: `${res.data[0].facebook_description}`},
+    //     { name: 'twitter:title', content: `${res.data[0].twitter_title}`},
+    //     { name: 'twitter:description', content: `${res.data[0].twitter_description}`},
+    //     { name: "twitter:image", content: `${res.data[0].twitter_description}`},
+    //     { property:"og:image", content: `${res.data[0].twitter_image}`},
+    //     { property:"og:image", content: `${res.data[0].facebook_image}`},
+    //   ]);
 
-      this.seo.getDestinationFact(1).subscribe(res => {
-        if(res.data.destination_seo_title == null){
+    //   this.seo.getDestinationFact(1).subscribe(res => {
+    //     if(res.data.destination_seo_title == null){
 
-          this._title.setTitle(`${this.Title}`)
-        }
-      }
+    //       this._title.setTitle(`${this.Title}`)
+    //     }
+    //   }
 
-      )
+    //   )
 
-    })
+    // })
 
   }
   onActivate() {

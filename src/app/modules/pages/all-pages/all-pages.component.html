@@ -1,8 +1,46 @@
+<section
+  class="sec-banne text-center"
+  [ngStyle]="{
+    'background-image': 'linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0 ,0 ,0, .5)) , url(' + category_banner + ')'
+  }"
+>
+  <div class="container mt-5">
+    <div class="head text-uppercase d-inline-block font-weight-bold pb-1 mt-4 d-flex">
+      <h1>
+        <span class="main-color font-weight-bold">{{ category_name }} </span>
+      </h1>
+    </div>
+  </div>
+  <!-- <div class="over_banner"><img src="{{ overBanner }}" alt="" srcset="" /></div> -->
+  <!-- <p class=" mx-auto mt-3 w-50 " [innerHTML]="category_description" ></p> -->
+</section>
+
+<section>
+  <div class="container">
+    <div   class="page-links py-2">
+     <a class="hover-color" routerLink="/"> <span > Home / </span>  </a>
+     <a class="hover-color" routerLink="/{{destination_slug}}/destination"> <span > {{destination_slug}} / </span>  </a>
+     <!-- <a class="hover-color" routerLink="/{{single.destination_slug}}/category/{{single.category_slug}}"> <span > {{single.category_name}} / </span>  </a> -->
+      <span class="main-color">{{category_name}}</span>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="">
+    <h1 class="main-color font-weight-bold ">{{ category_name }} </h1>
+    <p class=" mx-auto mt-3  " [innerHTML]="category_description" ></p>
+  </div>
+  </div>
+</section>
+
 <section class="container-fluid my-3">
   <div class="container">
       <div class="row">
           <div *ngFor="let page of pagesContent" class="col-lg-3 col-md-6 col-sm-12 mt-3">
-              <a routerLink="/{{page.destination_slug}}/page/{{page.category_slug}}/{{page.slug}}">
+
+              <a routerLink="/{{destination_slug}}/page/{{category_slug}}/{{page.slug}}">
+
               <div class="card" >
                   <img class="card-img-top img-fluid" [src]="page.thumb" [alt]="page.thumb_alt">
                   <div  class="card-body">
